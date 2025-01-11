@@ -1,8 +1,16 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ["./src/**/*.{html,js,jsx,css}"],
+
+export default {
+  content: [
+    "./src/**/*.{html,js,jsx,ts,tsx}", // Include your source files
+  ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#213555", // Custom primary color
+        secondary: "#3E5879", // Custom secondary color (fixed with '#')
+      },
+    },
   },
-  plugins: [],
-}
+  plugins: [require("daisyui")], // DaisyUI plugin
+};
