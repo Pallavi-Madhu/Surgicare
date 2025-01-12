@@ -16,7 +16,7 @@ const Navbar = () => {
               {/* Logo Section */}
               <div className="flex flex-col items-center">
                 <img src={logo} alt="SurgiCare Logo" className="h-14 w-auto" />
-                <p className="text-white font-serif text-lg font-bold mt-2">
+                <p className="text-white text-lg font-bold mt-2">
                   Nandana Surgi Care
                 </p>
               </div>
@@ -67,13 +67,13 @@ const Navbar = () => {
               <div className="hidden md:flex space-x-8 items-center relative">
                 <a
                   href="/"
-                  className="text-white font-serif text-2xl font-bold hover:text-pink-300 transition duration-300"
+                  className="text-white text-2xl font-bold hover:text-pink-300 transition duration-300"
                 >
                   Home
                 </a>
                 <a
                   href="/about-us"
-                  className="text-white font-serif text-2xl font-bold hover:text-pink-300 transition duration-300"
+                  className="text-white text-2xl font-bold hover:text-pink-300 transition duration-300"
                 >
                   About Us
                 </a>
@@ -82,7 +82,7 @@ const Navbar = () => {
                 <div className="relative">
                   <button
                     onClick={toggleDepartmentsMenu}
-                    className="text-white font-serif text-2xl font-bold hover:text-pink-300 transition duration-300"
+                    className="text-white text-2xl font-bold hover:text-pink-300 transition duration-300"
                   >
                     Departments
                   </button>
@@ -118,7 +118,7 @@ const Navbar = () => {
 
                 <a
                   href="/contact"
-                  className="text-white font-serif text-2xl font-bold hover:text-pink-300 transition duration-300"
+                  className="text-white text-2xl font-bold hover:text-pink-300 transition duration-300"
                 >
                   Contact
                 </a>
