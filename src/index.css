@@ -5,3 +5,18 @@
 @import "swiper/css";
 @import "swiper/css/effect-coverflow";
 @import "swiper/css/pagination";
+
+@layer utilities {
+  .bg-dark {
+    background-color: #E6A4B4;
+  }
+  .bg-primary {
+    background-color: #F3D7CA;
+  }
+  .bg-sec {
+    background-color: #BB9AB1;
+  }
+  .bg-last {
+    background-color: #FFF8E3;
+  }
+}

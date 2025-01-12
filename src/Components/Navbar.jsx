@@ -10,13 +10,13 @@ const Navbar = () => {
   return (
     <>
       <div>
-        <div className="min-h-50 bg-black">
-          <div className="w-full p-4">
+        <div className="fixed top-0 w-full bg-dark z-50 shadow-md">
+          <div className="w-full p-2">
             <div className="max-w-screen-xl mx-auto flex items-center justify-between">
               {/* Logo Section */}
               <div className="flex flex-col items-center">
                 <img src={logo} alt="SurgiCare Logo" className="h-14 w-auto" />
-                <p className="text-white text-lg font-bold mt-2">
+                <p className="text-black text-lg font-bold mt-2">
                   Nandana Surgi Care
                 </p>
               </div>
@@ -25,7 +25,7 @@ const Navbar = () => {
               <div className="md:hidden">
                 <button
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
-                  className="text-white focus:outline-none"
+                  className="text-black focus:outline-none"
                 >
                   {isMenuOpen ? (
                     // Cross Icon
@@ -67,13 +67,13 @@ const Navbar = () => {
               <div className="hidden md:flex space-x-8 items-center relative">
                 <a
                   href="/"
-                  className="text-white text-2xl font-bold hover:text-pink-300 transition duration-300"
+                  className="text-black text-2xl font-bold hover:text-white transition duration-300"
                 >
                   Home
                 </a>
                 <a
                   href="/about-us"
-                  className="text-white text-2xl font-bold hover:text-pink-300 transition duration-300"
+                  className="text-black text-2xl font-bold hover:text-white transition duration-300"
                 >
                   About Us
                 </a>
@@ -82,7 +82,7 @@ const Navbar = () => {
                 <div className="relative">
                   <button
                     onClick={toggleDepartmentsMenu}
-                    className="text-white text-2xl font-bold hover:text-pink-300 transition duration-300"
+                    className="text-black text-2xl font-bold hover:text-white transition duration-300"
                   >
                     Departments
                   </button>
@@ -118,7 +118,7 @@ const Navbar = () => {
 
                 <a
                   href="/contact"
-                  className="text-white text-2xl font-bold hover:text-pink-300 transition duration-300"
+                  className="text-black text-2xl font-bold hover:text-white"
                 >
                   Contact
                 </a>
