@@ -1,18 +1,3 @@
-// import React from "react";
-// import Navbar from "../Components/Navbar";
-
-// const Home = () => {
-//   return (
-//     <>
-//       <div className="min-h-screen bg-blue-400">
-//         <Navbar />
-//       </div>
-//     </>
-//   );
-// };
-
-// export default Home;
-
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -21,6 +6,7 @@ import "swiper/css/pagination";
 import { EffectCoverflow, Pagination, Autoplay } from "swiper/modules";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
+import scope from "../assets/scope.jpg";
 
 const HomePage = () => {
   const cards = [
@@ -47,9 +33,23 @@ const HomePage = () => {
   ];
 
   return (
-    <div className=" bg-blue-400">
+    <div
+      className="bg-cover bg-fixed bg-center h-screen mt-20"
+      style={{
+        backgroundImage: `url(${scope})`,
+        backgroundColor: "rgba(255, 255, 255, 0.5)", // Add transparency
+        backgroundBlendMode: "overlay", // Combine the image and color
+      }}
+    >
       <Navbar />
-      <div className="min-h-screen flex-grow flex flex-col items-center justify-center">
+      <div className="p-20 mt-10 font-bold  ">
+        A dummy paragraph is a block of text used to fill empty spaces in a
+        layout during the design phase, allowing designers and content creators
+        to visualize the final content’s layout and format without being
+        distracted by actual text. The most famous example of dummy text is
+        “Lorem Ipsum,” which has been in use since the 1500s.
+      </div>
+      <div className=" p-20 flex-grow flex flex-col items-center justify-center">
         <h1 className="text-4xl text-black font-bold mb-10">
           Stunning Sliding Cards
         </h1>
@@ -75,11 +75,11 @@ const HomePage = () => {
         >
           {cards.map((card, index) => (
             <SwiperSlide key={index} className="flex justify-center">
-              <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+              <div className="bg-last rounded-lg shadow-lg overflow-hidden">
                 <img
                   src={card.image}
                   alt={card.title}
-                  className="w-full h-40 object-cover"
+                  className="w-full  object-cover"
                 />
                 <div className="p-4">
                   <h2 className="text-xl font-bold">{card.title}</h2>
@@ -96,3 +96,20 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+
+
+// import React from "react";
+// import Navbar from "../Components/Navbar";
+
+// const Home = () => {
+//   return (
+//     <>
+//       <div className="min-h-screen bg-blue-400">
+//         <Navbar />
+//       </div>
+//     </>
+//   );
+// };
+
+// export default Home;
