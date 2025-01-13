@@ -4,10 +4,10 @@ import { IoCallOutline } from "react-icons/io5";
 
 const Footer = () => {
   return (
-    <div className="bg-dark text-black">
+    <div className="bg-dark text-black ml-2 mr-2" >
       {/* Footer Text Section */}
       <div className="py-8 px-4">
-        <h2 className="text-3xl font-bold text-center mb-6">
+        <h2 className="text-3xl font-bold text-center  mb-6">
           Get in touch with us!
         </h2>
         <div className="text-center">

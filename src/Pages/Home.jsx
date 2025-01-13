@@ -98,7 +98,14 @@ const Home = () => {
   ];
 
   return (
-    <div className=" min-h-screen m-0 bg-gradient-to-br from-[#ffb3d9] via-[#b3e0ff] to-[#c2c2f0] animate-gradientBackground ">
+    <div
+            className="min-h-screen bg-cover bg-fixed bg-center"
+            style={{
+              backgroundImage: `url(${scope})`,
+              backgroundColor: "rgba(255, 255, 255, 0.5)", // Transparent white overlay
+              backgroundBlendMode: "overlay", // Combine the image and color
+            }}
+          >
       <div className="min-h-screen grid grid-rows-[1fr_auto]">
         <Navbar />
         <div className="min-h-screen flex-grow flex flex-col items-center justify-center">
