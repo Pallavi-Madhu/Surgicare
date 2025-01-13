@@ -1,7 +1,8 @@
-import React from "react";
+import * as React from "react";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import scope from "../assets/scope.jpg";
+import AccordionSection from "../Components/Accordion"; // Import the AccordionSection
 
 const About = () => {
   return (
@@ -15,8 +16,8 @@ const About = () => {
         }}
       >
         <Navbar />
-        <div className="flex items-center justify-center min-h-screen mt-20 px-4 sm:px-10">
-          <div className="bg-white bg-opacity-90 px-6 py-6 sm:py-10 max-w-4xl w-full text-black rounded-lg shadow-lg">
+        <div className="flex items-center justify-center pt-10 pb-10 sm:min-h-screen px-4 sm:px-10 mt-20 sm:pt-0 sm:pb-0">
+          <div className="bg-white bg-opacity-90 px-6 py-6 sm:py-10 max-w-4xl w-full text-black font-light rounded-lg shadow-lg">
             <div className="flex items-center justify-center mb-10 text-2xl sm:text-4xl font-bold whitespace-nowrap">
               <span className="mr-2">Welcome to</span>
               <span className="font-bold text-pink-500">
@@ -41,14 +42,18 @@ const About = () => {
                 high-quality solutions that meet the demanding standards of this
                 field.
               </p>
-              <br />
-              <p className="text-indent-5">
-                Below is a list of the major companies we proudly represent,
-                offering you the best in medical innovation and care.
-              </p>
             </div>
           </div>
         </div>
+        <div>
+          <p className="font-semibold text-lg sm:text-4xl flex items-center justify-center px-4 sm:px-80 ">
+            Here are the key companies we represent
+          </p>
+        </div>
+
+        {/* Accordion section component */}
+        <AccordionSection />
+
         <Footer />
       </div>
     </>
