@@ -8,7 +8,7 @@ const About = () => {
   return (
     <>
       <div
-        className="min-h-screen bg-cover bg-fixed bg-center"
+        className="min-h-screen bg-cover bg-fixed bg-center "
         style={{
           backgroundImage: `url(${scope})`,
           backgroundColor: "rgba(255, 255, 255, 0.5)", // Transparent white overlay
@@ -46,14 +46,13 @@ const About = () => {
           </div>
         </div>
         <div>
-          <p className="font-semibold text-lg sm:text-4xl flex items-center justify-center px-4 sm:px-80 ">
+          <p className="font-semibold text-lg sm:text-4xl flex items-center justify-center px-4 sm:px-80 whitespace-nowrap">
             Here are the key companies we represent
           </p>
         </div>
 
         {/* Accordion section component */}
-        <AccordionSection />
-
+          <AccordionSection />
         <Footer />
       </div>
     </>

@@ -87,28 +87,28 @@ const Navbar = () => {
                     Departments
                   </button>
                   {isDepartmentsOpen && (
-                    <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md text-black z-10">
+                    <div className="absolute  p-2 left-0 mt-2 w-60 bg-white shadow-lg rounded-md text-black z-10">
                       <a
                         href="/critical-care"
-                        className="block px-4 py-2 text-sm hover:bg-gray-200"
+                        className="block px-6 py-2 text-base  hover:bg-gray-200"
                       >
                         Critical Care
                       </a>
                       <a
                         href="/cardiac-surgery"
-                        className="block px-4 py-2 text-sm hover:bg-gray-200"
+                        className="block px-6 py-2 text-base hover:bg-gray-200"
                       >
                         Cardiac Surgery
                       </a>
                       <a
                         href="/cardiology"
-                        className="block px-4 py-2 text-sm hover:bg-gray-200"
+                        className="block px-6 py-2 text-base hover:bg-gray-200"
                       >
                         Cardiology
                       </a>
                       <a
                         href="/neurosurgery"
-                        className="block px-4 py-2 text-sm hover:bg-gray-200"
+                        className="block px-6 py-2 text-base hover:bg-gray-200"
                       >
                         Neurosurgery
                       </a>
