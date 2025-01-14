@@ -1,0 +1,186 @@
+import React, { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import emailjs from "emailjs-com";
+import supabase from "../config/contactClient";
+
+const ContactForm = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    enquiry: "",
+  });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const emailData = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      enquiry: formData.enquiry,
+    };
+
+    try {
+      // Step 1: Insert data into Supabase
+      const { data, error } = await supabase
+        .from("Contact")
+        .insert([emailData]);
+
+      if (error) {
+        console.error("Error inserting data into Supabase:", error);
+        toast.error("Failed to save data to the database. Please try again.", {
+          hideProgressBar: true,
+          className:
+            "bg-red-100 text-red-700 border border-red-500 rounded-lg shadow-lg p-4",
+          autoClose: 3000,
+        });
+        return; // Exit if Supabase insertion fails
+      }
+
+      console.log("Data saved to Supabase:", data);
+
+      // Step 2: Send email using EmailJS
+      emailjs.init("64O2PPN7HQmxW9KjE"); // Replace with your EmailJS user ID
+
+      emailjs
+        .send(
+          "service_j54lhkq", // Replace with your EmailJS service ID
+          "template_rrrtk7x", // Replace with your EmailJS template ID
+          emailData
+        )
+        .then(
+          (response) => {
+            console.log("Email sent successfully", response);
+            toast.success("Form submitted successfully!", {
+              hideProgressBar: true,
+              className:
+                "bg-green-100 text-green-700 border border-green-500 rounded-lg shadow-lg p-4",
+              autoClose: 3000,
+            });
+            setFormData({ name: "", email: "", phone: "", enquiry: "" }); // Clear the form
+          },
+          (error) => {
+            console.error("Error sending email:", error);
+            toast.error("Failed to send email. Please try again.", {
+              hideProgressBar: true,
+              className:
+                "bg-red-100 text-red-700 border border-red-500 rounded-lg shadow-lg p-4",
+              autoClose: 3000,
+            });
+          }
+        );
+    } catch (error) {
+      console.error("Unexpected error:", error);
+      toast.error("An unexpected error occurred. Please try again.", {
+        hideProgressBar: true,
+        className:
+          "bg-red-100 text-red-700 border border-red-500 rounded-lg shadow-lg p-4",
+        autoClose: 3000,
+      });
+    }
+  };
+
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  return (
+    <div className="flex justify-center items-center min-h-screen">
+      <form
+        onSubmit={handleSubmit}
+        className="bg-white p-8 rounded-lg shadow-md w-full max-w-lg"
+      >
+        <h2 className="text-2xl font-semibold text-center text-gray-800 mb-6">
+          Contact Us
+        </h2>
+        <div className="space-y-4">
+          {/* Name Input */}
+          <div>
+            <label
+              htmlFor="name"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Name
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              className="mt-1 block w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+            />
+          </div>
+          {/* Email Input */}
+          <div>
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              className="mt-1 block w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+            />
+          </div>
+          {/* Phone Input */}
+          <div>
+            <label
+              htmlFor="phone"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Phone
+            </label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              required
+              className="mt-1 block w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+            />
+          </div>
+          {/* Enquiry Input */}
+          <div>
+            <label
+              htmlFor="enquiry"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Enquiry
+            </label>
+            <textarea
+              id="enquiry"
+              name="enquiry"
+              value={formData.enquiry}
+              onChange={handleChange}
+              required
+              className="mt-1 block w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+            ></textarea>
+          </div>
+        </div>
+        {/* Submit Button */}
+        <button
+          type="submit"
+          className="w-full mt-6 p-3 bg-green-500 text-white font-semibold rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500"
+        >
+          Submit Form
+        </button>
+      </form>
+      <ToastContainer />
+    </div>
+  );
+};
+
+export default ContactForm;
