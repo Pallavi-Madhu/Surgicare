@@ -89,20 +89,20 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen">
+    <div className="flex justify-center items-center min-h-screen font-b">
       <form
         onSubmit={handleSubmit}
-        className="bg-white p-8 rounded-lg shadow-md w-full max-w-lg"
+        className=" bg-white p-6 rounded-lg shadow-md w-full max-w-lg"
       >
-        <h2 className="text-2xl font-semibold text-center text-gray-800 mb-6">
+        <h2 className="text-2xl font-semibold text-center text-gray-800 mb-4">
           Contact Us
         </h2>
-        <div className="space-y-4">
+        <div className="space-y-">
           {/* Name Input */}
           <div>
             <label
               htmlFor="name"
-              className="block text-sm font-medium text-gray-700"
+              className="block text-md font-medium text-gray-700"
             >
               Name
             </label>
@@ -113,14 +113,14 @@ const ContactForm = () => {
               value={formData.name}
               onChange={handleChange}
               required
-              className="mt-1 block w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="mt-1 block w-full p-3 border border-blue-700 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
             />
           </div>
           {/* Email Input */}
           <div>
             <label
               htmlFor="email"
-              className="block text-sm font-medium text-gray-700"
+              className="block text-md font-medium text-gray-700"
             >
               Email
             </label>
@@ -131,14 +131,14 @@ const ContactForm = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="mt-1 block w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="mt-1 block w-full p-3 border border-blue-700 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
             />
           </div>
           {/* Phone Input */}
           <div>
             <label
               htmlFor="phone"
-              className="block text-sm font-medium text-gray-700"
+              className="block text-md font-medium text-gray-700"
             >
               Phone
             </label>
@@ -149,14 +149,14 @@ const ContactForm = () => {
               value={formData.phone}
               onChange={handleChange}
               required
-              className="mt-1 block w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="mt-1 block w-full p-3 border border-blue-700 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
             />
           </div>
           {/* Enquiry Input */}
           <div>
             <label
               htmlFor="enquiry"
-              className="block text-sm font-medium text-gray-700"
+              className="block text-md font-medium text-gray-700"
             >
               Enquiry
             </label>
@@ -166,7 +166,7 @@ const ContactForm = () => {
               value={formData.enquiry}
               onChange={handleChange}
               required
-              className="mt-1 block w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="mt-1 block w-full p-3 border border-blue-700 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
             ></textarea>
           </div>
         </div>

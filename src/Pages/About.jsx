@@ -1,7 +1,7 @@
 import * as React from "react";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
-import scope from "../assets/scope.jpg";
+import scope from "../assets/hos.png";
 import AccordionSection from "../Components/Accordion"; // Import the AccordionSection
 
 const About = () => {
@@ -17,10 +17,10 @@ const About = () => {
       >
         <Navbar />
         <div className="flex items-center justify-center pt-10 pb-10 sm:min-h-screen px-4 sm:px-10 mt-20 sm:pt-0 sm:pb-0">
-          <div className="bg-white bg-opacity-90 px-6 py-6 sm:py-10 max-w-4xl w-full text-black font-light rounded-lg shadow-lg">
+          <div className="bg-gradient-to-b from-blue-300 to-white bg-opacity-90 px-6 py-6 sm:py-10 max-w-4xl w-full text-black font-light rounded-lg shadow-lg">
             <div className="flex items-center justify-center mb-10 text-2xl sm:text-4xl font-bold whitespace-nowrap">
               <span className="mr-2">Welcome to</span>
-              <span className="font-bold text-pink-500">
+              <span className="font-bold text-blue-900">
                 Nandana SurgiCare!
               </span>
             </div>
@@ -31,7 +31,7 @@ const About = () => {
                 specializing in a wide range of medical equipment, instruments,
                 devices, and disposables. Our expertise lies in serving the
                 critical needs of{" "}
-                <span className="font-bold text-pink-500">
+                <span className="font-bold text-blue-900">
                   Cardiology, Vascular, Anesthesia, and Neurology
                 </span>{" "}
                 departments in both government and private hospitals.
@@ -52,7 +52,9 @@ const About = () => {
         </div>
 
         {/* Accordion section component */}
+        <div className="p-6 mb-10">
           <AccordionSection />
+        </div>
         <Footer />
       </div>
     </>

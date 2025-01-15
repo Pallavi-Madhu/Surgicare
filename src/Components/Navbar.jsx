@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <>
       <div>
-        <div className="fixed top-0 w-full bg-dark z-50 shadow-md">
+        <div className="fixed top-0 w-full bg-blue-300 z-50 shadow-md">
           <div className="w-full p-2">
             <div className="max-w-screen-xl mx-auto flex items-center justify-between">
               {/* Logo Section */}
@@ -87,7 +87,7 @@ const Navbar = () => {
                     Departments
                   </button>
                   {isDepartmentsOpen && (
-                    <div className="absolute  p-2 left-0 mt-2 w-60 bg-white shadow-lg rounded-md text-black z-10">
+                    <div className="absolute  p-2 left-0 mt-2 w-60 bg-white shadow-lg rounded-md text-blue-900 font-bold z-10">
                       <a
                         href="/critical-care"
                         className="block px-6 py-2 text-base  hover:bg-gray-200"
