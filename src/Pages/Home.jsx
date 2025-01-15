@@ -7,20 +7,20 @@ import { EffectCoverflow, Pagination, Autoplay } from "swiper/modules";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import Card from "../Components/Cards";
-import scope from "../assets/scope.jpg";
+import blue from "../assets/world.png";
 import { cards } from "../Data/dataHome";
 
 const Home = () => {
   return (
     <div
-      className="min-h-screen overflow-x-hidden bg-cover bg-fixed bg-center"
+      className="min-h-screen overflow-x-hidden bg-cover  bg-fixed bg-center"
       style={{
-        backgroundImage: `url(${scope})`,
+        backgroundImage: `url(${blue})`,
         backgroundColor: "rgba(255, 255, 255, 0.5)",
         backgroundBlendMode: "overlay",
       }}
     >
-      <div className="min-h-screen grid grid-rows-[1fr_auto] w-full">
+      <div className="min-h-screen  grid grid-rows-[1fr_auto] w-full">
         <Navbar />
         <div className="min-h-screen flex-grow flex flex-col items-center justify-center w-full">
           <h1 className="text-4xl text-black font-bold mb-10 text-center">

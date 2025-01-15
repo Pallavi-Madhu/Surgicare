@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import PropTypes from "prop-types"; // Optional but good practice for type-checking
 import Map from "ol/Map";
 import View from "ol/View";
 import TileLayer from "ol/layer/Tile";
@@ -11,29 +12,30 @@ import VectorSource from "ol/source/Vector";
 import Feature from "ol/Feature";
 import { defaults as defaultControls } from "ol/control";
 
+
 const MapComponent = ({ coordinates, markericon, onClick }) => {
   const mapRef = useRef(null);
   const mapInstance = useRef(null);
 
-  useEffect(() => {             //creating new map
+  useEffect(() => {
     const map = new Map({
-      target: mapRef.current,    //load the current mapRef value
+      target: mapRef.current,
       layers: [
         new TileLayer({
           source: new OSM(),
         }),
       ],
       view: new View({
-        center: fromLonLat(coordinates),   //center the map on provided coordinates
-        zoom: 15,                          // to set zoom
+        center: fromLonLat(coordinates),
+        zoom: 15,
       }),
-      controls: defaultControls({ attribution: false }),  //to remove copyright
+      controls: defaultControls({ attribution: false }),
     });
 
     mapInstance.current = map;
 
-    const markerSource = new VectorSource();    //create marker
-    const markerLayer = new VectorLayer({ 
+    const markerSource = new VectorSource();
+    const markerLayer = new VectorLayer({
       source: markerSource,
       style: new Style({
         image: new Icon({
@@ -44,6 +46,7 @@ const MapComponent = ({ coordinates, markericon, onClick }) => {
         }),
       }),
     });
+
     const marker = new Feature({
       geometry: new Point(fromLonLat(coordinates)),
     });
@@ -52,15 +55,15 @@ const MapComponent = ({ coordinates, markericon, onClick }) => {
     map.addLayer(markerLayer);
 
     return () => {
-      map.setTarget(null);   //cleanup after component unmounts
+      map.setTarget(null); // cleanup on unmount
     };
   }, [coordinates, markericon]);
 
   // Zoom In Handler
   const handleZoomIn = () => {
-    const view = mapInstance.current.getView();   //access map's view
-    const currentZoom = view.getZoom();           //get current zoom level
-    view.setZoom(currentZoom + 1);                //increase the zoom level
+    const view = mapInstance.current.getView();
+    const currentZoom = view.getZoom();
+    view.setZoom(currentZoom + 1);
   };
 
   // Zoom Out Handler
@@ -71,98 +74,100 @@ const MapComponent = ({ coordinates, markericon, onClick }) => {
   };
 
   return (
-    <div
-      style={{ position: "relative", width: "600px", height: "300px" }}
-      className="rounded-lg shadow-lg overflow-hidden border border-gray-300"
-    >
+    <div className="p-9 w-full flex flex-col sm:flex-row justify-center items-center gap-8">
       <div
-        ref={mapRef}
-        onClick={onClick}
-        style={{ width: "100%", height: "100%" }}
-      />
-
-      {/* Zoom Controls */}
-      <div
-        style={{
-          position: "absolute",
-          top: "10px",
-          right: "10px",
-          display: "flex",
-          flexDirection: "column",
-          gap: "10px",
-        }}
+        style={{ width: "600px", height: "300px" }} // Retaining the fixed width and height
+        className="rounded-lg  shadow-lg overflow-hidden border border-gray-300 relative"
       >
-        <button
-          onClick={handleZoomIn}
+        <div
+          ref={mapRef}
+          onClick={onClick}
+          style={{ width: "100%", height: "100%" }}
+        />
+        {/* Zoom Controls */}
+        <div
           style={{
-            background: "#007BFF",    // Blue background for visibility
-            color: "#fff",            // White text for contrast
-            border: "none",           // Remove border for a clean look
-            borderRadius: "50%",      // Circular buttons
-            width: "40px",           // Larger button size
-            height: "40px",
-            fontSize: "20px",
-            border: "1px solid #ccc",
-            padding: "5px",
-            cursor: "pointer",
+            position: "absolute",
+            top: "10px",
+            right: "10px",
+            display: "flex",
+            flexDirection: "column",
+            gap: "10px",
           }}
         >
-          +
-        </button>
-        <button
-          onClick={handleZoomOut}
-          style={{
-            background: "#007BFF", // Blue background for visibility
-            color: "#fff", // White text for contrast
-            border: "none", // Remove border for a clean look
-            borderRadius: "50%", // Circular buttons
-            width: "40px", // Larger button size
-            height: "40px",
-            fontSize: "20px",
-            border: "1px solid #ccc",
-            padding: "5px",
-            cursor: "pointer",
-          }}
-        >
-          -
-        </button>
+          <button
+            onClick={handleZoomIn}
+            style={{
+              background: "#007BFF",
+              color: "#fff",
+              border: "none",
+              borderRadius: "50%",
+              width: "40px",
+              height: "40px",
+              fontSize: "20px",
+              border: "1px solid #ccc",
+              padding: "5px",
+              cursor: "pointer",
+            }}
+          >
+            +
+          </button>
+          <button
+            onClick={handleZoomOut}
+            style={{
+              background: "#007BFF",
+              color: "#fff",
+              border: "none",
+              borderRadius: "50%",
+              width: "40px",
+              height: "40px",
+              fontSize: "20px",
+              border: "1px solid #ccc",
+              padding: "5px",
+              cursor: "pointer",
+            }}
+          >
+            -
+          </button>
+        </div>
       </div>
     </div>
   );
 };
 
+MapComponent.propTypes = {
+  coordinates: PropTypes.arrayOf(PropTypes.number).isRequired,
+  markericon: PropTypes.string,
+  onClick: PropTypes.func,
+};
 
 const TwoMaps = () => {
-  const handleMapClickKozhikode = (e) => {       //handler
+  const handleMapClickKozhikode = (e) => {
     e.stopPropagation();
     const gmapurl = "https://www.google.com/maps?q=11.279657,75.785949";
-    window.open(gmapurl, "_blank");               //open in a new tab
+    window.open(gmapurl, "_blank");
   };
 
-  const handleMapClickErnakulam = (e) => {        //handler
+  const handleMapClickErnakulam = (e) => {
     e.stopPropagation();
     const gmapurl = "https://www.google.com/maps?q=10.054821,76.282686";
-    window.open(gmapurl, "_blank");                //open in a new tab
+    window.open(gmapurl, "_blank");
   };
 
   return (
-    <div
-      className="flex justify-between items-center gap-20 p-8" // Added gap between maps
-    >
-      <div className=" rounded-xl shadow-xl">
+    <div className="sm:flex sm:justify-between flex lg:flex-row flex-col items-center gap-20 p-4">
+      <div className="rounded-xl bg-white bg-opacity-5 shadow-xl">
         <MapComponent
           coordinates={[76.282686, 10.054821]} // Ernakulam coordinates
           markericon="https://openlayers.org/en/v6.5.0/examples/data/icon.png"
-          onClick={handleMapClickErnakulam} // Pass click handler for Ernakulam
-          style={{ width: "600px", height: "300px" }}
+          onClick={handleMapClickErnakulam}
         />
       </div>
-      <div className=" rounded-xl shadow-xl">
+      <div className="rounded-xl bg-white bg-opacity-5 shadow-xl">
         <MapComponent
           coordinates={[75.785949, 11.279657]} // Kozhikode coordinates
           markericon="https://openlayers.org/en/v6.5.0/examples/data/icon.png"
-          onClick={handleMapClickKozhikode} // Pass click handler for Kozhikode
-          style={{ width: "600px", height: "300px" }}
+          onClick={handleMapClickKozhikode}
         />
       </div>
     </div>

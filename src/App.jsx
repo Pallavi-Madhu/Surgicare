@@ -9,7 +9,6 @@ import Cardiac_surgery from "./Pages/Departments/Critical_care";
 import Cardiology from "./Pages/Departments/Critical_care";
 import Neurosurgery from "./Pages/Departments/Critical_care";
 
-
 const App = () => {
   return (
     <>
