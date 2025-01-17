@@ -17,7 +17,7 @@ const About = () => {
       >
         <Navbar />
         <div className="flex items-center justify-center pt-10 pb-10 sm:min-h-screen px-4 sm:px-10 mt-20 sm:pt-0 sm:pb-0">
-          <div className="bg-gradient-to-b from-blue-300 to-white bg-opacity-90 px-6 py-6 sm:py-10 max-w-4xl w-full text-black font-light rounded-lg shadow-lg">
+          <div className="bg-gradient-to-b from-blue-300 to-white bg-opacity-90 p-10 sm:py-10 max-w-4xl w-full text-black font-light rounded-lg shadow-lg">
             <div className="flex items-center justify-center mb-10 text-2xl sm:text-4xl font-bold whitespace-nowrap">
               <span className="mr-2">Welcome to</span>
               <span className="font-bold text-blue-900">

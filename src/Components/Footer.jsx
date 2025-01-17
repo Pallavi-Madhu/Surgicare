@@ -15,7 +15,7 @@ const Footer = () => {
             {/* Address */}
             <li className="flex items-center justify-center space-x-2">
               <FaMapMarkerAlt className="text-white" />
-              <span className="text-lg">
+              <span className="text-2xl">
                 17 /530 A, Ground Floor, Near NSS Office, Container Road,
                 Cheranalloor PO Ernakulam, Kerala- 682034
               </span>
@@ -25,7 +25,7 @@ const Footer = () => {
               <IoCallOutline className="text-white" />
               <a
                 href="tel:+91 9207755944, +91 9207755955"
-                className="text-lg hover:text-white"
+                className="text-xl hover:text-white"
               >
                 +91 9207755944
               </a>
@@ -35,13 +35,13 @@ const Footer = () => {
               <FaEnvelope className="text-white" />
               <a
                 href="mailto:office@nandanasurgicare.com"
-                className="text-lg hover:text-white"
+                className="text-xl hover:text-white"
               >
                 office@nandanasurgicare.com
               </a>
             </li>
             {/* Privacy Policy */}
-            <li className="text-lg text-white hover:text-gray-500 cursor-pointer">
+            <li className="text-xl text-blue-900 hover:text-gray-500 cursor-pointer">
               Privacy Policy
             </li>
           </ul>
@@ -52,7 +52,7 @@ const Footer = () => {
       <hr className="border-gray-700" />
 
       {/* Copyright Section */}
-      <div className="py-4 text-center text-sm text-gray-500">
+      <div className="py-4 text-center text-lg text-gray-700">
         <p>
           &copy; {new Date().getFullYear()} Nandana Surgicare. All rights
           reserved.
