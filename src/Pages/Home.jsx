@@ -10,7 +10,7 @@ import Card from "../Components/Cards";
 import bg from "../assets/bg.png";
 import { cards } from "../Data/dataHome";
 import surgeryVideo from "../assets/Surgeryequip.mp4";
-import scalpel from "../assets/scalpel.png"
+import EQUIP from "../assets/EQUIP.png"
 import dist from "../assets/dist.png"
 import { motion } from "framer-motion";
 
@@ -75,14 +75,14 @@ const Home = () => {
         <div className="relative px-10">
           {/* First Section */}
           <motion.div
-            className="flex flex-row mx-40 gap-3 mt-10 p-10"
+            className="flex flex-col-reverse md:flex-row mx-4 md:mx-40 gap-6 mt-10 p-6"
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.0 }}
             //viewport={{ once: true }}
           >
             <motion.p
-              className="text-2xl text-black leading-relaxed font-bold mx-auto max-w-3xl mt-8 mb-12"
+              className="text-xl text-black leading-relaxed font-bold max-w-3xl mt-6 md:mt-0"
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 1.0, delay: 0.2 }}
@@ -100,8 +100,8 @@ const Home = () => {
               sectors.
             </motion.p>
             <motion.img
-              src={scalpel}
-              className="w-50 h-80"
+              src={EQUIP}
+              className="w-50 h-80 max-w-sm rounded-2xl shadow-lg"
               initial={{ opacity: 0, x: 100 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 1.0, delay: 0.3 }}
@@ -111,7 +111,7 @@ const Home = () => {
 
           {/* Second Section */}
           <motion.div
-            className="flex flex-row mx-40 p-10 gap-7"
+            className="flex flex-col md:flex-row mx-4 md:mx-40 p-6 gap-6"
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.0 }}
@@ -119,14 +119,14 @@ const Home = () => {
           >
             <motion.img
               src={dist}
-              className="w-50 h-80"
+              className="w-full h-auto max-w-sm rounded-2xl shadow-lg"
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 1.0, delay: 0.3 }}
               //viewport={{ once: true }}
             />
             <motion.p
-              className="text-2xl text-black leading-relaxed font-bold mx-auto max-w-3xl"
+              className="text-xl text-black leading-relaxed font-bold max-w-3xl mt-6 md:mt-0"
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 1.0, delay: 0.2 }}
@@ -268,7 +268,7 @@ const Home = () => {
             solutions."
           </motion.p>
         </motion.div>
-        <div className=" flex flex-col items-center justify-center py-10">
+        <div className="flex flex-col items-center justify-center py-10">
           <Swiper
             effect={"coverflow"}
             grabCursor={true}
@@ -284,7 +284,7 @@ const Home = () => {
               640: { slidesPerView: 1.5, spaceBetween: 20 },
               768: { slidesPerView: 2, spaceBetween: 30 },
             }}
-            className="w-full max-w-xl px-4" //p-x-4
+            className="w-full max-w-sm sm:max-w-md md:max-w-xl px-4" // Adjusted max-width for better centering
           >
             {cards.map((card, index) => (
               <SwiperSlide key={index} className="flex justify-center">

@@ -40,7 +40,7 @@ const Contact = () => {
               Got Questions? Reach Out!
             </h2>
             <motion.p
-              className="text-white text-center w-full lg:w-3/4 px-4 mt-8 lg:mt-20"
+              className="text-white text-center w-full lg:w-3/4 px-4 mt-8 mb-20 lg:mt-20"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
@@ -68,7 +68,7 @@ const Contact = () => {
           >
             <div className="absolute top-0 left-0 w-full h-screen flex justify-center items-center">
               <motion.div
-                className="w-11/12 sm:w-full max-w-3xl lg:mt-40 lg:mb-10 rounded-lg "
+                className="w-11/12 sm:mb-80 sm:w-full max-w-3xl lg:mt-40 md:mb-10 rounded-lg "
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
@@ -143,7 +143,7 @@ const Contact = () => {
               </li>
             </ul>
           </div> */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 lg:mt-40 sm:mt-60">
           {/* Ernakulam */}
           <motion.div
             className="bg-gradient-to-b from-blue-300 to-white p-5 border border-gray-300 rounded-lg shadow-lg"
