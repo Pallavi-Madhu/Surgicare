@@ -36,11 +36,11 @@ const Contact = () => {
             transition={{ duration: 1, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl lg:text-5xl font-bold text-center mt-10 lg:mt-20 text-white">
+            <h2 className="text-3xl lg:text-5xl font-bold text-center mt-10 lg:mt-60 text-white">
               Got Questions? Reach Out!
             </h2>
             <motion.p
-              className="text-white text-center w-full lg:w-3/4 px-4 mt-8 mb-20 lg:mt-20"
+              className="text-white text-center w-full lg:w-3/4 px-4 sm:mb-40 mt-8 lg:mt-20"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
@@ -68,7 +68,7 @@ const Contact = () => {
           >
             <div className="absolute top-0 left-0 w-full h-screen flex justify-center items-center">
               <motion.div
-                className="w-11/12 sm:mb-80 sm:w-full max-w-3xl lg:mt-40 md:mb-10 rounded-lg "
+                className="w-11/12 mb-60 sm:mb-80 sm:w-full max-w-3xl lg:mt-96 md:mb-60 rounded-lg "
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
@@ -143,7 +143,7 @@ const Contact = () => {
               </li>
             </ul>
           </div> */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 lg:mt-40 sm:mt-60">
+        <div className="grid grid-cols-1 mt-60  md:grid-cols-2 gap-8 px-4 md:mt-80 lg:mt-40 sm:mt-80">
           {/* Ernakulam */}
           <motion.div
             className="bg-gradient-to-b from-blue-300 to-white p-5 border border-gray-300 rounded-lg shadow-lg"
