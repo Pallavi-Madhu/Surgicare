@@ -7,6 +7,19 @@ const Navbar = () => {
 
   const toggleDepartmentsMenu = () => setIsDepartmentsOpen(!isDepartmentsOpen);
 
+  const departments = [
+    { name: "Critical Care", href: "/critical-care" },
+    { name: "Cardiac Surgery", href: "/cardiac-surgery" },
+    { name: "Cardiology", href: "/cardiology" },
+    { name: "Neurosurgery", href: "/neurosurgery" },
+    { name: "Ophthalmology", href: "/ophthalmology" },
+    { name: "Pulmonology", href: "/pulmonology" },
+    { name: "General Surgery", href: "/general-surgery" },
+    { name: "Plastic Surgery", href: "/plastic-surgery" },
+    { name: "Orthopedic", href: "/orthopedic" },
+    { name: "Anesthesiology", href: "/anesthesiology" },
+  ];
+
   return (
     <>
       <div>
@@ -87,31 +100,16 @@ const Navbar = () => {
                     Departments
                   </button>
                   {isDepartmentsOpen && (
-                    <div className="absolute  p-2 left-0 mt-2 w-60 bg-white shadow-lg rounded-md text-blue-900 font-bold z-10">
-                      <a
-                        href="/critical-care"
-                        className="block px-6 py-2 text-base  hover:bg-gray-200"
-                      >
-                        Critical Care
-                      </a>
-                      <a
-                        href="/cardiac-surgery"
-                        className="block px-6 py-2 text-base hover:bg-gray-200"
-                      >
-                        Cardiac Surgery
-                      </a>
-                      <a
-                        href="/cardiology"
-                        className="block px-6 py-2 text-base hover:bg-gray-200"
-                      >
-                        Cardiology
-                      </a>
-                      <a
-                        href="/neurosurgery"
-                        className="block px-6 py-2 text-base hover:bg-gray-200"
-                      >
-                        Neurosurgery
-                      </a>
+                    <div className="absolute left-0 mt-2 w-60 bg-white shadow-lg rounded-md text-blue-900 font-bold z-10">
+                      {departments.map((dept) => (
+                        <a
+                          key={dept.name}
+                          href={dept.href}
+                          className="block px-6 py-2 text-base hover:bg-gray-200"
+                        >
+                          {dept.name}
+                        </a>
+                      ))}
                     </div>
                   )}
                 </div>
@@ -150,30 +148,15 @@ const Navbar = () => {
                     </button>
                     {isDepartmentsOpen && (
                       <div className="bg-white shadow-lg rounded-md text-black">
-                        <a
-                          href="/critical-care"
-                          className="block px-4 py-2 text-sm hover:bg-gray-200"
-                        >
-                          Critical Care
-                        </a>
-                        <a
-                          href="/cardiac-surgery"
-                          className="block px-4 py-2 text-sm hover:bg-gray-200"
-                        >
-                          Cardiac Surgery
-                        </a>
-                        <a
-                          href="/cardiology"
-                          className="block px-4 py-2 text-sm hover:bg-gray-200"
-                        >
-                          Cardiology
-                        </a>
-                        <a
-                          href="/neurosurgery"
-                          className="block px-4 py-2 text-sm hover:bg-gray-200"
-                        >
-                          Neurosurgery
-                        </a>
+                        {departments.map((dept) => (
+                          <a
+                            key={dept.name}
+                            href={dept.href}
+                            className="block px-4 py-2 text-sm hover:bg-gray-200"
+                          >
+                            {dept.name}
+                          </a>
+                        ))}
                       </div>
                     )}
                   </div>

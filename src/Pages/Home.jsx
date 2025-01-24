@@ -75,7 +75,7 @@ const Home = () => {
         <div className="relative px-10">
           {/* First Section */}
           <motion.div
-            className="flex flex-col-reverse md:flex-row mx-4 md:mx-40 gap-6 mt-10 p-6"
+            className="flex flex-col-reverse lg:flex-row mx-4 md:mx-40 gap-6 mt-10 p-6"
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.0 }}
@@ -111,7 +111,7 @@ const Home = () => {
 
           {/* Second Section */}
           <motion.div
-            className="flex flex-col md:flex-row mx-4 md:mx-40 p-6 gap-6"
+            className="flex flex-col lg:flex-row mx-4 md:mx-40 p-6 gap-6"
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.0 }}
