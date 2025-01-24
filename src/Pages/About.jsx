@@ -99,15 +99,14 @@ const About = () => {
           </motion.div>
         </motion.div>
         <div>
-          <p className="font-semibold text-lg sm:text-4xl flex items-center justify-center px-4 sm:px-80 whitespace-nowrap">
+          <p className="font-semibold text-lg sm:text-4xl flex items-center justify-center px-4 sm:px-80 ">
             Here are the key companies we represent
           </p>
         </div>
 
         {/* Accordion section component */}
-        <div className="p-6 mb-10">
-          <AccordionSection />
-        </div>
+        <AccordionSection />
+
         <Footer />
       </div>
     </>
