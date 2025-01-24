@@ -4,7 +4,7 @@ import { IoCallOutline } from "react-icons/io5";
 
 const Footer = () => {
   return (
-    <div className="bg-blue-300 text-black ml-2 mr-2" >
+    <div className="bg-blue-300 text-black ml-2 mr-2">
       {/* Footer Text Section */}
       <div className="py-8 px-4">
         <h2 className="text-3xl font-bold text-center  mb-6">
@@ -24,10 +24,10 @@ const Footer = () => {
             <li className="flex items-center justify-center space-x-2">
               <IoCallOutline className="text-white" />
               <a
-                href="tel:+91 9207755944, +91 9207755955"
+                href="tel:+91 9847933898, +91 9207755944 "
                 className="text-xl hover:text-white"
               >
-                +91 9207755944
+                +91 9847933898 ,+91 9207755944
               </a>
             </li>
             {/* Email */}

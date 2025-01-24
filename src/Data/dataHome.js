@@ -2,7 +2,7 @@ import image1 from "../assets/BL LifSciences.png";
 import image2 from "../assets/Baxter.png";
 import image3 from "../assets/Scanlan.png";
 import image4 from "../assets/Terumo.png";
-import image5 from "../assets/Artivion.png";
+//import image5 from "../assets/Artivion.png";
 import image6 from "../assets/Grena.png";
 import image7 from "../assets/Halyard.png";
 import image8 from "../assets/Sinapi.png";
@@ -32,10 +32,10 @@ export const cards = [
       "Leading the way in medical devices and healthcare innovations.",
     image: image4,
   },
-  {
-    description: "Pioneering heart valve technologies for better outcomes.",
-    image: image5,
-  },
+  // {
+  //   description: "Pioneering heart valve technologies for better outcomes.",
+  //   image: image5,
+  // },
   {
     description: "Cutting-edge solutions in medical devices and diagnostics.",
     image: image6,
