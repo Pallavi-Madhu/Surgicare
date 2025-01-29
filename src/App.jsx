@@ -4,10 +4,18 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
-import Critical_care from "./Pages/Departments/Critical_care";
-import Cardiac_surgery from "./Pages/Departments/Critical_care";
-import Cardiology from "./Pages/Departments/Critical_care";
-import Neurosurgery from "./Pages/Departments/Critical_care";
+
+// Import Department Pages
+import CriticalCare from "./Pages/Departments/CriticalCare";
+import CardiacSurgery from "./Pages/Departments/CardiacSurgery";
+import Cardiology from "./Pages/Departments/Cardiology";
+import Neurosurgery from "./Pages/Departments/Neurosurgery";
+import Ophthalmology from "./Pages/Departments/Ophthalmology";
+import Pulmonology from "./Pages/Departments/Pulmonology";
+import GeneralSurgery from "./Pages/Departments/GeneralSurgery";
+import PlasticSurgery from "./Pages/Departments/PlasticSurgery";
+import Orthopedic from "./Pages/Departments/Orthopedic";
+import Anesthesiology from "./Pages/Departments/Anesthesiology";
 
 const App = () => {
   return (
@@ -15,13 +23,25 @@ const App = () => {
       <Router>
         <div>
           <Routes>
+            {/* Main Pages */}
             <Route path="/" element={<Home />} />
             <Route path="/about-us" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/critical-care" element={<Critical_care />} />
-            <Route path="/cardiac-surgery" element={<Cardiac_surgery />} />
+
+            {/* Department Pages */}
+            <Route path="/critical-care" element={<CriticalCare />} />
+            <Route path="/cardiac-surgery" element={<CardiacSurgery />} />
             <Route path="/cardiology" element={<Cardiology />} />
             <Route path="/neurosurgery" element={<Neurosurgery />} />
+            <Route path="/ophthalmology" element={<Ophthalmology />} />
+            <Route path="/pulmonology" element={<Pulmonology />} />
+            <Route path="/general-surgery" element={<GeneralSurgery />} />
+            <Route path="/plastic-surgery" element={<PlasticSurgery />} />
+            <Route path="/orthopedic" element={<Orthopedic />} />
+            <Route path="/anesthesiology" element={<Anesthesiology />} />
+
+            {/* Fallback Route */}
+            <Route path="*" element={<h1>404 - Page Not Found</h1>} />
           </Routes>
         </div>
       </Router>
