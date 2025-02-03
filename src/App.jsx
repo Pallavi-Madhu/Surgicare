@@ -6,8 +6,8 @@ import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 
 // Import Department Pages
-import CriticalCare from "./Pages/Departments/CriticalCare";
-import CardiacSurgery from "./Pages/Departments/CardiacSurgery";
+import CriticalCare from "./Pages/Departments/Critical_care";
+import CardiacSurgery from "./Pages/Departments/Cardiac_surgery";
 import Cardiology from "./Pages/Departments/Cardiology";
 import Neurosurgery from "./Pages/Departments/Neurosurgery";
 import Ophthalmology from "./Pages/Departments/Ophthalmology";

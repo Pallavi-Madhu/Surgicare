@@ -5,8 +5,12 @@ import Footer from "../../Components/Footer"
 
 const cardiology = () => {
   return (
-    <div>cardiology</div>
-  )
+    <>
+      <Navbar />
+      <div>cardiology</div>
+      <Footer />
+    </>
+  );
 }
 
 export default cardiology
