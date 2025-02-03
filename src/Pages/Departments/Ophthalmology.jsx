@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
+import Navbar from "../../Components/Navbar";
+import Footer from "../../Components/Footer";
 
 const Ophthalmology = () => {
   return (
-    <div>Ophthalmology</div>
-  )
-}
+    <>
+      <Navbar />
+      <div>Ophthalmology</div>
+      <Footer />
+    </>
+  );
+};
 
-export default Ophthalmology
+export default Ophthalmology;

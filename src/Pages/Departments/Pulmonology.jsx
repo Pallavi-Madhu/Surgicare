@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
+import Navbar from "../../Components/Navbar";
+import Footer from "../../Components/Footer";
 
 const Pulmonology = () => {
   return (
-    <div>Pulmonology</div>
-  )
-}
+    <>
+      <Navbar />
+      <div>Pulmonology</div>
+      <Footer />
+    </>
+  );
+};
 
-export default Pulmonology
+export default Pulmonology;
