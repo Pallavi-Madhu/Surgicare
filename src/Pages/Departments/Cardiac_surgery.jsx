@@ -4,8 +4,12 @@ import Footer from "../../Components/Footer";
 
 const Cardiac_surgery = () => {
   return (
-    <div>Cardiac_surgery</div>
-  )
+    <>
+      <Navbar />
+      <div>Cardiac_surgery</div>
+      <Footer />
+    </>
+  );
 }
 
 export default Cardiac_surgery

@@ -1,6 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import supabase from "../../config/contactClient";
+import Navbar from "../../Components/Navbar";
+import Footer from "../../Components/Footer";
 
 const Anesthesiology = () => {
   const [images, setImages] = useState([]);
@@ -22,14 +24,18 @@ const Anesthesiology = () => {
   }, []);
 
   return (
-    <div>
-      <h1>helleo</h1>
-      <div className="">
-        {images.map((img, index) => {
-          return <img key={index} src={img.images} alt={`Image-${index}`} />;
-        })}
+    <>
+      <Navbar />
+      <div>
+        <h1>hello Pallavi !</h1>
+        <div className="">
+          {images.map((img, index) => {
+            return <img key={index} src={img.images} alt={`Image-${index}`} />;
+          })}
+        </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 

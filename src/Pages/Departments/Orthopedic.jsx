@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
+import Navbar from "../../Components/Navbar";
+import Footer from "../../Components/Footer";
 
 const Orthopedic = () => {
   return (
-    <div>Orthopedic</div>
-  )
-}
+    <>
+      <Navbar />
+      <div>Orthopedic</div>
+      <Footer />
+    </>
+  );
+};
 
-export default Orthopedic
+export default Orthopedic;
