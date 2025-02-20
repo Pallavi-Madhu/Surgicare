@@ -6,7 +6,8 @@ import Insightra from "../../assets/insightra.png";
 import Card1 from "../../assets/BL Lifsciences.png";
 import Card2 from "../../assets/BL Lifsciences.png";
 import Card3 from "../../assets/BL Lifsciences.png";
-import bg from "../../assets/depBG.png"; // Keeping the background image as you requested
+import bg from "../../assets/depBG.png"; 
+import heart from "../../assets/heart.png"
 
 const DepartmentPage = ({ name, image, buttonImages }) => {
   const [selected, setSelected] = useState("BL");
@@ -32,9 +33,9 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-20 p-12 items-center">
             <h2 className="text-6xl font-bold text-left flex-1">{name}</h2>
             <img
-              src={image}
+              src={heart}
               alt={name}
-              className="w-full md:w-1/2 rounded-lg shadow"
+              className="absolute -top-20 -right-4 opacity-70 w-full transform md:-rotate-45 md:w-1/3 rounded-3xl shadow-2xl"
             />
           </div>
 
@@ -76,7 +77,9 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
             )}
           </div>
 
-          <div className="flex mt-10 text-4xl font-bold justify-center items-center">Range of products</div>
+          <div className="flex mt-10 text-4xl font-bold justify-center items-center">
+            Range of products
+          </div>
 
           {/* Hover Cards (Conditionally Rendered) */}
           <div className="grid grid-cols-1 sm:grid-cols-3 my-20 gap-6 p-10">
@@ -115,6 +118,35 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
               ))}
           </div>
         </div>
+        {selected === "BL" && (
+          <>
+            <a
+              href="https://www.bllifesciences.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex justify-center "
+            >
+              <button className=" hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700">
+                Read More
+              </button>
+            </a>
+          </>
+        )}
+
+        {selected === "Insightra" && (
+          <>
+            <a
+              href="https://insightra.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex justify-center "
+            >
+              <button className=" hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700">
+                Read More
+              </button>
+            </a>
+          </>
+        )}
       </div>
       <Footer />
     </>
