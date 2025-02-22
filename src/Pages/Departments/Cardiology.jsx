@@ -3,11 +3,12 @@ import Navbar from "../../Components/Navbar";
 import Footer from "../../Components/Footer";
 import BL from "../../assets/BL Lifsciences.png";
 import Insightra from "../../assets/insightra.png";
+import Mizuho from "../../assets/Mizuho.png";
 import Card1 from "../../assets/BL Lifsciences.png";
 import Card2 from "../../assets/BL Lifsciences.png";
 import Card3 from "../../assets/BL Lifsciences.png";
-import bg from "../../assets/depBG.png"; 
-import heart from "../../assets/heart.png"
+import bg from "../../assets/depBG.png";
+import heart from "../../assets/heart.png";
 
 const DepartmentPage = ({ name, image, buttonImages }) => {
   const [selected, setSelected] = useState("BL");
@@ -45,8 +46,8 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
               <button
                 key={id}
                 onClick={() => setSelected(id)}
-                className={`p-4 rounded-3xl text-white w-full h-14 border flex justify-center items-center ${
-                  selected === id ? "bg-blue-500" : "bg-gray-300"
+                className={`p-4 rounded-3xl text-white w-full h-14 border flex justify-center items-center border-black ${
+                  selected === id ? "bg-blue-300" : "bg-white"
                 }`}
               >
                 <img src={src} alt={alt} className="h-12 w-auto" />
@@ -162,7 +163,7 @@ export default function Cardiology() {
   return (
     <DepartmentPage
       name="CARDIOLOGY"
-      image="/src/assets/Mizuho.png"
+      image={Mizuho}
       buttonImages={buttonImages}
     />
   );
