@@ -321,7 +321,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
   );
 };
 
-export default function Cardiology() {
+export default function Neurosurgery() {
   const buttonImages = [
     { id: "Mizuho", src: Mizuho, alt: "Mizuho" },
     { id: "Kinamed", src: Kinamed, alt: "Kinamed" },
