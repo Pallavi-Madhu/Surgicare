@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import Navbar from "../../Components/Navbar";
 import Footer from "../../Components/Footer";
 import BL from "../../assets/BL Lifsciences.png";
@@ -9,6 +11,7 @@ import Card2 from "../../assets/BL Lifsciences.png";
 import Card3 from "../../assets/BL Lifsciences.png";
 import bg from "../../assets/depBG.png";
 import heart from "../../assets/heart.png";
+import departments from "../../Data/departments"
 
 const DepartmentPage = ({ name, image, buttonImages }) => {
   const [selected, setSelected] = useState("BL");
@@ -18,6 +21,23 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
     { id: 2, image: Card2, text: "Card 2 Description" },
     { id: 3, image: Card3, text: "Card 3 Description" },
   ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % departments.length);
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + departments.length) % departments.length
+    );
+  };
+
+  const handleNavigate = () => {
+    navigate(`/${departments[currentIndex].id}`);
+  };
+
 
   return (
     <>
@@ -36,7 +56,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
             <img
               src={heart}
               alt={name}
-              className="absolute -top-20 -right-4 opacity-70 w-full transform md:-rotate-45 md:w-1/3 rounded-3xl shadow-2xl"
+              className="absolute -top-20 -right-4 opacity-70 w-full transform md:-rotate-45 md:w-1/3 rounded-3xl shadow-2xl z-0"
             />
           </div>
 
@@ -59,7 +79,11 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
           <div className="flex flex-col justify-center items-center mt-6">
             {selected === "BL" && (
               <>
-                <img src={BL} alt="BL Lifesciences" className="h-40 w-auto" />
+                <img
+                  src={BL}
+                  alt="BL Lifesciences"
+                  className="h-40 w-auto m-10"
+                />
                 <p className="text-center mt-4">
                   Customized Cath lab Procedure Packs are available as per
                   user-defined requirements and specifications.
@@ -68,7 +92,11 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
             )}
             {selected === "Insightra" && (
               <>
-                <img src={Insightra} alt="Insightra" className="h-40 w-auto" />
+                <img
+                  src={Insightra}
+                  alt="Insightra"
+                  className="h-20 w-80 flex m-10"
+                />
                 <p className="text-center mt-4">
                   The Insightra Ultra 7Fr catheter allows common fluid-filled
                   technology in a smaller catheter with no compromise on lumen
@@ -148,6 +176,32 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
             </a>
           </>
         )}
+      </div>
+      {/* Department Navigation (Just Above Footer) */}
+      <div className="mt-10 mb-20 flex flex-col items-center">
+        <div className="flex items-center gap-6">
+          <button
+            onClick={handlePrev}
+            className="p-4 rounded-full border border-black hover:bg-gray-200"
+          >
+            <FaArrowLeft className="h-6 w-6" />
+          </button>
+
+          {/* Department Button */}
+          <button
+            onClick={handleNavigate}
+            className="p-4 w-60 h-14 rounded-3xl text-black border border-black bg-white hover:bg-blue-300 transition text-lg font-semibold"
+          >
+            {departments[currentIndex].name}
+          </button>
+
+          <button
+            onClick={handleNext}
+            className="p-4 rounded-full border border-black hover:bg-gray-200"
+          >
+            <FaArrowRight className="h-6 w-6" />
+          </button>
+        </div>
       </div>
       <Footer />
     </>

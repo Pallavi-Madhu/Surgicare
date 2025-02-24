@@ -7,23 +7,10 @@ import BL from "../../assets/BL Lifsciences.png";
 import Card1 from "../../assets/Sinapi.png";
 import Card2 from "../../assets/BL Lifsciences.png";
 import Card3 from "../../assets/BL Lifsciences.png";
-
-const departments = [
-  { id: "critical-care", name: "Critical Care" },
-  { id: "cardiac-surgery", name: "Cardiac Surgery" },
-  { id: "cardiology", name: "Cardiology" },
-  { id: "neurosurgery", name: "Neurosurgery" },
-  { id: "ophthalmology", name: "Ophthalmology" },
-  { id: "pulmonology", name: "Pulmonology" },
-  { id: "general-surgery", name: "General Surgery" },
-  { id: "plastic-surgery", name: "Plastic Surgery" },
-  { id: "orthopedic", name: "Orthopedic" },
-  { id: "anesthesiology", name: "Anesthesiology" },
-];
+import departments from "../../Data/departments";
 
 export default function GeneralSurgery() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const navigate = useNavigate();
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % departments.length);
@@ -38,7 +25,6 @@ export default function GeneralSurgery() {
   const handleNavigate = () => {
     navigate(`/${departments[currentIndex].id}`);
   };
-
   return (
     <>
       <Navbar />

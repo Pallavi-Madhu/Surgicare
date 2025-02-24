@@ -23,16 +23,16 @@ const Navbar = () => {
   return (
     <>
       <div>
-        <div className="fixed top-0 w-full bg-blue-300 z-50 shadow-md">
-          <div className="w-full p-2">
+        <div className=" top-0 w-full bg-white relative z-50 ">
+          <div className="w-full p-2 m-5">
             <div className="max-w-screen-xl mx-auto flex items-center justify-between">
               {/* Logo Section */}
               <div className="flex flex-col items-center">
                 <img src={logo} alt="SurgiCare Logo" className="h-14 w-auto" />
-                <p className="text-black text-lg font-bold mt-2">
-                  Nandana Surgi Care
-                </p>
               </div>
+              <p className="text-5xl font-bold p-2 bg-gradient-to-l from-blue-500 to-black bg-clip-text text-transparent">
+                Nandana Surgi Care
+              </p>
 
               {/* Hamburger Icon for Mobile */}
               <div className="md:hidden">
