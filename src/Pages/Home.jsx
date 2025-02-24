@@ -27,7 +27,7 @@ const Home = () => {
     >
       <div className="min-h-screen overflow-x-hidden">
         <Navbar />
-        <div className="relative w-full mt-20">
+        <div className="relative w-full ">
           <video
             className="w-full h-96 object-cover opacity-80"
             autoPlay
