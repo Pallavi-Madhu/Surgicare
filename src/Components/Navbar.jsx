@@ -80,13 +80,13 @@ const Navbar = () => {
               <div className="hidden md:flex space-x-8 items-center relative">
                 <a
                   href="/"
-                  className="text-black text-2xl font-bold hover:text-white transition duration-300"
+                  className="text-black text-2xl font-bold hover:text-blue-700 transition duration-300"
                 >
                   Home
                 </a>
                 <a
                   href="/about-us"
-                  className="text-black text-2xl font-bold hover:text-white transition duration-300"
+                  className="text-black text-2xl font-bold hover:text-blue-700 transition duration-300"
                 >
                   About Us
                 </a>
@@ -95,12 +95,12 @@ const Navbar = () => {
                 <div className="relative">
                   <button
                     onClick={toggleDepartmentsMenu}
-                    className="text-black text-2xl font-bold hover:text-white transition duration-300"
+                    className="text-black text-2xl font-bold hover:text-blue-700 transition duration-300"
                   >
                     Departments
                   </button>
                   {isDepartmentsOpen && (
-                    <div className="absolute left-0 mt-2 w-60 bg-white shadow-lg rounded-md text-blue-900 font-bold z-10">
+                    <div className="absolute left-0 mt-2 w-60 bg-white shadow-lg rounded-md text-black font-bold z-10">
                       {departments.map((dept) => (
                         <a
                           key={dept.name}
@@ -116,7 +116,7 @@ const Navbar = () => {
 
                 <a
                   href="/contact"
-                  className="text-black text-2xl font-bold hover:text-white"
+                  className="text-black text-2xl font-bold hover:text-blue-700"
                 >
                   Contact
                 </a>

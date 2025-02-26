@@ -12,6 +12,8 @@ import departments from "../../Data/departments";
 export default function GeneralSurgery() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const navigate = useNavigate();
+
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % departments.length);
   };
