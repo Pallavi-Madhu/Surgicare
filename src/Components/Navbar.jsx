@@ -38,7 +38,7 @@ const Navbar = () => {
               <div className="md:hidden">
                 <button
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
-                  className="text-black focus:outline-none"
+                  className="text-black w-10  focus:outline-none"
                 >
                   {isMenuOpen ? (
                     // Cross Icon
@@ -115,6 +115,13 @@ const Navbar = () => {
                 </div>
 
                 <a
+                  href="/products"
+                  className="text-black text-2xl font-bold hover:text-blue-700"
+                >
+                  Products
+                </a>
+
+                <a
                   href="/contact"
                   className="text-black text-2xl font-bold hover:text-blue-700"
                 >
@@ -152,7 +159,7 @@ const Navbar = () => {
                           <a
                             key={dept.name}
                             href={dept.href}
-                            className="block px-4 py-2 text-sm hover:bg-gray-200"
+                            className="block px-4 py-2 text-sm font-semibold hover:bg-gray-200"
                           >
                             {dept.name}
                           </a>
@@ -160,6 +167,13 @@ const Navbar = () => {
                       </div>
                     )}
                   </div>
+
+                  <a
+                    href="/products"
+                    className="block text-lg font-bold hover:text-pink-300"
+                  >
+                    Products
+                  </a>
 
                   <a
                     href="/contact"

@@ -3,6 +3,7 @@ import "./index.css"; // Ensure this is your Tailwind CSS file
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
+import Products from "./Pages/Products";
 import Contact from "./Pages/Contact";
 
 // Import Department Pages
@@ -26,6 +27,7 @@ const App = () => {
             {/* Main Pages */}
             <Route path="/" element={<Home />} />
             <Route path="/about-us" element={<About />} />
+            <Route path="/products" element={<Products />} />
             <Route path="/contact" element={<Contact />} />
 
             {/* Department Pages */}
