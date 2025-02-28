@@ -39,7 +39,7 @@ const About = () => {
             </div>
 
             {/* Content Section */}
-            <div className="text-lg sm:text-3xl text-justify">
+            <div className="text-lg sm:text-3xl text-center">
               <motion.p
                 className="text-indent-5"
                 initial={{ opacity: 0, x: -50 }}
