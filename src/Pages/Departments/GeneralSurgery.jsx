@@ -1,13 +1,10 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React from "react";
 import Navbar from "../../Components/Navbar";
 import Footer from "../../Components/Footer";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import BL from "../../assets/BL Lifsciences.png";
 import Card1 from "../../assets/Sinapi.png";
 import Card2 from "../../assets/BL Lifsciences.png";
 import Card3 from "../../assets/BL Lifsciences.png";
-import departments from "../../Data/departments";
 import DepNav from "../../Components/DepNav";
 
 export default function GeneralSurgery() {

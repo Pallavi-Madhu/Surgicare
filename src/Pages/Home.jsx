@@ -10,7 +10,7 @@ import Card from "../Components/Cards";
 import bg from "../assets/bg.png";
 import { cards } from "../Data/dataHome";
 import surgeryVideo from "../assets/Surgeryequip.mp4";
-import EQUIP from "../assets/EQUIP.png"
+import positive from "../assets/positive.png"
 import dist from "../assets/dist.png"
 import { motion } from "framer-motion";
 
@@ -38,7 +38,7 @@ const Home = () => {
             Your browser does not support the video tag.
           </video>
           <div className="absolute inset-0 flex items-center justify-center bg-black/30">
-            <span className="text-white text-6xl font-black drop-shadow-lg">
+            <span className="text-white text-6xl text-center font-black drop-shadow-lg">
               "Delivering health solutions
               <br />
               for a better tomorrow."
@@ -49,14 +49,14 @@ const Home = () => {
         <div className="relative px-10">
           {/* First Section */}
           <motion.div
-            className="flex flex-col-reverse lg:flex-row mx-4 md:mx-40 gap-6 mt-10 p-6"
+            className="bg-gradient-to-r from-blue-300 to-white flex flex-col-reverse lg:flex-row mx-4 md:mx-40 gap-6 mt-10 p-6"
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.0 }}
             //viewport={{ once: true }}
           >
             <motion.p
-              className="text-xl text-black text-center leading-relaxed font-bold max-w-3xl mt-6 md:mt-0"
+              className="text-2xl text-black text-center leading-relaxed font-bold max-w-3xl mt-6 lg:mt-20"
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 1.0, delay: 0.2 }}
@@ -74,8 +74,8 @@ const Home = () => {
               sectors.
             </motion.p>
             <motion.img
-              src={EQUIP}
-              className="w-50 h-80 m-auto max-w-sm rounded-2xl shadow-lg"
+              src={positive}
+              className="w-80 h-100 m-auto max-w-sm rounded-2xl shadow-lg"
               initial={{ opacity: 0, x: 100 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 1.0, delay: 0.3 }}
@@ -83,9 +83,12 @@ const Home = () => {
             />
           </motion.div>
 
+          <br />
+          <br />
+
           {/* Second Section */}
           <motion.div
-            className="flex flex-col lg:flex-row mx-4 md:mx-40 p-6 gap-6"
+            className="bg-gradient-to-l from-blue-300 to-white flex flex-col lg:flex-row mx-4 md:mx-40 p-6 gap-6"
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.0 }}
@@ -100,7 +103,7 @@ const Home = () => {
               //viewport={{ once: true }}
             />
             <motion.p
-              className="text-xl text-black text-center leading-relaxed font-bold max-w-3xl mt-6 md:mt-0"
+              className="text-2xl text-black text-center leading-relaxed font-bold max-w-3xl mt-6 lg:mt-14"
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 1.0, delay: 0.2 }}
@@ -114,6 +117,8 @@ const Home = () => {
             </motion.p>
           </motion.div>
         </div>
+        <br />
+
         <div className="text-7xl text-black font-bold text-center p-10">
           <h1>Why choose us?</h1>
         </div>

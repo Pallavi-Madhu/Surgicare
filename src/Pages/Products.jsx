@@ -27,10 +27,10 @@ const Products = () => {
   return (
     <>
       <div
-        className="min-h-screen overflow-x-hidden bg-cover bg-fixed bg-center"
+        className="min-h-screen overflow-x-hidden bg-cover relative z-0 bg-fixed bg-center"
         style={{
           backgroundImage: `url(${equipments})`,
-          backgroundColor: "rgba(255, 255, 255, 0.25)",
+         backgroundColor: "rgba(255, 255, 255, 0.5)",
           backgroundBlendMode: "overlay",
         }}
       >
