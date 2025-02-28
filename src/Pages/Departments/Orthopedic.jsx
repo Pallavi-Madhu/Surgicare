@@ -7,6 +7,7 @@ import Halyard from "../../assets/Halyard.png";
 import Card1 from "../../assets/Sinapi.png";
 import Card2 from "../../assets/BL Lifsciences.png";
 import Card3 from "../../assets/BL Lifsciences.png";
+import DepNav from "../../Components/DepNav";
 
 const departments = [
   { id: "critical-care", name: "Critical Care" },
@@ -22,22 +23,6 @@ const departments = [
 ];
 
 export default function Pulmonology() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const navigate = useNavigate();
-
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % departments.length);
-  };
-
-  const handlePrev = () => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + departments.length) % departments.length
-    );
-  };
-
-  const handleNavigate = () => {
-    navigate(`/${departments[currentIndex].id}`);
-  };
 
   return (
     <>
@@ -97,34 +82,7 @@ export default function Pulmonology() {
           </button>
         </a>
       </div>
-
-      {/* Department Navigation (Just Above Footer) */}
-      <div className="mt-10 mb-20 flex flex-col items-center">
-        <div className="flex items-center gap-6">
-          <button
-            onClick={handlePrev}
-            className="p-4 rounded-full border border-black hover:bg-gray-200"
-          >
-            <FaArrowLeft className="h-6 w-6" />
-          </button>
-
-          {/* Department Button */}
-          <button
-            onClick={handleNavigate}
-            className="p-4 w-60 h-14 rounded-3xl text-black border border-black bg-white hover:bg-blue-300 transition text-lg font-semibold"
-          >
-            {departments[currentIndex].name}
-          </button>
-
-          <button
-            onClick={handleNext}
-            className="p-4 rounded-full border border-black hover:bg-gray-200"
-          >
-            <FaArrowRight className="h-6 w-6" />
-          </button>
-        </div>
-      </div>
-
+      <DepNav/>
       <Footer />
     </>
   );
