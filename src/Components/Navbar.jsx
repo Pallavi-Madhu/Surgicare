@@ -38,7 +38,7 @@ const Navbar = () => {
               <div className="md:hidden">
                 <button
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
-                  className="text-black focus:outline-none"
+                  className="text-black w-10  focus:outline-none"
                 >
                   {isMenuOpen ? (
                     // Cross Icon
@@ -80,13 +80,13 @@ const Navbar = () => {
               <div className="hidden md:flex space-x-8 items-center relative">
                 <a
                   href="/"
-                  className="text-black text-2xl font-bold hover:text-white transition duration-300"
+                  className="text-black text-2xl font-bold hover:text-blue-700 transition duration-300"
                 >
                   Home
                 </a>
                 <a
                   href="/about-us"
-                  className="text-black text-2xl font-bold hover:text-white transition duration-300"
+                  className="text-black text-2xl font-bold hover:text-blue-700 transition duration-300"
                 >
                   About Us
                 </a>
@@ -95,12 +95,12 @@ const Navbar = () => {
                 <div className="relative">
                   <button
                     onClick={toggleDepartmentsMenu}
-                    className="text-black text-2xl font-bold hover:text-white transition duration-300"
+                    className="text-black text-2xl font-bold hover:text-blue-700 transition duration-300"
                   >
                     Departments
                   </button>
                   {isDepartmentsOpen && (
-                    <div className="absolute left-0 mt-2 w-60 bg-white shadow-lg rounded-md text-blue-900 font-bold z-10">
+                    <div className="absolute left-0 mt-2 w-60 bg-white shadow-lg rounded-md text-black font-bold z-10">
                       {departments.map((dept) => (
                         <a
                           key={dept.name}
@@ -115,8 +115,15 @@ const Navbar = () => {
                 </div>
 
                 <a
+                  href="/products"
+                  className="text-black text-2xl font-bold hover:text-blue-700"
+                >
+                  Products
+                </a>
+
+                <a
                   href="/contact"
-                  className="text-black text-2xl font-bold hover:text-white"
+                  className="text-black text-2xl font-bold hover:text-blue-700"
                 >
                   Contact
                 </a>
@@ -152,7 +159,7 @@ const Navbar = () => {
                           <a
                             key={dept.name}
                             href={dept.href}
-                            className="block px-4 py-2 text-sm hover:bg-gray-200"
+                            className="block px-4 py-2 text-sm font-semibold hover:bg-gray-200"
                           >
                             {dept.name}
                           </a>
@@ -160,6 +167,13 @@ const Navbar = () => {
                       </div>
                     )}
                   </div>
+
+                  <a
+                    href="/products"
+                    className="block text-lg font-bold hover:text-pink-300"
+                  >
+                    Products
+                  </a>
 
                   <a
                     href="/contact"
