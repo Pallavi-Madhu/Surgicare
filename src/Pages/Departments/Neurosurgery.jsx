@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
 import Navbar from "../../Components/Navbar";
 import Footer from "../../Components/Footer";
 import departments from "../../Data/departments";
-import DepNav from "../../Components/DepNav"
+import DepNav from "../../Components/DepNav";
 
+//dept images for button
 import Mizuho from "../../assets/Mizuho.png";
 import Kinamed from "../../assets/Kinamed.png";
 import Baxter from "../../assets/Baxter.png";
@@ -15,18 +14,86 @@ import Syncromax from "../../assets/Syncromax.png";
 import Cocoon from "../../assets/Cocoon.png";
 import BL from "../../assets/BL Lifsciences.png";
 
-import Card1 from "../../assets/BL Lifsciences.png";
-import Card2 from "../../assets/BL Lifsciences.png";
-import Card3 from "../../assets/BL Lifsciences.png";
 import bg from "../../assets/depBG.png"; // Keeping the background image as you requested
 
-const DepartmentPage = ({ name, image, buttonImages }) => {
-  const [selected, setSelected] = useState("BL");
+//product images-Mizuho
+import clips from "../../assets/Neuro/Mizuho/image.png";
+import headholder from "../../assets/Neuro/Mizuho/headholder.webp";
+import dopplersystem from "../../assets/Neuro/Mizuho/DopplerSystems.webp";
+//product images-Kinamed
+import screws from "../../assets/Neuro/Kinamed/NeuroProLowProfileRigidFixationSystem.webp"
+import screws2 from "../../assets/Neuro/Kinamed/NeuroProRigidFixationSystem.webp"
+//product images Baxter
+import floseal from "../../assets/Neuro/Baxter/floseal.jpg"
+import hemopatch from "../../assets/Neuro/Baxter/hemopatch.webp";
+import tiseel from "../../assets/Neuro/Baxter/Tisseel.webp";
+//product images Sunoptic
+import light from "../../assets/Neuro/Sunoptic/light.jpg"
+//product images Syncromax
+import bovinepatch from "../../assets/Neuro/Syncromax/bovinepatch.jpg"
+//product images Cocoon
+import warmer from "../../assets/Neuro/Cocoon/warming.png";
+import blanket from "../../assets/Neuro/Cocoon/blanket.jpg";
 
-  const cards = [
-    { id: 1, image: Card1, text: "Card 1 Description" },
-    { id: 2, image: Card2, text: "Card 2 Description" },
-    { id: 3, image: Card3, text: "Card 3 Description" },
+const DepartmentPage = ({ name, image, buttonImages }) => {
+  const [selected, setSelected] = useState("Mizuho");
+
+  const mizuhoCards = [
+    {
+      id: 1,
+      image: clips,
+      text: "Sugita Titanium Aneurysm Clip II (T2) &amp; Appliers:Sugita Titanium aneurysm Clip Ⅱ from Mizuho.",
+    },
+    { id: 2, image: headholder, text: "Smart Fix Head Holder" },
+    { id: 3, image: dopplersystem, text: "Mizuho Vascular Doppler System" },
+  ];
+
+  const kinamedCards = [
+    {
+      id: 1,
+      image: screws,
+      text: "NeuroPro® Rigid Fixation System",
+    },
+    {
+      id: 2,
+      image: screws2,
+      text: 
+        "NeuroPro® Low Profile Rigid Fixation System"
+    },
+  ];
+
+  const baxterCards = [
+    {
+      id: 1,
+      image: floseal,
+      text: "Floseal",
+    },
+    {
+      id: 2,
+      image: hemopatch,
+      text: "Hemopatch ",
+    },
+    {
+      id: 3,
+      image: tiseel,
+      text: "Tisseel ",
+    },
+  ];
+  const sunopticCards = [
+    {
+      id: 1,
+      image: light,
+      text: "Sunoptic LX2 Battery Operated LED Headlight",
+    },
+  ];
+
+  const syncromaxCards = [
+    { id: 1, image: bovinepatch, text: " Bovine pericardial patch" },
+  ];
+
+  const cocoonCards = [
+    { id: 1, image: blanket, text: "Cocoon Convective Warming Blankets" },
+    { id: 2, image: warmer, text: "Cocoon Convective Warming System" },
   ];
 
   return (
@@ -50,7 +117,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
             />
           </div>
 
-          {/* Buttons for BL and Insightra */}
+          {/* Buttons */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-6">
             {buttonImages.map(({ src, alt, id }) => (
               <button
@@ -162,48 +229,149 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
               </>
             )}
           </div>
-          <div className="flex mt-10 text-4xl font-bold justify-center items-center">
+          <div className="flex mt-10  text-5xl font-bold justify-center items-center">
             Range of products
           </div>
 
-          {/* Hover Cards (Conditionally Rendered) */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 my-20 gap-6 p-10">
-            {selected === "BL" &&
-              cards.map((card) => (
-                <div
-                  key={card.id}
-                  className="relative group h-48 w-full bg-gray-200 rounded-xl overflow-hidden shadow-lg"
-                >
-                  <img
-                    src={card.image}
-                    alt={`Card ${card.id}`}
-                    className="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-0"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center bg-blue-500 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
-                    {card.text}
+          <div className="container mx-auto my-10 px-4 py-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-20 place-items-center">
+              {selected === "Mizuho" &&
+                mizuhoCards.map((card) => (
+                  <div
+                    key={card.id}
+                    className="relative group w-60 h-60 bg-gray-200 rounded-xl overflow-hidden shadow-lg"
+                  >
+                    {/* Product Image */}
+                    <img
+                      src={card.image}
+                      alt={card.name}
+                      className="w-full h-60 object-cover transition duration-300 transform group-hover:brightness-50"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center bg-blue-100 text-black text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
+                      {card.text}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
 
-            {selected === "Insightra" &&
-              cards.map((card) => (
-                <div
-                  key={card.id}
-                  className="relative group h-48 w-full bg-gray-200 rounded-xl overflow-hidden shadow-lg"
-                >
-                  <img
-                    src={card.image}
-                    alt={`Card ${card.id}`}
-                    className="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-0"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center bg-red-500 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
-                    {card.text}
+              {selected === "Kinamed" &&
+                kinamedCards.map((card) => (
+                  <div
+                    key={card.id}
+                    className="relative group h-60 w-60 bg-gray-200 rounded-xl overflow-hidden shadow-lg"
+                  >
+                    <img
+                      src={card.image}
+                      alt={`Card ${card.id}`}
+                      className="h-60 w-full object-cover transition-opacity duration-300 group-hover:opacity-0"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center bg-red-500 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
+                      {card.text}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+
+              {selected === "Baxter" &&
+                baxterCards.map((card) => (
+                  <div
+                    key={card.id}
+                    className="relative group h-60 w-60 bg-gray-200 rounded-xl overflow-hidden shadow-lg"
+                  >
+                    <img
+                      src={card.image}
+                      alt={`Card ${card.id}`}
+                      className="h-60 w-full object-cover transition-opacity duration-300 group-hover:opacity-0"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center bg-blue-500 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
+                      {card.text}
+                    </div>
+                  </div>
+                ))}
+
+              {selected === "Halyard" &&
+                cards.map((card) => (
+                  <div
+                    key={card.id}
+                    className="relative group h-48 w-full bg-gray-200 rounded-xl overflow-hidden shadow-lg"
+                  >
+                    <img
+                      src={card.image}
+                      alt={`Card ${card.id}`}
+                      className="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-0"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center bg-blue-500 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
+                      {card.text}
+                    </div>
+                  </div>
+                ))}
+              {selected === "Sunoptic" &&
+                sunopticCards.map((card) => (
+                  <div
+                    key={card.id}
+                    className="relative group h-48 w-full bg-gray-200 rounded-xl overflow-hidden shadow-lg"
+                  >
+                    <img
+                      src={card.image}
+                      alt={`Card ${card.id}`}
+                      className="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-0"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center bg-blue-500 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
+                      {card.text}
+                    </div>
+                  </div>
+                ))}
+              {selected === "SyncroMax" &&
+                syncromaxCards.map((card) => (
+                  <div
+                    key={card.id}
+                    className="relative group h-48 w-full bg-gray-200 rounded-xl overflow-hidden shadow-lg"
+                  >
+                    <img
+                      src={card.image}
+                      alt={`Card ${card.id}`}
+                      className="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-0"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center bg-blue-500 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
+                      {card.text}
+                    </div>
+                  </div>
+                ))}
+              {selected === "Cocoon" &&
+                cocoonCards.map((card) => (
+                  <div
+                    key={card.id}
+                    className="relative group h-48 w-full bg-gray-200 rounded-xl overflow-hidden shadow-lg"
+                  >
+                    <img
+                      src={card.image}
+                      alt={`Card ${card.id}`}
+                      className="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-0"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center bg-blue-500 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
+                      {card.text}
+                    </div>
+                  </div>
+                ))}
+              {selected === "BL-OT" &&
+                cards.map((card) => (
+                  <div
+                    key={card.id}
+                    className="relative group h-48 w-full bg-gray-200 rounded-xl overflow-hidden shadow-lg"
+                  >
+                    <img
+                      src={card.image}
+                      alt={`Card ${card.id}`}
+                      className="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-0"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center bg-blue-500 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
+                      {card.text}
+                    </div>
+                  </div>
+                ))}
+            </div>
           </div>
         </div>
       </div>
+
       {/*Read more*/}
       {selected === "Mizuho" && (
         <>
@@ -334,7 +502,7 @@ export default function Cardiology() {
     { id: "Sunoptic", src: Sunoptic, alt: "Sunoptic" },
     { id: "Syncromax", src: Syncromax, alt: "Syncromax" },
     { id: "Cocoon", src: Cocoon, alt: "Cocoon" },
-    { id: "BL-OT", src: BL , alt: "BL-OT" },
+    { id: "BL-OT", src: BL, alt: "BL-OT" },
   ];
 
   return (
