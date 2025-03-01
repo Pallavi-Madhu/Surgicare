@@ -1,13 +1,10 @@
+
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Navbar from "../../Components/Navbar";
 import Footer from "../../Components/Footer";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import Sinapi from "../../assets/Sinapi.png";
-import Card1 from "../../assets/Sinapi.png";
-import Card2 from "../../assets/BL Lifsciences.png";
-import Card3 from "../../assets/BL Lifsciences.png";
 import DepNav from "../../Components/DepNav";
+import chestdrain from "../../assets/Pulmo/chestdrain.png"
 
 const departments = [
   { id: "critical-care", name: "Critical Care" },
@@ -22,8 +19,13 @@ const departments = [
   { id: "anesthesiology", name: "Anesthesiology" },
 ];
 
-export default function Pulmonology() {
+const Card = {
+  id: 1,
+  image: chestdrain, 
+  text: "Chest Drainage System 50ml,400ml,1000ml",
+};
 
+export default function Pulmonology() {
   return (
     <>
       <Navbar />
@@ -52,23 +54,18 @@ export default function Pulmonology() {
           Range of Products
         </div>
 
-        {/* Product Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 my-20 gap-6 p-10">
-          {[Card1, Card2, Card3].map((image, index) => (
-            <div
-              key={index}
-              className="relative group h-40 w-full sm:w-1/2 bg-gray-200 rounded-xl overflow-hidden shadow-lg mx-auto"
-            >
-              <img
-                src={image}
-                alt={`Card ${index + 1}`}
-                className="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-0"
-              />
-              <div className="absolute inset-0 flex items-center justify-center bg-blue-500 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
-                Card {index + 1} Description
-              </div>
+        {/* Card */}
+        <div className="flex justify-center mt-10">
+          <div className="relative group h-100  bg-gray-200 rounded-xl overflow-hidden shadow-lg border border-gray-300 mx-auto">
+            <img
+              src={Card.image}
+              alt={Card.text}
+              className="h-full w-full object-cover object-center transition-opacity duration-300 group-hover:opacity-50"
+            />
+            <div className="absolute inset-0 flex items-center justify-center bg-blue-500 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
+              {Card.text}
             </div>
-          ))}
+          </div>
         </div>
 
         {/* Read More Button */}
@@ -76,14 +73,14 @@ export default function Pulmonology() {
           href="https://sinapibiomedical.com/"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex justify-center"
+          className="flex justify-center mt-10"
         >
           <button className="hover:bg-blue-300 hover:text-black text-blue-700 py-2 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700">
             Read More
           </button>
         </a>
       </div>
-      <DepNav/>
+      <DepNav />
       <Footer />
     </>
   );
