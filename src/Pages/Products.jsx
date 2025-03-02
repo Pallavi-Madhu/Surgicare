@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
-import equipments from "../assets/equipments.png";
+import hex from "../assets/gold.png";
 import { motion } from "framer-motion";
 import helena from "../assets/Equipments/helena.png";
 import cocoon from "../assets/Equipments/cocoon.png";
@@ -13,14 +13,62 @@ import novita from "../assets/Equipments/novita.png";
 import hico from "../assets/Equipments/HICO.png";
 
 const products = [
-  { id: 1, name: "Helena", image: helena },
-  { id: 2, name: "Cocoon", image: cocoon },
-  { id: 3, name: "HICO", image: hico },
-  { id: 4, name: "Novita", image: novita },
-  { id: 5, name: "Sunoptic", image: sunoptic },
-  { id: 6, name: "De Soutter", image: deSoutter },
-  { id: 7, name: "So Clean", image: soClean },
-  { id: 8, name: "Cirona", image: cirona },
+  {
+    id: 1,
+    name: "Helena",
+    image: helena,
+    k: "ACT Machine",
+    url: "https://www.helena.com/actalykemini2.htm",
+  },
+  {
+    id: 2,
+    name: "Cocoon",
+    image: cocoon,
+    k: "Warmer",
+    url: "https://www.dispomed.com/products/cocoon-cws-5000-patient-warming-system/",
+  },
+  {
+    id: 3,
+    name: "HICO",
+    image: hico,
+    k: "Medical Equipments",
+    url: "https://www.hicomedical.com/products",
+  },
+  {
+    id: 4,
+    name: "Novita",
+    image: novita,
+    k: "Dehumidifiers",
+    url: "https://www.climatronics.in/product/compact-dehumidifiers/novita/novita-nd-12-8-dehumidifier/",
+  },
+  {
+    id: 5,
+    name: "Sunoptic",
+    image: sunoptic,
+    k: "Headlight and light sources",
+    url: "https://sunopticsurgical.com/products/",
+  },
+  {
+    id: 6,
+    name: "De Soutter",
+    image: deSoutter,
+    k: "Sternum Saw",
+    url: "https://www.de-soutter.com/US-products-power-tools-Cardiothoracic",
+  },
+  {
+    id: 7,
+    name: "So Clean",
+    image: soClean,
+    k: "X-ray viewer",
+    url: "https://www.soclean.in/x-ray-view-box.html",
+  },
+  {
+    id: 8,
+    name: "Cirona",
+    image: cirona,
+    k: "DVT Machine",
+    url: "https://megamed.in/product/devon-cirona-6200-dvt-pump-ce-fda-approved/?srsltid=AfmBOorjjAZjx1yf_HBcmfMIaGeQeH-SSyE-U3UHNP09yNY1BpdWlmSV",
+  },
 ];
 
 const Products = () => {
@@ -29,14 +77,20 @@ const Products = () => {
       <div
         className="min-h-screen overflow-x-hidden bg-cover relative z-0 bg-fixed bg-center"
         style={{
-          backgroundImage: `url(${equipments})`,
-         backgroundColor: "rgba(255, 255, 255, 0.5)",
+          backgroundImage: `url(${hex})`,
+          backgroundColor: "rgba(255, 255, 255, 0)",
           backgroundBlendMode: "overlay",
         }}
       >
         <Navbar />
-        <div className="text-center font-semibold text-4xl py-8">
+        <div className="text-center font-semibold text-6xl py-4">
           Equipments
+        </div>
+        <div className="text-center text-3xl p-2 sm:p-4  text-black">
+          Offering a wide range of high-quality medical equipment designed to
+          enhance patient care and improve healthcare outcomes
+          <br />
+          <div className="p-4 font-bold">Click cards to know more!</div>
         </div>
 
         {/* Product Grid */}
@@ -45,28 +99,27 @@ const Products = () => {
             {products.map((product) => (
               <div key={product.id} className="flex flex-col items-center">
                 {/* Image Card with Hover Effect */}
-                <motion.div
-                  className="relative group overflow-hidden rounded-lg shadow-lg cursor-pointer"
-                  whileHover={{ scale: 1.05 }}
-                >
-                  {/* Product Image */}
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-60 object-cover transition duration-300 transform group-hover:brightness-50"
-                  />
-
-                  {/* Hover Effect - Product Name */}
+                <a href={product.url} target="_blank" rel="noopener noreferrer">
                   <motion.div
-                    className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300"
-                    initial={{ opacity: 0 }}
-                    whileHover={{ opacity: 1 }}
+                    className="relative group overflow-hidden rounded-lg shadow-lg cursor-pointer"
+                    whileHover={{ scale: 1.05 }}
                   >
-                    <span className="text-white text-xl font-bold">
-                      {product.name}
-                    </span>
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="w-full h-60 object-cover transition duration-300 transform group-hover:brightness-50"
+                    />
+                    <motion.div
+                      className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
+                      initial={{ opacity: 0 }}
+                      whileHover={{ opacity: 1 }}
+                    >
+                      <span className="text-white text-3xl text-center font-bold">
+                        {product.k}
+                      </span>
+                    </motion.div>
                   </motion.div>
-                </motion.div>
+                </a>
 
                 {/* Small Name Below the Card */}
                 <p className="mt-2 text-gray-800 text-2xl font-semibold">

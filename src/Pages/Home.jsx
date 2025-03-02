@@ -49,14 +49,14 @@ const Home = () => {
         <div className="relative px-10">
           {/* First Section */}
           <motion.div
-            className="bg-gradient-to-r from-blue-300 to-white flex flex-col-reverse lg:flex-row mx-4 md:mx-40 gap-6 mt-10 p-6"
+            className="bg-gradient-to-r from-blue-300 to-white flex flex-col-reverse lg:flex-row md:mx-20 gap-6 mt-10 p-6"
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.0 }}
             //viewport={{ once: true }}
           >
             <motion.p
-              className="text-2xl text-black text-center leading-relaxed font-bold max-w-3xl mt-6 lg:mt-20"
+              className="text-2xl text-black text-center leading-relaxed font-bold max-w-3xl mt-6 lg:mt-28"
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 1.0, delay: 0.2 }}
@@ -75,7 +75,7 @@ const Home = () => {
             </motion.p>
             <motion.img
               src={positive}
-              className="w-80 h-100 m-auto max-w-sm rounded-2xl shadow-lg"
+              className="w-full m-auto h-auto max-w-sm rounded-2xl shadow-lg"
               initial={{ opacity: 0, x: 100 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 1.0, delay: 0.3 }}
@@ -88,7 +88,7 @@ const Home = () => {
 
           {/* Second Section */}
           <motion.div
-            className="bg-gradient-to-l from-blue-300 to-white flex flex-col lg:flex-row mx-4 md:mx-40 p-6 gap-6"
+            className="bg-gradient-to-l from-blue-300 to-white flex flex-col lg:flex-row md:mx-20 p-6 gap-6"
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.0 }}
@@ -118,15 +118,17 @@ const Home = () => {
           </motion.div>
         </div>
         <br />
+        <br />
+        <br />
 
         <div className="text-7xl text-black font-bold text-center p-10">
           <h1>Why choose us?</h1>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 px-10 gap-8">
+        <div className="grid grid-cols-1  sm:grid-cols-3 px-10 gap-8">
           {/* Quality Assurance */}
           <motion.div
-            className="p-10 rounded-lg shadow-md hover:bg-gray-200 transition-all mt-8"
+            className="p-14  rounded-lg shadow-md hover:bg-gray-200 transition-all mt-8"
             initial={{ opacity: 0, translateY: 50, background: "white" }}
             whileInView={{
               opacity: 1,
@@ -187,6 +189,10 @@ const Home = () => {
             </p>
           </motion.div>
         </div>
+        <br />
+        <br />
+        <br />
+
         <motion.div
           className="flex flex-col mt-20"
           initial={{ opacity: 0, translateY: 50 }}
@@ -241,6 +247,8 @@ const Home = () => {
               </SwiperSlide>
             ))}
           </Swiper>
+          <br />
+          <br />
         </div>
       </div>
       <Footer />

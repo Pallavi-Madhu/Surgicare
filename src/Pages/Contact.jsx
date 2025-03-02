@@ -16,7 +16,7 @@ const Contact = () => {
     >
       <div>
         <Navbar />
-        <div className="flex mt-40 lg:mt-0 min-h-screen relative flex-col lg:flex-row">
+        <div className="flex mt-20 lg:mt-0  min-h-screen relative flex-col lg:flex-row">
           {/* Heading */}
           {/* <div className="flex flex-col items-center justify-center w-full lg:w-1/2 px-4">
             <h2 className="text-3xl lg:text-5xl font-bold text-center mt-10 lg:mt-20 text-white">
@@ -36,7 +36,7 @@ const Contact = () => {
             transition={{ duration: 1, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl lg:text-5xl font-bold text-center mt-10 lg:mt-60 text-white">
+            <h2 className="text-3xl lg:text-5xl font-bold text-center mt-10 lg:mt-34 text-white">
               Got Questions? Reach Out!
             </h2>
             <motion.p
@@ -68,7 +68,7 @@ const Contact = () => {
           >
             <div className="absolute top-0 left-0 w-full h-screen flex justify-center items-center">
               <motion.div
-                className="w-11/12 mb-60 sm:mb-80 sm:w-full max-w-3xl lg:mt-96 md:mb-60 rounded-lg "
+                className="w-11/12 mb-60 sm:mb-80 sm:w-full max-w-3xl lg:mt-40 md:mb-60 rounded-lg "
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
