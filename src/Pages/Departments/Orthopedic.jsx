@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Navbar from "../../Components/Navbar";
 import Footer from "../../Components/Footer";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import Halyard from "../../assets/Halyard.png";
 import Card1 from "../../assets/Sinapi.png";
 import Card2 from "../../assets/BL Lifsciences.png";
 import Card3 from "../../assets/BL Lifsciences.png";
 import DepNav from "../../Components/DepNav";
+import drapes from "../../assets/Orthopedic/drapes.jpg";
+import gowns from "../../assets/Orthopedic/gowns.jpeg";
+import masks from "../../assets/Orthopedic/masks.jpg";
 
 const departments = [
   { id: "critical-care", name: "Critical Care" },
@@ -22,8 +23,25 @@ const departments = [
   { id: "anesthesiology", name: "Anesthesiology" },
 ];
 
-export default function Pulmonology() {
+const products = [
+  {
+    id: "drapes",
+    image: drapes,
+    description: "Surgical Drapes",
+  },
+  {
+    id: "gowns",
+    image: gowns,
+    description: "Surgical Gowns",
+  },
+  {
+    id: "masks",
+    image: masks,
+    description: "Surgical Masks",
+  },
+];
 
+export default function Pulmonology() {
   return (
     <>
       <Navbar />
@@ -53,18 +71,18 @@ export default function Pulmonology() {
 
         {/* Product Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-3 my-20 gap-6 p-10">
-          {[Card1, Card2, Card3].map((image, index) => (
+          {products.map((product) => (
             <div
-              key={index}
-              className="relative group h-40 w-full sm:w-1/2 bg-gray-200 rounded-xl overflow-hidden shadow-lg mx-auto"
+              key={product.id}
+              className="relative group h-60 w-full sm:w-1/2 bg-gray-200 rounded-xl overflow-hidden shadow-lg mx-auto"
             >
               <img
-                src={image}
-                alt={`Card ${index + 1}`}
+                src={product.image}
+                alt={product.id}
                 className="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-0"
               />
               <div className="absolute inset-0 flex items-center justify-center bg-blue-500 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
-                Card {index + 1} Description
+                {product.description}
               </div>
             </div>
           ))}
@@ -82,7 +100,7 @@ export default function Pulmonology() {
           </button>
         </a>
       </div>
-      <DepNav/>
+      <DepNav />
       <Footer />
     </>
   );
