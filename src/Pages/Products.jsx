@@ -71,6 +71,11 @@ const products = [
   },
 ];
 
+const openPdfInNewTab = () => {
+  window.open("/public/HICO.pdf", "_blank");
+};
+
+
 const Products = () => {
   return (
     <>
@@ -98,28 +103,56 @@ const Products = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-20">
             {products.map((product) => (
               <div key={product.id} className="flex flex-col items-center">
-                {/* Image Card with Hover Effect */}
-                <a href={product.url} target="_blank" rel="noopener noreferrer">
-                  <motion.div
-                    className="relative group overflow-hidden rounded-lg shadow-lg cursor-pointer"
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    <img
-                      src={product.image}
-                      alt={product.name}
-                      className="w-full h-60 object-cover transition duration-300 transform group-hover:brightness-50"
-                    />
+                {/* Conditional Click Behavior */}
+                {product.name === "HICO" ? (
+                  <div onClick={openPdfInNewTab} className="cursor-pointer">
                     <motion.div
-                      className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
-                      initial={{ opacity: 0 }}
-                      whileHover={{ opacity: 1 }}
+                      className="relative group overflow-hidden rounded-lg shadow-lg"
+                      whileHover={{ scale: 1.05 }}
                     >
-                      <span className="text-white text-3xl text-center font-bold">
-                        {product.k}
-                      </span>
+                      <img
+                        src={product.image}
+                        alt={product.name}
+                        className="w-full h-60 object-cover transition duration-300 transform group-hover:brightness-50"
+                      />
+                      <motion.div
+                        className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
+                        initial={{ opacity: 0 }}
+                        whileHover={{ opacity: 1 }}
+                      >
+                        <span className="text-white text-3xl text-center font-bold">
+                          {product.k}
+                        </span>
+                      </motion.div>
                     </motion.div>
-                  </motion.div>
-                </a>
+                  </div>
+                ) : (
+                  <a
+                    href={product.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <motion.div
+                      className="relative group overflow-hidden rounded-lg shadow-lg cursor-pointer"
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      <img
+                        src={product.image}
+                        alt={product.name}
+                        className="w-full h-60 object-cover transition duration-300 transform group-hover:brightness-50"
+                      />
+                      <motion.div
+                        className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
+                        initial={{ opacity: 0 }}
+                        whileHover={{ opacity: 1 }}
+                      >
+                        <span className="text-white text-3xl text-center font-bold">
+                          {product.k}
+                        </span>
+                      </motion.div>
+                    </motion.div>
+                  </a>
+                )}
 
                 {/* Small Name Below the Card */}
                 <p className="mt-2 text-gray-800 text-2xl font-semibold">
