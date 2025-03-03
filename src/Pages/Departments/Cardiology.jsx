@@ -3,7 +3,6 @@ import Navbar from "../../Components/Navbar";
 import Footer from "../../Components/Footer";
 import BL from "../../assets/BL Lifsciences.png";
 import Insightra from "../../assets/insightra.png";
-import Mizuho from "../../assets/Mizuho.png";
 import Card1 from "../../assets/BL Lifsciences.png";
 import Card2 from "../../assets/BL Lifsciences.png";
 import Card3 from "../../assets/BL Lifsciences.png";
@@ -18,7 +17,28 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
     { id: 1, image: Card1, text: "Card 1 Description" },
     { id: 2, image: Card2, text: "Card 2 Description" },
     { id: 3, image: Card3, text: "Card 3 Description" },
+    { id: 1, image: Card1, text: "Card 1 Description" },
+    { id: 2, image: Card2, text: "Card 2 Description" },
+    { id: 3, image: Card3, text: "Card 3 Description" },
+    { id: 1, image: Card1, text: "Card 1 Description" },
+    { id: 2, image: Card2, text: "Card 2 Description" },
+    { id: 3, image: Card3, text: "Card 3 Description" },
+    { id: 1, image: Card1, text: "Card 1 Description" },
+    { id: 2, image: Card2, text: "Card 2 Description" },
+    { id: 3, image: Card3, text: "Card 3 Description" },
+    { id: 1, image: Card1, text: "Card 1 Description" },
+    { id: 2, image: Card2, text: "Card 2 Description" },
+    { id: 3, image: Card3, text: "Card 3 Description" },
+    { id: 1, image: Card1, text: "Card 1 Description" },
+    { id: 2, image: Card2, text: "Card 2 Description" },
+    { id: 3, image: Card3, text: "Card 3 Description" },
+    { id: 1, image: Card1, text: "Card 1 Description" },
+    { id: 2, image: Card2, text: "Card 2 Description" },
+    { id: 3, image: Card3, text: "Card 3 Description" },
+    { id: 3, image: Card3, text: "Card 3 Description" },
   ];
+
+  const cards1 = [{ id: 1, image: Card1, text: "Card 1 Description" }];
 
   return (
     <>
@@ -111,7 +131,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
               ))}
 
             {selected === "Insightra" &&
-              cards.map((card) => (
+              cards1.map((card) => (
                 <div
                   key={card.id}
                   className="relative group h-48 w-full bg-gray-200 rounded-xl overflow-hidden shadow-lg"
@@ -128,6 +148,8 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
               ))}
           </div>
         </div>
+
+        {/* conditionally rendered read more */}
         {selected === "BL" && (
           <>
             <a

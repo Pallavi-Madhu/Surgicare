@@ -14,7 +14,6 @@ import positive from "../assets/positive.png"
 import dist from "../assets/dist.png"
 import { motion } from "framer-motion";
 
-
 const Home = () => {
   return (
     <div
