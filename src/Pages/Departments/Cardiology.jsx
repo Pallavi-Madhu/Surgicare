@@ -190,10 +190,5 @@ export default function Cardiology() {
     { id: "Insightra", src: Insightra, alt: "Insightra" },
   ];
 
-  return (
-    <DepartmentPage
-      name="CARDIOLOGY"
-      buttonImages={buttonImages}
-    />
-  );
+  return <DepartmentPage name="CARDIOLOGY" buttonImages={buttonImages} />;
 }
