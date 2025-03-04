@@ -14,31 +14,29 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
   const [selected, setSelected] = useState("BL");
 
   const cards = [
-    { id: 1, image: Card1, text: "Card 1 Description" },
-    { id: 2, image: Card2, text: "Card 2 Description" },
-    { id: 3, image: Card3, text: "Card 3 Description" },
-    { id: 1, image: Card1, text: "Card 1 Description" },
-    { id: 2, image: Card2, text: "Card 2 Description" },
-    { id: 3, image: Card3, text: "Card 3 Description" },
-    { id: 1, image: Card1, text: "Card 1 Description" },
-    { id: 2, image: Card2, text: "Card 2 Description" },
-    { id: 3, image: Card3, text: "Card 3 Description" },
-    { id: 1, image: Card1, text: "Card 1 Description" },
-    { id: 2, image: Card2, text: "Card 2 Description" },
-    { id: 3, image: Card3, text: "Card 3 Description" },
-    { id: 1, image: Card1, text: "Card 1 Description" },
-    { id: 2, image: Card2, text: "Card 2 Description" },
-    { id: 3, image: Card3, text: "Card 3 Description" },
-    { id: 1, image: Card1, text: "Card 1 Description" },
-    { id: 2, image: Card2, text: "Card 2 Description" },
-    { id: 3, image: Card3, text: "Card 3 Description" },
-    { id: 1, image: Card1, text: "Card 1 Description" },
-    { id: 2, image: Card2, text: "Card 2 Description" },
-    { id: 3, image: Card3, text: "Card 3 Description" },
-    { id: 3, image: Card3, text: "Card 3 Description" },
+    { id: 2, image: Card2, text: "Disposable Transducer" },
+    { id: 2, image: Card2, text: "PTCA Kit" },
+    { id: 3, image: Card3, text: "Control Syringe" },
+    { id: 1, image: Card1, text: "Needle" },
+    { id: 2, image: Card2, text: "High Pressure Tubing" },
+    { id: 3, image: Card3, text: "IV SET VENTED" },
+    { id: 1, image: Card1, text: "Inflation Device" },
+    { id: 2, image: Card2, text: "Manifold" },
+    { id: 3, image: Card3, text: "J & Straight" },
+    { id: 1, image: Card1, text: "Guide Ware" },
+    { id: 2, image: Card2, text: "BL Transducer Interface Cable" },
+    { id: 3, image: Card3, text: "ACT Tube" },
+    { id: 1, image: Card1, text: "Pressure Monitoring Line" },
+    { id: 2, image: Card2, text: "Flow Regulator" },
+    { id: 3, image: Card3, text: "Snare Kit" },
+    { id: 2, image: Card2, text: "Cuff clean pressure infusion bag" },
+    { id: 3, image: Card3, text: "Medex Reusable Pressure Infusor" },
+    { id: 2, image: Card2, text: "CPAP/BIPAP Mask" },
+    { id: 3, image: Card3, text: "Haemostasis valve" },
+    { id: 3, image: Card3, text: "Prelude Femoral Sheath" },
   ];
 
-  const cards1 = [{ id: 1, image: Card1, text: "Card 1 Description" }];
+  const cards1 = [{ id: 1, image: Card1, text: "IABP" }];
 
   return (
     <>
@@ -112,19 +110,19 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
           </div>
 
           {/* Hover Cards (Conditionally Rendered) */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 my-20 gap-6 p-10">
+          <div className="grid grid-cols-1 sm:grid-cols-3 my-20 gap-6 p-20">
             {selected === "BL" &&
               cards.map((card) => (
                 <div
                   key={card.id}
-                  className="relative group h-48 w-full bg-gray-200 rounded-xl overflow-hidden shadow-lg"
+                  className="relative group h-60 w-80  bg-gray-200 rounded-xl overflow-hidden shadow-lg"
                 >
                   <img
                     src={card.image}
                     alt={`Card ${card.id}`}
-                    className="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-0"
+                    className="h-full w-full object-cover  transition-opacity-90 duration-300 group-hover:opacity-0"
                   />
-                  <div className="absolute inset-0 flex items-center justify-center bg-blue-500 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
+                  <div className="text-center absolute inset-0 flex items-center justify-center bg-blue-500 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
                     {card.text}
                   </div>
                 </div>
@@ -180,7 +178,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
           </>
         )}
       </div>
-      <DepNav/>
+      <DepNav />
       <Footer />
     </>
   );
@@ -192,10 +190,5 @@ export default function Cardiology() {
     { id: "Insightra", src: Insightra, alt: "Insightra" },
   ];
 
-  return (
-    <DepartmentPage
-      name="CARDIOLOGY"
-      buttonImages={buttonImages}
-    />
-  );
+  return <DepartmentPage name="CARDIOLOGY" buttonImages={buttonImages} />;
 }
