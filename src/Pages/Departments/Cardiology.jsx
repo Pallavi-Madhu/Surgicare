@@ -2,10 +2,8 @@ import React, { useState } from "react";
 import Navbar from "../../Components/Navbar";
 import Footer from "../../Components/Footer";
 import BL from "../../assets/BL Lifsciences.png";
+
 import Insightra from "../../assets/insightra.png";
-import Card1 from "../../assets/BL Lifsciences.png";
-import Card2 from "../../assets/insightra.png";
-import Card3 from "../../assets/insightra.png";
 import bg from "../../assets/depBG.png";
 import heart from "../../assets/heart.png";
 import DepNav from "../../Components/DepNav";
@@ -64,7 +62,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
     },
   ];
 
-  const cards1 = [{ id: 1, image: Card1, text: "IABP" }];
+  const cards1 = [{ id: 1, image: "/Cardiology/IABP", text: "IABP" }];
 
   return (
     <>
@@ -138,7 +136,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
           </div>
 
           {/* Hover Cards (Conditionally Rendered) */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 my-20 gap-6 p-20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 my-20 gap-28 sm:m-4 sm:gap-20 m-10 lg:p-20">
             {selected === "BL" &&
               cards.map((card) => (
                 <div
@@ -184,7 +182,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
               rel="noopener noreferrer"
               className="flex justify-center "
             >
-              <button className=" hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700">
+              <button className=" hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 my-20 rounded-3xl border font-bold hover:border-black border-blue-700">
                 Read More
               </button>
             </a>
