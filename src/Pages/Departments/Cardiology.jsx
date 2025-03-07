@@ -2,10 +2,8 @@ import React, { useState } from "react";
 import Navbar from "../../Components/Navbar";
 import Footer from "../../Components/Footer";
 import BL from "../../assets/BL Lifsciences.png";
+
 import Insightra from "../../assets/insightra.png";
-import Card1 from "../../assets/BL Lifsciences.png";
-import Card2 from "../../assets/BL Lifsciences.png";
-import Card3 from "../../assets/BL Lifsciences.png";
 import bg from "../../assets/depBG.png";
 import heart from "../../assets/heart.png";
 import DepNav from "../../Components/DepNav";
@@ -14,29 +12,57 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
   const [selected, setSelected] = useState("BL");
 
   const cards = [
-    { id: 2, image: Card2, text: "Disposable Transducer" },
-    { id: 2, image: Card2, text: "PTCA Kit" },
-    { id: 3, image: Card3, text: "Control Syringe" },
-    { id: 1, image: Card1, text: "Needle" },
-    { id: 2, image: Card2, text: "High Pressure Tubing" },
-    { id: 3, image: Card3, text: "IV SET VENTED" },
-    { id: 1, image: Card1, text: "Inflation Device" },
-    { id: 2, image: Card2, text: "Manifold" },
-    { id: 3, image: Card3, text: "J & Straight" },
-    { id: 1, image: Card1, text: "Guide Ware" },
-    { id: 2, image: Card2, text: "BL Transducer Interface Cable" },
-    { id: 3, image: Card3, text: "ACT Tube" },
-    { id: 1, image: Card1, text: "Pressure Monitoring Line" },
-    { id: 2, image: Card2, text: "Flow Regulator" },
-    { id: 3, image: Card3, text: "Snare Kit" },
-    { id: 2, image: Card2, text: "Cuff clean pressure infusion bag" },
-    { id: 3, image: Card3, text: "Medex Reusable Pressure Infusor" },
-    { id: 2, image: Card2, text: "CPAP/BIPAP Mask" },
-    { id: 3, image: Card3, text: "Haemostasis valve" },
-    { id: 3, image: Card3, text: "Prelude Femoral Sheath" },
+    {
+      id: 1,
+      image: "/Cardiology/transducer.png",
+      text: "Disposable Transducer",
+    },
+    { id: 2, image: "/Cardiology/PTCA.png", text: "PTCA Kit" },
+    { id: 3, image: "/Cardiology/control.png", text: "Control Syringe" },
+    { id: 4, image: "/Cardiology/needle.png", text: "Needle" },
+    {
+      id: 5,
+      image: "/Cardiology/highpress.png",
+      text: "High Pressure Tubing",
+    },
+    { id: 6, image: "/Cardiology/IVset.png", text: "IV SET VENTED" },
+    { id: 7, image: "/Cardiology/inflation.png", text: "Inflation Device" },
+    { id: 8, image: "/Cardiology/manifold.png", text: "Manifold" },
+    { id: 9, image: "/Cardiology/jns.png", text: "J & Straight" },
+    { id: 10, image: "/Cardiology/guideware.png", text: "Guide Ware" },
+    {
+      id: 11,
+      image: "/Cardiology/transcab.png",
+      text: "BL Transducer Interface Cable",
+    },
+    { id: 12, image: "/Cardiology/ACT.png", text: "ACT Tube" },
+    {
+      id: 13,
+      image: "/Cardiology/pressmon.png",
+      text: "Pressure Monitoring Line",
+    },
+    { id: 14, image: "/Cardiology/flowreg.png", text: "Flow Regulator" },
+    { id: 15, image: "/Cardiology/snare.png", text: "Snare Kit" },
+    {
+      id: 16,
+      image: "/Cardiology/infusion.png",
+      text: "Cuff clean pressure infusion bag",
+    },
+    {
+      id: 17,
+      image: "/Cardiology/infusion.png",
+      text: "Medex Reusable Pressure Infusor",
+    },
+    { id: 18, image: "/Cardiology/mask.png", text: "CPAP/BIPAP Mask" },
+    { id: 19, image: "/Cardiology/hemostat.png", text: "Haemostasis valve" },
+    {
+      id: 20,
+      image: "/Cardiology/prelude.png",
+      text: "Prelude Femoral Sheath",
+    },
   ];
 
-  const cards1 = [{ id: 1, image: Card1, text: "IABP" }];
+  const cards1 = [{ id: 1, image: "/Cardiology/IABP", text: "IABP" }];
 
   return (
     <>
@@ -110,7 +136,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
           </div>
 
           {/* Hover Cards (Conditionally Rendered) */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 my-20 gap-6 p-20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 my-20 gap-28 sm:m-4 sm:gap-20 m-10 lg:p-20">
             {selected === "BL" &&
               cards.map((card) => (
                 <div
@@ -156,7 +182,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
               rel="noopener noreferrer"
               className="flex justify-center "
             >
-              <button className=" hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700">
+              <button className=" hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 my-20 rounded-3xl border font-bold hover:border-black border-blue-700">
                 Read More
               </button>
             </a>
