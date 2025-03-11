@@ -18,7 +18,7 @@ const About = () => {
       >
         <Navbar />
         <motion.div
-          className="flex items-center justify-center pt-10 pb-10 sm:min-h-screen px-4 sm:px-10 sm:pt-0 sm:pb-0"
+          className="flex items-center justify-center pt-20 pb-20 sm:min-h-screen px-4 sm:px-10 sm:pt-0"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
@@ -32,7 +32,7 @@ const About = () => {
           >
             {/* Header Section */}
             <div className="flex items-center justify-center mb-10 text-2xl sm:text-4xl font-bold whitespace-nowrap">
-              <span className="mr-2">Welcome to</span>
+              <span className="m-2">Welcome to</span>
               <span className="font-bold text-blue-900">
                 Nandana SurgiCare!
               </span>
@@ -76,7 +76,9 @@ const About = () => {
         </div>
 
         {/* Accordion section component */}
-        <AccordionSection />
+        <div className="p-4 mb-20">
+          <AccordionSection />
+        </div>
 
         <Footer />
       </div>
