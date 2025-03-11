@@ -50,7 +50,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
     },
     {
       id: 17,
-      image: "/Cardiology/infusion.png",
+      image: "/Cardiology/reuse.png",
       text: "Medex Reusable Pressure Infusor",
     },
     { id: 18, image: "/Cardiology/mask.png", text: "CPAP/BIPAP Mask" },
@@ -62,11 +62,13 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
     },
   ];
 
-  const cards1 = [{ id: 1, image: "/Cardiology/IABP", text: "IABP" }];
+  const cards1 = [{ id: 1, image: "/Cardiology/IABP.png", text: "IABP" }];
 
   return (
     <>
-      <Navbar />
+      <div>
+        <Navbar />
+      </div>
       <div
         className="min-h-screen overflow-x-hidden bg-cover bg-fixed bg-center"
         style={{
@@ -77,16 +79,16 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
       >
         <div className="mt-40">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-20 p-12 items-center">
-            <h2 className="text-6xl font-bold text-left flex-1">{name}</h2>
+            <h2 className="z-50 text-6xl font-bold text-left flex-1">{name}</h2>
             <img
               src={heart}
               alt={name}
-              className="absolute -top-20 -right-4 opacity-70  transform -rotate-45 w-2/5 lg:w-1/3 rounded-3xl shadow-2xl z-0"
+              className="absolute -top-20 -right-4 opacity-70  transform -rotate-45 w-4/5 sm:w-3/5 lg:w-1/3 rounded-3xl shadow-2xl z-0"
             />
           </div>
 
           {/* Buttons for BL and Insightra */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-6">
+          <div className="grid relative z-50 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-6">
             {buttonImages.map(({ src, alt, id }) => (
               <button
                 key={id}
@@ -101,7 +103,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
           </div>
 
           {/* Conditionally Rendered Content */}
-          <div className="flex flex-col justify-center items-center mt-6">
+          <div className="flex z-50 flex-col justify-center items-center mt-6">
             {selected === "BL" && (
               <>
                 <img

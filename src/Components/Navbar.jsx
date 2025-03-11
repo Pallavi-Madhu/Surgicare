@@ -24,7 +24,7 @@ const Navbar = () => {
     <>
       <div>
         <div className=" top-0 w-full bg-white relative z-50 ">
-          <div className="w-full p-2 m-5">
+          <div className="w-full m-5">
             <div className="max-w-screen-xl mx-auto flex items-center justify-between">
               {/* Logo Section */}
               <div className="flex flex-col items-center">
@@ -77,7 +77,7 @@ const Navbar = () => {
               </div>
 
               {/* Desktop Navigation Links */}
-              <div className="hidden md:flex space-x-8 items-center relative">
+              <div className="hidden md:flex p-0 md:p-2 md:mr-4 lg:mr-0 space-x-8 items-center relative">
                 <a
                   href="/"
                   className="text-black text-2xl font-bold hover:text-blue-700 transition duration-300"
