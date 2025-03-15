@@ -16,53 +16,127 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
       id: 1,
       image: "/Cardiology/transducer.png",
       text: "Disposable Transducer",
+      url: "https://www.bllifesciences.com/products/invasive-pressure-system/",
     },
-    { id: 2, image: "/Cardiology/PTCA.png", text: "PTCA Kit" },
-    { id: 3, image: "/Cardiology/control.png", text: "Control Syringe" },
-    { id: 4, image: "/Cardiology/needle.png", text: "Needle" },
+    {
+      id: 2,
+      image: "/Cardiology/PTCA.png",
+      text: "PTCA Kit",
+      url: "https://www.bllifesciences.com/products/interventional-systems/",
+    },
+    {
+      id: 3,
+      image: "/Cardiology/control.png",
+      text: "Control Syringe",
+      url: "https://www.bllifesciences.com/products/interventional-systems/",
+    },
+    {
+      id: 4,
+      image: "/Cardiology/needle.png",
+      text: "Needle",
+      url: "https://www.bllifesciences.com/products/interventional-systems/",
+    },
     {
       id: 5,
       image: "/Cardiology/highpress.png",
       text: "High Pressure Tubing",
+      url: "https://www.bllifesciences.com/products/interventional-systems/",
     },
-    { id: 6, image: "/Cardiology/IVset.png", text: "IV SET VENTED" },
-    { id: 7, image: "/Cardiology/inflation.png", text: "Inflation Device" },
-    { id: 8, image: "/Cardiology/manifold.png", text: "Manifold" },
-    { id: 9, image: "/Cardiology/jns.png", text: "J & Straight" },
-    { id: 10, image: "/Cardiology/guideware.png", text: "Guide Ware" },
+    {
+      id: 6,
+      image: "/Cardiology/IVset.png",
+      text: "IV SET VENTED",
+      url: "https://bllifesciences.com/wp-content/uploads/2022/08/BL-Lifesciences.pdf",
+    },
+    {
+      id: 7,
+      image: "/Cardiology/inflation.png",
+      text: "Inflation Device",
+      url: "https://www.bllifesciences.com/wp-content/uploads/2022/06/24_IFU_Inflation_device.pdf",
+    },
+    {
+      id: 8,
+      image: "/Cardiology/manifold.png",
+      text: "Manifold",
+      url: "https://www.bllifesciences.com/products/interventional-systems/",
+    },
+    {
+      id: 9,
+      image: "/Cardiology/jns.png",
+      text: "J & Straight",
+      url: "https://www.bllifesciences.com/products/interventional-systems/",
+    },
+    {
+      id: 10,
+      image: "/Cardiology/guideware.png",
+      text: "Guide Ware",
+      url: "https://www.bllifesciences.com/products/interventional-systems/",
+    },
     {
       id: 11,
       image: "/Cardiology/transcab.png",
       text: "BL Transducer Interface Cable",
+      url: "https://www.bllifesciences.com/products/interventional-systems/",
     },
-    { id: 12, image: "/Cardiology/ACT.png", text: "ACT Tube" },
+    {
+      id: 12,
+      image: "/Cardiology/ACT.png",
+      text: "ACT Tube",
+      url: "https://www.bllifesciences.com/departments/cardiac-surgery/",
+    },
     {
       id: 13,
       image: "/Cardiology/pressmon.png",
       text: "Pressure Monitoring Line",
+      url: "https://www.bllifesciences.com/products/invasive-pressure-system/",
     },
-    { id: 14, image: "/Cardiology/flowreg.png", text: "Flow Regulator" },
-    { id: 15, image: "/Cardiology/snare.png", text: "Snare Kit" },
+    {
+      id: 14,
+      image: "/Cardiology/flowreg.png",
+      text: "Flow Regulator",
+      url: "https://www.bllifesciences.com/products/interventional-systems/",
+    },
+    { id: 15, image: "/Cardiology/snare.png", text: "Snare Kit", url: "" },
     {
       id: 16,
       image: "/Cardiology/infusion.png",
       text: "Cuff clean pressure infusion bag",
+      url: "https://www.medzell.net/company/bl-lifesciences/",
     },
     {
       id: 17,
       image: "/Cardiology/reuse.png",
       text: "Medex Reusable Pressure Infusor",
+      url: "https://www.bllifesciences.com/",
     },
-    { id: 18, image: "/Cardiology/mask.png", text: "CPAP/BIPAP Mask" },
-    { id: 19, image: "/Cardiology/hemostat.png", text: "Haemostasis valve" },
+    {
+      id: 18,
+      image: "/Cardiology/mask.png",
+      text: "CPAP/BIPAP Mask",
+      url: "https://www.bllifesciences.com/",
+    },
+    {
+      id: 19,
+      image: "/Cardiology/hemostat.png",
+      text: "Haemostasis valve",
+      url: "https://meritoem.com/product-category/valves/hemostasis-valves/#:~:text=Merit%20Medical's%20hemostasis%20valves%20and,during%20interventional%20and%20diagnostic%20procedures.",
+    },
     {
       id: 20,
       image: "/Cardiology/prelude.png",
       text: "Prelude Femoral Sheath",
+      url: "https://www.merit.com/product/prelude-pro-sheath-introducers/",
     },
   ];
 
-  const cards1 = [{ id: 1, image: "/Cardiology/IABP.png", text: "IABP" }];
+  const cards1 = [
+    {
+      id: 1,
+      image: "/Cardiology/IABP.png",
+      text: "IABP",
+      url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+    },
+  ];
 
   return (
     <>
@@ -141,36 +215,48 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 my-20 gap-28 sm:m-4 sm:gap-20 m-10 lg:p-20">
             {selected === "BL" &&
               cards.map((card) => (
-                <div
+                <a
                   key={card.id}
-                  className="relative group h-60 w-80  bg-gray-200 rounded-xl overflow-hidden shadow-lg"
+                  href={card.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="no-underline"
                 >
-                  <img
-                    src={card.image}
-                    alt={`Card ${card.id}`}
-                    className="h-full w-full object-cover  transition-opacity-90 duration-300 group-hover:opacity-0"
-                  />
-                  <div className="text-center absolute inset-0 flex items-center justify-center bg-blue-500 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
-                    {card.text}
+                  <div className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg">
+                    <img
+                      src={card.image}
+                      alt={`Card ${card.id}`}
+                      className="h-full w-full object-cover transition-opacity-90 duration-300 group-hover:opacity-0"
+                    />
+                    <div className="text-center absolute inset-0 flex items-center justify-center bg-blue-500 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
+                      {card.text}
+                    </div>
                   </div>
-                </div>
+                </a>
               ))}
 
             {selected === "Insightra" &&
               cards1.map((card) => (
-                <div
+                <a
                   key={card.id}
-                  className="relative group h-48 w-full bg-gray-200 rounded-xl overflow-hidden shadow-lg"
+                  href={card.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <img
-                    src={card.image}
-                    alt={`Card ${card.id}`}
-                    className="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-0"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center bg-red-500 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
-                    {card.text}
+                  <div
+                    key={card.id}
+                    className="relative group h-48 w-full bg-gray-200 rounded-xl overflow-hidden shadow-lg"
+                  >
+                    <img
+                      src={card.image}
+                      alt={`Card ${card.id}`}
+                      className="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-0"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center bg-red-500 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
+                      {card.text}
+                    </div>
                   </div>
-                </div>
+                </a>
               ))}
           </div>
         </div>
