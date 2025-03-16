@@ -21,16 +21,16 @@ import clips from "../../assets/Neuro/Mizuho/image.png";
 import headholder from "../../assets/Neuro/Mizuho/headholder.webp";
 import dopplersystem from "../../assets/Neuro/Mizuho/DopplerSystems.webp";
 //product images-Kinamed
-import screws from "../../assets/Neuro/Kinamed/NeuroProLowProfileRigidFixationSystem.webp"
-import screws2 from "../../assets/Neuro/Kinamed/NeuroProRigidFixationSystem.webp"
+import screws from "../../assets/Neuro/Kinamed/NeuroProLowProfileRigidFixationSystem.webp";
+import screws2 from "../../assets/Neuro/Kinamed/NeuroProRigidFixationSystem.webp";
 //product images Baxter
-import floseal from "../../assets/Neuro/Baxter/floseal.jpg"
+import floseal from "../../assets/Neuro/Baxter/floseal.jpg";
 import hemopatch from "../../assets/Neuro/Baxter/hemopatch.webp";
 import tiseel from "../../assets/Neuro/Baxter/Tisseel.webp";
 //product images Sunoptic
-import light from "../../assets/Neuro/Sunoptic/light.jpg"
+import light from "../../assets/Neuro/Sunoptic/light.jpg";
 //product images Syncromax
-import bovinepatch from "../../assets/Neuro/Syncromax/bovinepatch.jpg"
+import bovinepatch from "../../assets/Neuro/Syncromax/bovinepatch.jpg";
 //product images Cocoon
 import warmer from "../../assets/Neuro/Cocoon/warming.png";
 import blanket from "../../assets/Neuro/Cocoon/blanket.jpg";
@@ -57,8 +57,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
     {
       id: 2,
       image: screws2,
-      text: 
-        "NeuroPro® Low Profile Rigid Fixation System"
+      text: "NeuroPro® Low Profile Rigid Fixation System",
     },
   ];
 
@@ -117,6 +116,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
             />
           </div>
 
+          {/* Buttons */}
           {/* Buttons */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-6">
             {buttonImages.map(({ src, alt, id }) => (
