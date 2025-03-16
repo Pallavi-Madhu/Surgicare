@@ -3,6 +3,8 @@ import Navbar from "../../Components/Navbar";
 import Footer from "../../Components/Footer";
 import BL from "../../assets/BL Lifsciences.png";
 
+import { motion } from "framer-motion";
+
 import Insightra from "../../assets/insightra.png";
 import bg from "../../assets/depBG.png";
 import heart from "../../assets/heart.png";
@@ -82,7 +84,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
       id: 12,
       image: "/Cardiology/ACT.png",
       text: "ACT Tube",
-      url: "https://www.bllifesciences.com/departments/cardiac-surgery/",
+      url: "https://www.helena.com/actalykemini2.htm",
     },
     {
       id: 13,
@@ -96,7 +98,12 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
       text: "Flow Regulator",
       url: "https://www.bllifesciences.com/products/interventional-systems/",
     },
-    { id: 15, image: "/Cardiology/snare.png", text: "Snare Kit", url: "" },
+    {
+      id: 15,
+      image: "/Cardiology/snare.png",
+      text: "Snare Kit",
+      url: "https://www.argonmedical.com/product/atrieve-vascular-snare-kit/",
+    },
     {
       id: 16,
       image: "/Cardiology/infusion.png",
@@ -107,7 +114,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
       id: 17,
       image: "/Cardiology/reuse.png",
       text: "Medex Reusable Pressure Infusor",
-      url: "https://www.bllifesciences.com/",
+      url: "https://www.icumed.com/products/hemodynamic-monitoring/blood-pressure-monitoring/pressure-infusors/medex-clear-cuff-pressure-bag/",
     },
     {
       id: 18,
@@ -140,7 +147,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
 
   return (
     <>
-      <div>
+      <div className="relative z-50">
         <Navbar />
       </div>
       <div
@@ -151,9 +158,9 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
           backgroundBlendMode: "overlay",
         }}
       >
-        <div className="mt-40">
+        <div className=" mt-40">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-20 p-12 items-center">
-            <h2 className="z-50 text-6xl font-bold text-left flex-1">{name}</h2>
+            <h2 className="z-20 text-6xl font-bold text-left flex-1">{name}</h2>
             <img
               src={heart}
               alt={name}
@@ -162,7 +169,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
           </div>
 
           {/* Buttons for BL and Insightra */}
-          <div className="grid relative z-50 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-6">
+          <div className="z-0 relative grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-6">
             {buttonImages.map(({ src, alt, id }) => (
               <button
                 key={id}
@@ -222,16 +229,28 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                   rel="noopener noreferrer"
                   className="no-underline"
                 >
-                  <div className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg">
+                  <motion.div
+                    className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
+                    whileHover={{ scale: 1.05 }}
+                  >
                     <img
                       src={card.image}
-                      alt={`Card ${card.id}`}
-                      className="h-full w-full object-cover transition-opacity-90 duration-300 group-hover:opacity-0"
+                      alt={`Card ${card.text}`}
+                      className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
                     />
-                    <div className="text-center absolute inset-0 flex items-center justify-center bg-blue-500 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
-                      {card.text}
-                    </div>
-                  </div>
+                    <motion.div
+                      className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
+                      initial={{ opacity: 0 }}
+                      whileHover={{ opacity: 1 }}
+                    >
+                      <span className="text-white text-3xl text-center font-bold">
+                        {card.text}
+                      </span>
+                    </motion.div>
+                  </motion.div>
+                  <p className="flex justify-center text-gray-800 text-2xl p-6 text-center font-semibold">
+                    {card.text}
+                  </p>
                 </a>
               ))}
 
@@ -242,20 +261,30 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                   href={card.url}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="no-underline"
                 >
-                  <div
-                    key={card.id}
-                    className="relative group h-48 w-full bg-gray-200 rounded-xl overflow-hidden shadow-lg"
+                  <motion.div
+                    className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
+                    whileHover={{ scale: 1.05 }}
                   >
                     <img
                       src={card.image}
-                      alt={`Card ${card.id}`}
-                      className="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-0"
+                      alt={`Card ${card.text}`}
+                      className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
                     />
-                    <div className="absolute inset-0 flex items-center justify-center bg-red-500 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
-                      {card.text}
-                    </div>
-                  </div>
+                    <motion.div
+                      className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
+                      initial={{ opacity: 0 }}
+                      whileHover={{ opacity: 1 }}
+                    >
+                      <span className="text-white text-3xl text-center font-bold">
+                        {card.text}
+                      </span>
+                    </motion.div>
+                  </motion.div>
+                  <p className="flex justify-center text-gray-800 text-2xl p-6 text-center font-semibold">
+                    {card.text}
+                  </p>
                 </a>
               ))}
           </div>
