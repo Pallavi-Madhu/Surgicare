@@ -8,6 +8,12 @@ import Hico from "../../assets/Hico.png";
 import Cocoon from "../../assets/Cocoon.png";
 import BL from "../../assets/BL Lifsciences.png";
 import Meditech from "../../assets/Meditech.png";
+import Aero from "../../assets/Aero.png";
+import Rusch from "../../assets/Rusch.png";
+import Medisafe from "../../assets/Medisafe.png";
+import Suretech from "../../assets/suretech.webp";
+import Venticare from "../../assets/Venticare.png";
+import Portex from "../../assets/Portex.png";
 import DepNav from "../../Components/DepNav";
 
 import image1 from "../../assets/Anastesiology/PressureMonitoringLines_Main.jpg";
@@ -18,6 +24,7 @@ import image5 from "../../assets/Anastesiology/3waywithextension.jpeg";
 import image7 from "../../assets/Anastesiology/lumen.jpg";
 import image8 from "../../assets/Anastesiology/adultexpandable.jpg";
 import image9 from "../../assets/Anastesiology/Lungexcerciser.jpg";
+import image10 from "../../assets/Anastesiology/warmingblanket.jpg";
 
 const DepartmentPage = ({ name, image, buttonImages }) => {
   const [selected, setSelected] = useState("BL");
@@ -87,12 +94,12 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
     // },
   ];
    const cards2 = [
-     // {
-     //   id: 1,
-     //   image: "/Cardiology/IABP.png",
-     //   text: "IABP",
-     //   url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-     // },
+     {
+       id: 1,
+       image: image10,
+       text: "Warming Blankets",
+       //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+     },
    ];
     const cards3 = [
       // {
@@ -139,9 +146,13 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
 
           {/* Conditionally Rendered Content */}
           <div className="flex z-50 flex-col justify-center items-center mt-6">
-            {selected === "Hico" && (
+            {selected === "Venticare" && (
               <>
-                <img src={Hico} alt="Hico" className="h-40 w-auto m-10" />
+                <img
+                  src={Venticare}
+                  alt="Venticare"
+                  className="h-40 w-auto m-10"
+                />
                 <p className="text-center mt-4">
                   Hico specializes in temperature management solutions in
                   anesthesiology, offering advanced warming and cooling systems.
@@ -206,7 +217,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
 
           {/* Hover Cards (Conditionally Rendered) */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 my-20 gap-28 sm:m-4 sm:gap-20 m-10 lg:p-20">
-            {selected === "Hico" &&
+            {selected === "Venticare" &&
               cards1.map((card) => (
                 <a
                   key={card.id}
@@ -358,10 +369,10 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
           </>
         )}
 
-        {selected === "Hico" && (
+        {selected === "Venticare" && (
           <>
             <a
-              href="https://www.hico.de/en/start.html"
+              href="https://venticaremedicalinc.com/products/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex justify-center "
@@ -400,6 +411,76 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
             </a>
           </>
         )}
+        {selected === "Aero" && (
+          <>
+            <a
+              href="https://aerohealthcare.com/us/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex justify-center "
+            >
+              <button className=" hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700">
+                Read More
+              </button>
+            </a>
+          </>
+        )}
+        {selected === "Portex" && (
+          <>
+            <a
+              href="https://www.southwestmedical.com/brands/portex-smiths-medical"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex justify-center "
+            >
+              <button className=" hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700">
+                Read More
+              </button>
+            </a>
+          </>
+        )}
+        {selected === "Rusch" && (
+          <>
+            <a
+              href="https://www.acsmedical.com/brands/rusch"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex justify-center "
+            >
+              <button className=" hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700">
+                Read More
+              </button>
+            </a>
+          </>
+        )}
+        {selected === "Medisafe" && (
+          <>
+            <a
+              href="https://www.medisaferesuscitators.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex justify-center "
+            >
+              <button className=" hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700">
+                Read More
+              </button>
+            </a>
+          </>
+        )}
+        {selected === "SURETECH" && (
+          <>
+            <a
+              href="https://aerohealthcare.com/us/"   //site not working
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex justify-center "
+            >
+              <button className=" hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700">
+                Read More
+              </button>
+            </a>
+          </>
+        )}
       </div>
       <DepNav />
       <Footer />
@@ -410,9 +491,14 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
 export default function Anesthesiology() {
   const buttonImages = [
     { id: "BL", src: BL, alt: "BL Lifesciences" },
-    { id: "Hico", src: Hico, alt: "Hico" },
+    { id: "Venticare", src: Venticare, alt: "Venticare" },
     { id: "Cocoon", src: Cocoon, alt: "Cocoon" },
     { id: "Meditech", src: Meditech, alt: "Meditech" },
+    { id: "Aero", src: Aero, alt: "Aero" },
+    { id: "Portex", src: Portex, alt: "Portex" },
+    { id: " Rusch", src: Rusch, alt: " Rusch" },
+    { id: "Medisafe", src: Medisafe, alt: "Medisafe" },
+    { id: "SURETECH", src: Suretech, alt: "SURETECH" },
   ];
 
   return <DepartmentPage name="ANESTHESIOLOGY" buttonImages={buttonImages} />;
