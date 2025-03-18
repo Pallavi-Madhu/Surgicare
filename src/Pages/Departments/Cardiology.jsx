@@ -10,7 +10,7 @@ import bg from "../../assets/depBG.png";
 import heart from "../../assets/heart.png";
 import DepNav from "../../Components/DepNav";
 
-const DepartmentPage = ({ name, image, buttonImages }) => {
+const DepartmentPage = ({ name, buttonImages }) => {
   const [selected, setSelected] = useState("BL");
 
   const cards = [
