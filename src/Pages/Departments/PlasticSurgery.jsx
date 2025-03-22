@@ -25,29 +25,29 @@ const DepartmentPage = ({ name, buttonImages }) => {
   const cards2 = [
     {
       id: 1,
-      image: "", // Change this to the correct image
-      text: "Burn Mesh",
-      url: "",
+      image: "/Plastic/bovine.png", // Change this to the correct image
+      text: "Bovine Patch",
+      url: "https://www.reachmedicalsystems.com/synkromax",
     },
   ];
 
   const cards3 = [
     {
       id: 1,
-      image: "", // Change this to the correct image
+      image: "/Plastic/gplast.png", // Change this to the correct image
       text: "G Plast",
       url: "",
     },
     {
       id: 2,
-      image: "", // Change this to the correct image
+      image: "/Plastic/gdress.png", // Change this to the correct image
       text: "G Dress",
       url: "",
     },
     {
       id: 3,
-      image: "", // Change this to the correct image
-      text: "Bovine Patch",
+      image: "/Plastic/burnmesh.png", // Change this to the correct image
+      text: "Burn Mesh",
       url: "",
     },
   ];
@@ -68,11 +68,11 @@ const DepartmentPage = ({ name, buttonImages }) => {
         <div className=" mt-40">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-20 p-12 items-center">
             <h2 className="z-20 text-6xl font-bold text-left flex-1">{name}</h2>
-            <img
+            {/* <img
               src={heart}
               alt={name}
               className="absolute -top-20 -right-4 opacity-70  transform -rotate-45 w-4/5 sm:w-3/5 lg:w-1/3 rounded-3xl shadow-2xl z-0"
-            />
+            /> */}
           </div>
 
           {/* Buttons for BL and Insightra */}
@@ -88,6 +88,64 @@ const DepartmentPage = ({ name, buttonImages }) => {
                 <img src={src} alt={alt} className="h-12 w-auto" />
               </button>
             ))}
+          </div>
+
+          {/* Conditionally Rendered Content */}
+          <div className="flex z-50 flex-col justify-center items-center mt-6">
+            {selected === "Baxter" && (
+              <>
+                <img
+                  src={Baxter}
+                  alt="BL Lifesciences"
+                  className="h-20 w-auto m-10"
+                />
+                <p className="text-center w-3/4 mt-4">
+                  Baxter TISSEEL is a fibrin sealant used in surgical procedures
+                  to control bleeding and support wound healing. It mimics the
+                  body’s natural clotting process by combining fibrinogen and
+                  thrombin to form a stable fibrin clot.
+                </p>
+              </>
+            )}
+            {selected === "Synkromax" && (
+              <>
+                <img
+                  src={Sunkromax}
+                  alt="Synkromax"
+                  className="h-20 w-80 flex m-10"
+                />
+                <p className="text-center w-3/4 mt-4">
+                  SynkroMax's Synkroscaff is a tissue-engineered, decellularized
+                  bovine pericardial patch designed for surgical anatomical
+                  repairs.
+                </p>
+              </>
+            )}
+            {selected === "Surgiwear" && (
+              <>
+                <img
+                  src={Surgiwear}
+                  alt="Surgiwear"
+                  className="h-20 w-80 flex m-10"
+                />
+                <p className="text-center w-3/4 mt-4">
+                  Surgiwear's G-Dress is a sterilized adhesive bandage made from
+                  SMS non-woven fabric, featuring a fluid-resistant middle layer
+                  that allows for regular activities like bathing without
+                  compromising the dressing. <br />
+                  G-Plast is Surgiwear's surgical tape, designed to secure
+                  dressings and medical devices to the skin, providing reliable
+                  adhesion while being gentle on the skin. <br />
+                  Finally Burnmesh by Surgiwear is a paraffin gauze dressing
+                  designed to protect burn wounds, minimize pain, and prevent
+                  adherence to the wound.
+                </p>
+              </>
+            )}
+          </div>
+
+          <div className="flex mt-10 text-4xl font-bold justify-center items-center">
+            Range of products
           </div>
 
           {/* Hover Cards (Conditionally Rendered) */}
