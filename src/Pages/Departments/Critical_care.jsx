@@ -1,67 +1,41 @@
 import React, { useState } from "react";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
 import Navbar from "../../Components/Navbar";
 import Footer from "../../Components/Footer";
-import departments from "../../Data/departments";
+import DepNav from "../../Components/DepNav";
+import bg from "../../assets/depBG.png";
+import BL from "../../assets/BL Lifsciences.png";
 
-const Critical_care = () => {
-
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const navigate = useNavigate();
-
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % departments.length);
-  };
-
-  const handlePrev = () => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + departments.length) % departments.length
-    );
-  };
-
-  const handleNavigate = () => {
-    navigate(`/${departments[currentIndex].id}`);
-  };
-
+const DepartmentPage = ({ name, buttonImages }) => {
+  const [selected, setSelected] = useState("BL");
   return (
     <>
       <div>
-        <Navbar />
-        <div className="min-h-screen"></div>
-
-        {/* Department Navigation (Just Above Footer) */}
-        <div className="mt-10 mb-20 flex flex-col items-center">
-          <div className="flex items-center gap-6">
-            <button
-              onClick={handlePrev}
-              className="p-4 rounded-full border border-black hover:bg-gray-200"
-            >
-              <FaArrowLeft className="h-6 w-6" />
-            </button>
-
-            {/* Department Button */}
-            <button
-              onClick={handleNavigate}
-              className="p-4 w-60 h-14 rounded-3xl text-black border border-black bg-white hover:bg-blue-300 transition text-lg font-semibold"
-            >
-              {departments[currentIndex].name}
-            </button>
-
-            <button
-              onClick={handleNext}
-              className="p-4 rounded-full border border-black hover:bg-gray-200"
-            >
-              <FaArrowRight className="h-6 w-6" />
-            </button>
-          </div>
+        <div className="relative z-50">
+          {" "}
+          <Navbar />
         </div>
 
+        <div
+          className="min-h-screen overflow-x-hidden bg-cover bg-fixed bg-center"
+          style={{
+            backgroundImage: `url(${bg})`,
+            backgroundColor: "rgba(255, 255, 255, 0)",
+            backgroundBlendMode: "overlay",
+          }}
+        ></div>
+        <DepNav />
         <Footer />
       </div>
     </>
   );
 };
 
-export default Critical_care;
+export default function CriticalCare() {
+  const buttonImages = [
+    { id: "BL", src: BL, alt: "BL Lifesciences" },
+    { id: "Insightra", src: BL, alt: "Insightra" },
+  ];
+
+  return <DepartmentPage name="CRITICAL CARE" buttonImages={buttonImages} />;
+}
+
