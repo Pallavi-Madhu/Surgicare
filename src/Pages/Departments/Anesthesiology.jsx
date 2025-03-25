@@ -26,6 +26,9 @@ import image8 from "../../assets/Anastesiology/adultexpandable.jpg";
 import image9 from "../../assets/Anastesiology/Lungexcerciser.jpg";
 import image10 from "../../assets/Anastesiology/warmingblanket.jpg";
 
+import image11 from "../../assets/Anastesiology/nebulizer.jpeg";
+import image12 from "../../assets/Anastesiology/Ventilator-Plain-Circuit.jpg";
+
 const DepartmentPage = ({ name, image, buttonImages }) => {
   const [selected, setSelected] = useState("BL");
 
@@ -86,21 +89,27 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
     },
   ];
   const cards1 = [
-    // {
-    //   id: 1,
-    //   image: "/Cardiology/IABP.png",
-    //   text: "IABP",
-    //   url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-    // },
+    {
+      id: 1,
+      image: image11,
+      text: "Adult Nebulizer Mask Kit (3026)",
+      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+    },
+    {
+      id: 2,
+      image: image12,
+      text: "VENTILATOR CIRCUIT PLAIN ADULT",
+      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+    },
   ];
-   const cards2 = [
-     {
-       id: 1,
-       image: image10,
-       text: "Warming Blankets",
-       //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-     },
-   ];
+   //const cards2 = [
+    //  {
+    //    id: 1,
+    //    image: image10,
+    //    text: "Warming Blankets",
+    //    //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+    //  },
+   //];
     const cards3 = [
       // {
       //   id: 1,
