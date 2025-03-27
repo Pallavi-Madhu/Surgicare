@@ -847,7 +847,7 @@ export default function Anesthesiology() {
     { id: "Meditech", src: Meditech, alt: "Meditech" },
     { id: "Aero", src: Aero, alt: "Aero" },
     { id: "Portex", src: Portex, alt: "Portex" },
-    { id: " Rusch", src: Rusch, alt: " Rusch" },
+    { id: "Rusch", src: Rusch, alt: "Rusch" },
     { id: "Medisafe", src: Medisafe, alt: "Medisafe" },
     { id: "Suretech", src: Suretech, alt: "Suretech" },
   ];
