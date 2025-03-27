@@ -50,6 +50,9 @@ import image27 from "../../assets/Anastesiology/bougie.avif";
 
 import image28 from "../../assets/Anastesiology/4blades.jpg";
 
+import image29 from "../../assets/Anastesiology/needle.jpg";
+
+
 const DepartmentPage = ({ name, image, buttonImages }) => {
   const [selected, setSelected] = useState("BL");
 
@@ -239,6 +242,15 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
         //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
       },
     ];
+     const cards7 = [
+       //SURETECH
+       {
+         id: 1,
+         image: image29,
+         text: "INTRODUCER NEEDLE 18 Gx7CM",
+         //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+       },
+     ];
 
   return (
     <>
@@ -383,6 +395,24 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                   breathing circuits, and resuscitation devices. With a focus on
                   innovation and reliability, Medisafe ensures superior patient
                   safety and healthcare efficiency.
+                </p>
+              </>
+            )}
+            {selected === "Suretech" && (
+              <>
+                <img
+                  src={Suretech}
+                  alt="Suretech"
+                  className="h-20 w-80 flex m-10"
+                />
+                <p className="text-center mt-4">
+                  Suretech Medical Inc is a leading manufacturer and supplier of
+                  high-quality medical devices, specializing in cardiology,
+                  anesthesia, and critical care products. Their range includes
+                  introducer needles, vascular access devices, and surgical
+                  instruments designed for precision and patient safety. With a
+                  strong commitment to innovation and quality, Suretech serves
+                  hospitals and healthcare providers worldwide.
                 </p>
               </>
             )}
@@ -638,6 +668,39 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                   </p>
                 </a>
               ))}
+            {selected === "Suretech" &&
+              cards7.map((card) => (
+                <a
+                  key={card.id}
+                  href={card.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="no-underline"
+                >
+                  <motion.div
+                    className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <img
+                      src={card.image}
+                      alt={`Card ${card.text}`}
+                      className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
+                    />
+                    <motion.div
+                      className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
+                      initial={{ opacity: 0 }}
+                      whileHover={{ opacity: 1 }}
+                    >
+                      <span className="text-white text-3xl text-center font-bold">
+                        {card.text}
+                      </span>
+                    </motion.div>
+                  </motion.div>
+                  <p className="flex justify-center text-gray-800 text-2xl p-6 text-center font-semibold">
+                    {card.text}
+                  </p>
+                </a>
+              ))}
           </div>
         </div>
 
@@ -786,7 +849,7 @@ export default function Anesthesiology() {
     { id: "Portex", src: Portex, alt: "Portex" },
     { id: " Rusch", src: Rusch, alt: " Rusch" },
     { id: "Medisafe", src: Medisafe, alt: "Medisafe" },
-    { id: "SURETECH", src: Suretech, alt: "SURETECH" },
+    { id: "Suretech", src: Suretech, alt: "Suretech" },
   ];
 
   return <DepartmentPage name="ANESTHESIOLOGY" buttonImages={buttonImages} />;
