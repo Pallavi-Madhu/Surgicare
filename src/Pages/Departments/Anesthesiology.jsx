@@ -24,10 +24,11 @@ import image5 from "../../assets/Anastesiology/3waywithextension.jpeg";
 import image7 from "../../assets/Anastesiology/lumen.jpg";
 import image8 from "../../assets/Anastesiology/adultexpandable.jpg";
 import image9 from "../../assets/Anastesiology/Lungexcerciser.jpg";
-import image10 from "../../assets/Anastesiology/warmingblanket.jpg";
 
 import image11 from "../../assets/Anastesiology/nebulizer.jpeg";
 import image12 from "../../assets/Anastesiology/Ventilator-Plain-Circuit.jpg";
+
+import image10 from "../../assets/Anastesiology/warmingblanket.jpg";
 
 import image13 from "../../assets/Anastesiology/bronchial.webp";
 import image14 from "../../assets/Anastesiology/cuff-meter.webp";
@@ -46,6 +47,8 @@ import image25 from "../../assets/Anastesiology/pediatricbreathing.jpg";
 import image26 from "../../assets/Anastesiology/tconnector.jpeg";
 
 import image27 from "../../assets/Anastesiology/bougie.avif";
+
+import image28 from "../../assets/Anastesiology/4blades.jpg";
 
 const DepartmentPage = ({ name, image, buttonImages }) => {
   const [selected, setSelected] = useState("BL");
@@ -207,7 +210,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
        //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
      },
    ];
-    const cards6 = [           //RUSCH
+    const cards5 = [           //RUSCH
       {
         id: 1,
         image: image13,
@@ -224,6 +227,15 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
         id: 3,
         image: image15,
         text: "Nasopharyngeal Air way 28,30,34",
+        //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+      },
+    ];
+    const cards6 = [
+      //MEDISAFE
+      {
+        id: 1,
+        image: image28,
+        text: "Laryngoscope with 4 blades -Fiberoptic",
         //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
       },
     ];
@@ -353,6 +365,24 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                   offerings include epidural catheters, anesthesia breathing
                   circuits, and spinal anesthesia trays, all designed to meet
                   the specific needs of anesthesia departments.
+                </p>
+              </>
+            )}
+            {selected === "Medisafe" && (
+              <>
+                <img
+                  src={Medisafe}
+                  alt="Medisafe"
+                  className="h-20 w-80 flex m-10"
+                />
+                <p className="text-center mt-4">
+                  Medisafe International is a leading manufacturer and supplier
+                  of high-quality medical equipment, specializing in anesthesia,
+                  critical care, and surgical instruments. The company is known
+                  for its precision-engineered fiber optic laryngoscopes,
+                  breathing circuits, and resuscitation devices. With a focus on
+                  innovation and reliability, Medisafe ensures superior patient
+                  safety and healthcare efficiency.
                 </p>
               </>
             )}
@@ -543,6 +573,39 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
               ))}
 
             {selected === "Rusch" &&
+              cards5.map((card) => (
+                <a
+                  key={card.id}
+                  href={card.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="no-underline"
+                >
+                  <motion.div
+                    className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <img
+                      src={card.image}
+                      alt={`Card ${card.text}`}
+                      className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
+                    />
+                    <motion.div
+                      className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
+                      initial={{ opacity: 0 }}
+                      whileHover={{ opacity: 1 }}
+                    >
+                      <span className="text-white text-3xl text-center font-bold">
+                        {card.text}
+                      </span>
+                    </motion.div>
+                  </motion.div>
+                  <p className="flex justify-center text-gray-800 text-2xl p-6 text-center font-semibold">
+                    {card.text}
+                  </p>
+                </a>
+              ))}
+            {selected === "Medisafe" &&
               cards6.map((card) => (
                 <a
                   key={card.id}
