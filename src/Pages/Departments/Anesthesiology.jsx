@@ -4,7 +4,7 @@ import Footer from "../../Components/Footer";
 
 import { motion } from "framer-motion";
 
-import Hico from "../../assets/Hico.png";
+
 import Cocoon from "../../assets/Cocoon.png";
 import BL from "../../assets/BL Lifsciences.png";
 import Meditech from "../../assets/Meditech.png";
@@ -29,10 +29,26 @@ import image10 from "../../assets/Anastesiology/warmingblanket.jpg";
 import image11 from "../../assets/Anastesiology/nebulizer.jpeg";
 import image12 from "../../assets/Anastesiology/Ventilator-Plain-Circuit.jpg";
 
+import image13 from "../../assets/Anastesiology/bronchial.webp";
+import image14 from "../../assets/Anastesiology/cuff-meter.webp";
+import image15 from "../../assets/Anastesiology/Nasopharyngeal.jpg";
+
+import image16 from "../../assets/Anastesiology/BainCircuit.jpg";
+import image17 from "../../assets/Anastesiology/adultbreathablecircuit.webp";
+import image18 from "../../assets/Anastesiology/circuit.jpg";
+import image19 from "../../assets/Anastesiology/breathingcircuitwhite.jpg";
+import image20 from "../../assets/Anastesiology/ReusableAdult.png";
+import image21 from "../../assets/Anastesiology/BVL-Filter.jpg";
+import image22 from "../../assets/Anastesiology/cpap.jpeg";
+import image23 from "../../assets/Anastesiology/harness2.jpg";
+import image24 from "../../assets/Anastesiology/pediatric.jpg";
+import image25 from "../../assets/Anastesiology/pediatricbreathing.jpg";
+import image26 from "../../assets/Anastesiology/tconnector.jpeg";
+
 const DepartmentPage = ({ name, image, buttonImages }) => {
   const [selected, setSelected] = useState("BL");
 
-  const cards = [
+  const cards = [       //BL
     {
       id: 1,
       image: image1,
@@ -88,7 +104,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
       //url: "https://www.bllifesciences.com/products/interventional-systems/",
     },
   ];
-  const cards1 = [
+  const cards1 = [             //VENTICARE
     {
       id: 1,
       image: image11,
@@ -102,21 +118,103 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
       //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
     },
   ];
-   //const cards2 = [
-    //  {
-    //    id: 1,
-    //    image: image10,
-    //    text: "Warming Blankets",
-    //    //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-    //  },
-   //];
-    const cards3 = [
-      // {
-      //   id: 1,
-      //   image: "/Cardiology/IABP.png",
-      //   text: "IABP",
-      //   url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-      // },
+   const cards2 = [          //COCOON
+     {
+       id: 1,
+       image: image10,
+       text: "Warming Blankets",
+       //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+     },
+   ];
+   const cards3 = [
+     //AERO
+     {
+       id: 1,
+       image: image16,
+       text: "ADULT BAINS CIRCUIT-AERO (2001)",
+       //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+     },
+     {
+       id: 2,
+       image: image17,
+       text: "ADULT BREATHING CIRCUIT-EXPANDABLE (1010-E)",
+       //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+     },
+     {
+       id: 3,
+       image: image18,
+       text: "ADULT BREATHING CIRCUIT EXP.WITH EXTRA LIMB &CONCTR (1010-01-E)",
+       //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+     },
+     {
+       id: 4,
+       image: image19,
+       text: "ADULT BREATHING CIRCUIT-WHITE (REF:1010)",
+       //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+     },
+     {
+       id: 5,
+       image: image20,
+       text: "Adult Double Water Trap Ventilator Circuit (REF:1012)",
+       //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+     },
+     {
+       id: 6,
+       image: image21,
+       text: "BVL FILTER AERO (2010)",
+       //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+     },
+
+     {
+       id: 7,
+       image: image22,
+       text: "CPAP CIRCUIT (SMOOTH BORE TUBING) 1.8 MTR (4000)",
+       //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+     },
+     {
+       id: 8,
+       image: image23,
+       text: "Cpap Circuit with Mask and Harness-Adult",
+       //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+     },
+     {
+       id: 9,
+       image: image24,
+       text: "PAEDIATRIC BAIN CIRCUIT-JACKSON REES (2002)",
+       //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+     },
+     {
+       id: 10,
+       image: image25,
+       text: "PEADIATRIC BREATHING CIRUIT (1020)",
+       //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+     },
+     {
+       id: 11,
+       image: image26,
+       text: "T- CONNECTOR (1500)",
+       //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+     },
+   ];
+    const cards6 = [           //RUSCH
+      {
+        id: 1,
+        image: image13,
+        text: "Bronchial Double Lumen Tube",
+        //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+      },
+      {
+        id: 2,
+        image: image14,
+        text: "Cuff measuring meter for E.T.Tube",
+        //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+      },
+      {
+        id: 3,
+        image: image15,
+        text: "Nasopharyngeal Air way 28,30,34",
+        //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+      },
     ];
 
   return (
@@ -218,6 +316,30 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                 </p>
               </>
             )}
+            {selected === "Aero" && (
+              <>
+                <img src={Aero} alt="Aero" className="h-20 w-80 flex m-10" />
+                <p className="text-center mt-4">
+                  AERO is a medical equipment manufacturer specializing in
+                  anesthesia and respiratory care solutions. They provide
+                  high-quality breathing circuits, ventilator accessories, and
+                  CPAP systems for hospitals and clinics. Their products ensure
+                  efficient and safe patient care in anesthesiology and critical
+                  care settings.
+                </p>
+              </>
+            )}
+            {selected === "Rusch" && (
+              <>
+                <img src={Rusch} alt="Rusch" className="h-20 w-80 flex m-10" />
+                <p className="text-center mt-4">
+                  RÜSCH is a medical device company specializing in urology,
+                  anesthesia, and surgical products, known for its high-quality
+                  catheters and airway management solutions. It is a subsidiary
+                  of Teleflex, a global provider of medical technologies.
+                </p>
+              </>
+            )}
           </div>
 
           <div className="flex mt-10 text-4xl font-bold justify-center items-center">
@@ -226,6 +348,39 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
 
           {/* Hover Cards (Conditionally Rendered) */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 my-20 gap-28 sm:m-4 sm:gap-20 m-10 lg:p-20">
+            {selected === "BL" &&
+              cards.map((card) => (
+                <a
+                  key={card.id}
+                  href={card.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="no-underline"
+                >
+                  <motion.div
+                    className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <img
+                      src={card.image}
+                      alt={`Card ${card.text}`}
+                      className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
+                    />
+                    <motion.div
+                      className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
+                      initial={{ opacity: 0 }}
+                      whileHover={{ opacity: 1 }}
+                    >
+                      <span className="text-white text-3xl text-center font-bold">
+                        {card.text}
+                      </span>
+                    </motion.div>
+                  </motion.div>
+                  <p className="flex justify-center text-gray-800 text-2xl p-6 text-center font-semibold">
+                    {card.text}
+                  </p>
+                </a>
+              ))}
             {selected === "Venticare" &&
               cards1.map((card) => (
                 <a
@@ -293,8 +448,8 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                   </p>
                 </a>
               ))}
-            {selected === "BL" &&
-              cards.map((card) => (
+            {selected === "Aero" &&
+              cards3.map((card) => (
                 <a
                   key={card.id}
                   href={card.url}
@@ -326,8 +481,9 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                   </p>
                 </a>
               ))}
-            {selected === "Meditech" &&
-              cards3.map((card) => (
+
+            {selected === "Rusch" &&
+              cards6.map((card) => (
                 <a
                   key={card.id}
                   href={card.url}
@@ -479,7 +635,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
         {selected === "SURETECH" && (
           <>
             <a
-              href="https://aerohealthcare.com/us/"   //site not working
+              href="https://aerohealthcare.com/us/" //site not working
               target="_blank"
               rel="noopener noreferrer"
               className="flex justify-center "
