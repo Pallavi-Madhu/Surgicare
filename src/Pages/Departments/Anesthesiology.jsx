@@ -45,6 +45,8 @@ import image24 from "../../assets/Anastesiology/pediatric.jpg";
 import image25 from "../../assets/Anastesiology/pediatricbreathing.jpg";
 import image26 from "../../assets/Anastesiology/tconnector.jpeg";
 
+import image27 from "../../assets/Anastesiology/bougie.avif";
+
 const DepartmentPage = ({ name, image, buttonImages }) => {
   const [selected, setSelected] = useState("BL");
 
@@ -196,6 +198,15 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
        //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
      },
    ];
+   const cards4 = [
+     //PORTEX
+     {
+       id: 1,
+       image: image27,
+       text: "Bougie (Adult) ",
+       //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+     },
+   ];
     const cards6 = [           //RUSCH
       {
         id: 1,
@@ -329,6 +340,22 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                 </p>
               </>
             )}
+            {selected === "Portex" && (
+              <>
+                <img
+                  src={Portex}
+                  alt="Portex"
+                  className="h-20 w-80 flex m-10"
+                />
+                <p className="text-center mt-4">
+                  Portex, a brand under ICU Medical, specializes in
+                  manufacturing anesthesia and respiratory care products. Their
+                  offerings include epidural catheters, anesthesia breathing
+                  circuits, and spinal anesthesia trays, all designed to meet
+                  the specific needs of anesthesia departments.
+                </p>
+              </>
+            )}
             {selected === "Rusch" && (
               <>
                 <img src={Rusch} alt="Rusch" className="h-20 w-80 flex m-10" />
@@ -450,6 +477,39 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
               ))}
             {selected === "Aero" &&
               cards3.map((card) => (
+                <a
+                  key={card.id}
+                  href={card.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="no-underline"
+                >
+                  <motion.div
+                    className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <img
+                      src={card.image}
+                      alt={`Card ${card.text}`}
+                      className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
+                    />
+                    <motion.div
+                      className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
+                      initial={{ opacity: 0 }}
+                      whileHover={{ opacity: 1 }}
+                    >
+                      <span className="text-white text-3xl text-center font-bold">
+                        {card.text}
+                      </span>
+                    </motion.div>
+                  </motion.div>
+                  <p className="flex justify-center text-gray-800 text-2xl p-6 text-center font-semibold">
+                    {card.text}
+                  </p>
+                </a>
+              ))}
+            {selected === "Portex" &&
+              cards4.map((card) => (
                 <a
                   key={card.id}
                   href={card.url}
