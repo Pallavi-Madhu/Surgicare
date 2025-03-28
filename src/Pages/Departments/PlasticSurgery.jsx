@@ -36,19 +36,19 @@ const DepartmentPage = ({ name, buttonImages }) => {
       id: 1,
       image: "/Plastic/gplast.png", // Change this to the correct image
       text: "G Plast",
-      url: "",
+      url: "https://surgiwear.co.in/?product_cat=0&s=g+plast&post_type=product",
     },
     {
       id: 2,
       image: "/Plastic/gdress.png", // Change this to the correct image
       text: "G Dress",
-      url: "",
+      url: "https://surgiwear.co.in/product/owntone-g-dress-transparent-adhesive-dressing-with-pad/",
     },
     {
       id: 3,
       image: "/Plastic/burnmesh.png", // Change this to the correct image
       text: "Burn Mesh",
-      url: "",
+      url: "https://surgiwear.co.in/?product_cat=0&s=burn+mesh&post_type=product",
     },
   ];
 
