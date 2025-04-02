@@ -50,14 +50,14 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
         }}
       >
         <div className="mt-40">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-20 p-12 items-center">
+          {/* <div className="grid grid-cols-1 sm:grid-cols-2 gap-20 p-12 items-center">
             <h2 className="text-6xl font-bold text-left flex-1">{name}</h2>
             <img
               src={heart}
               alt={name}
               className="absolute -top-20 -right-4 opacity-70 w-full transform md:-rotate-45 md:w-1/3 rounded-3xl shadow-2xl"
             />
-          </div>
+          </div> */}
 
           {/* Buttons for BL and Insightra */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-6">

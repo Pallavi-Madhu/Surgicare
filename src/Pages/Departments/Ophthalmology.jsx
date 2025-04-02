@@ -21,9 +21,6 @@ const DepartmentPage = ({ name, buttonImages }) => {
 
   return (
     <>
-      <div className="relative bg-none z-50">
-        <Navbar />
-      </div>
       <div
         className="min-h-screen overflow-x-hidden bg-cover bg-fixed bg-center"
         style={{
@@ -32,6 +29,10 @@ const DepartmentPage = ({ name, buttonImages }) => {
           backgroundBlendMode: "overlay",
         }}
       >
+        <div className="relative  z-50">
+          {" "}
+          <Navbar />
+        </div>
         <div className=" relative z-0 mt-20 m-0  lg:mt-40 lg:m-10">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-20 p-12 items-center">
             <h2 className="z-50 text-4xl sm:text-6xl font-bold text-left flex-1">
