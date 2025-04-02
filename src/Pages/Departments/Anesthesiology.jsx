@@ -4,7 +4,6 @@ import Footer from "../../Components/Footer";
 
 import { motion } from "framer-motion";
 
-
 import Cocoon from "../../assets/Cocoon.png";
 import BL from "../../assets/BL Lifsciences.png";
 import Meditech from "../../assets/Meditech.png";
@@ -52,11 +51,23 @@ import image28 from "../../assets/Anastesiology/4blades.jpg";
 
 import image29 from "../../assets/Anastesiology/needle.jpg";
 
+import image30 from "../../assets/Anastesiology/BougieInroducer -Adult.jpeg";
+import image31 from "../../assets/Anastesiology/BougieInroducer -Pediatric,.jpg";
+import image32 from "../../assets/Anastesiology/Adult Ported Introducer.jpeg";
+import image33 from "../../assets/Anastesiology/Pediatric Ported Introducer.webp";
+import image34 from "../../assets/Anastesiology/Neonatal Stylette.webp";
+import image35 from "../../assets/Anastesiology/Pediatric Stylette.avif";
+import image36 from "../../assets/Anastesiology/Adult Stylette.jpg";
+import image37 from "../../assets/Anastesiology/Adult Malleable Introducer.jpg";
+import image38 from "../../assets/Anastesiology/Sterile Adult Al Stylette.jpg";
+import image39 from "../../assets/Anastesiology/Wendl Nasopharyngeal Airways.jpeg";
+
 
 const DepartmentPage = ({ name, image, buttonImages }) => {
   const [selected, setSelected] = useState("BL");
 
-  const cards = [       //BL
+  const cards = [
+    //BL
     {
       id: 1,
       image: image1,
@@ -112,7 +123,8 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
       //url: "https://www.bllifesciences.com/products/interventional-systems/",
     },
   ];
-  const cards1 = [             //VENTICARE
+  const cards1 = [
+    //VENTICARE
     {
       id: 1,
       image: image11,
@@ -126,131 +138,197 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
       //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
     },
   ];
-   const cards2 = [          //COCOON
-     {
-       id: 1,
-       image: image10,
-       text: "Warming Blankets",
-       //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-     },
-   ];
-   const cards3 = [
-     //AERO
-     {
-       id: 1,
-       image: image16,
-       text: "ADULT BAINS CIRCUIT-AERO (2001)",
-       //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-     },
-     {
-       id: 2,
-       image: image17,
-       text: "ADULT BREATHING CIRCUIT-EXPANDABLE (1010-E)",
-       //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-     },
-     {
-       id: 3,
-       image: image18,
-       text: "ADULT BREATHING CIRCUIT EXP.WITH EXTRA LIMB &CONCTR (1010-01-E)",
-       //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-     },
-     {
-       id: 4,
-       image: image19,
-       text: "ADULT BREATHING CIRCUIT-WHITE (REF:1010)",
-       //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-     },
-     {
-       id: 5,
-       image: image20,
-       text: "Adult Double Water Trap Ventilator Circuit (REF:1012)",
-       //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-     },
-     {
-       id: 6,
-       image: image21,
-       text: "BVL FILTER AERO (2010)",
-       //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-     },
+  const cards2 = [
+    //COCOON
+    {
+      id: 1,
+      image: image10,
+      text: "Warming Blankets",
+      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+    },
+  ];
+  const cards3 = [
+    //AERO
+    {
+      id: 1,
+      image: image16,
+      text: "ADULT BAINS CIRCUIT-AERO (2001)",
+      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+    },
+    {
+      id: 2,
+      image: image17,
+      text: "ADULT BREATHING CIRCUIT-EXPANDABLE (1010-E)",
+      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+    },
+    {
+      id: 3,
+      image: image18,
+      text: "ADULT BREATHING CIRCUIT EXP.WITH EXTRA LIMB &CONCTR (1010-01-E)",
+      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+    },
+    {
+      id: 4,
+      image: image19,
+      text: "ADULT BREATHING CIRCUIT-WHITE (REF:1010)",
+      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+    },
+    {
+      id: 5,
+      image: image20,
+      text: "Adult Double Water Trap Ventilator Circuit (REF:1012)",
+      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+    },
+    {
+      id: 6,
+      image: image21,
+      text: "BVL FILTER AERO (2010)",
+      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+    },
 
-     {
-       id: 7,
-       image: image22,
-       text: "CPAP CIRCUIT (SMOOTH BORE TUBING) 1.8 MTR (4000)",
-       //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-     },
-     {
-       id: 8,
-       image: image23,
-       text: "Cpap Circuit with Mask and Harness-Adult",
-       //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-     },
-     {
-       id: 9,
-       image: image24,
-       text: "PAEDIATRIC BAIN CIRCUIT-JACKSON REES (2002)",
-       //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-     },
-     {
-       id: 10,
-       image: image25,
-       text: "PEADIATRIC BREATHING CIRUIT (1020)",
-       //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-     },
-     {
-       id: 11,
-       image: image26,
-       text: "T- CONNECTOR (1500)",
-       //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-     },
-   ];
-   const cards4 = [
-     //PORTEX
-     {
-       id: 1,
-       image: image27,
-       text: "Bougie (Adult) ",
-       //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-     },
-   ];
-    const cards5 = [           //RUSCH
-      {
-        id: 1,
-        image: image13,
-        text: "Bronchial Double Lumen Tube",
-        //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-      },
-      {
-        id: 2,
-        image: image14,
-        text: "Cuff measuring meter for E.T.Tube",
-        //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-      },
-      {
-        id: 3,
-        image: image15,
-        text: "Nasopharyngeal Air way 28,30,34",
-        //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-      },
-    ];
-    const cards6 = [
-      //MEDISAFE
-      {
-        id: 1,
-        image: image28,
-        text: "Laryngoscope with 4 blades -Fiberoptic",
-        //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-      },
-    ];
-     const cards7 = [
-       //SURETECH
-       {
-         id: 1,
-         image: image29,
-         text: "INTRODUCER NEEDLE 18 Gx7CM",
-         //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-       },
-     ];
+    {
+      id: 7,
+      image: image22,
+      text: "CPAP CIRCUIT (SMOOTH BORE TUBING) 1.8 MTR (4000)",
+      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+    },
+    {
+      id: 8,
+      image: image23,
+      text: "Cpap Circuit with Mask and Harness-Adult",
+      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+    },
+    {
+      id: 9,
+      image: image24,
+      text: "PAEDIATRIC BAIN CIRCUIT-JACKSON REES (2002)",
+      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+    },
+    {
+      id: 10,
+      image: image25,
+      text: "PEADIATRIC BREATHING CIRUIT (1020)",
+      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+    },
+    {
+      id: 11,
+      image: image26,
+      text: "T- CONNECTOR (1500)",
+      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+    },
+  ];
+  const cards4 = [
+    //PORTEX
+    {
+      id: 1,
+      image: image27,
+      text: "Bougie (Adult) ",
+      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+    },
+  ];
+  const cards5 = [
+    //RUSCH
+    {
+      id: 1,
+      image: image13,
+      text: "Bronchial Double Lumen Tube",
+      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+    },
+    {
+      id: 2,
+      image: image14,
+      text: "Cuff measuring meter for E.T.Tube",
+      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+    },
+    {
+      id: 3,
+      image: image15,
+      text: "Nasopharyngeal Air way 28,30,34",
+      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+    },
+  ];
+  const cards6 = [
+    //MEDISAFE
+    {
+      id: 1,
+      image: image28,
+      text: "Laryngoscope with 4 blades -Fiberoptic",
+      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+    },
+  ];
+  const cards7 = [
+    //SURETECH
+    {
+      id: 1,
+      image: image29,
+      text: "INTRODUCER NEEDLE 18 Gx7CM",
+      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+    },
+  ];
+  const cards8 = [
+    //MEDITECH
+    {
+      id: 1,
+      image: image30,                                          
+      text: "BougieInroducer -Adult, Coudé Tip-15 FR x 70 cm",
+      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+    },
+    {
+      id: 2,
+      image: image31,
+      text: "BougieInroducer -Pediatric, Coudé Tip-10 FR x 70 cm",
+      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+    },
+    {
+      id: 3,
+      image: image32,
+      text: "Adult Ported Introducer-15 FR x 70 cm",
+      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+    },
+    {
+      id: 4,
+      image: image33,
+      text: "Pediatric Ported Introducer-10 FR x 70 cm",
+      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+    },
+    {
+      id: 5,
+      image: image34,
+      text: "Neonatal Stylette (2.0mm)-6 FR x 255 mm",
+      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+    },
+    {
+      id: 6,
+      image: image35,
+      text: "Pediatric Stylette (3.0mm)-8FR x 300 mm",
+      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+    },
+
+    {
+      id: 7,
+      image: image36,
+      text: "Adult Stylette (4.0mm)-10 FR x 335 mm",
+      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+    },
+    {
+      id: 8,
+      image: image37,
+      text: "Adult Malleable Introducer-15 FR x 70 cm",
+      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+    },
+    {
+      id: 9,
+      image: image38,
+      text: "Sterile Adult Al Stylette-9FR x 16",
+      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+    },
+    {
+      id: 10,
+      image: image25,
+      text: "Wendl Nasopharyngeal Airways (Silicone)12 Fr-  3/4.0mm",
+      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+    },
+  ];
 
   return (
     <>
@@ -670,6 +748,39 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
               ))}
             {selected === "Suretech" &&
               cards7.map((card) => (
+                <a
+                  key={card.id}
+                  href={card.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="no-underline"
+                >
+                  <motion.div
+                    className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <img
+                      src={card.image}
+                      alt={`Card ${card.text}`}
+                      className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
+                    />
+                    <motion.div
+                      className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
+                      initial={{ opacity: 0 }}
+                      whileHover={{ opacity: 1 }}
+                    >
+                      <span className="text-white text-3xl text-center font-bold">
+                        {card.text}
+                      </span>
+                    </motion.div>
+                  </motion.div>
+                  <p className="flex justify-center text-gray-800 text-2xl p-6 text-center font-semibold">
+                    {card.text}
+                  </p>
+                </a>
+              ))}
+            {selected === "Meditech" &&
+              cards8.map((card) => (
                 <a
                   key={card.id}
                   href={card.url}
