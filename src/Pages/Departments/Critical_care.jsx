@@ -36,6 +36,18 @@ const DepartmentPage = ({ name, buttonImages }) => {
         text: "Nasopharyngeal airway",
         url: "",
       },
+      {
+        id: 2,
+        image: "/CriticalCare/bougie.png",
+        text: "Bougie",
+        url: "",
+      },
+      {
+        id: 3,
+        image: "/CriticalCare/stylet.png",
+        text: "Stylet",
+        url: "",
+      },
     ];
   const cards5 = [
     {
@@ -122,64 +134,92 @@ const DepartmentPage = ({ name, buttonImages }) => {
                     <img
                       src={BL}
                       alt="BL Lifesciences"
-                      className="h-20 w-auto m-10"
+                      className="h-40 w-auto m-10"
+                    />
+                  </>
+                )}
+                {selected === "Toray" && (
+                  <>
+                    <img
+                      src={toray}
+                      alt="Toray"
+                      className="h-40 w-auto flex m-10"
                     />
                     <p className="text-center w-3/4 mt-4">
-                      Baxter TISSEEL is a fibrin sealant used in surgical
-                      procedures to control bleeding and support wound healing.
-                      It mimics the body’s natural clotting process by combining
-                      fibrinogen and thrombin to form a stable fibrin clot.
+                      HEMOFEEL CH is a polymethylmethacrylate (PMMA) hemofilter
+                      designed for continuous renal support, offering excellent
+                      biocompatibility and cytokine adsorption. <br />
+                      TORAYMYXI (PMX™) is an extracorporeal hemoperfusion
+                      cartridge that removes endotoxins from the blood, using
+                      polymyxin B-immobilized fibers to treat sepsis and septic
+                      shock caused by Gram-negative bacterial infections.
                     </p>
                   </>
                 )}
-                {selected === "Synkromax" && (
+                {selected === "Meditech" && (
                   <>
                     <img
-                      src={Sunkromax}
-                      alt="Synkromax"
-                      className="h-20 w-80 flex m-10"
+                      src={meditech}
+                      alt="Sinapi"
+                      className="h-30 w-auto flex m-10"
                     />
                     <p className="text-center w-3/4 mt-4">
-                      SynkroMax's Synkroscaff is a tissue-engineered,
-                      decellularized bovine pericardial patch designed for
-                      surgical anatomical repairs.
+                      ​Meditech offers a range of airway management devices,
+                      including bougies, stylets, and nasopharyngeal airways
+                      <br />
+                      Bougies: These single-use, latex-free devices assist in
+                      the placement of endotracheal tubes during challenging
+                      intubations by facilitating positive tracheal location.{" "}
+                      <br />
+                      Stylets: Designed to aid intubation, Meditech's stylets
+                      are malleable, allowing clinicians to shape them as needed
+                      for optimal tube placement.
+                      <br />
+                      Nasopharyngeal Airways: These single-use airways are
+                      blue-colored for easy identification and are intended to
+                      maintain an open airway by inserting through the nasal
+                      passage.
                     </p>
                   </>
                 )}
-                {selected === "Surgiwear" && (
+                {selected === "Cocoon" && (
                   <>
                     <img
-                      src={Surgiwear}
-                      alt="Surgiwear"
-                      className="h-20 w-80 flex m-10"
+                      src={cocoon}
+                      alt="Toray"
+                      className="h-20 w-auto flex m-10"
                     />
                     <p className="text-center w-3/4 mt-4">
-                      Surgiwear's G-Dress is a sterilized adhesive bandage made
-                      from SMS non-woven fabric, featuring a fluid-resistant
-                      middle layer that allows for regular activities like
-                      bathing without compromising the dressing. <br />
-                      G-Plast is Surgiwear's surgical tape, designed to secure
-                      dressings and medical devices to the skin, providing
-                      reliable adhesion while being gentle on the skin. <br />
-                      Finally Burnmesh by Surgiwear is a paraffin gauze dressing
-                      designed to protect burn wounds, minimize pain, and
-                      prevent adherence to the wound.
+                      The Cocoon Convective Patient Warming System helps
+                      maintain patient normothermia using a
+                      microprocessor-controlled warming unit and specialized
+                      blankets. It ensures uniform heat distribution, is
+                      lightweight, and meets FDA, CE, and TGA standards for
+                      safety.
+                    </p>
+                  </>
+                )}
+                {selected === "HICO" && (
+                  <>
+                    <img
+                      src={hico}
+                      alt="Toray"
+                      className="h-40 w-auto flex m-10"
+                    />
+                    <p className="text-center w-3/4 mt-4">
+                      ​HICO offers a range of patient temperature management
+                      devices designed to prevent hypothermia and maintain
+                      normothermia during medical procedures
                     </p>
                   </>
                 )}
               </div>
 
               {/* Hover Cards (Conditionally Rendered) */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 my-20 gap-6 p-10">
+              <div className="grid grid-cols-1 sm:grid-cols-2 sm:mt-20 sm:mb-20 lg:grid-cols-3 my-20 gap-28 sm:m-4 sm:gap-20 m-10 lg:p-20">
                 {selected === "HICO" &&
                   cards6.map((card) => (
-                    <a
-                      key={card.id}
-                      href={card.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="no-underline"
-                    >
+                    <a key={card.id} href={card.url} className="no-underline">
                       <motion.div
                         className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
                         whileHover={{ scale: 1.05 }}
@@ -207,13 +247,7 @@ const DepartmentPage = ({ name, buttonImages }) => {
 
                 {selected === "Toray" &&
                   cards3.map((card) => (
-                    <a
-                      key={card.id}
-                      href={card.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="no-underline"
-                    >
+                    <a key={card.id} href={card.url} className="no-underline">
                       <motion.div
                         className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
                         whileHover={{ scale: 1.05 }}
@@ -233,20 +267,14 @@ const DepartmentPage = ({ name, buttonImages }) => {
                           </span>
                         </motion.div>
                       </motion.div>
-                      <p className="flex justify-center text-gray-800 text-2xl p-6 text-center font-semibold">
+                      <p className="flex justify-start text-gray-800 text-2xl p-6 text-center font-semibold">
                         {card.text}
                       </p>
                     </a>
                   ))}
                 {selected === "Cocoon" &&
                   cards5.map((card) => (
-                    <a
-                      key={card.id}
-                      href={card.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="no-underline"
-                    >
+                    <a key={card.id} href={card.url} className="no-underline">
                       <motion.div
                         className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
                         whileHover={{ scale: 1.05 }}
@@ -273,13 +301,7 @@ const DepartmentPage = ({ name, buttonImages }) => {
                   ))}
                 {selected === "Meditech" &&
                   cards4.map((card) => (
-                    <a
-                      key={card.id}
-                      href={card.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="no-underline"
-                    >
+                    <a key={card.id} href={card.url} className="no-underline">
                       <motion.div
                         className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
                         whileHover={{ scale: 1.05 }}
@@ -307,6 +329,78 @@ const DepartmentPage = ({ name, buttonImages }) => {
               </div>
             </div>
           </div>
+          {/* conditionally rendered read more */}
+          {selected === "BL" && (
+            <>
+              <a
+                href="https://www.bllifesciences.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex justify-center "
+              >
+                <button className=" hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 my-20 rounded-3xl border font-bold hover:border-black border-blue-700">
+                  Read More
+                </button>
+              </a>
+            </>
+          )}
+
+          {selected === "Toray" && (
+            <>
+              <a
+                href="https://www.toray.com/global/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex justify-center "
+              >
+                <button className=" hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700">
+                  Read More
+                </button>
+              </a>
+            </>
+          )}
+          {selected === "Meditech" && (
+            <>
+              <a
+                href="https://meditechintl.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex justify-center "
+              >
+                <button className=" hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700">
+                  Read More
+                </button>
+              </a>
+            </>
+          )}
+          {selected === "Cocoon" && (
+            <>
+              <a
+                href="https://www.minogue-med.com/product/cocoon-convective-patient-warming-system/?utm_source=chatgpt.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex justify-center "
+              >
+                <button className=" hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700">
+                  Read More
+                </button>
+              </a>
+            </>
+          )}
+          {selected === "HICO" && (
+            <>
+              <a
+                href="https://www.hico.de/en/hico.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex justify-center "
+              >
+                <button className=" hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700">
+                  Read More
+                </button>
+              </a>
+            </>
+          )}
         </div>
         <DepNav />
         <Footer />
