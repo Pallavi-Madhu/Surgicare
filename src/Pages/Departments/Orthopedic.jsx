@@ -193,7 +193,7 @@ export default function Orthopedic() {
 return (
     <Departments
       name="ORTHOPEDIC"
-      image="/src/assets/Mizuho.png"
+      //image="/src/assets/Mizuho.png"
       buttonImages={buttonImages}
     />
   );
