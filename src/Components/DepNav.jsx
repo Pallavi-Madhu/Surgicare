@@ -18,8 +18,14 @@ const handlePrev = () => {
 };
 
 const handleNavigate = () => {
+  console.log("Navigating to:", `/${departments[currentIndex].id}`);
   navigate(`/${departments[currentIndex].id}`);
 };
+
+
+// const handleNavigate = () => {
+//   navigate(`/${departments[currentIndex].id}`);
+// };
 return (
   <>
     {/* Department Navigation (Just Above Footer) */}
