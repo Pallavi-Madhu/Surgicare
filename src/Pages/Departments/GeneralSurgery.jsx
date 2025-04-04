@@ -7,7 +7,15 @@ import BL from "../../assets/BL Lifsciences.png";
 import Scanlan from "../../assets/Scanlan.png";
 import Sinapi from "../../assets/Sinapi.png";
 import Peters from "../../assets/Peters.png";
-//Products-Halyard
+//Products-Sinapi
+import chestdrain from "../../assets/GeneralSurgery/Sinapi/chest_drain.jpg";
+
+//Products-Scanlan
+import clamp from "../../assets/GeneralSurgery/Scanlan/clamp.png";
+import instrument_care from "../../assets/GeneralSurgery/Scanlan/instrument_care.jpg";
+import skinmarker from "../../assets/GeneralSurgery/Scanlan/skinmarker.jpg";
+import surgiloop from "../../assets/GeneralSurgery/Scanlan/surgiloop.jpg";
+
 import drapes from "../../assets/Orthopedic/Halyard/drapes.jpg";
 import gowns from "../../assets/Orthopedic/Halyard/gowns.jpeg";
 import masks from "../../assets/Orthopedic/Halyard/masks.jpg";
@@ -39,35 +47,30 @@ const Departments = ({ name, image, buttonImages }) => {
   const ScanlanCards = [
     {
       id: 1,
-      image: GBone,
-      text: "G Bone",
+      image: clamp,
+      text: "BULL DOG CLAMP",
     },
     {
       id: 2,
-      image: GDress,
-      text: "G Dress",
+      image: skinmarker,
+      text: "Skin Marker",
     },
     {
       id: 3,
-      image: GPatch,
-      text: "G Patch",
+      image: instrument_care,
+      text: "Instrument marker ( All colors are available)",
     },
+    {
+      id:4,
+      image: surgiloop,
+      text:"Surgi loop with blend needle"
+    }
   ];
   const SinapiCards = [
     {
-      id: "drapes",
-      image: drapes,
-      text: "Surgical Drapes",
-    },
-    {
-      id: "gowns",
-      image: gowns,
-      text: "Surgical Gowns",
-    },
-    {
-      id: "masks",
-      image: masks,
-      text: "Surgical Masks",
+      id: "1",
+      image: chestdrain,
+      text: "CHEST DRAIN SINAPI  1000ml",
     },
   ];
   const PetersCards = [
@@ -135,9 +138,7 @@ const Departments = ({ name, image, buttonImages }) => {
                 surgical instruments, specializing in cardiovascular,
                 microsurgical, and general surgical tools. Founded in 1921, the
                 company is known for precision craftsmanship and innovation in
-                medical device manufacturing. Scanlan products are used by
-                surgeons worldwide for their durability, reliability, and
-                ergonomic design.
+                medical device manufacturing.
               </p>
             </>
           )}
