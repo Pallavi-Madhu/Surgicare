@@ -24,6 +24,8 @@ import GBone from "../../assets/Orthopedic/Surgiwear/GBone.webp";
 import GDress from "../../assets/Orthopedic/Surgiwear/GDress.jpg";
 import GPatch from "../../assets/Orthopedic/Surgiwear/GPatch.jpg";
 
+import bg from "../../assets/depBG.png";
+
 const Departments = ({ name, image, buttonImages }) => {
   const [selected, setSelected] = useState("Bl");
 
@@ -94,6 +96,14 @@ const Departments = ({ name, image, buttonImages }) => {
   return (
     <>
       <Navbar />
+      <div
+              className="min-h-screen overflow-x-hidden bg-cover bg-fixed bg-center"
+              style={{
+                backgroundImage: `url(${bg})`,
+                backgroundColor: "rgba(255, 255, 255, 0)",
+                backgroundBlendMode: "overlay",
+              }}
+            >
       {/* Pulmonology Page Content */}
       <div className="mt-40">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-20 p-12 items-center">
@@ -313,6 +323,7 @@ const Departments = ({ name, image, buttonImages }) => {
 
       <DepNav />
       <Footer />
+      </div>
     </>
   );
 };
