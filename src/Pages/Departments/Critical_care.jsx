@@ -40,7 +40,7 @@ const DepartmentPage = ({ name, buttonImages }) => {
         id: 2,
         image: "/CriticalCare/bougie.png",
         text: "Bougie",
-        url: "",
+        url: "https://www.meditechsystems.co.uk/product/bougie-coude-tip-introducers/",
       },
       {
         id: 3,
@@ -159,8 +159,8 @@ const DepartmentPage = ({ name, buttonImages }) => {
                 {selected === "Meditech" && (
                   <>
                     <img
-                      src={meditech}
-                      alt="Sinapi"
+                      src="/CriticalCare/meditech.png"
+                      alt="meditech"
                       className="h-30 w-auto flex m-10"
                     />
                     <p className="text-center w-3/4 mt-4">
@@ -321,9 +321,9 @@ const DepartmentPage = ({ name, buttonImages }) => {
                           </span>
                         </motion.div>
                       </motion.div>
-                      <div className="absolute inset-0 flex items-center justify-center bg-blue-500 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
+                      <p className="flex justify-center text-gray-800 text-2xl p-6 text-center font-semibold">
                         {card.text}
-                      </div>
+                      </p>
                     </a>
                   ))}
               </div>
@@ -414,7 +414,7 @@ export default function CriticalCare() {
     { id: "BL", src: BL, alt: "BL Lifesciences" },
     { id: "Sinapi", src: sinapi, alt: "Sinapi" },
     { id: "Toray", src: toray, alt: "Toray" },
-    { id: "Meditech", src: meditech, alt: "Meditech devices" },
+    { id: "Meditech", src: "/CriticalCare/meditech.png", alt: "Meditech devices" },
     { id: "Cocoon", src: cocoon, alt: "Cocoon" },
     { id: "HICO", src: hico, alt: "HICO" },
   ];
