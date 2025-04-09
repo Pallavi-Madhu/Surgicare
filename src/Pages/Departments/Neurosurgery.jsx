@@ -447,7 +447,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
       {selected === "Syncromax" && (
         <>
           <a
-            href="https://insightra.com/"
+            href="https://insightra.com/" 
             target="_blank"
             rel="noopener noreferrer"
             className="flex justify-center "
