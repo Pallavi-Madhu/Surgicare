@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import Navbar from "../../Components/Navbar";
 import Footer from "../../Components/Footer";
-import DepNav from "../../Components/DepNav"; 
+import DepNav from "../../Components/DepNav";
+
 //companies
 import BL from "../../assets/BL Lifsciences.png";
 import Scanlan from "../../assets/Scanlan.png";
 import Sinapi from "../../assets/Sinapi.png";
 import Peters from "../../assets/Peters.png";
+
 //Products-Sinapi
 import chestdrain from "../../assets/GeneralSurgery/Sinapi/chest_drain.jpg";
 
@@ -16,34 +18,70 @@ import instrument_care from "../../assets/GeneralSurgery/Scanlan/instrument_care
 import skinmarker from "../../assets/GeneralSurgery/Scanlan/skinmarker.jpg";
 import surgiloop from "../../assets/GeneralSurgery/Scanlan/surgiloop.jpg";
 
-import drapes from "../../assets/Orthopedic/Halyard/drapes.jpg";
-import gowns from "../../assets/Orthopedic/Halyard/gowns.jpeg";
-import masks from "../../assets/Orthopedic/Halyard/masks.jpg";
-//Products-Surgiwear
-import GBone from "../../assets/Orthopedic/Surgiwear/GBone.webp";
-import GDress from "../../assets/Orthopedic/Surgiwear/GDress.jpg";
-import GPatch from "../../assets/Orthopedic/Surgiwear/GPatch.jpg";
+//Products-Peters
+import clips from "../../assets/GeneralSurgery/Peters/clips.jpg";
+
+//Products-BL
+import thoracic1 from "../../assets/GeneralSurgery/Bl/thoracic1.jpeg";
+import thoracic2 from "../../assets/GeneralSurgery/Bl/thoracic2.jpg";
+import chest1000ml from "../../assets/GeneralSurgery/Bl/chest1000ml.webp";
+import suctionset from "../../assets/GeneralSurgery/Bl/suctionset.jpg";
+import tipcleaner from "../../assets/GeneralSurgery/Bl/tipcleaner.webp";
+import tipcleaner2_actual from "../../assets/GeneralSurgery/Bl/tipcleaner2_actual.webp";
+import mister2 from "../../assets/GeneralSurgery/Bl/mister2.jpg";        
+import surgiloop2 from "../../assets/GeneralSurgery/Bl/surgiloop.webp";
+import cannula from "../../assets/GeneralSurgery/Bl/cannula.png";
 
 import bg from "../../assets/depBG.png";
 
 const Departments = ({ name, image, buttonImages }) => {
   const [selected, setSelected] = useState("Bl");
 
-  const BlCards = [
+  const BLCards = [
     {
-      id: "drapes",
-      image: drapes,
-      text: "Surgical Drapes",
+      id: "1",
+      image: thoracic1,
+      text: "THORACIC DRAINAGE CATHETER 12,20,24,28,32FR",
     },
     {
-      id: "gowns",
-      image: gowns,
-      text: "Surgical Gowns",
+      id: "2",
+      image: thoracic2,
+      text: "THORACIC DRAINAGE CATHETER 24,28,32,36'FR ANGLED",
     },
     {
-      id: "masks",
-      image: masks,
-      text: "Surgical Masks",
+      id: "3",
+      image: chest1000ml,
+      text: "CHEST DRAIN.SYSTEM-2000ML",
+    },
+    {
+      id: "4",
+      image: suctionset,
+      text: "YANKUR SUCTION SET.- STANDARD TIP",
+    },
+    {
+      id: "5",
+      image: tipcleaner,
+      text: "CAUTERY TIP CLEANER",
+    },
+    {
+      id: "6",
+      image: tipcleaner2_actual,
+      text: "CAUTERY TIP  PENCIL WITH CLEANER ",
+    },
+    {
+      id: "7",
+      image: mister2,
+      image: "CARDIAC MISTER BLOWER WITH EXTENSION",
+    },
+    {
+      id: "8",
+      image: surgiloop2,
+      text: "Surgi I Loop Mini/Maxi ( Yellow/Blue/Red/White)",
+    },
+    {
+      id: "9",
+      image: cannula,
+      text: "Vessel Cannula Transparant Flexible 5C",
     },
   ];
   const ScanlanCards = [
@@ -63,10 +101,10 @@ const Departments = ({ name, image, buttonImages }) => {
       text: "Instrument marker ( All colors are available)",
     },
     {
-      id:4,
+      id: 4,
       image: surgiloop,
-      text:"Surgi loop with blend needle"
-    }
+      text: "Surgi loop with blend needle",
+    },
   ];
   const SinapiCards = [
     {
@@ -78,18 +116,8 @@ const Departments = ({ name, image, buttonImages }) => {
   const PetersCards = [
     {
       id: 1,
-      image: GBone,
-      text: "G Bone",
-    },
-    {
-      id: 2,
-      image: GDress,
-      text: "G Dress",
-    },
-    {
-      id: 3,
-      image: GPatch,
-      text: "G Patch",
+      image: clips,
+      text: "S L S Clips, small, medium & Large",
     },
   ];
 
@@ -107,7 +135,9 @@ const Departments = ({ name, image, buttonImages }) => {
       {/* Pulmonology Page Content */}
       <div className="mt-40">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-20 p-12 items-center">
-          <h2 className="text-6xl font-bold text-left flex-1">General Surgery</h2>
+          <h2 className="text-6xl font-bold text-left flex-1">
+            General Surgery
+          </h2>
         </div>
 
         {/* Buttons */}
@@ -127,7 +157,7 @@ const Departments = ({ name, image, buttonImages }) => {
 
         {/* Company Details */}
         <div className="flex flex-col justify-center items-center mt-6">
-          {selected === "BL Lifesciences" && (
+          {selected === "BL" && (
             <>
               <img src={BL} alt="BL" className="h-40 w-auto" />
               <p className="text-center mt-4">
@@ -189,7 +219,7 @@ const Departments = ({ name, image, buttonImages }) => {
         <div className="container mx-auto my-10 px-4 py-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-20 place-items-center">
             {selected === "BL" &&
-              BlCards.map((card) => (
+              BLCards.map((card) => (
                 <div
                   key={card.id}
                   className="relative group w-60 h-60 bg-gray-200 rounded-xl overflow-hidden shadow-lg"
@@ -329,7 +359,7 @@ const Departments = ({ name, image, buttonImages }) => {
 };
 export default function GeneralSurgery() {
   const buttonImages = [
-    { id: "Bl", src: BL, alt: "Bl" },
+    { id: "BL", src: BL, alt: "BL" },
     { id: "Scanlan", src: Scanlan, alt: "Scanlan" },
     { id: "Sinapi", src: Sinapi, alt: "Sinapi" },
     { id: "Peters", src: Peters, alt: "Peters" },
