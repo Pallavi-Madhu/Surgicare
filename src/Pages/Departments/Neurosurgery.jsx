@@ -14,23 +14,28 @@ import Syncromax from "../../assets/Syncromax.png";
 import Cocoon from "../../assets/Cocoon.png";
 import BL from "../../assets/BL Lifsciences.png";
 
-import bg from "../../assets/depBG.png"; // Keeping the background image as you requested
+import bg from "../../assets/depBG.png"; 
 
 //product images-Mizuho
 import clips from "../../assets/Neuro/Mizuho/image.png";
 import headholder from "../../assets/Neuro/Mizuho/headholder.webp";
 import dopplersystem from "../../assets/Neuro/Mizuho/DopplerSystems.webp";
+
 //product images-Kinamed
 import screws from "../../assets/Neuro/Kinamed/NeuroProLowProfileRigidFixationSystem.webp";
 import screws2 from "../../assets/Neuro/Kinamed/NeuroProRigidFixationSystem.webp";
+
 //product images Baxter
 import floseal from "../../assets/Neuro/Baxter/floseal.jpg";
 import hemopatch from "../../assets/Neuro/Baxter/hemopatch.webp";
 import tiseel from "../../assets/Neuro/Baxter/Tisseel.webp";
+
 //product images Sunoptic
 import light from "../../assets/Neuro/Sunoptic/light.jpg";
+
 //product images Syncromax
 import bovinepatch from "../../assets/Neuro/Syncromax/bovinepatch.jpg";
+
 //product images Cocoon
 import warmer from "../../assets/Neuro/Cocoon/warming.png";
 import blanket from "../../assets/Neuro/Cocoon/blanket.jpg";
