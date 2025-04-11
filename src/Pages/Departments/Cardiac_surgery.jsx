@@ -7,7 +7,7 @@ import DepNav from "../../Components/DepNav";
 import Euroset from "../../assets/Euroset.png";
 import BL from "../../assets/BL Lifsciences.png";
 import Baxter from "../../assets/Baxter.png";
-import Syncromax from "../../assets/Syncromax.png";
+import Synkromax from "../../assets/Syncromax.png";
 import Terumo from "../../assets/Terumo.png";
 import Scanlan from "../../assets/Scanlan.png";
 import Sinapi from "../../assets/Sinapi.png";
@@ -355,7 +355,9 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
   ];
 
   const SynkromaxCards = [
-    { id: 1, image: bovinepatch, text: "Bovine pericardial patch" },
+    { id: 1,
+      image: bovinepatch,
+      text: "Bovine pericardial patch" },
   ];
 
   const TerumoCards = [
@@ -633,7 +635,6 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                     </div>
                   </div>
                 ))}
-                
 
               {selected === "Baxter" &&
                 BaxterCards.map((card) => (
@@ -652,7 +653,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                   </div>
                 ))}
 
-              {selected === "Synnkromax" &&
+              {selected === "Synkromax" &&
                 SynkromaxCards.map((card) => (
                   <div
                     key={card.id}
@@ -755,23 +756,6 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                   </div>
                 ))}
 
-              {selected === "Insightra" &&
-                InsightraCards.map((card) => (
-                  <div
-                    key={card.id}
-                    className="relative group h-60 w-60 bg-gray-200 rounded-xl overflow-hidden shadow-lg"
-                  >
-                    <img
-                      src={card.image}
-                      alt={`Card ${card.id}`}
-                      className="h-60 w-full object-cover transition-opacity duration-300 group-hover:opacity-0"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center bg-red-500 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
-                      {card.text}
-                    </div>
-                  </div>
-                ))}
-
               {selected === "LSI" &&
                 LSICards.map((card) => (
                   <div
@@ -834,7 +818,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
               </a>
             </>
           )}
-          {selected === "Syncromax" && (
+          {selected === "SynKromax" && (
             <>
               <a
                 href="https://insightra.com/" //not correct
@@ -951,7 +935,7 @@ export default function Cardiac_surgery() {
     { id: "Euroset", src: Euroset, alt: "Euroset" },
     { id: "BL", src: BL, alt: "BL Lifesciences" },
     { id: "Baxter", src: Baxter, alt: "Baxter" },
-    { id: "Syncromax", src: Syncromax, alt: "Syncromax" },
+    { id: "Synkromax", src: Synkromax, alt: "Synkromax" },
     { id: "Terumo", src: Terumo, alt: "Terumo" },
     { id: "Scanlan", src: Scanlan, alt: "Scanlan" },
     { id: "Sinapi", src: Sinapi, alt: "Sinapi" },
