@@ -324,7 +324,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
     },
     {
       id: 10,
-      image: image25,
+      image: image39,
       text: "Wendl Nasopharyngeal Airways (Silicone)12 Fr-  3/4.0mm",
       //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
     },
