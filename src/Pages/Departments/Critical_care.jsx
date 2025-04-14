@@ -118,8 +118,8 @@ const DepartmentPage = ({ name, buttonImages }) => {
                   <button
                     key={id}
                     onClick={() => setSelected(id)}
-                    className={`p-4 rounded-3xl text-white w-full h-14 border flex justify-center items-center border-black ${
-                      selected === id ? "bg-blue-300" : "bg-white"
+                    className={`p-4 rounded-full text-white w-3/4 mx-4 h-14 border flex justify-center items-center  ${
+                      selected === id ? "bg-blue-600" : "bg-blue-300"
                     }`}
                   >
                     <img src={src} alt={alt} className="h-12 w-auto" />
@@ -169,7 +169,7 @@ const DepartmentPage = ({ name, buttonImages }) => {
                       <br />
                       Bougies: These single-use, latex-free devices assist in
                       the placement of endotracheal tubes during challenging
-                      intubations by facilitating positive tracheal location.{" "}
+                      intubations by facilitating positive tracheal location.
                       <br />
                       Stylets: Designed to aid intubation, Meditech's stylets
                       are malleable, allowing clinicians to shape them as needed
