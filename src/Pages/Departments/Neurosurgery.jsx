@@ -128,8 +128,8 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
               <button
                 key={id}
                 onClick={() => setSelected(id)}
-                className={`p-4 rounded-3xl text-white w-full h-14 border flex justify-center items-center ${
-                  selected === id ? "bg-blue-500" : "bg-gray-300"
+                className={`p-4 rounded-full text-white w-3/4 h-14 border flex justify-center items-center ${
+                  selected === id ? "bg-blue-600" : "bg-blue-300"
                 }`}
               >
                 <img src={src} alt={alt} className="h-12 w-auto" />
