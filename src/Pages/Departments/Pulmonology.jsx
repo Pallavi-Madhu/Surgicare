@@ -19,10 +19,11 @@ const departments = [
   { id: "anesthesiology", name: "Anesthesiology" },
 ];
 
-const Card = {
+const cards = {
   id: 1,
   image: chestdrain, 
   text: "Chest Drainage System 50ml,400ml,1000ml",
+  url:"https://sinapibiomedical.com/"
 };
 
 export default function Pulmonology() {
@@ -57,14 +58,16 @@ export default function Pulmonology() {
         {/* Card */}
         <div className="flex justify-center mt-10">
           <div className="relative group h-100  bg-gray-200 rounded-xl overflow-hidden shadow-lg border border-gray-300 mx-auto">
+            <a key={cards.id} href={cards.url} className="no-underline">
             <img
-              src={Card.image}
-              alt={Card.text}
+              src={cards.image}
+              alt={cards.text}
               className="h-full w-full object-cover object-center transition-opacity duration-300 group-hover:opacity-50"
             />
             <div className="absolute inset-0 flex items-center justify-center bg-blue-500 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
-              {Card.text}
+              {cards.text}
             </div>
+          </a>
           </div>
         </div>
 

@@ -42,46 +42,54 @@ const Departments = ({ name, image, buttonImages }) => {
       id: "1",
       image: thoracic1,
       text: "THORACIC DRAINAGE CATHETER 12,20,24,28,32FR",
+      url:"https://www.bllifesciences.com/products/surgical-innovations/"
     },
     {
       id: "2",
       image: thoracic2,
       text: "THORACIC DRAINAGE CATHETER 24,28,32,36'FR ANGLED",
+      url:"https://www.bllifesciences.com/products/surgical-innovations/"
     },
     {
       id: "3",
       image: chest1000ml,
       text: "CHEST DRAIN.SYSTEM-2000ML",
+      url:"https://sinapibiomedical.com/"
     },
     {
       id: "4",
       image: suctionset,
       text: "YANKUR SUCTION SET.- STANDARD TIP",
+      url:"https://www.bllifesciences.com/products/surgical-innovations/"
     },
     {
       id: "5",
       image: tipcleaner,
       text: "CAUTERY TIP CLEANER",
+      url:"https://www.bllifesciences.com/products/surgical-innovations/"
     },
     {
       id: "6",
       image: tipcleaner2_actual,
       text: "CAUTERY TIP  PENCIL WITH CLEANER ",
+      url:"https://www.bllifesciences.com/products/surgical-innovations/"
     },
     {
       id: "7",
       image: mister2,
       image: "CARDIAC MISTER BLOWER WITH EXTENSION",
+      url:"https://www.bllifesciences.com/products/customised-perfusion-system/"
     },
     {
       id: "8",
       image: surgiloop2,
       text: "Surgi I Loop Mini/Maxi ( Yellow/Blue/Red/White)",
+      url:"https://www.minogue-med.com/product/aspen-surgical-vessel-loops-maxi-blue/"
     },
     {
       id: "9",
       image: cannula,
-      text: "Vessel Cannula Transparant Flexible 5C",
+      text: "Vessel Cannula Transparant Flexible 5C",  //could  not find link
     },
   ];
   const ScanlanCards = [
@@ -89,21 +97,25 @@ const Departments = ({ name, image, buttonImages }) => {
       id: 1,
       image: clamp,
       text: "BULL DOG CLAMP",
+      url:"https://www.scanlaninternational.com/product-category/instrumentation/clamps/"
     },
     {
       id: 2,
       image: skinmarker,
       text: "Skin Marker",
+      url:"https://www.scanlaninternational.com/products/1001-710/"
     },
     {
       id: 3,
       image: instrument_care,
       text: "Instrument marker ( All colors are available)",
+      url:"https://www.scanlaninternational.com/scanlan-products/instrument-care/"
     },
     {
       id: 4,
       image: surgiloop,
       text: "Surgi loop with blend needle",
+      url:"https://www.scanlaninternational.com/products/1001-81p/"
     },
   ];
   const SinapiCards = [
@@ -111,6 +123,7 @@ const Departments = ({ name, image, buttonImages }) => {
       id: "1",
       image: chestdrain,
       text: "CHEST DRAIN SINAPI  1000ml",
+      url:"https://sinapibiomedical.com/"
     },
   ];
   const PetersCards = [
@@ -118,6 +131,7 @@ const Departments = ({ name, image, buttonImages }) => {
       id: 1,
       image: clips,
       text: "S L S Clips, small, medium & Large",
+      url:"https://peters-surgical.com/wp-content/uploads/sites/4/2023/05/SLS-Titanium-clips-brochure.pdf"
     },
   ];
 
@@ -220,6 +234,7 @@ const Departments = ({ name, image, buttonImages }) => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-20 place-items-center">
             {selected === "BL" &&
               BLCards.map((card) => (
+                <a href={card.url}>
                 <div
                   key={card.id}
                   className="relative group w-60 h-60 bg-gray-200 rounded-xl overflow-hidden shadow-lg"
@@ -234,10 +249,12 @@ const Departments = ({ name, image, buttonImages }) => {
                     {card.text}
                   </div>
                 </div>
+              </a>
               ))}
 
             {selected === "Scanlan" &&
               ScanlanCards.map((card) => (
+                <a href={card.url}>
                 <div
                   key={card.id}
                   className="relative group h-60 w-60 bg-gray-200 rounded-xl overflow-hidden shadow-lg"
@@ -251,10 +268,12 @@ const Departments = ({ name, image, buttonImages }) => {
                     {card.text}
                   </div>
                 </div>
+                </a>
               ))}
 
             {selected === "Sinapi" &&
               SinapiCards.map((card) => (
+                <a href={card.url}>
                 <div
                   key={card.id}
                   className="relative group h-60 w-60 bg-gray-200 rounded-xl overflow-hidden shadow-lg"
@@ -268,10 +287,12 @@ const Departments = ({ name, image, buttonImages }) => {
                     {card.text}
                   </div>
                 </div>
+                </a>
               ))}
 
             {selected === "Peters" &&
               PetersCards.map((card) => (
+                <a href={card.url}>
                 <div
                   key={card.id}
                   className="relative group h-60 w-60 bg-gray-200 rounded-xl overflow-hidden shadow-lg"
@@ -285,6 +306,7 @@ const Departments = ({ name, image, buttonImages }) => {
                     {card.text}
                   </div>
                 </div>
+                </a>
               ))}
           </div>
         </div>
