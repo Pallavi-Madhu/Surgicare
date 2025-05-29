@@ -4,7 +4,7 @@ import Footer from "../../Components/Footer";
 import DepNav from "../../Components/DepNav";
 
 //companies
-import BL from "../../assets/BL Lifsciences.png";
+import BL from "../../assets/BLLifsciences.png";
 import Scanlan from "../../assets/Scanlan.png";
 import Sinapi from "../../assets/Sinapi.png";
 import Peters from "../../assets/Peters.png";

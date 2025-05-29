@@ -1,4 +1,4 @@
-import image1 from "../assets/BL LifSciences.png";
+import image1 from "../assets/BLLifsciences.png";
 import image2 from "../assets/Baxter.png";
 import image3 from "../assets/Scanlan.png";
 import image4 from "../assets/Terumo.png";

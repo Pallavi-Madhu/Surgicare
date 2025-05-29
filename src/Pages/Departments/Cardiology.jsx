@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "../../Components/Navbar";
 import Footer from "../../Components/Footer";
-import BL from "../../assets/BL Lifsciences.png";
+import BL from "../../assets/BLLifsciences.png";
 
 import { motion } from "framer-motion";
 

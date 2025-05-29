@@ -12,7 +12,7 @@ import Halyard from "../../assets/Halyard.png";
 import Sunoptic from "../../assets/Sunoptic.png";
 import Syncromax from "../../assets/Syncromax.png";
 import Cocoon from "../../assets/Cocoon.png";
-import BL from "../../assets/BL Lifsciences.png";
+import BL from "../../assets/BLLifsciences.png";
 
 import bg from "../../assets/depBG.png"; 
 

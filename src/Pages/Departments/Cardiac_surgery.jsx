@@ -5,7 +5,7 @@ import DepNav from "../../Components/DepNav";
 
 //import company logo
 import Euroset from "../../assets/Euroset.png";
-import BL from "../../assets/BL Lifsciences.png";
+import BL from "../../assets/BLLifsciences.png";
 import Baxter from "../../assets/Baxter.png";
 import Synkromax from "../../assets/Syncromax.png";
 import Terumo from "../../assets/Terumo.png";

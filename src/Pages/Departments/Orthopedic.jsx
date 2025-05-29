@@ -11,7 +11,7 @@ import masks from "../../assets/Orthopedic/Halyard/masks.jpg";
 //Products-Surgiwear
 import GBone from "../../assets/Orthopedic/Surgiwear/GBone.webp";
 import GDress from "../../assets/Orthopedic/Surgiwear/GDress.jpg";
-import GPatch from "../../assets/Orthopedic/Surgiwear/GPatch.jpg";
+//import GPatch from "../assets/Orthopedic/Surgiwear/GPatch.jpg";
 
 const Departments = ({ name, image, buttonImages }) => {
   const [selected, setSelected] = useState("Halyard");

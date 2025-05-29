@@ -6,7 +6,7 @@ import bg from "../../assets/depBG.png";
 import { motion } from "framer-motion";
 
 import Cocoon from "../../assets/Cocoon.png";
-import BL from "../../assets/BL Lifsciences.png";
+import BL from "../../assets/BLLifsciences.png";
 import Meditech from "../../assets/Meditech.png";
 import Aero from "../../assets/Aero.png";
 import Rusch from "../../assets/Rusch.png";

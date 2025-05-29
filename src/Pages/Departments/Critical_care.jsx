@@ -3,7 +3,7 @@ import Navbar from "../../Components/Navbar";
 import Footer from "../../Components/Footer";
 import DepNav from "../../Components/DepNav";
 import bg from "../../assets/depBG.png";
-import BL from "../../assets/BL Lifsciences.png";
+import BL from "../../assets/BLLifsciences.png";
 import sinapi from "../../assets/Sinapi.png";
 import toray from "../../assets/Toray.png";
 import meditech from "../../assets/Meditech.png";
