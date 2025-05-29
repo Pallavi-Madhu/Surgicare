@@ -11,7 +11,8 @@ import masks from "../../assets/Orthopedic/Halyard/masks.jpg";
 //Products-Surgiwear
 import GBone from "../../assets/Orthopedic/Surgiwear/GBone.webp";
 import GDress from "../../assets/Orthopedic/Surgiwear/GDress.jpg";
-//import GPatch from "../assets/Orthopedic/Surgiwear/GPatch.jpg";
+import GPatch from "../../assets/Orthopedic/Surgiwear/GPatchFinal.png"
+
 
 const Departments = ({ name, image, buttonImages }) => {
   const [selected, setSelected] = useState("Halyard");
@@ -21,16 +22,19 @@ const halyardCards = [
     id: "drapes",
     image: drapes,
     text: "Surgical Drapes",
+    url:"https://products.halyardhealth.com/products/surgical-solutions/surgical-drapes"
   },
   {
     id: "gowns",
     image: gowns,
     text: "Surgical Gowns",
+    url:"https://products.halyardhealth.com/products/surgical-solutions/surgical-gowns"
   },
   {
     id: "masks",
     image: masks,
     text: "Surgical Masks",
+    url:"https://products.halyardhealth.com/products/personal-protection/facial-respiratory-protection/medical-surgical-masks"
   },
 ];
 const surgiwearCards = [
@@ -38,23 +42,26 @@ const surgiwearCards = [
     id: 1,
     image: GBone,
     text: "G Bone",
+    url:"https://surgiwear.co.in/product-category/orthopaedics/implants-orthopaedics/g-bone-modified-hydroxyapatite/"
   },
   {
     id: 2,
     image: GDress,
     text: "G Dress",
+    url:"https://surgiwear.co.in/product-category/orthopaedics/disposable-orthopaedics/g-dress-disposable-orthopaedics/"
   },
   {
     id: 3,
     image: GPatch,
     text: "G Patch",
-  },
+    url:"https://surgiwear.co.in/product-category/orthopaedics/implants-orthopaedics/g-patch-implants-orthopaedics/"
+  }, 
 ];
 
   return (
     <>
       <Navbar />
-      {/* Pulmonology Page Content */}
+      {/* Orthopedic Page Content */}
       <div className="mt-40">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-20 p-12 items-center">
           <h2 className="text-6xl font-bold text-left flex-1">ORTHOPEDIC</h2>
@@ -112,6 +119,7 @@ const surgiwearCards = [
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-20 place-items-center">
             {selected === "Halyard" &&
               halyardCards.map((card) => (
+                <a href = {card.url}>
                 <div
                   key={card.id}
                   className="relative group w-60 h-60 bg-gray-200 rounded-xl overflow-hidden shadow-lg"
@@ -126,10 +134,12 @@ const surgiwearCards = [
                     {card.text}
                   </div>
                 </div>
+                </a>
               ))}
 
             {selected === "Surgiwear" &&
               surgiwearCards.map((card) => (
+                <a href = {card.url}>
                 <div
                   key={card.id}
                   className="relative group h-60 w-60 bg-gray-200 rounded-xl overflow-hidden shadow-lg"
@@ -143,6 +153,7 @@ const surgiwearCards = [
                     {card.text}
                   </div>
                 </div>
+                </a>
               ))}
           </div>
         </div>
