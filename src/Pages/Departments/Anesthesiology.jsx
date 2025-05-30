@@ -72,55 +72,55 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
       id: 1,
       image: image1,
       text: "Pressure Monitoring Lines",
-      //url: "https://www.bllifesciences.com/products/invasive-pressure-system/",
+      url: "https://www.bllifesciences.com/products/invasive-pressure-system/",
     },
     {
       id: 2,
       image: image2,
       text: "Disposable pressure transducer",
-      //url: "https://www.bllifesciences.com/products/interventional-systems/",
+      url: "https://www.bllifesciences.com/products/interventional-systems/",
     },
     {
       id: 3,
       image: image3,
       text: "HME filter",
-      //url: "https://www.bllifesciences.com/products/interventional-systems/",
+      url: "https://www.bllifesciences.com/products/anesthesia-and-critical-care/",
     },
     {
       id: 4,
       image: image4,
       text: "Inter phase cable suit with your monitor",
-      // url: "https://www.bllifesciences.com/products/interventional-systems/",
+      // url: "https://www.bllifesciences.com/products/interventional-systems/",  //could not find link
     },
     {
       id: 5,
       image: image5,
       text: "3 way with extension -10cm, 25/50cm",
-      //url: "https://www.bllifesciences.com/products/interventional-systems/",
+      url: "https://www.bllifesciences.com/products/interventional-systems/",
     },
     {
       id: 6,
       image: "/Cardiology/IVset.png",
       text: "IV SET VENTED",
-      //url: "https://bllifesciences.com/wp-content/uploads/2022/08/BL-Lifesciences.pdf",
+      url: "https://bllifesciences.com/wp-content/uploads/2022/08/BL-Lifesciences.pdf",
     },
     {
       id: 7,
       image: image7,
       text: "1 Lumen CVP CATH",
-      //url: "https://www.bllifesciences.com/wp-content/uploads/2022/06/24_IFU_Inflation_device.pdf",
+      url: "https://www.bllifesciences.com/products/central-venous-catheters/",
     },
     {
       id: 8,
       image: image8,
       text: "ADULT EXPANDABLE CIRCUIT",
-      //url: "https://www.bllifesciences.com/products/interventional-systems/",
+      url: "https://www.bllifesciences.com/products/anesthesia-and-critical-care/",
     },
     {
       id: 9,
       image: image9,
       text: "Lung Exerciser",
-      //url: "https://www.bllifesciences.com/products/interventional-systems/",
+      url: "https://www.bllifesciences.com/products/anesthesia-and-critical-care/",
     },
   ];
   const cards1 = [
@@ -129,13 +129,13 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
       id: 1,
       image: image11,
       text: "Adult Nebulizer Mask Kit (3026)",
-      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+      url: "https://venticaremedicalinc.com/products/",
     },
     {
       id: 2,
       image: image12,
       text: "VENTILATOR CIRCUIT PLAIN ADULT",
-      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+      url: "https://venticaremedicalinc.com/products/",
     },
   ];
   const cards2 = [
@@ -144,7 +144,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
       id: 1,
       image: image10,
       text: "Warming Blankets",
-      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+      url: "https://www.careessentials.com.au/product-category/warming-blankets-warming-machines/?category-list=warming-blankets",
     },
   ];
   const cards3 = [
@@ -152,7 +152,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
     {
       id: 1,
       image: image16,
-      text: "ADULT BAINS CIRCUIT-AERO (2001)",
+      text: "ADULT BAINS CIRCUIT-AERO (2001)",            //no product found in website
       //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
     },
     {
@@ -223,7 +223,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
       id: 1,
       image: image27,
       text: "Bougie (Adult) ",
-      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+      url: "https://www.medis-medical.com/products/flexo-guide",
     },
   ];
   const cards5 = [
@@ -232,19 +232,19 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
       id: 1,
       image: image13,
       text: "Bronchial Double Lumen Tube",
-      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+      url: "https://www.teleflex.com/emea/en/product-areas/anaesthesia/airway-management/double-lumen-tubes/index.html",
     },
     {
       id: 2,
       image: image14,
       text: "Cuff measuring meter for E.T.Tube",
-      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+      url: "https://us.myteleflex.com/en/USD/All-Categories/Anesthesia/Airway/Intubation-Accessories/Ru%CC%88sch%C2%AE-Endotest%E2%84%A2-Cuff-Pressure-Manometer/p/endotest",
     },
     {
       id: 3,
       image: image15,
       text: "Nasopharyngeal Air way 28,30,34",
-      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+      url: "https://www.teleflex.com/usa/en/product-areas/anesthesia/airway-management/oral-and-nasal-airways/nasal-airways/index.html",
     },
   ];
   const cards6 = [
@@ -253,7 +253,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
       id: 1,
       image: image28,
       text: "Laryngoscope with 4 blades -Fiberoptic",
-      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+      url: "https://www.medisaferesuscitators.com/search.html?ss=Laryngoscope+with+4+blades+-Fiberoptic",
     },
   ];
   const cards7 = [
@@ -262,7 +262,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
       id: 1,
       image: image29,
       text: "INTRODUCER NEEDLE 18 Gx7CM",
-      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+      url: "https://www.exportersindia.com/suretech-medical-inc/products.htm",
     },
   ];
   const cards8 = [
