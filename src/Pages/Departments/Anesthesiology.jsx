@@ -147,12 +147,12 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
       url: "https://www.careessentials.com.au/product-category/warming-blankets-warming-machines/?category-list=warming-blankets",
     },
   ];
-  const cards3 = [
+  const cards3 = [                     //not able to find it
     //AERO
     {
       id: 1,
       image: image16,
-      text: "ADULT BAINS CIRCUIT-AERO (2001)",            //no product found in website
+      text: "ADULT BAINS CIRCUIT-AERO (2001)",            
       //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
     },
     {
@@ -271,13 +271,13 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
       id: 1,
       image: image30,
       text: "BougieInroducer -Adult, Coudé Tip-15 FR x 70 cm",
-      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+      url: "https://www.meditechsystems.co.uk/product/bougie-coude-tip-introducers/",
     },
     {
       id: 2,
       image: image31,
       text: "BougieInroducer -Pediatric, Coudé Tip-10 FR x 70 cm",
-      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+      url: "https://www.meditechsystems.co.uk/product/bougie-coude-tip-introducers/",
     },
     {
       id: 3,
@@ -326,7 +326,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
       id: 10,
       image: image39,
       text: "Wendl Nasopharyngeal Airways (Silicone)12 Fr-  3/4.0mm",
-      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+      url: "https://www.meditechsystems.co.uk/product-category/airway-management/oxygen-and-aerosol-therapy/resuscitation-kits-and-nasophranageal/",
     },
   ];
 

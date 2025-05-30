@@ -438,7 +438,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
         <div className="mt-40">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-20 p-12 items-center">
             <h2 className="text-6xl font-bold text-left flex-1">
-              General Surgery
+              Cardiac Surgery
             </h2>
           </div>
 

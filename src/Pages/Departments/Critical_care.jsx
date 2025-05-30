@@ -4,15 +4,87 @@ import Footer from "../../Components/Footer";
 import DepNav from "../../Components/DepNav";
 import bg from "../../assets/depBG.png";
 import BL from "../../assets/BLLifsciences.png";
-import sinapi from "../../assets/Sinapi.png";
+//import sinapi from "../../assets/Sinapi.png";
 import toray from "../../assets/Toray.png";
 import meditech from "../../assets/Meditech.png";
 import cocoon from "../../assets/Cocoon.png";
 import hico from "../../assets/Hico.png";
 import { motion } from "framer-motion";
 
+import image1 from "../../assets/Anastesiology/PressureMonitoringLines_Main.jpg";
+import image2 from "../../assets/Anastesiology/presseurtransducer.jpg";
+import image3 from "../../assets/Anastesiology/hmefilter.jpg";
+import image4 from "../../assets/Anastesiology/interphasecable.jpg";
+import image5 from "../../assets/Anastesiology/3waywithextension.jpeg";
+import image7 from "../../assets/Anastesiology/lumen.jpg";
+import image8 from "../../assets/Anastesiology/adultexpandable.jpg";
+import image9 from "../../assets/Anastesiology/Lungexcerciser.jpg";
+
 const DepartmentPage = ({ name, buttonImages }) => {
   const [selected, setSelected] = useState("BL");
+
+  const cards1 = [
+        //BL
+        {
+          id: 1,
+          image: image1,
+          text: "Pressure Monitoring Lines",
+          url: "https://www.bllifesciences.com/products/invasive-pressure-system/",
+        },
+        {
+          id: 2,
+          image: image2,
+          text: "Disposable pressure transducer",
+          url: "https://www.bllifesciences.com/products/interventional-systems/",
+        },
+        {
+          id: 3,
+          image: image3,
+          text: "HME filter",
+          url: "https://www.bllifesciences.com/products/anesthesia-and-critical-care/",
+        },
+        {
+          id: 4,
+          image: image4,
+          text: "Inter phase cable suit with your monitor",
+          // url: "https://www.bllifesciences.com/products/interventional-systems/",  //could not find link
+        },
+        {
+          id: 5,
+          image: image5,
+          text: "3 way with extension -10cm, 25/50cm",
+          url: "https://www.bllifesciences.com/products/interventional-systems/",
+        },
+        {
+          id: 6,
+          image: "/Cardiology/IVset.png",
+          text: "IV SET VENTED",
+          url: "https://bllifesciences.com/wp-content/uploads/2022/08/BL-Lifesciences.pdf",
+        },
+        {
+          id: 7,
+          image: image7,
+          text: "1 Lumen CVP CATH",
+          url: "https://www.bllifesciences.com/products/central-venous-catheters/",
+        },
+        {
+          id: 8,
+          image: image8,
+          text: "ADULT EXPANDABLE CIRCUIT",
+          url: "https://www.bllifesciences.com/products/anesthesia-and-critical-care/",
+        },
+        {
+          id: 9,
+          image: image9,
+          text: "Lung Exerciser",
+          url: "https://www.bllifesciences.com/products/anesthesia-and-critical-care/",
+        },
+      ]
+
+    // const cards2 = [
+    // {
+    // }
+    // ] 
 
 
   const cards3 = [
@@ -34,7 +106,7 @@ const DepartmentPage = ({ name, buttonImages }) => {
         id: 1,
         image: "/CriticalCare/airway.png",
         text: "Nasopharyngeal airway",
-        url: "",
+        url: "https://www.meditechsystems.co.uk/product-category/airway-management/oxygen-and-aerosol-therapy/resuscitation-kits-and-nasophranageal/",
       },
       {
         id: 2,
@@ -46,7 +118,7 @@ const DepartmentPage = ({ name, buttonImages }) => {
         id: 3,
         image: "/CriticalCare/stylet.png",
         text: "Stylet",
-        url: "",
+        //url: "",                 //could not find link
       },
     ];
   const cards5 = [
@@ -136,6 +208,13 @@ const DepartmentPage = ({ name, buttonImages }) => {
                       alt="BL Lifesciences"
                       className="h-40 w-auto m-10"
                     />
+                    <p className="text-center w-3/4 mt-4">
+                    BL Lifesciences plays a vital role in critical care by providing
+                    high-quality medical devices such as invasive pressure monitoring systems ,
+                    anesthesia and ventilation circuits, and customized perfusion products. 
+                    Their innovative and reliable solutions help improve patient monitoring,
+                    respiratory support, and life-saving interventions in intensive care units. 
+                    </p>
                   </>
                 )}
                 {selected === "Toray" && (
@@ -217,6 +296,35 @@ const DepartmentPage = ({ name, buttonImages }) => {
 
               {/* Hover Cards (Conditionally Rendered) */}
               <div className="grid grid-cols-1 sm:grid-cols-2 sm:mt-20 sm:mb-20 lg:grid-cols-3 my-20 gap-28 sm:m-4 sm:gap-20 m-10 lg:p-20">
+
+                {selected === "BL" &&
+                  cards1.map((card) => (
+                    <a key={card.id} href={card.url} className="no-underline">
+                      <motion.div
+                        className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
+                        whileHover={{ scale: 1.05 }}
+                      >
+                        <img
+                          src={card.image}
+                          alt={`Card ${card.text}`}
+                          className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
+                        />
+                        <motion.div
+                          className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
+                          initial={{ opacity: 0 }}
+                          whileHover={{ opacity: 1 }}
+                        >
+                          <span className="text-white text-3xl text-center font-bold">
+                            {card.text}
+                          </span>
+                        </motion.div>
+                      </motion.div>
+                      <p className="flex justify-start text-gray-800 text-2xl p-6 text-center font-semibold">
+                        {card.text}
+                      </p>
+                    </a>
+                  ))}
+
                 {selected === "HICO" &&
                   cards6.map((card) => (
                     <a key={card.id} href={card.url} className="no-underline">
@@ -412,7 +520,7 @@ const DepartmentPage = ({ name, buttonImages }) => {
 export default function CriticalCare() {
   const buttonImages = [
     { id: "BL", src: BL, alt: "BL Lifesciences" },
-    { id: "Sinapi", src: sinapi, alt: "Sinapi" },
+    //{ id: "Sinapi", src: sinapi, alt: "Sinapi" },
     { id: "Toray", src: toray, alt: "Toray" },
     { id: "Meditech", src: "/CriticalCare/meditech.png", alt: "Meditech devices" },
     { id: "Cocoon", src: cocoon, alt: "Cocoon" },
