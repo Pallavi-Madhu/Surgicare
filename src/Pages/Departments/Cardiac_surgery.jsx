@@ -107,55 +107,55 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
       id: 1,
       image: image1,
       text: "Pressure Monitoring Lines",
-      //url: "https://www.bllifesciences.com/products/invasive-pressure-system/",
+      url: "https://www.bllifesciences.com/products/invasive-pressure-system/",
     },
     {
       id: 2,
       image: image2,
       text: "Disposable pressure transducer",
-      //url: "https://www.bllifesciences.com/products/interventional-systems/",
+      url: "https://www.bllifesciences.com/products/interventional-systems/",
     },
     {
       id: 3,
       image: image3,
       text: "HME filter",
-      //url: "https://www.bllifesciences.com/products/interventional-systems/",
+      url: "https://www.bllifesciences.com/products/anesthesia-and-critical-care/",
     },
     {
       id: 4,
       image: image4,
       text: "Inter phase cable suit with your monitor",
-      // url: "https://www.bllifesciences.com/products/interventional-systems/",
+      // url: "https://www.bllifesciences.com/products/interventional-systems/",  //could not find link
     },
     {
       id: 5,
       image: image5,
       text: "3 way with extension -10cm, 25/50cm",
-      //url: "https://www.bllifesciences.com/products/interventional-systems/",
+      url: "https://www.bllifesciences.com/products/interventional-systems/",
     },
     {
       id: 6,
       image: "/Cardiology/IVset.png",
       text: "IV SET VENTED",
-      //url: "https://bllifesciences.com/wp-content/uploads/2022/08/BL-Lifesciences.pdf",
+      url: "https://bllifesciences.com/wp-content/uploads/2022/08/BL-Lifesciences.pdf",
     },
     {
       id: 7,
       image: image7,
       text: "1 Lumen CVP CATH",
-      //url: "https://www.bllifesciences.com/wp-content/uploads/2022/06/24_IFU_Inflation_device.pdf",
+      url: "https://www.bllifesciences.com/products/central-venous-catheters/",
     },
     {
       id: 8,
       image: image8,
       text: "ADULT EXPANDABLE CIRCUIT",
-      //url: "https://www.bllifesciences.com/products/interventional-systems/",
+      url: "https://www.bllifesciences.com/products/anesthesia-and-critical-care/",
     },
     {
       id: 9,
       image: image9,
       text: "Lung Exerciser",
-      //url: "https://www.bllifesciences.com/products/interventional-systems/",
+      url: "https://www.bllifesciences.com/products/anesthesia-and-critical-care/",
     },
     {
       id: 10,
@@ -346,18 +346,22 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
       id: 1,
       image: floseal,
       text: "Floseal",
+      url:"https://ecatalog.baxter.com/ecatalog/loadproduct.html?cid=20016&lid=10001&hid=20001&pid=1472740"
     },
     {
       id: 2,
       image: hemopatch,
       text: "Hemopatch",
+      url:"https://advancedsurgery.baxter.eu/hemopatch"
     },
   ];
 
   const SynkromaxCards = [
     { id: 1,
       image: bovinepatch,
-      text: "Bovine pericardial patch" },
+      text: "Bovine pericardial patch",
+      url: "https://www.reachmedicalsystems.com/synkromax",
+    },
   ];
 
   const TerumoCards = [
@@ -365,6 +369,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
       id: 1,
       image: evhs,
       text: "Endoscopic Vessel Harvesting (EVH) System",
+      url:"https://terumocv.com/evh/"
     },
     {
       id: 2,
@@ -386,6 +391,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
       id: 1,
       image: chestdrain,
       text: "Chest Drain System",
+      url:"https://sinapibiomedical.com/"
     },
   ];
 
@@ -394,16 +400,19 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
       id: "drapes",
       image: drapes,
       text: "Surgical Drapes",
+      url:"https://products.halyardhealth.com/products/surgical-solutions/surgical-drapes"
     },
     {
       id: "gowns",
       image: gowns,
       text: "Surgical Gowns",
+      url:"https://products.halyardhealth.com/products/surgical-solutions/surgical-gowns"
     },
     {
       id: "masks",
       image: masks,
       text: "Surgical Masks",
+      url:"https://products.halyardhealth.com/products/personal-protection/facial-respiratory-protection/medical-surgical-masks"
     },
   ];
 
@@ -412,6 +421,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
       id: 1,
       image: IABP,
       text: "ULTRA - IABP 7Fr Intra Aortic Balloon Catheter Ki",
+      url:"https://insightra.com/ultra-7fr-iab-catheter-kit/"
     },
   ];
 
@@ -420,6 +430,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
       id: 1,
       image: corknot,
       text: "COR-KNOT",
+      url:"https://www.lsisolutions.com/products/cor-knot"
     },
   ];
 
