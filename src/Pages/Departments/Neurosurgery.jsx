@@ -30,6 +30,11 @@ import floseal from "../../assets/Neuro/Baxter/floseal.jpg";
 import hemopatch from "../../assets/Neuro/Baxter/hemopatch.webp";
 import tiseel from "../../assets/Neuro/Baxter/Tisseel.webp";
 
+//Products-Halyard
+import drapes from "../../assets/Orthopedic/Halyard/drapes.jpg";
+import gowns from "../../assets/Orthopedic/Halyard/gowns.jpeg";
+import masks from "../../assets/Orthopedic/Halyard/masks.jpg";
+
 //product images Sunoptic
 import light from "../../assets/Neuro/Sunoptic/light.jpg";
 
@@ -48,9 +53,16 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
       id: 1,
       image: clips,
       text: "Sugita Titanium Aneurysm Clip II (T2) &amp; Appliers:Sugita Titanium aneurysm Clip Ⅱ from Mizuho.",
+      url:"http://www.mizuhomedical.co.jp/products/?id=1459223043-814215"
     },
-    { id: 2, image: headholder, text: "Smart Fix Head Holder" },
-    { id: 3, image: dopplersystem, text: "Mizuho Vascular Doppler System" },
+    { id: 2, image: headholder,
+      text: "Smart Fix Head Holder",
+      url:"http://www.mizuhomedical.co.jp/products/?id=1461291666-642683" }
+    ,
+    { id: 3,
+      image: dopplersystem,
+      text: "Mizuho Vascular Doppler System",
+      url:"http://www.mizuhomedical.co.jp/products/?id=1461299942-673127" },
   ];
 
   const kinamedCards = [
@@ -58,11 +70,13 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
       id: 1,
       image: screws,
       text: "NeuroPro® Rigid Fixation System",
+      url:"https://www.kinamed.com/products/neurosurgical-products/neuropro-rigid-fixation-system"
     },
     {
       id: 2,
       image: screws2,
       text: "NeuroPro® Low Profile Rigid Fixation System",
+      url:"https://www.kinamed.com/products/neurosurgical-products/neuropro-low-profile-rigid-fixation-system"
     },
   ];
 
@@ -71,33 +85,62 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
       id: 1,
       image: floseal,
       text: "Floseal",
+      url:"https://ecatalog.baxter.com/ecatalog/loadproduct.html?cid=20016&lid=10001&hid=20001&pid=1472740"
     },
     {
       id: 2,
       image: hemopatch,
       text: "Hemopatch ",
+      url:"https://advancedsurgery.baxter.eu/hemopatch"
     },
     {
       id: 3,
       image: tiseel,
       text: "Tisseel ",
+      url:"https://www.baxter.com/healthcare-professionals/surgical-care/tisseel-fibrin-sealant"
     },
   ];
+
+  const halyardCards = [
+    {
+        id: "drapes",
+        image: drapes,
+        text: "Surgical Drapes",
+        url:"https://products.halyardhealth.com/products/surgical-solutions/surgical-drapes"
+      },
+      {
+        id: "gowns",
+        image: gowns,
+        text: "Surgical Gowns",
+        url:"https://products.halyardhealth.com/products/surgical-solutions/surgical-gowns"
+      },
+      {
+        id: "masks",
+        image: masks,
+        text: "Surgical Masks",
+        url:"https://products.halyardhealth.com/products/personal-protection/facial-respiratory-protection/medical-surgical-masks"
+      },
+  ]
   const sunopticCards = [
     {
       id: 1,
       image: light,
       text: "Sunoptic LX2 Battery Operated LED Headlight",
+      url:"https://sunopticsurgical.com/products/ssl-lx2-led-best-in-class-portable-headlight/"
     },
   ];
 
   const syncromaxCards = [
-    { id: 1, image: bovinepatch, text: " Bovine pericardial patch" },
+    { id: 1,
+      image: bovinepatch,
+      text: " Bovine pericardial patch",
+      url:"https://www.visionarymedtech.com/synkroscaff.html"
+     },
   ];
 
   const cocoonCards = [
-    { id: 1, image: blanket, text: "Cocoon Convective Warming Blankets" },
-    { id: 2, image: warmer, text: "Cocoon Convective Warming System" },
+    { id: 1, image: blanket, text: "Cocoon Convective Warming Blankets",url:"https://www.careessentials.com.au/product-category/warming-blankets-warming-machines/warming-blankets/" },
+    { id: 2, image: warmer, text: "Cocoon Convective Warming System",url:"https://www.careessentials.com.au/product/cws-5000/" },
   ];
 
   return (
@@ -242,6 +285,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-20 place-items-center">
               {selected === "Mizuho" &&
                 mizuhoCards.map((card) => (
+                  <a href = {card.url}>
                   <div
                     key={card.id}
                     className="relative group w-60 h-60 bg-gray-200 rounded-xl overflow-hidden shadow-lg"
@@ -256,10 +300,12 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                       {card.text}
                     </div>
                   </div>
+                  </a>
                 ))}
 
               {selected === "Kinamed" &&
                 kinamedCards.map((card) => (
+                  <a href = {card.url}>
                   <div
                     key={card.id}
                     className="relative group h-60 w-60 bg-gray-200 rounded-xl overflow-hidden shadow-lg"
@@ -273,10 +319,12 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                       {card.text}
                     </div>
                   </div>
+                  </a>
                 ))}
 
               {selected === "Baxter" &&
                 baxterCards.map((card) => (
+                  <a href = {card.url}>
                   <div
                     key={card.id}
                     className="relative group h-60 w-60 bg-gray-200 rounded-xl overflow-hidden shadow-lg"
@@ -290,10 +338,12 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                       {card.text}
                     </div>
                   </div>
+                  </a>
                 ))}
 
               {selected === "Halyard" &&
-                cards.map((card) => (
+                halyardCards.map((card) => (
+                  <a href = {card.url}>
                   <div
                     key={card.id}
                     className="relative group h-48 w-full bg-gray-200 rounded-xl overflow-hidden shadow-lg"
@@ -307,9 +357,11 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                       {card.text}
                     </div>
                   </div>
+                  </a>
                 ))}
               {selected === "Sunoptic" &&
                 sunopticCards.map((card) => (
+                  <a href = {card.url}>
                   <div
                     key={card.id}
                     className="relative group h-48 w-full bg-gray-200 rounded-xl overflow-hidden shadow-lg"
@@ -323,9 +375,11 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                       {card.text}
                     </div>
                   </div>
+                  </a>
                 ))}
               {selected === "SyncroMax" &&
                 syncromaxCards.map((card) => (
+                  <a href = {card.url}>
                   <div
                     key={card.id}
                     className="relative group h-48 w-full bg-gray-200 rounded-xl overflow-hidden shadow-lg"
@@ -339,9 +393,11 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                       {card.text}
                     </div>
                   </div>
+                  </a>
                 ))}
               {selected === "Cocoon" &&
                 cocoonCards.map((card) => (
+                  <a href = {card.url}>
                   <div
                     key={card.id}
                     className="relative group h-48 w-full bg-gray-200 rounded-xl overflow-hidden shadow-lg"
@@ -355,9 +411,11 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                       {card.text}
                     </div>
                   </div>
+                  </a>
                 ))}
               {selected === "BL-OT" &&
                 cards.map((card) => (
+                  <a href = {card.url}>
                   <div
                     key={card.id}
                     className="relative group h-48 w-full bg-gray-200 rounded-xl overflow-hidden shadow-lg"
@@ -371,6 +429,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                       {card.text}
                     </div>
                   </div>
+                  </a>
                 ))}
             </div>
           </div>
