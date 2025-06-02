@@ -99,6 +99,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
       id: "1",
       image: oxygenerator,
       text: "Oxygenator adult Kompass",
+      url:"https://euromed.ch/wp-content/uploads/2023/01/kompass_brochure.pdf"
     },
   ];
 
@@ -160,7 +161,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
     {
       id: 10,
       image: image11,
-      text: "Adult Nebulizer Mask Kit (3026)",
+      text: "Adult Nebulizer Mask Kit (3026)",           //venticare
       //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
     },
     {

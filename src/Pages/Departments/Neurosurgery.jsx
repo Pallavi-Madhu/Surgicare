@@ -53,7 +53,7 @@ import chest1000ml from "../../assets/GeneralSurgery/Bl/chest1000ml.webp";
 import suctionset from "../../assets/GeneralSurgery/Bl/suctionset.jpg";
 import tipcleaner from "../../assets/GeneralSurgery/Bl/tipcleaner.webp";
 import tipcleaner2_actual from "../../assets/GeneralSurgery/Bl/tipcleaner2_actual.webp";
-import mister2 from "../../assets/GeneralSurgery/Bl/mister2.jpg";        
+import mister2 from "../../assets/GeneralSurgery/Bl/mister_blower.png";     
 import surgiloop2 from "../../assets/GeneralSurgery/Bl/surgiloop.webp";
 import cannula from "../../assets/GeneralSurgery/Bl/cannula.png";
 
