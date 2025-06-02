@@ -614,6 +614,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-20 place-items-center">
               {selected === "Euroset" &&
                 EuroCards.map((card) => (
+                  <a href = {card.url}>
                   <div
                     key={card.id}
                     className="relative group w-60 h-60 bg-gray-200 rounded-xl overflow-hidden shadow-lg"
@@ -628,10 +629,12 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                       {card.text}
                     </div>
                   </div>
+                  </a>
                 ))}
 
               {selected === "BL" &&
                 BLCards.map((card) => (
+                  <a href = {card.url}>
                   <div
                     key={card.id}
                     className="relative group w-60 h-60 bg-gray-200 rounded-xl overflow-hidden shadow-lg"
@@ -645,10 +648,12 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                       {card.text}
                     </div>
                   </div>
+                  </a>
                 ))}
 
               {selected === "Baxter" &&
                 BaxterCards.map((card) => (
+                  <a href = {card.url}>
                   <div
                     key={card.id}
                     className="relative group h-60 w-60 bg-gray-200 rounded-xl overflow-hidden shadow-lg"
@@ -662,10 +667,12 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                       {card.text}
                     </div>
                   </div>
+                  </a>
                 ))}
 
               {selected === "Synkromax" &&
                 SynkromaxCards.map((card) => (
+                  <a href = {card.url}>
                   <div
                     key={card.id}
                     className="relative group h-60 w-60 bg-gray-200 rounded-xl overflow-hidden shadow-lg"
@@ -679,10 +686,12 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                       {card.text}
                     </div>
                   </div>
+                  </a>
                 ))}
 
               {selected === "Terumo" &&
                 TerumoCards.map((card) => (
+                  <a href = {card.url}>
                   <div
                     key={card.id}
                     className="relative group h-60 w-60 bg-gray-200 rounded-xl overflow-hidden shadow-lg"
@@ -696,6 +705,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                       {card.text}
                     </div>
                   </div>
+                  </a>
                 ))}
 
               {/*{selected === "Scanlan" &&
@@ -718,6 +728,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
 
               {selected === "Sinapi" &&
                 SinapiCards.map((card) => (
+                  <a href = {card.url}>
                   <div
                     key={card.id}
                     className="relative group h-60 w-60 bg-gray-200 rounded-xl overflow-hidden shadow-lg"
@@ -731,10 +742,12 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                       {card.text}
                     </div>
                   </div>
+                  </a>
                 ))}
 
               {selected === "Halyard" &&
                 HalyardCards.map((card) => (
+                  <a href = {card.url}>
                   <div
                     key={card.id}
                     className="relative group h-60 w-60 bg-gray-200 rounded-xl overflow-hidden shadow-lg"
@@ -748,10 +761,12 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                       {card.text}
                     </div>
                   </div>
+                  </a>
                 ))}
 
               {selected === "Insightra" &&
                 InsightraCards.map((card) => (
+                  <a href = {card.url}>
                   <div
                     key={card.id}
                     className="relative group h-60 w-60 bg-gray-200 rounded-xl overflow-hidden shadow-lg"
@@ -765,10 +780,12 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                       {card.text}
                     </div>
                   </div>
+                  </a>
                 ))}
 
               {selected === "LSI" &&
                 LSICards.map((card) => (
+                  <a href = {card.url}>
                   <div
                     key={card.id}
                     className="relative group h-60 w-60 bg-gray-200 rounded-xl overflow-hidden shadow-lg"
@@ -782,6 +799,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                       {card.text}
                     </div>
                   </div>
+                  </a>
                 ))}
             </div>
           </div>

@@ -4,7 +4,7 @@ import Footer from "../../Components/Footer";
 import DepNav from "../../Components/DepNav";
 import bg from "../../assets/depBG.png";
 import BL from "../../assets/BLLifsciences.png";
-//import sinapi from "../../assets/Sinapi.png";
+import Sinapi from "../../assets/Sinapi.png";
 import toray from "../../assets/Toray.png";
 import meditech from "../../assets/Meditech.png";
 import cocoon from "../../assets/Cocoon.png";
@@ -19,6 +19,8 @@ import image5 from "../../assets/Anastesiology/3waywithextension.jpeg";
 import image7 from "../../assets/Anastesiology/lumen.jpg";
 import image8 from "../../assets/Anastesiology/adultexpandable.jpg";
 import image9 from "../../assets/Anastesiology/Lungexcerciser.jpg";
+import chestdrain from "../../assets/Pulmo/chestdrain.png"
+import ChestDrain from "../../assets/ChestDrain.pdf";
 
 const DepartmentPage = ({ name, buttonImages }) => {
   const [selected, setSelected] = useState("BL");
@@ -81,10 +83,14 @@ const DepartmentPage = ({ name, buttonImages }) => {
         },
       ]
 
-    // const cards2 = [
-    // {
-    // }
-    // ] 
+    const cards2 = [
+    {
+       id: 1,
+        image: chestdrain, 
+        text: "Chest Drainage System 50ml,400ml,1000ml",
+        url: ChestDrain
+    }
+    ] 
 
 
   const cards3 = [
@@ -217,6 +223,27 @@ const DepartmentPage = ({ name, buttonImages }) => {
                     </p>
                   </>
                 )}
+
+                {selected === "Sinapi" && (
+                  <>
+                    <img
+                      src={Sinapi}
+                      alt="Sinapi"
+                      className="h-40 w-auto m-10"
+                    />
+                    <p className="text-center w-3/4 mt-4">
+                      The Sinapi Chest Drain plays a crucial role in critical care by
+                      efficiently removing air, blood, or fluid from the pleural space,
+                      helping re-expand the lungs and stabilize patients post-surgery or trauma.
+                      Its reliable, lightweight design and advanced water-seal system
+                      reduce infection risk and promote patient recovery. 
+                      With user-friendly setup and monitoring, Sinapi enhances patient safety and
+                      optimizes critical care outcomes.
+
+                    </p>
+                  </>
+                )}
+
                 {selected === "Toray" && (
                   <>
                     <img
@@ -299,6 +326,34 @@ const DepartmentPage = ({ name, buttonImages }) => {
 
                 {selected === "BL" &&
                   cards1.map((card) => (
+                    <a key={card.id} href={card.url} className="no-underline">
+                      <motion.div
+                        className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
+                        whileHover={{ scale: 1.05 }}
+                      >
+                        <img
+                          src={card.image}
+                          alt={`Card ${card.text}`}
+                          className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
+                        />
+                        <motion.div
+                          className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
+                          initial={{ opacity: 0 }}
+                          whileHover={{ opacity: 1 }}
+                        >
+                          <span className="text-white text-3xl text-center font-bold">
+                            {card.text}
+                          </span>
+                        </motion.div>
+                      </motion.div>
+                      <p className="flex justify-start text-gray-800 text-2xl p-6 text-center font-semibold">
+                        {card.text}
+                      </p>
+                    </a>
+                  ))}
+
+                  {selected === "Sinapi" &&
+                  cards2.map((card) => (
                     <a key={card.id} href={card.url} className="no-underline">
                       <motion.div
                         className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
@@ -452,6 +507,20 @@ const DepartmentPage = ({ name, buttonImages }) => {
               </a>
             </>
           )}
+        {selected == "Sinapi" && (
+          <>
+          <a
+          href="https://sinapibiomedical.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex justify-center mt-10"
+        >
+          <button className="hover:bg-blue-300 hover:text-black text-blue-700 py-2 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700">
+            Read More
+          </button>
+        </a>
+        </>
+        )}
 
           {selected === "Toray" && (
             <>
@@ -520,7 +589,7 @@ const DepartmentPage = ({ name, buttonImages }) => {
 export default function CriticalCare() {
   const buttonImages = [
     { id: "BL", src: BL, alt: "BL Lifesciences" },
-    //{ id: "Sinapi", src: sinapi, alt: "Sinapi" },
+    { id: "Sinapi", src: Sinapi, alt: "Sinapi" },
     { id: "Toray", src: toray, alt: "Toray" },
     { id: "Meditech", src: "/CriticalCare/meditech.png", alt: "Meditech devices" },
     { id: "Cocoon", src: cocoon, alt: "Cocoon" },
