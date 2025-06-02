@@ -375,6 +375,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
       id: 2,
       image: stabilizer,
       text: "Stabilizer",
+      url:"https://www.terumo-europe.com/en-emea/products/titan%E2%84%A2-stabilizer-attachments-beating-heart"
     },
   ];
 
