@@ -76,6 +76,15 @@ import bovinepatch from "../../assets/CardiacSurgery/Syncromax/bovinepatch.jpg";
 //Terumo products
 import evhs from "../../assets/CardiacSurgery/Terumo/evhs.jpg";
 import stabilizer from "../../assets/CardiacSurgery/Terumo/stabilizer.png";
+import brochure1 from "../../assets/CardiacSurgery/Terumo/Gelsoft-Plus-Brochure-A4-PM-07037-Global.pdf"
+import brochure2 from "../../assets/CardiacSurgery/Terumo/Gelweave%2BBrochure 2.pdf";
+import brochure3 from "../../assets/CardiacSurgery/Terumo/Gelweave%2BGeometries%2BBrochure.pdf";
+import brochure4 from "../../assets/CardiacSurgery/Terumo/Gelweave%2BValsalva%2BBrochure.pdf"
+import gelsoft from "../../assets/CardiacSurgery/Terumo/gelsoft.jpeg";
+import gelwieve from "../../assets/CardiacSurgery/Terumo/gelwieve.jpeg";
+import aortic from "../../assets/CardiacSurgery/Terumo/aortic.jpeg";
+import valsalva from "../../assets/CardiacSurgery/Terumo/valsalva.jpeg";
+
 
 //Sinapi products
 import chestdrain from "../../assets/CardiacSurgery/Sinapi/chestdrain.png";
@@ -378,6 +387,30 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
       text: "Stabilizer",
       url:"https://www.terumo-europe.com/en-emea/products/titan%E2%84%A2-stabilizer-attachments-beating-heart"
     },
+    {
+      id:3,
+      image:gelsoft,
+      text:"Gelsoft Plus",
+      url:brochure1
+    },
+    {
+      id:4,
+      image:gelwieve,
+      text:"GelweaveTM",
+      url:brochure2
+    },
+    {
+      id:5,
+      image:aortic,
+      text:"GelweaveTM- Aortic Surgical Grafts",
+      url:brochure3
+    },
+    {
+      id:6,
+      image:valsalva,
+      text:"Gelweave ValsalvaTM",
+      url:brochure4
+    }
   ];
 
   /*const ScanlanCards = [                //change
