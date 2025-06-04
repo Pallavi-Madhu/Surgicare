@@ -42,12 +42,12 @@ const ContactForm = () => {
       console.log("Data saved to Supabase:", data);
 
       // Step 2: Send email using EmailJS
-      emailjs.init("64O2PPN7HQmxW9KjE"); // Replace with your EmailJS user ID
+      emailjs.init("WsoV1NEyJ8ZPmecSP"); // Replace with your EmailJS user ID
 
       emailjs
         .send(
-          "service_j54lhkq", // Replace with your EmailJS service ID
-          "template_rrrtk7x", // Replace with your EmailJS template ID
+          "service_nxddopp", // Replace with your EmailJS service ID
+          "template_6wzraxj", // Replace with your EmailJS template ID
           emailData
         )
         .then(

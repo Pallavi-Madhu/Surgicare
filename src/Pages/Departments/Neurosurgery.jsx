@@ -3,7 +3,7 @@ import Navbar from "../../Components/Navbar";
 import Footer from "../../Components/Footer";
 import departments from "../../Data/departments";
 import DepNav from "../../Components/DepNav";
-
+import { motion } from "framer-motion";
 //dept images for button
 import Mizuho from "../../assets/Mizuho.png";
 import Kinamed from "../../assets/Kinamed.png";
@@ -276,7 +276,6 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
 
   return (
     <>
-      <Navbar />
       <div
         className="min-h-screen overflow-x-hidden bg-cover bg-fixed bg-center"
         style={{
@@ -285,29 +284,28 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
           backgroundBlendMode: "overlay",
         }}
       >
+          <div className="relative  z-50">
+                    {" "}
+                    <Navbar />
+                  </div>
         <div className="mt-40">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-20 p-12 items-center">
             <h2 className="text-6xl font-bold text-left flex-1">{name}</h2>
-            <img
-              src={image}
-              alt={name}
-              className="w-full md:w-1/2 rounded-lg shadow"
-            />
+           
           </div>
 
           {/* Buttons */}
-          {/* Buttons */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-6">
-            {buttonImages.map(({ src, alt, id }) => (
-              <button
-                key={id}
-                onClick={() => setSelected(id)}
-                className={`p-4 rounded-full text-white w-3/4 h-14 border flex justify-center items-center ${
-                  selected === id ? "bg-blue-600" : "bg-blue-300"
-                }`}
-              >
-                <img src={src} alt={alt} className="h-12 w-auto" />
-              </button>
+       <div className="z-0 relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7 p-10">
+            {buttonImages.map(({ label, id }) => (
+          <button
+          key={id}
+           onClick={() => setSelected(id)}
+            className={`p-2 font-bold rounded-3xl text-black w-3/4 mx-14 h-14 border border-black flex justify-center items-center ${
+           selected === id ? "bg-gray-500 text-white border-gray-500" : "bg-white"
+         }` }
+           >
+              {label}
+            </button>
             ))}
           </div>
 
@@ -315,8 +313,8 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
           <div className="flex flex-col justify-center items-center mt-6">
             {selected === "Mizuho" && (
               <>
-                <img src={Mizuho} alt="Mizuho" className="h-40 w-auto" />
-                <p className="text-center mt-4">
+                <img src={Mizuho} alt="Mizuho" className="h-30 w-auto" />
+                 <p className="text-center mt-4 p-7 sm:p-20 lg:p-30">
                   Mizuho is a global leader in the field of neurosurgery. All
                   the products being being produced in Japan, they are
                   particularly well known for their “Sugita Aneurysm Clips”,
@@ -327,7 +325,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
             {selected === "Kinamed" && (
               <>
                 <img src={Kinamed} alt="Kinamed" className="h-40 w-auto" />
-                <p className="text-center mt-4">
+                <p className="text-center mt-4 p-7 sm:p-20 lg:p-30">
                   Kinamed Inc USA designs and manufactures Implantables and
                   Instruments for Neurosurgery. BL promotes the NeuroPro® Low
                   Profile Rigid Fixation System across the country.
@@ -336,8 +334,8 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
             )}
             {selected === "Baxter" && (
               <>
-                <img src={Baxter} alt="Baxter" className="h-40 w-auto" />
-                <p className="text-center mt-4">
+                <img src={Baxter} alt="Baxter" className="h-30 w-auto" />
+                <p className="text-center mt-4 p-7 sm:p-20 lg:p-30">
                   Baxter contributes to neurosurgery with advanced hemostatic
                   agents, sealants, and dural repair solutions that aid in
                   bleeding control, tissue sealing, and surgical precision. Key
@@ -348,8 +346,8 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
             )}
             {selected === "Halyard" && (
               <>
-                <img src={Halyard} alt="Halyard" className="h-40 w-auto" />
-                <p className="text-center mt-4">
+                <img src={Halyard} alt="Halyard" className="h-30 w-auto" />
+  <p className="text-center mt-4 p-7 sm:p-20 lg:p-30">
                   Halyard specializes in surgical and infection prevention
                   solutions, providing sterile drapes, gowns, gloves, and
                   protective equipment essential for neurosurgery and other
@@ -361,8 +359,8 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
             )}
             {selected === "Sunoptic" && (
               <>
-                <img src={Sunoptic} alt="Sunoptic" className="h-40 w-auto" />
-                <p className="text-center mt-4">
+                <img src={Sunoptic} alt="Sunoptic" className="h-30 w-auto" />
+       <p className="text-center mt-4 p-7 sm:p-20 lg:p-30">
                   Sunoptic is known for its surgical illumination solutions,
                   providing high-intensity LED and xenon surgical headlights,
                   cameras, and imaging systems used in neurosurgery and other
@@ -375,7 +373,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
             {selected === "Syncromax" && (
               <>
                 <img src={Syncromax} alt="Syncromax" className="h-40 w-auto" />
-                <p className="text-center mt-4">
+                <p className="text-center mt-4 p-7 sm:p-20 lg:p-30">
                   Mizuho is a global leader in the field of neurosurgery. All
                   the products being being produced in Japan, they are
                   particularly well known for their “Sugita Aneurysm Clips”,
@@ -385,8 +383,8 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
             )}
             {selected === "Cocoon" && (
               <>
-                <img src={Cocoon} alt="Cocoon" className="h-40 w-auto" />
-                <p className="text-center mt-4">
+                <img src={Cocoon} alt="Cocoon" className="h-30 w-auto" />
+                 <p className="text-center mt-4 p-7 sm:p-20 lg:p-30">
                   Cocoon is known for its patient warming systems used in
                   surgeries, including neurosurgery. Their Cocoon warming
                   blankets help maintain a patient’s body temperature during
@@ -399,7 +397,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
             {selected === "BL-OT" && (
               <>
                 <img src={BL} alt="BL-OT" className="h-40 w-auto" />
-                <p className="text-center mt-4">
+                <p className="text-center mt-4 p-7 sm:p-20 lg:p-30">
                   Mizuho is a global leader in the field of neurosurgery. All
                   the products being being produced in Japan, they are
                   particularly well known for their “Sugita Aneurysm Clips”,
@@ -414,7 +412,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                   alt="Surgiwear"
                   className="h-20 w-80 flex m-10"
                 />
-                <p className="text-center w-3/4 mt-4">
+              <p className="text-center mt-4 p-7 sm:p-20 lg:p-30">
                   Surgiwear has made significant contributions to neurosurgery 
                   by developing a comprehensive range of innovative and cost-effective medical devices. 
                   Notably, their Chhabra Slit n Spring Hydrocephalus Shunt system is widely 
@@ -430,173 +428,253 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
             Range of products
           </div>
 
-          <div className="container mx-auto my-10 px-4 py-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-20 place-items-center">
+                 <div className="container mx-auto my-10 px-4 py-4">
+                     <div className="grid grid-cols-1 sm:grid-cols-2 sm:mt-20 sm:mb-20 lg:grid-cols-3 my-20 gap-28 sm:m-4 sm:gap-20 m-10 lg:p-20">
               {selected === "Mizuho" &&
                 mizuhoCards.map((card) => (
-                  <a href = {card.url}>
-                  <div
-                    key={card.id}
-                    className="relative group w-60 h-60 bg-gray-200 rounded-xl overflow-hidden shadow-lg"
-                  >
-                    {/* Product Image */}
-                    <img
-                      src={card.image}
-                      alt={card.name}
-                      className="w-full h-60 object-cover transition duration-300 transform group-hover:brightness-50"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center bg-blue-100 text-black text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
-                      {card.text}
-                    </div>
-                  </div>
-                  </a>
+                <a key={card.id} href={card.url} className="no-underline">
+                                                    <motion.div
+                                                      className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
+                                                      whileHover={{ scale: 1.05 }}
+                                                    >
+                                                      <img
+                                                        src={card.image}
+                                                        alt={`Card ${card.text}`}
+                                                        className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
+                                                      />
+                                                      <motion.div
+                                                        className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
+                                                        initial={{ opacity: 0 }}
+                                                        whileHover={{ opacity: 1 }}
+                                                      >
+                                                        <span className="text-white text-3xl text-center font-bold">
+                                                          {card.text}
+                                                        </span>
+                                                      </motion.div>
+                                                    </motion.div>
+                                                    <p className="flex justify-start text-gray-800 text-2xl p-6 text-center font-semibold">
+                                                      {card.text}
+                                                    </p>
+                                                  </a>
                 ))}
 
               {selected === "Kinamed" &&
                 kinamedCards.map((card) => (
-                  <a href = {card.url}>
-                  <div
-                    key={card.id}
-                    className="relative group h-60 w-60 bg-gray-200 rounded-xl overflow-hidden shadow-lg"
-                  >
-                    <img
-                      src={card.image}
-                      alt={`Card ${card.id}`}
-                      className="h-60 w-full object-cover transition-opacity duration-300 group-hover:opacity-0"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center bg-red-500 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
-                      {card.text}
-                    </div>
-                  </div>
-                  </a>
+           <a key={card.id} href={card.url} className="no-underline">
+                                               <motion.div
+                                                 className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
+                                                 whileHover={{ scale: 1.05 }}
+                                               >
+                                                 <img
+                                                   src={card.image}
+                                                   alt={`Card ${card.text}`}
+                                                   className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
+                                                 />
+                                                 <motion.div
+                                                   className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
+                                                   initial={{ opacity: 0 }}
+                                                   whileHover={{ opacity: 1 }}
+                                                 >
+                                                   <span className="text-white text-3xl text-center font-bold">
+                                                     {card.text}
+                                                   </span>
+                                                 </motion.div>
+                                               </motion.div>
+                                               <p className="flex justify-start text-gray-800 text-2xl p-6 text-center font-semibold">
+                                                 {card.text}
+                                               </p>
+                                             </a>
                 ))}
 
               {selected === "Baxter" &&
                 baxterCards.map((card) => (
-                  <a href = {card.url}>
-                  <div
-                    key={card.id}
-                    className="relative group h-60 w-60 bg-gray-200 rounded-xl overflow-hidden shadow-lg"
-                  >
-                    <img
-                      src={card.image}
-                      alt={`Card ${card.id}`}
-                      className="h-60 w-full object-cover transition-opacity duration-300 group-hover:opacity-0"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center bg-blue-500 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
-                      {card.text}
-                    </div>
-                  </div>
-                  </a>
+              <a key={card.id} href={card.url} className="no-underline">
+                                                  <motion.div
+                                                    className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
+                                                    whileHover={{ scale: 1.05 }}
+                                                  >
+                                                    <img
+                                                      src={card.image}
+                                                      alt={`Card ${card.text}`}
+                                                      className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
+                                                    />
+                                                    <motion.div
+                                                      className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
+                                                      initial={{ opacity: 0 }}
+                                                      whileHover={{ opacity: 1 }}
+                                                    >
+                                                      <span className="text-white text-3xl text-center font-bold">
+                                                        {card.text}
+                                                      </span>
+                                                    </motion.div>
+                                                  </motion.div>
+                                                  <p className="flex justify-start text-gray-800 text-2xl p-6 text-center font-semibold">
+                                                    {card.text}
+                                                  </p>
+                                                </a>
                 ))}
 
               {selected === "Halyard" &&
                 halyardCards.map((card) => (
-                  <a href = {card.url}>
-                  <div
-                    key={card.id}
-                    className="relative group h-48 w-full bg-gray-200 rounded-xl overflow-hidden shadow-lg"
-                  >
-                    <img
-                      src={card.image}
-                      alt={`Card ${card.id}`}
-                      className="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-0"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center bg-blue-500 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
-                      {card.text}
-                    </div>
-                  </div>
-                  </a>
+          <a key={card.id} href={card.url} className="no-underline">
+                                              <motion.div
+                                                className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
+                                                whileHover={{ scale: 1.05 }}
+                                              >
+                                                <img
+                                                  src={card.image}
+                                                  alt={`Card ${card.text}`}
+                                                  className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
+                                                />
+                                                <motion.div
+                                                  className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
+                                                  initial={{ opacity: 0 }}
+                                                  whileHover={{ opacity: 1 }}
+                                                >
+                                                  <span className="text-white text-3xl text-center font-bold">
+                                                    {card.text}
+                                                  </span>
+                                                </motion.div>
+                                              </motion.div>
+                                              <p className="flex justify-start text-gray-800 text-2xl p-6 text-center font-semibold">
+                                                {card.text}
+                                              </p>
+                                            </a>
                 ))}
               {selected === "Sunoptic" &&
                 sunopticCards.map((card) => (
-                  <a href = {card.url}>
-                  <div
-                    key={card.id}
-                    className="relative group h-48 w-full bg-gray-200 rounded-xl overflow-hidden shadow-lg"
-                  >
-                    <img
-                      src={card.image}
-                      alt={`Card ${card.id}`}
-                      className="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-0"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center bg-blue-500 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
-                      {card.text}
-                    </div>
-                  </div>
-                  </a>
+            <a key={card.id} href={card.url} className="no-underline">
+                                                <motion.div
+                                                  className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
+                                                  whileHover={{ scale: 1.05 }}
+                                                >
+                                                  <img
+                                                    src={card.image}
+                                                    alt={`Card ${card.text}`}
+                                                    className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
+                                                  />
+                                                  <motion.div
+                                                    className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
+                                                    initial={{ opacity: 0 }}
+                                                    whileHover={{ opacity: 1 }}
+                                                  >
+                                                    <span className="text-white text-3xl text-center font-bold">
+                                                      {card.text}
+                                                    </span>
+                                                  </motion.div>
+                                                </motion.div>
+                                                <p className="flex justify-start text-gray-800 text-2xl p-6 text-center font-semibold">
+                                                  {card.text}
+                                                </p>
+                                              </a>
                 ))}
               {selected === "Syncromax" &&
                 syncromaxCards.map((card) => (
-                  <a href = {card.url}>
-                  <div
-                    key={card.id}
-                    className="relative group h-48 w-full bg-gray-200 rounded-xl overflow-hidden shadow-lg"
-                  >
-                    <img
-                      src={card.image}
-                      alt={`Card ${card.id}`}
-                      className="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-0"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center bg-blue-500 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
-                      {card.text}
-                    </div>
-                  </div>
-                  </a>
+            <a key={card.id} href={card.url} className="no-underline">
+                                                <motion.div
+                                                  className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
+                                                  whileHover={{ scale: 1.05 }}
+                                                >
+                                                  <img
+                                                    src={card.image}
+                                                    alt={`Card ${card.text}`}
+                                                    className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
+                                                  />
+                                                  <motion.div
+                                                    className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
+                                                    initial={{ opacity: 0 }}
+                                                    whileHover={{ opacity: 1 }}
+                                                  >
+                                                    <span className="text-white text-3xl text-center font-bold">
+                                                      {card.text}
+                                                    </span>
+                                                  </motion.div>
+                                                </motion.div>
+                                                <p className="flex justify-start text-gray-800 text-2xl p-6 text-center font-semibold">
+                                                  {card.text}
+                                                </p>
+                                              </a>
                 ))}
               {selected === "Cocoon" &&
                 cocoonCards.map((card) => (
-                  <a href = {card.url}>
-                  <div
-                    key={card.id}
-                    className="relative group h-48 w-full bg-gray-200 rounded-xl overflow-hidden shadow-lg"
-                  >
-                    <img
-                      src={card.image}
-                      alt={`Card ${card.id}`}
-                      className="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-0"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center bg-blue-500 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
-                      {card.text}
-                    </div>
-                  </div>
-                  </a>
+        <a key={card.id} href={card.url} className="no-underline">
+                                            <motion.div
+                                              className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
+                                              whileHover={{ scale: 1.05 }}
+                                            >
+                                              <img
+                                                src={card.image}
+                                                alt={`Card ${card.text}`}
+                                                className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
+                                              />
+                                              <motion.div
+                                                className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
+                                                initial={{ opacity: 0 }}
+                                                whileHover={{ opacity: 1 }}
+                                              >
+                                                <span className="text-white text-3xl text-center font-bold">
+                                                  {card.text}
+                                                </span>
+                                              </motion.div>
+                                            </motion.div>
+                                            <p className="flex justify-start text-gray-800 text-2xl p-6 text-center font-semibold">
+                                              {card.text}
+                                            </p>
+                                          </a>
                 ))}
               {selected === "BL-OT" &&
                 blCards.map((card) => (
-                  <a href = {card.url}>
-                  <div
-                    key={card.id}
-                    className="relative group h-48 w-full bg-gray-200 rounded-xl overflow-hidden shadow-lg"
-                  >
-                    <img
-                      src={card.image}
-                      alt={`Card ${card.id}`}
-                      className="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-0"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center bg-blue-500 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
-                      {card.text}
-                    </div>
-                  </div>
-                  </a>
+             <a key={card.id} href={card.url} className="no-underline">
+                                                 <motion.div
+                                                   className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
+                                                   whileHover={{ scale: 1.05 }}
+                                                 >
+                                                   <img
+                                                     src={card.image}
+                                                     alt={`Card ${card.text}`}
+                                                     className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
+                                                   />
+                                                   <motion.div
+                                                     className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
+                                                     initial={{ opacity: 0 }}
+                                                     whileHover={{ opacity: 1 }}
+                                                   >
+                                                     <span className="text-white text-3xl text-center font-bold">
+                                                       {card.text}
+                                                     </span>
+                                                   </motion.div>
+                                                 </motion.div>
+                                                 <p className="flex justify-start text-gray-800 text-2xl p-6 text-center font-semibold">
+                                                   {card.text}
+                                                 </p>
+                                               </a>
                 ))}
                 {selected === "Surgiwear" &&
                 surgiCards.map((card) => (
-                  <a href = {card.url}>
-                  <div
-                    key={card.id}
-                    className="relative group h-48 w-full bg-gray-200 rounded-xl overflow-hidden shadow-lg"
-                  >
-                    <img
-                      src={card.image}
-                      alt={`Card ${card.id}`}
-                      className="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-0"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center bg-blue-500 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
-                      {card.text}
-                    </div>
-                  </div>
-                  </a>
+             <a key={card.id} href={card.url} className="no-underline">
+                                                 <motion.div
+                                                   className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
+                                                   whileHover={{ scale: 1.05 }}
+                                                 >
+                                                   <img
+                                                     src={card.image}
+                                                     alt={`Card ${card.text}`}
+                                                     className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
+                                                   />
+                                                   <motion.div
+                                                     className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
+                                                     initial={{ opacity: 0 }}
+                                                     whileHover={{ opacity: 1 }}
+                                                   >
+                                                     <span className="text-white text-3xl text-center font-bold">
+                                                       {card.text}
+                                                     </span>
+                                                   </motion.div>
+                                                 </motion.div>
+                                                 <p className="flex justify-start text-gray-800 text-2xl p-6 text-center font-semibold">
+                                                   {card.text}
+                                                 </p>
+                                               </a>
                 ))}
             </div>
           </div>
@@ -739,17 +817,18 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
 };
 
 export default function Cardiology() {
-  const buttonImages = [
-    { id: "Mizuho", src: Mizuho, alt: "Mizuho" },
-    { id: "Kinamed", src: Kinamed, alt: "Kinamed" },
-    { id: "Baxter", src: Baxter, alt: "Baxter" },
-    { id: "Halyard", src: Halyard, alt: "Halyard" },
-    { id: "Sunoptic", src: Sunoptic, alt: "Sunoptic" },
-    { id: "Syncromax", src: Syncromax, alt: "Syncromax" },
-    { id: "Cocoon", src: Cocoon, alt: "Cocoon" },
-    { id: "BL-OT", src: BL, alt: "BL-OT" },
-    { id: "Surgiwear", src: Surgiwear, alt: "Surgiwear" },
-  ];
+const buttonImages = [
+  { id: "Mizuho", label: "Mizuho" },
+  { id: "Kinamed", label: "Kinamed" },
+  { id: "Baxter", label: "Baxter" },
+  { id: "Halyard", label: "Halyard" },
+  { id: "Sunoptic", label: "Sunoptic" },
+  { id: "Syncromax", label: "Syncromax" },
+  { id: "Cocoon", label: "Cocoon" },
+  { id: "BL-OT", label: "BL-OT" },
+  { id: "Surgiwear", label: "Surgiwear" },
+];
+
 
   return (
     <DepartmentPage
