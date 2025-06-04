@@ -147,9 +147,7 @@ const DepartmentPage = ({ name, buttonImages }) => {
 
   return (
     <>
-      <div className="relative z-50">
-        <Navbar />
-      </div>
+  
       <div
         className="min-h-screen overflow-x-hidden bg-cover bg-fixed bg-center"
         style={{
@@ -157,29 +155,31 @@ const DepartmentPage = ({ name, buttonImages }) => {
           backgroundColor: "rgba(255, 255, 255, 0)",
           backgroundBlendMode: "overlay",
         }}
-      >
+      ><div className="relative  z-50">
+            <Navbar />
+          </div>
         <div className=" mt-40">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-20 p-12 items-center">
             <h2 className="z-20 text-6xl font-bold text-left flex-1">{name}</h2>
-            <img
-              src={heart}
+            {/* <img
+              //src={heart}
               alt={name}
               className="absolute -top-20 -right-4 opacity-70  transform -rotate-45 w-4/5 sm:w-3/5 lg:w-1/3 rounded-3xl shadow-2xl z-0"
-            />
+            /> */}
           </div>
 
           {/* Buttons for BL and Insightra */}
-          <div className="z-0 relative grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-6">
-            {buttonImages.map(({ src, alt, id }) => (
-              <button
-                key={id}
-                onClick={() => setSelected(id)}
-                className={`p-4 rounded-full text-white mx-4 w-3/4 h-14 border flex justify-center items-center  ${
-                  selected === id ? "bg-blue-600" : "bg-blue-300"
-                }`}
-              >
-                <img src={src} alt={alt} className="h-12 w-auto" />
-              </button>
+       <div className="z-0 relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7 p-10">
+            {buttonImages.map(({ label, id }) => (
+          <button
+          key={id}
+           onClick={() => setSelected(id)}
+            className={`p-2 font-bold rounded-3xl text-black w-3/4 mx-14 h-14 border border-black flex justify-center items-center ${
+           selected === id ? "bg-gray-500 text-white border-gray-500" : "bg-white"
+         }` }
+           >
+              {label}
+            </button>
             ))}
           </div>
 
@@ -192,7 +192,7 @@ const DepartmentPage = ({ name, buttonImages }) => {
                   alt="BL Lifesciences"
                   className="h-40 w-auto m-10"
                 />
-                <p className="text-center mt-4">
+                  <p className="text-center mt-4 p-7 sm:p-20 lg:p-30">
                   Customized Cath lab Procedure Packs are available as per
                   user-defined requirements and specifications.
                 </p>
@@ -205,7 +205,7 @@ const DepartmentPage = ({ name, buttonImages }) => {
                   alt="Insightra"
                   className="h-20 w-80 flex m-10"
                 />
-                <p className="text-center mt-4">
+                 <p className="text-center mt-4 p-7 sm:p-20 lg:p-30">
                   The Insightra Ultra 7Fr catheter allows common fluid-filled
                   technology in a smaller catheter with no compromise on lumen
                   size.
@@ -219,77 +219,66 @@ const DepartmentPage = ({ name, buttonImages }) => {
           </div>
 
           {/* Hover Cards (Conditionally Rendered) */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 my-20 gap-28 sm:m-4 sm:gap-20 m-10 lg:p-20">
+        <div className="container mx-auto my-10 px-4 py-4">
+                     <div className="grid grid-cols-1 sm:grid-cols-2 sm:mt-20 sm:mb-20 lg:grid-cols-3 my-20 gap-28 sm:m-4 sm:gap-20 m-10 lg:p-20">
             {selected === "BL" &&
               cards.map((card) => (
-                <a
-                  key={card.id}
-                  href={card.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="no-underline"
-                >
-                  <motion.div
-                    className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    <img
-                      src={card.image}
-                      alt={`Card ${card.text}`}
-                      className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
-                    />
-                    <motion.div
-                      className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
-                      initial={{ opacity: 0 }}
-                      whileHover={{ opacity: 1 }}
-                    >
-                      <span className="text-white text-3xl text-center font-bold">
-                        {card.text}
-                      </span>
-                    </motion.div>
-                  </motion.div>
-                  <p className="flex justify-center text-gray-800 text-2xl p-6 text-center font-semibold">
-                    {card.text}
-                  </p>
-                </a>
+               <a key={card.id} href={card.url} className="no-underline">
+                                    <motion.div
+                                      className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
+                                      whileHover={{ scale: 1.05 }}
+                                    >
+                                      <img
+                                        src={card.image}
+                                        alt={`Card ${card.text}`}
+                                        className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
+                                      />
+                                      <motion.div
+                                        className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
+                                        initial={{ opacity: 0 }}
+                                        whileHover={{ opacity: 1 }}
+                                      >
+                                        <span className="text-white text-3xl text-center font-bold">
+                                          {card.text}
+                                        </span>
+                                      </motion.div>
+                                    </motion.div>
+                                    <p className="flex justify-start text-gray-800 text-2xl p-6 text-center font-semibold">
+                                      {card.text}
+                                    </p>
+                                  </a>
               ))}
 
             {selected === "Insightra" &&
               cards1.map((card) => (
-                <a
-                  key={card.id}
-                  href={card.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="no-underline"
-                >
-                  <motion.div
-                    className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    <img
-                      src={card.image}
-                      alt={`Card ${card.text}`}
-                      className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
-                    />
-                    <motion.div
-                      className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
-                      initial={{ opacity: 0 }}
-                      whileHover={{ opacity: 1 }}
-                    >
-                      <span className="text-white text-3xl text-center font-bold">
-                        {card.text}
-                      </span>
-                    </motion.div>
-                  </motion.div>
-                  <p className="flex justify-center text-gray-800 text-2xl p-6 text-center font-semibold">
-                    {card.text}
-                  </p>
-                </a>
+                 <a key={card.id} href={card.url} className="no-underline">
+                                      <motion.div
+                                        className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
+                                        whileHover={{ scale: 1.05 }}
+                                      >
+                                        <img
+                                          src={card.image}
+                                          alt={`Card ${card.text}`}
+                                          className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
+                                        />
+                                        <motion.div
+                                          className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
+                                          initial={{ opacity: 0 }}
+                                          whileHover={{ opacity: 1 }}
+                                        >
+                                          <span className="text-white text-3xl text-center font-bold">
+                                            {card.text}
+                                          </span>
+                                        </motion.div>
+                                      </motion.div>
+                                      <p className="flex justify-start text-gray-800 text-2xl p-6 text-center font-semibold">
+                                        {card.text}
+                                      </p>
+                                    </a>
               ))}
           </div>
         </div>
-
+</div>
         {/* conditionally rendered read more */}
         {selected === "BL" && (
           <>
@@ -328,10 +317,10 @@ const DepartmentPage = ({ name, buttonImages }) => {
 };
 
 export default function Cardiology() {
-  const buttonImages = [
-    { id: "BL", src: BL, alt: "BL Lifesciences" },
-    { id: "Insightra", src: Insightra, alt: "Insightra" },
-  ];
+const buttonImages = [
+  { id: "BL", label: "BL Lifesciences" },
+  { id: "Insightra", label: "Insightra" },
+];
 
   return <DepartmentPage name="CARDIOLOGY" buttonImages={buttonImages} />;
 }

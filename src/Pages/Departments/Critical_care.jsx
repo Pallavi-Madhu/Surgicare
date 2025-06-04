@@ -191,19 +191,20 @@ const DepartmentPage = ({ name, buttonImages }) => {
               }}
             >
               {/* Buttons  */}
-              <div className="z-0 relative grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-6">
-                {buttonImages.map(({ src, alt, id }) => (
-                  <button
-                    key={id}
-                    onClick={() => setSelected(id)}
-                    className={`p-4 rounded-full text-white w-3/4 mx-4 h-14 border flex justify-center items-center  ${
-                      selected === id ? "bg-blue-600" : "bg-blue-300"
-                    }`}
-                  >
-                    <img src={src} alt={alt} className="h-12 w-auto" />
-                  </button>
-                ))}
-              </div>
+              <div className="z-0 relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7 p-10">
+            {buttonImages.map(({ label, id }) => (
+          <button
+          key={id}
+           onClick={() => setSelected(id)}
+            className={`p-2 font-bold rounded-3xl text-black w-3/4 mx-14 h-14 border border-black flex justify-center items-center ${
+           selected === id ? "bg-gray-500 text-white border-gray-500" : "bg-white"
+         }` }
+           >
+              {label}
+            </button>
+            ))}
+          </div>
+
 
               {/* Conditionally Rendered Content */}
               <div className="flex z-50 flex-col justify-center items-center mt-6">
@@ -435,33 +436,37 @@ const DepartmentPage = ({ name, buttonImages }) => {
                       </p>
                     </a>
                   ))}
-                {selected === "Cocoon" &&
-                  cards5.map((card) => (
-                    <a key={card.id} href={card.url} className="no-underline">
-                      <motion.div
-                        className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
-                        whileHover={{ scale: 1.05 }}
-                      >
-                        <img
-                          src={card.image}
-                          alt={`Card ${card.text}`}
-                          className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
-                        />
-                        <motion.div
-                          className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
-                          initial={{ opacity: 0 }}
-                          whileHover={{ opacity: 1 }}
-                        >
-                          <span className="text-white text-3xl text-center font-bold">
-                            {card.text}
-                          </span>
-                        </motion.div>
-                      </motion.div>
-                      <p className="flex justify-center text-gray-800 text-2xl p-6 text-center font-semibold">
-                        {card.text}
-                      </p>
-                    </a>
-                  ))}
+               {selected === "Cocoon" && (
+  <div className="flex flex-wrap justify-center gap-6 my-10">
+    {cards5.map((card) => (
+      <a key={card.id} href={card.url} className="no-underline">
+        <motion.div
+          className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
+          whileHover={{ scale: 1.05 }}
+        >
+          <img
+            src={card.image}
+            alt={`Card ${card.text}`}
+            className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
+          />
+          <motion.div
+            className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
+            initial={{ opacity: 0 }}
+            whileHover={{ opacity: 1 }}
+          >
+            <span className="text-white text-3xl text-center font-bold">
+              {card.text}
+            </span>
+          </motion.div>
+        </motion.div>
+        <p className="text-center text-gray-800 text-2xl pt-4 font-semibold">
+          {card.text}
+        </p>
+      </a>
+    ))}
+  </div>
+)}
+
                 {selected === "Meditech" &&
                   cards4.map((card) => (
                     <a key={card.id} href={card.url} className="no-underline">
@@ -587,14 +592,14 @@ const DepartmentPage = ({ name, buttonImages }) => {
 };
 
 export default function CriticalCare() {
-  const buttonImages = [
-    { id: "BL", src: BL, alt: "BL Lifesciences" },
-    { id: "Sinapi", src: Sinapi, alt: "Sinapi" },
-    { id: "Toray", src: toray, alt: "Toray" },
-    { id: "Meditech", src: "/CriticalCare/meditech.png", alt: "Meditech devices" },
-    { id: "Cocoon", src: cocoon, alt: "Cocoon" },
-    { id: "HICO", src: hico, alt: "HICO" },
-  ];
+ const buttonImages = [
+  { id: "BL", label: "BL Lifesciences" },
+  { id: "Sinapi", label: "Sinapi" },
+  { id: "Toray", label: "Toray" },
+  { id: "Meditech", label: "Meditech devices" },
+  { id: "Cocoon", label: "Cocoon" },
+  { id: "HICO", label: "HICO" },
+];
 
   return <DepartmentPage name="CRITICAL CARE" buttonImages={buttonImages} />;
 }

@@ -30,12 +30,12 @@ const Navbar = () => {
               <div className="flex flex-col items-center">
                 <img src={logo} alt="SurgiCare Logo" className="h-14 w-auto" />
               </div>
-              <p className="text-5xl font-bold p-2 bg-gradient-to-l from-blue-500 to-black bg-clip-text text-transparent">
+              <p className="text-3xl sm:text-5xl font-bold p-2 bg-gradient-to-l from-blue-500 to-black bg-clip-text text-transparent">
                 Nandana Surgi Care
               </p>
 
               {/* Hamburger Icon for Mobile */}
-              <div className="md:hidden">
+              <div className="lg:hidden p-7">
                 <button
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
                   className="text-black w-10  focus:outline-none"
@@ -59,7 +59,7 @@ const Navbar = () => {
                   ) : (
                     // Hamburger Icon
                     <svg
-                      className="w-6 h-6"
+                      className="w-10 h-10"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -77,7 +77,7 @@ const Navbar = () => {
               </div>
 
               {/* Desktop Navigation Links */}
-              <div className="hidden md:flex p-0 md:p-2 md:mr-4 lg:mr-0 space-x-8 items-center relative">
+              <div className="hidden lg:flex p-0 md:p-2 md:mr-4 lg:mr-0 space-x-8 items-center relative">
                 <a
                   href="/"
                   className="text-black text-2xl font-bold hover:text-blue-700 transition duration-300"
@@ -131,7 +131,7 @@ const Navbar = () => {
 
               {/* Mobile Menu - Conditionally Rendered */}
               {isMenuOpen && (
-                <div className="absolute top-16 left-0 w-full bg-black text-white p-4 md:hidden">
+                <div className="absolute top-24 left-0 w-full bg-black text-white p-4 lg:hidden">
                   <a
                     href="/"
                     className="block text-lg font-bold hover:text-pink-300"
