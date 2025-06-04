@@ -2,15 +2,13 @@
 
 Welcome to the official website repository for **Nandana Surgicare**, a company dedicated to delivering high-quality medical and surgical equipment. This website serves as a digital catalog of the wide range of products handled by the company across various medical departments.
 
----
 
-## 🌐 About the Website
+## About the Website
 
 This website is designed to provide an intuitive, professional, and informative platform for healthcare professionals, hospital administrators, and clients to explore the diverse product offerings from Nandana Surgicare. It features detailed descriptions, departmental categorization, and high-quality visuals to enhance user experience.
 
----
 
-### 🔍 Key Features
+### Key Features
 
 - ✅ **Department-wise Product Display**  
   Products are neatly organized under various medical departments such as General Surgery, Orthopedics, Critical Care, Plastic Surgery and more.
@@ -30,12 +28,10 @@ This website is designed to provide an intuitive, professional, and informative 
 - **Backend**:
 - **Hosting**:  -->
 
----
 
 ## Contributors
 
-- **Pallavi-Madhu** 
-- **3-stardust-7** 
+ **Pallavi-Madhu** ,**3-stardust-7** 
 
 We collaboratively built this project with the goal of helping Nandana Surgicare extend their reach and better serve the medical community.
 
