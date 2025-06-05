@@ -498,6 +498,7 @@ const DepartmentPage = ({ name, buttonImages }) => {
             </div>
           </div>
           {/* conditionally rendered read more */}
+           <div className="flex justify-center mt-10 mb-14">
           {selected === "BL" && (
             <>
               <a
@@ -515,7 +516,7 @@ const DepartmentPage = ({ name, buttonImages }) => {
         {selected == "Sinapi" && (
           <>
           <a
-          href="https://sinapibiomedical.com/"
+          href="https://t.sinapibiomedical.com/"
           target="_blank"
           rel="noopener noreferrer"
           className="flex justify-center mt-10"
@@ -530,42 +531,36 @@ const DepartmentPage = ({ name, buttonImages }) => {
           {selected === "Toray" && (
             <>
               <a
-                href="https://www.toray.com/global/"
+                href="https://www.toray-medical.com/en/products/index.html"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex justify-center "
+                className="hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700"
               >
-                <button className=" hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700">
-                  Read More
-                </button>
+                Read More
               </a>
             </>
           )}
           {selected === "Meditech" && (
             <>
               <a
-                href="https://meditechintl.com/"
+                href="https://meditecdevices.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex justify-center "
+                className="hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700"
               >
-                <button className=" hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700">
-                  Read More
-                </button>
+                Read More
               </a>
             </>
           )}
           {selected === "Cocoon" && (
             <>
               <a
-                href="https://www.minogue-med.com/product/cocoon-convective-patient-warming-system/?utm_source=chatgpt.com"
+                href="https://www.careessentials.com.au/  "
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex justify-center "
+                className="hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700"
               >
-                <button className=" hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700">
-                  Read More
-                </button>
+                Read More
               </a>
             </>
           )}
@@ -575,17 +570,16 @@ const DepartmentPage = ({ name, buttonImages }) => {
                 href="https://www.hico.de/en/hico.html"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex justify-center "
+                className="hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700"
               >
-                <button className=" hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700">
-                  Read More
-                </button>
+               Read More
               </a>
             </>
           )}
         </div>
         <DepNav />
         <Footer />
+      </div>
       </div>
     </>
   );

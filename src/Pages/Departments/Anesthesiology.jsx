@@ -835,17 +835,16 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
           </div>
 
           {/* conditionally rendered read more */}
+          <div className="flex justify-center mt-10 mb-14">
           {selected === "BL" && (
             <>
               <a
                 href="https://www.bllifesciences.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex justify-center "
+                className="hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 my-20 rounded-3xl border font-bold hover:border-black border-blue-700"
               >
-                <button className=" hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 my-20 rounded-3xl border font-bold hover:border-black border-blue-700">
-                  Read More
-                </button>
+                Read More
               </a>
             </>
           )}
@@ -856,25 +855,21 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                 href="https://venticaremedicalinc.com/products/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex justify-center "
+                className="hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 my-20 rounded-3xl border font-bold hover:border-black border-blue-700 "
               >
-                <button className=" hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700">
-                  Read More
-                </button>
+                Read More
               </a>
             </>
           )}
           {selected === "Meditech" && (
             <>
               <a
-                href="https://meditechintl.com/products//"
+                href="https://meditecdevices.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex justify-center "
+                className="hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 my-20 rounded-3xl border font-bold hover:border-black border-blue-700flex justify-center "
               >
-                <button className=" hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700">
-                  Read More
-                </button>
+                Read More
               </a>
             </>
           )}
@@ -884,11 +879,9 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                 href="https://www.careessentials.com.au/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex justify-center "
+                className="hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 my-20 rounded-3xl border font-bold hover:border-black border-blue-700"
               >
-                <button className=" hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700">
-                  Read More
-                </button>
+                Read More
               </a>
             </>
           )}
@@ -898,11 +891,9 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                 href="https://aerohealthcare.com/us/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex justify-center "
+                className="hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 my-20 rounded-3xl border font-bold hover:border-black border-blue-700 "
               >
-                <button className=" hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700">
-                  Read More
-                </button>
+               Read More
               </a>
             </>
           )}
@@ -912,11 +903,9 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                 href="https://www.southwestmedical.com/brands/portex-smiths-medical"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex justify-center "
+                className="hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 my-20 rounded-3xl border font-bold hover:border-black border-blue-700"
               >
-                <button className=" hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700">
-                  Read More
-                </button>
+                Read More
               </a>
             </>
           )}
@@ -926,11 +915,9 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                 href="https://www.acsmedical.com/brands/rusch"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex justify-center "
+                className="hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 my-20 rounded-3xl border font-bold hover:border-black border-blue-700 "
               >
-                <button className=" hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700">
-                  Read More
-                </button>
+                Read More
               </a>
             </>
           )}
@@ -940,11 +927,9 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                 href="https://www.medisaferesuscitators.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex justify-center "
+                className="hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 my-20 rounded-3xl border font-bold hover:border-black border-blue-700"
               >
-                <button className=" hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700">
-                  Read More
-                </button>
+                Read More
               </a>
             </>
           )}
@@ -954,14 +939,13 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                 href="https://aerohealthcare.com/us/" //site not working
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex justify-center "
+                className="hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 my-20 rounded-3xl border font-bold hover:border-black border-blue-700 "
               >
-                <button className=" hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700">
-                  Read More
-                </button>
+                Read More
               </a>
             </>
           )}
+        </div>
         </div>
         <DepNav />
         <Footer />

@@ -255,6 +255,46 @@ const DepartmentPage = ({ name, buttonImages }) => {
           </div>
         </div>
       </div>
+      <div className="flex justify-center mt-10 mb-14">
+        
+      
+      {selected === "Baxter" && (
+            <>
+              <a
+                href="https://www.baxter.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:bg-blue-300 hover:text-black text-blue-700 py-2 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700"
+              >
+               Read More
+              </a>
+            </>
+          )}
+          {selected === "Synkromax" && (
+            <>
+              <a
+                href="http://www.synkromax.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:bg-blue-300 hover:text-black text-blue-700 py-2 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700"
+              >
+               Read More
+              </a>
+            </>
+          )}
+          {selected === "Surgiwear" && (
+            <>
+              <a
+                href="https://surgiwear.co.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:bg-blue-300 hover:text-black text-blue-700 py-2 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700"
+              >
+               Read More
+              </a>
+            </>
+          )}
+          </div>
       <DepNav />
       <Footer />
     </>
