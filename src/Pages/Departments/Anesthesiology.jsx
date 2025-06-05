@@ -332,9 +332,18 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
 
   return (
     <>
-      <div className="relative z-50">
-        <Navbar />
-      </div>
+    <div
+        className="min-h-screen overflow-x-hidden bg-cover bg-fixed bg-center"
+        style={{
+          backgroundImage: `url(${bg})`,
+          backgroundColor: "rgba(255, 255, 255, 0)",
+          backgroundBlendMode: "overlay",
+        }}
+      >
+        <div className="relative  z-50">
+          {" "}
+          <Navbar />
+        </div>
       <div
         className="min-h-screen overflow-x-hidden bg-cover bg-fixed bg-center"
         style={{
@@ -360,19 +369,19 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
             </div>
 
             {/* Buttons for BL and Insightra */}
-            <div className="z-0 relative grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-6">
-              {buttonImages.map(({ src, alt, id }) => (
-                <button
-                  key={id}
-                  onClick={() => setSelected(id)}
-                  className={`p-4 rounded-full text-white w-3/4 h-14 border flex justify-center items-center ${
-                    selected === id ? "bg-blue-600" : "bg-blue-300"
-                  }`}
-                >
-                  <img src={src} alt={alt} className="h-12 w-auto" />
-                </button>
-              ))}
-            </div>
+          <div className="grid relative  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-6">
+            {buttonImages.map(({ src, alt, id }) => (
+             <button
+          key={id}
+           onClick={() => setSelected(id)}
+            className={`p-3 font-bold rounded-full text-black w-1/2 sm:w-3/4 lg:w-1/2 mx-14 h-14 border border-black flex justify-center items-center ${
+           selected === id ? "bg-gray-500 text-white border-gray-500" : "bg-white"
+         }` }
+           >
+                <img src={src} alt={alt} className="h-12 w-auto" />
+              </button>
+            ))}
+          </div>
 
             {/* Conditionally Rendered Content */}
             <div className="flex z-50 flex-col justify-center items-center mt-6">
@@ -381,9 +390,9 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                   <img
                     src={Venticare}
                     alt="Venticare"
-                    className="h-40 w-auto m-10"
+                    className="h-30 w-auto m-10"
                   />
-                  <p className="text-center mt-4">
+                        <p className="text-center mt-4 p-7 sm:p-20 lg:p-30">
                     Hico specializes in temperature management solutions in
                     anesthesiology, offering advanced warming and cooling
                     systems. Their devices help maintain patient normothermia
@@ -400,7 +409,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                     alt="Cocoon"
                     className="h-20 w-80 flex m-10"
                   />
-                  <p className="text-center mt-4">
+                        <p className="text-center mt-4 p-7 sm:p-20 lg:p-30">
                     Cocoon specializes in patient warming solutions for
                     anesthesiology, helping to maintain normothermia during
                     surgeries. Their advanced warming blankets and systems
@@ -413,8 +422,8 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
               )}
               {selected === "BL" && (
                 <>
-                  <img src={BL} alt="BL" className="h-20 w-80 flex m-10" />
-                  <p className="text-center mt-4">
+                  <img src={BL} alt="BL" className="h-40 w-auto flex m-10" />
+                       <p className="text-center mt-4 p-7 sm:p-20 lg:p-30">
                     BL Lifesciences contributes to anesthesiology by providing
                     advanced anesthesia delivery systems, breathing circuits,
                     and airway management solutions. Their products ensure
@@ -432,7 +441,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                     alt="Meditech"
                     className="h-20 w-80 flex m-10"
                   />
-                  <p className="text-center mt-4">
+                       <p className="text-center mt-4 p-7 sm:p-20 lg:p-30">
                     Meditech is a private company specializing in representing
                     medical device manufacturers. Since 1979, they have
                     exclusively represented innovative solutions for the
@@ -444,7 +453,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
               {selected === "Aero" && (
                 <>
                   <img src={Aero} alt="Aero" className="h-20 w-80 flex m-10" />
-                  <p className="text-center mt-4">
+                        <p className="text-center mt-4 p-7 sm:p-20 lg:p-30">
                     AERO is a medical equipment manufacturer specializing in
                     anesthesia and respiratory care solutions. They provide
                     high-quality breathing circuits, ventilator accessories, and
@@ -461,7 +470,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                     alt="Portex"
                     className="h-20 w-80 flex m-10"
                   />
-                  <p className="text-center mt-4">
+                        <p className="text-center mt-4 p-7 sm:p-20 lg:p-30">
                     Portex, a brand under ICU Medical, specializes in
                     manufacturing anesthesia and respiratory care products.
                     Their offerings include epidural catheters, anesthesia
@@ -476,9 +485,9 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                   <img
                     src={Medisafe}
                     alt="Medisafe"
-                    className="h-20 w-80 flex m-10"
+                    className="h-40 w-auto flex m-10"
                   />
-                  <p className="text-center mt-4">
+                     <p className="text-center mt-4 p-7 sm:p-20 lg:p-30">
                     Medisafe International is a leading manufacturer and
                     supplier of high-quality medical equipment, specializing in
                     anesthesia, critical care, and surgical instruments. The
@@ -495,9 +504,9 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                   <img
                     src={Suretech}
                     alt="Suretech"
-                    className="h-20 w-80 flex m-10"
+                    className="h-50 w-auto flex m-10"
                   />
-                  <p className="text-center mt-4">
+                     <p className="text-center mt-4 p-7 sm:p-20 lg:p-30">
                     Suretech Medical Inc is a leading manufacturer and supplier
                     of high-quality medical devices, specializing in cardiology,
                     anesthesia, and critical care products. Their range includes
@@ -515,7 +524,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                     alt="Rusch"
                     className="h-20 w-80 flex m-10"
                   />
-                  <p className="text-center mt-4">
+                        <p className="text-center mt-4 p-7 sm:p-20 lg:p-30">
                     RÜSCH is a medical device company specializing in urology,
                     anesthesia, and surgical products, known for its
                     high-quality catheters and airway management solutions. It
@@ -526,7 +535,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
               )}
             </div>
 
-            <div className="flex mt-10 text-4xl font-bold justify-center items-center">
+            <div className="flex mb-20 text-4xl font-bold justify-center items-center">
               Range of products
             </div>
 
@@ -950,6 +959,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
         <DepNav />
         <Footer />
       </div>
+          </div>
     </>
   );
 };

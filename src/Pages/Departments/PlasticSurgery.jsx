@@ -6,10 +6,8 @@ import bg from "../../assets/depBG.png";
 import Baxter from "../../assets/Baxter.png";
 import Sunkromax from "../../assets/Syncromax.png";
 import Surgiwear from "../../assets/Surgiwear.png";
-
 import { motion } from "framer-motion";
 
-import heart from "../../assets/heart.png";
 
 const DepartmentPage = ({ name, buttonImages }) => {
   const [selected, setSelected] = useState("Baxter");
@@ -77,15 +75,15 @@ const DepartmentPage = ({ name, buttonImages }) => {
           </div>
 
           {/* Buttons for BL and Insightra */}
-          <div className="z-0 relative grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-6">
+         <div className="grid relative  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-6">
             {buttonImages.map(({ src, alt, id }) => (
-              <button
-                key={id}
-                onClick={() => setSelected(id)}
-                className={`p-4 rounded-full text-white w-3/4 h-14 border flex justify-center items-center ${
-                  selected === id ? "bg-blue-600" : "bg-blue-300"
-                }`}
-              >
+             <button
+          key={id}
+           onClick={() => setSelected(id)}
+            className={`p-2 font-bold rounded-3xl text-black w-1/2 sm:w-3/4 lg:w-1/2 mx-14 h-14 border border-black flex justify-center items-center ${
+           selected === id ? "bg-gray-500 text-white border-gray-500" : "bg-white"
+         }` }
+           >
                 <img src={src} alt={alt} className="h-12 w-auto" />
               </button>
             ))}

@@ -5,7 +5,8 @@ import Footer from "../../Components/Footer";
 import Sinapi from "../../assets/Sinapi.png";
 import DepNav from "../../Components/DepNav";
 import chestdrain from "../../assets/Pulmo/chestdrain.png"
-
+import { motion } from "framer-motion";
+import bg from "../../assets/depBG.png";
 const departments = [
   { id: "critical-care", name: "Critical Care" },
   { id: "cardiac-surgery", name: "Cardiac Surgery" },
@@ -19,7 +20,7 @@ const departments = [
   { id: "anesthesiology", name: "Anesthesiology" },
 ];
 
-const cards = {
+const card = {
   id: 1,
   image: chestdrain, 
   text: "Chest Drainage System 50ml,400ml,1000ml",
@@ -29,7 +30,16 @@ const cards = {
 export default function Pulmonology() {
   return (
     <>
-      <Navbar />
+     <div
+            className="min-h-screen overflow-x-hidden bg-cover bg-fixed bg-center"
+            style={{
+              backgroundImage: `url(${bg})`,
+              backgroundColor: "rgba(255, 255, 255, 0)",
+              backgroundBlendMode: "overlay",
+            }}
+          ><div className="relative  z-50">
+            <Navbar />
+          </div>
 
       {/* Pulmonology Page Content */}
       <div className="mt-40">
@@ -40,7 +50,7 @@ export default function Pulmonology() {
         {/* Company Details */}
         <div className="flex flex-col items-center mt-6">
           <img src={Sinapi} alt="Sinapi" className="h-40 w-auto" />
-          <p className="mt-4 ml-4 text-left">
+          <p className="text-center mt-4 p-7 sm:p-20 lg:p-30">
             Sinapi Biomedicals specializes in developing innovative and
             cost-effective medical devices, particularly in wound care, critical
             care, and surgical solutions. Their product range includes chest
@@ -57,18 +67,38 @@ export default function Pulmonology() {
 
         {/* Card */}
         <div className="flex justify-center mt-10">
-          <div className="relative group h-100  bg-gray-200 rounded-xl overflow-hidden shadow-lg border border-gray-300 mx-auto">
-            <a key={cards.id} href={cards.url} className="no-underline">
-            <img
-              src={cards.image}
-              alt={cards.text}
-              className="h-full w-full object-cover object-center transition-opacity duration-300 group-hover:opacity-50"
-            />
-            <div className="absolute inset-0 flex items-center justify-center bg-blue-500 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
-              {cards.text}
-            </div>
-          </a>
-          </div>
+        
+             <a
+                                            key={card.id}
+                                            href={card.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="no-underline"
+                                          >
+                                            <motion.div
+                                              className="relative group h-auto w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
+                                              whileHover={{ scale: 1.05 }}
+                                            >
+                                              <img
+                                                src={card.image}
+                                                alt={`Card ${card.text}`}
+                                                className="object-cover transition duration-300 transform group-hover:brightness-50"
+                                              />
+                                              <motion.div
+                                                className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
+                                                initial={{ opacity: 0 }}
+                                                whileHover={{ opacity: 1 }}
+                                              >
+                                                <span className="text-white text-3xl text-center font-bold">
+                                                  {card.text}
+                                                </span>
+                                              </motion.div>
+                                            </motion.div>
+                                            <p className="flex justify-center text-gray-800 text-2xl p-6 text-center font-semibold">
+                                              {card.text}
+                                            </p>
+                                          </a>
+        
         </div>
       </div>
 
@@ -86,6 +116,7 @@ export default function Pulmonology() {
 
       <DepNav />
       <Footer />
+       </div>
     </>
   );
 }
