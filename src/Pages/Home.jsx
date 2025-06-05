@@ -242,7 +242,9 @@ const Home = () => {
           >
             {cards.map((card, index) => (
               <SwiperSlide key={index} className="flex justify-center">
+                <a href={card.url} target="_blank" rel="noopener noreferrer" className="block w-full h-full">
                 <Card image={card.image} description={card.description} />
+                </a>
               </SwiperSlide>
             ))}
           </Swiper>

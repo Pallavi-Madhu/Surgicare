@@ -25,7 +25,7 @@ const products = [
     name: "Cocoon",
     image: cocoon,
     k: "Warmer",
-    url: "https://www.dispomed.com/products/cocoon-cws-5000-patient-warming-system/",
+    url: "https://www.careessentials.com.au/product-category/warming-blankets-warming-machines/?category-list=warming-machines",
   },
   {
     id: 3,
