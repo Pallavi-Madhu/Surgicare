@@ -972,17 +972,16 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
           </div>
 
           {/*Read more*/}
+          <div className="flex justify-center mt-10 mb-14">
           {selected === "Euroset" && (
             <>
               <a
-                href="https://www.eurosets.com/en/"
+                href="https://www.eurosets.com/en/products/cardiopulmonary/oxygenators/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex justify-center "
+                className="hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700"
               >
-                <button className=" hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700">
-                  Read More
-                </button>
+               Read More
               </a>
             </>
           )}
@@ -992,11 +991,9 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                 href="https://www.bllifesciences.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex justify-center "
+                className="hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700"
               >
-                <button className=" hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700">
-                  Read More
-                </button>
+                Read More
               </a>
             </>
           )}
@@ -1006,25 +1003,21 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                 href="https://www.baxter.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex justify-center "
+                className="hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700 "
               >
-                <button className=" hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700">
-                  Read More
-                </button>
+                Read More
               </a>
             </>
           )}
           {selected === "SynKromax" && (
             <>
               <a
-                href="https://insightra.com/" //not correct
+                href="http://www.synkromax.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex justify-center "
+                className="hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700 "
               >
-                <button className=" hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700">
-                  Read More
-                </button>
+                Read More
               </a>
             </>
           )}
@@ -1035,11 +1028,9 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                 href="https://www.terumo.com/" //check
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex justify-center "
+                className="hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700 "
               >
-                <button className=" hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700">
-                  Read More
-                </button>
+                Read More
               </a>
             </>
           )}
@@ -1050,11 +1041,9 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                 href="https://www.scanlaninternational.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex justify-center "
+                className="hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700"
               >
-                <button className=" hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700">
-                  Read More
-                </button>
+                Read More
               </a>
             </>
           )}
@@ -1062,14 +1051,12 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
           {selected === "Sinapi" && (
             <>
               <a
-                href="https://sinapibiomedical.com/"
+                href="https://t.sinapibiomedical.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex justify-center "
+                className="hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700 "
               >
-                <button className=" hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700">
-                  Read More
-                </button>
+                Read More
               </a>
             </>
           )}
@@ -1080,11 +1067,9 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                 href="https://www.halyardhealth.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex justify-center "
+                className="hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700 "
               >
-                <button className=" hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700">
-                  Read More
-                </button>
+                Read More
               </a>
             </>
           )}
@@ -1095,11 +1080,9 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                 href="https://insightra.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex justify-center "
+                className="hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700"
               >
-                <button className=" hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700">
-                  Read More
-                </button>
+                Read More
               </a>
             </>
           )}
@@ -1110,14 +1093,13 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                 href="https://www.lsisolutions.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex justify-center "
+                className="hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700 "
               >
-                <button className=" hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700">
-                  Read More
-                </button>
+                Read More
               </a>
             </>
           )}
+        </div>
         </div>
 
         <DepNav />

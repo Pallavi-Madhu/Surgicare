@@ -159,17 +159,16 @@ const surgiwearCards = [
         </div>
 
         {/*Read more*/}
+        <div className="flex justify-center mt-10 mb-14">
         {selected === "Halyard" && (
           <>
             <a
               href="https://www.halyardhealth.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex justify-center "
+              className="hover:bg-blue-300 hover:text-black text-blue-700 py-2 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700"
             >
-              <button className=" hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700">
-                Read More
-              </button>
+              Read More
             </a>
           </>
         )}
@@ -180,14 +179,13 @@ const surgiwearCards = [
               href="https://surgiwear.co.in/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex justify-center "
+              className="hover:bg-blue-300 hover:text-black text-blue-700 py-2 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700"
             >
-              <button className=" hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700">
-                Read More
-              </button>
+              Read More
             </a>
           </>
         )}
+      </div>
       </div>
 
       <DepNav />
