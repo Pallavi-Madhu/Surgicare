@@ -159,8 +159,11 @@ const Contact = () => {
               <li className="flex p-3">
                 <FaMapMarkerAlt className="mr-3" />
                 <span className="text-base lg:text-2xl">
-                  17 /530 A, Ground Floor, Near NSS Office, Container Road,
-                  Cheranalloor PO Ernakulam, Kerala-682034
+                  17/85/A1, “Vyshnavam” ,
+                  Near Palakkal Bhagavathi Temple, 
+                  Container Terminal Road,
+                  Cheranalloor,
+                  Cochin -682034
                 </span>
               </li>
               <li className="flex p-3">

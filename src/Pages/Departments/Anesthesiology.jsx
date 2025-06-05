@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 import Cocoon from "../../assets/Cocoon.png";
 import BL from "../../assets/BLLifsciences.png";
-import Meditech from "../../assets/Meditech.png";
+import Meditec from "../../assets/meditec.png";
 import Aero from "../../assets/Aero.png";
 import Rusch from "../../assets/Rusch.png";
 import Medisafe from "../../assets/Medisafe.png";
@@ -437,7 +437,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
               {selected === "Meditech" && (
                 <>
                   <img
-                    src={Meditech}
+                    src={Meditec}
                     alt="Meditech"
                     className="h-20 w-80 flex m-10"
                   />
@@ -909,7 +909,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
           {selected === "Portex" && (
             <>
               <a
-                href="https://www.southwestmedical.com/brands/portex-smiths-medical"
+                //href="https://www.southwestmedical.com/brands/portex-smiths-medical"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 my-20 rounded-3xl border font-bold hover:border-black border-blue-700"
@@ -969,7 +969,7 @@ export default function Anesthesiology() {
     { id: "BL", src: BL, alt: "BL Lifesciences" },
     { id: "Venticare", src: Venticare, alt: "Venticare" },
     { id: "Cocoon", src: Cocoon, alt: "Cocoon" },
-    { id: "Meditech", src: Meditech, alt: "Meditech" },
+    { id: "Meditech", src: Meditec, alt: "Meditech" },
     { id: "Aero", src: Aero, alt: "Aero" },
     { id: "Portex", src: Portex, alt: "Portex" },
     { id: "Rusch", src: Rusch, alt: "Rusch" },

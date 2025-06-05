@@ -6,7 +6,7 @@ import bg from "../../assets/depBG.png";
 import BL from "../../assets/BLLifsciences.png";
 import Sinapi from "../../assets/Sinapi.png";
 import toray from "../../assets/Toray.png";
-import meditech from "../../assets/Meditech.png";
+import meditech from "../../assets/meditec.png";
 import cocoon from "../../assets/Cocoon.png";
 import hico from "../../assets/Hico.png";
 import { motion } from "framer-motion";
@@ -37,7 +37,7 @@ const DepartmentPage = ({ name, buttonImages }) => {
           id: 2,
           image: image2,
           text: "Disposable pressure transducer",
-          url: "https://www.bllifesciences.com/products/interventional-systems/",
+          url: "https://www.bllifesciences.com/products/invasive-pressure-system/",
         },
         {
           id: 3,
@@ -66,7 +66,7 @@ const DepartmentPage = ({ name, buttonImages }) => {
         {
           id: 7,
           image: image7,
-          text: "1 Lumen CVP CATH",
+          text: "Central Venous Catheters",
           url: "https://www.bllifesciences.com/products/central-venous-catheters/",
         },
         {
@@ -266,7 +266,7 @@ const DepartmentPage = ({ name, buttonImages }) => {
                 {selected === "Meditech" && (
                   <>
                     <img
-                      src="/CriticalCare/meditech.png"
+                      src={meditech}
                       alt="meditech"
                       className="h-30 w-auto flex m-10"
                     />
