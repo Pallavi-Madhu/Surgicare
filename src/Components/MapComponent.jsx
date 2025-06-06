@@ -150,7 +150,7 @@ const TwoMaps = () => {
 
   const handleMapClickErnakulam = (e) => {
     e.stopPropagation();
-    const gmapurl = "https://www.google.com/maps?q=10.054821,76.282686";
+    const gmapurl = "https://www.google.com/maps?q=76.286105,10.060137";
     window.open(gmapurl, "_blank");
   };
 
@@ -158,7 +158,7 @@ const TwoMaps = () => {
     <div className="sm:flex sm:justify-between flex lg:flex-row flex-col items-center gap-20 p-4">
       <div className="rounded-xl bg-white bg-opacity-5 shadow-xl">
         <MapComponent
-          coordinates={[76.282686, 10.054821]} // Ernakulam coordinates
+          coordinates={[76.286105, 10.060137]}// Ernakulam coordinates
           markericon="https://openlayers.org/en/v6.5.0/examples/data/icon.png"
           onClick={handleMapClickErnakulam}
         />

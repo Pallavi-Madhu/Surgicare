@@ -1025,7 +1025,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
           {selected === "Terumo" && (
             <>
               <a
-                href="https://www.terumo.com/" //check
+                href="https://www.terumo.com/" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700 "

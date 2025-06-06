@@ -45,7 +45,7 @@ export const companies = [
   {
     name: "Terumo",
     items: [
-      "Endovascular Harvesting System, HERC FLEX 360 ARM, TITAN FLEX 360 STABILIZER",
+      "Endovascular Harvesting System, HERC FLEX 360 ARM, TITAN FLEX 360 STABILIZER, VASCULAR GRAFT DIVISION (TERUMO AORTIC), OXYGENATION SYSTEMS",
     ],
   },
 ];
