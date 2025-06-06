@@ -20,9 +20,9 @@ import bg from "../../assets/depBG.png";
 import oxygenerator from "../../assets/CardiacSurgery/Euroset/oxygenerator.webp";
 
 //BL products
-import image1 from "../../assets/Anastesiology/PressureMonitoringLines_Main.jpg";
+import image1 from "../../assets/Anastesiology/pressurelines.png";
 import image2 from "../../assets/Anastesiology/presseurtransducer.jpg";
-import image3 from "../../assets/Anastesiology/hmefilter.jpg";
+import image3 from "../../assets/Anastesiology/hmefilter.png";
 import image4 from "../../assets/Anastesiology/interphasecable.jpg";
 import image5 from "../../assets/Anastesiology/3waywithextension.jpeg";
 import image7 from "../../assets/Anastesiology/lumen.jpg";

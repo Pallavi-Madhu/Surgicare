@@ -16,9 +16,9 @@ import Venticare from "../../assets/Venticare.png";
 import Portex from "../../assets/Portex.png";
 import DepNav from "../../Components/DepNav";
 
-import image1 from "../../assets/Anastesiology/PressureMonitoringLines_Main.jpg";
+import image1 from "../../assets/Anastesiology/pressurelines.png";
 import image2 from "../../assets/Anastesiology/presseurtransducer.jpg";
-import image3 from "../../assets/Anastesiology/hmefilter.jpg";
+import image3 from "../../assets/Anastesiology/hmefilter.png";
 import image4 from "../../assets/Anastesiology/interphasecable.jpg";
 import image5 from "../../assets/Anastesiology/3waywithextension.jpeg";
 import image7 from "../../assets/Anastesiology/lumen.jpg";

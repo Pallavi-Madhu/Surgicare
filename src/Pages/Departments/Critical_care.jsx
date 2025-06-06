@@ -11,9 +11,9 @@ import cocoon from "../../assets/Cocoon.png";
 import hico from "../../assets/Hico.png";
 import { motion } from "framer-motion";
 
-import image1 from "../../assets/Anastesiology/PressureMonitoringLines_Main.jpg";
+import image1 from "../../assets/Anastesiology/pressurelines.png";
 import image2 from "../../assets/Anastesiology/presseurtransducer.jpg";
-import image3 from "../../assets/Anastesiology/hmefilter.jpg";
+import image3 from "../../assets/Anastesiology/hmefilter.png";
 import image4 from "../../assets/Anastesiology/interphasecable.jpg";
 import image5 from "../../assets/Anastesiology/3waywithextension.jpeg";
 import image7 from "../../assets/Anastesiology/lumen.jpg";
@@ -98,13 +98,13 @@ const DepartmentPage = ({ name, buttonImages }) => {
       id: 1,
       image: "/CriticalCare/hemofeel.png",
       text: "Hemofeel",
-      url: "https://www.toray.com/global/products/pharmaceuticals-medical/medical013.html",
+      url: "https://www.toray-medical.com/en/products/emergency/eme_0020.html",
     },
     {
       id: 2,
       image: "/CriticalCare/myxin.png",
       text: "Toraymyxin",
-      url: "https://www.toraymyxin.toray/en/",
+      url: "https://www.toray-medical.com/en/products/emergency/eme_0010.html",
     },
   ];
     const cards4 = [
@@ -112,19 +112,19 @@ const DepartmentPage = ({ name, buttonImages }) => {
         id: 1,
         image: "/CriticalCare/airway.png",
         text: "Nasopharyngeal airway",
-        url: "https://www.meditechsystems.co.uk/product-category/airway-management/oxygen-and-aerosol-therapy/resuscitation-kits-and-nasophranageal/",
+        url: "https://meditecdevices.com/products/search/?q=nasopharyngeal%20airway",
       },
       {
         id: 2,
         image: "/CriticalCare/bougie.png",
         text: "Bougie",
-        url: "https://www.meditechsystems.co.uk/product/bougie-coude-tip-introducers/",
+        url: "https://meditecdevices.com/products/search/?q=bougie",
       },
       {
         id: 3,
         image: "/CriticalCare/stylet.png",
         text: "Stylet",
-        //url: "",                 //could not find link
+        url: "https://meditecdevices.com/products/search/?q=stylet",                
       },
     ];
   const cards5 = [
@@ -132,7 +132,7 @@ const DepartmentPage = ({ name, buttonImages }) => {
       id: 1,
       image: "/CriticalCare/cocoon.png",
       text: "Body Warmer",
-      url: "https://www.dispomed.com/products/cocoon-cws-5000-patient-warming-system/",
+      url: "https://www.careessentials.com.au/product/cws-5000/",
     },
   ];
     const cards6 = [

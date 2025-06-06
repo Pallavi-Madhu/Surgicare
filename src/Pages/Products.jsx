@@ -11,6 +11,7 @@ import soClean from "../assets/Equipments/soClean.png";
 import sunoptic from "../assets/Equipments/sunoptic.png";
 import novita from "../assets/Equipments/novita.png";
 import hico from "../assets/Equipments/HICO.png";
+import oxygenerator from "../assets/Equipments/oxygenerator.png";
 
 const products = [
   {
@@ -69,6 +70,19 @@ const products = [
     k: "DVT Machine",
     url: "https://megamed.in/product/devon-cirona-6200-dvt-pump-ce-fda-approved/?srsltid=AfmBOorjjAZjx1yf_HBcmfMIaGeQeH-SSyE-U3UHNP09yNY1BpdWlmSV",
   },
+  {
+    id:9,
+    name:"Oxygenerator",
+    image:oxygenerator,
+    k: "Oxygenerator",
+    url:"https://terumoindia.com/cardiovascular-division-terumo-cardiovascular/oxygenation-systems"
+  },
+  {
+    id:10,
+    name:"",  //ADD
+    k: "",
+    url:"https://terumoindia.com/vascular-graft-division-terumo-aortic"
+  }
 ];
 
 const openPdfInNewTab = () => {
