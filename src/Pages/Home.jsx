@@ -67,8 +67,8 @@ const Home = () => {
               focus on quality, innovation, and reliability, we offer a
               comprehensive range of medical instruments and devices from some
               of the most respected brands in the industry. Whether you're
-              looking for critical solutions in Cardiology, Vascular,
-              Anesthesia, or Neurology, we have the right equipment to meet the
+              looking for critical solutions in <span className="font-bold text-3xl text-blue-900">Cardiology, Thoracic Surgery,
+              Neurosurgery, or Plastic Surgery</span>, we have the right equipment to meet the
               needs of healthcare providers in both government and private
               sectors.
             </motion.p>

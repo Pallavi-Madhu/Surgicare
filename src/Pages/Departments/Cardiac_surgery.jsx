@@ -101,6 +101,10 @@ import IABP from "../../assets/CardiacSurgery/Insightra/IABP.png";
 //LSI products
 import corknot from "../../assets/CardiacSurgery/LSI/corknot.jpeg";
 
+//Scanlan
+import coverpg from "../../assets/CardiacSurgery/Scanlan/coverpg.png"
+import sc from "../../assets/CardiacSurgery/Scanlan/Scanlan.pdf"
+
 const DepartmentPage = ({ name, image, buttonImages }) => {
   const [selected, setSelected] = useState("BL");
 
@@ -113,6 +117,12 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
     },
   ];
 
+  const ScanlanCards=[{
+      id: 1,
+      image: coverpg,
+      text: "Scanlan Products",
+      url: sc,
+    },]
   const BLCards = [
     {
       id: 1,
@@ -492,17 +502,17 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
           </div>
 
           {/* Buttons */}
-            <div className="z-0 relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7 p-10">
-            {buttonImages.map(({ label, id }) => (
-          <button
+         <div className="grid relative grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-8">
+            {buttonImages.map(({ src, alt, id }) => (
+             <button
           key={id}
            onClick={() => setSelected(id)}
-            className={`p-2 font-bold rounded-3xl text-black w-3/4 mx-14 h-14 border border-black flex justify-center items-center ${
+            className={`p-4 font-bold rounded-full text-black w-1/2 sm:w-3/4 lg:w-1/2 mx-14 h-14 border border-black flex justify-center items-center ${
            selected === id ? "bg-gray-500 text-white border-gray-500" : "bg-white"
          }` }
            >
-              {label}
-            </button>
+                <img src={src} alt={alt} className="h-12  w-auto" />
+              </button>
             ))}
           </div>
 
@@ -815,23 +825,40 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                                  </a>
                 ))}
 
-              {/*{selected === "Scanlan" &&
+              {selected === "Scanlan" &&
                 ScanlanCards.map((card) => (
-                  <div
-                    key={card.id}
-                    className="relative group h-60 w-60 bg-gray-200 rounded-xl overflow-hidden shadow-lg"
-                  >
-                    <img
-                      src={card.image}
-                      alt={`Card ${card.id}`}
-                      className="h-60 w-full object-cover transition-opacity duration-300 group-hover:opacity-0"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center bg-red-500 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
-                      {card.text}
-                    </div>
-                  </div>
+                 <a
+                                   key={card.id}
+                                   href={card.url}
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   className="no-underline"
+                                 >
+                                   <motion.div
+                                     className="relative group h-auto w-auto bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
+                                     whileHover={{ scale: 1.05 }}
+                                   >
+                                     <img
+                                       src={card.image}
+                                       alt={`Card ${card.text}`}
+                                       className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
+                                     />
+                                     <motion.div
+                                       className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
+                                       initial={{ opacity: 0 }}
+                                       whileHover={{ opacity: 1 }}
+                                     >
+                                       <span className="text-white text-3xl text-center font-bold">
+                                         {card.text}
+                                       </span>
+                                     </motion.div>
+                                   </motion.div>
+                                   <p className="flex justify-center text-gray-800 text-2xl p-6 text-center font-semibold">
+                                    Click card to know more!
+                                   </p>
+                                 </a>
                 ))}
-                */}
+               
 
               {selected === "Sinapi" &&
                 SinapiCards.map((card) => (
@@ -1108,19 +1135,21 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
     </>
   );
 };
+
+
 export default function Cardiac_surgery() {
- const buttonImages = [
-  { id: "Euroset", label: "Euroset" },
-  { id: "BL", label: "BL Lifesciences" },
-  { id: "Baxter", label: "Baxter" },
-  { id: "Synkromax", label: "Synkromax" },
-  { id: "Terumo", label: "Terumo" },
-  { id: "Scanlan", label: "Scanlan" },
-  { id: "Sinapi", label: "Sinapi" },
-  { id: "Halyard", label: "Halyard" },
-  { id: "Insightra", label: "Insightra" },
-  { id: "LSI", label: "LSI" },
-];
+  const buttonImages = [
+    { id: "Euroset", src: Euroset, alt: "Euroset" },
+    { id: "BL", src: BL, alt: "BL Lifesciences" },
+    { id: "Baxter", src: Baxter, alt: "Baxter" },
+    { id: "Synkromax", src: Synkromax, alt: "Synkromax" },
+    { id: "Terumo", src: Terumo, alt: "Terumo" },
+    { id: "Scanlan", src: Scanlan, alt: "Scanlan" },
+    { id: "Sinapi", src: Sinapi, alt: "Sinapi" },
+    { id: "Halyard", src: Halyard, alt: "Halyard" },
+    { id: "Insightra", src: Insightra, alt: "Insightra" },
+    { id: "LSI", src: LSI, alt: "LSI" },
+  ];
 
 
   return (

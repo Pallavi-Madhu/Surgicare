@@ -169,17 +169,17 @@ const DepartmentPage = ({ name, buttonImages }) => {
           </div>
 
           {/* Buttons for BL and Insightra */}
-       <div className="z-0 relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7 p-10">
-            {buttonImages.map(({ label, id }) => (
-          <button
+            <div className="grid relative grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-8">
+            {buttonImages.map(({ src, alt, id }) => (
+             <button
           key={id}
            onClick={() => setSelected(id)}
-            className={`p-2 font-bold rounded-3xl text-black w-3/4 mx-14 h-14 border border-black flex justify-center items-center ${
+            className={`p-4 font-bold rounded-full text-black w-1/2 sm:w-3/4 lg:w-1/2 mx-14 h-14 border border-black flex justify-center items-center ${
            selected === id ? "bg-gray-500 text-white border-gray-500" : "bg-white"
          }` }
            >
-              {label}
-            </button>
+                <img src={src} alt={alt} className="h-12  w-auto" />
+              </button>
             ))}
           </div>
 
@@ -315,10 +315,9 @@ const DepartmentPage = ({ name, buttonImages }) => {
 };
 
 export default function Cardiology() {
-const buttonImages = [
-  { id: "BL", label: "BL Lifesciences" },
-  { id: "Insightra", label: "Insightra" },
-];
-
+  const buttonImages = [
+    { id: "BL", src: BL, alt: "BL Lifesciences" },
+    { id: "Insightra", src: Insightra, alt: "Insightra" },
+  ];
   return <DepartmentPage name="CARDIOLOGY" buttonImages={buttonImages} />;
 }

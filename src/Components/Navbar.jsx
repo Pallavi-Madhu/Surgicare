@@ -46,7 +46,7 @@ const dropdownVariants = {
               <div className="flex flex-col items-center">
                 <img src={logo} alt="SurgiCare Logo" className="h-14 w-auto" />
               </div>
-              <p className="text-3xl sm:text-5xl font-bold p-2 bg-gradient-to-l from-blue-500 to-black bg-clip-text text-transparent">
+              <p className="text-3xl sm:text-6xl font-bold p-2 bg-gradient-to-l from-blue-500 to-black bg-clip-text text-transparent">
                 Nandana Surgi Care
               </p>
 
@@ -96,13 +96,13 @@ const dropdownVariants = {
               <div className="hidden lg:flex p-0 md:p-2 md:mr-4 lg:mr-0 space-x-8 items-center relative">
                 <a
                   href="/"
-                  className="text-black text-2xl font-bold hover:text-blue-700 transition duration-300"
+                  className="text-black text-3xl font-bold hover:text-blue-700 transition duration-300"
                 >
                   Home
                 </a>
                 <a
                   href="/about-us"
-                  className="text-black text-2xl font-bold hover:text-blue-700 transition duration-300"
+                  className="text-black text-3xl font-bold hover:text-blue-700 transition duration-300"
                 >
                   About Us
                 </a>
@@ -111,23 +111,24 @@ const dropdownVariants = {
                 <div className="relative ">
                   <button
                     onClick={toggleProductsMenu}
-                    className="text-black text-2xl font-bold hover:text-blue-700 transition duration-300"
+                    className="text-black text-3xl font-bold hover:text-blue-700 transition duration-300"
                   >
                     Products
                   </button>
                   {isProductsOpen && (
-<div className="absolute left-0 mt-4 w-96 bg-white shadow-lg rounded-md text-black font-bold z-10">
+<div className="relative w-full">
+  <div className="absolute left-0 mt-4 w-96 bg-white shadow-lg rounded-md text-black font-bold z-10">
 
                       <a
                         href="/products"
-                        className="block text-pink-700 px-6 py-2 text-lg hover:bg-pink-200"
+                        className="block text-pink-700 px-6 py-2 text-2xl hover:bg-pink-200"
                       >
                         Equipments
                       </a>
                       <div>
                 <button
                   onClick={toggleDisposablesMenu}
-                  className="w-full text-pink-700 text-left px-6 py-2 text-lg font-bold hover:bg-pink-200"
+                  className="w-full text-pink-700 text-left px-6 py-2 text-2xl font-bold hover:bg-pink-200"
                 >
                   Disposables
                 </button>
@@ -141,33 +142,37 @@ const dropdownVariants = {
                       transition={{ duration: 0.3 }}
                       className="border-t border-gray-200"
                     >
-                      <div className="grid grid-cols-2 gap-x-6 gap-y-2 px-6 py-4">
+                     <div className="grid grid-cols-2 gap-x-6 gap-y-2 px-6 py-4">
   {departments.map((dept) => (
     <a
       key={dept.name}
       href={dept.href}
-      className="text-base font-semibold hover:bg-gray-200 px-2 py-2 rounded"
+      className="text-xl font-semibold hover:bg-gray-200 px-2 py-2 rounded border border-gray-400"
     >
-      {dept.name}
+      {dept.name} Products
     </a>
   ))}
 </div>
+
 
                     </motion.div>
                   )}
                 </AnimatePresence>
               </div>
                     </div>
+                     </div>
                   )}
                 </div>
+                
 
                 <a
                   href="/contact"
-                  className="text-black text-2xl font-bold hover:text-blue-700"
+                  className="text-black text-3xl font-bold hover:text-blue-700"
                 >
                   Contact
                 </a>
               </div>
+               
 
               {/* Mobile Menu - Conditionally Rendered */}
             <AnimatePresence>
@@ -243,7 +248,7 @@ const dropdownVariants = {
                           href={dept.href}
                           className="block px-6 py-2 text-sm font-semibold hover:bg-gray-200"
                         >
-                          {dept.name}
+                          {dept.name} Products
                         </a>
                       ))}
                     </motion.div>
