@@ -26,10 +26,16 @@ export const companies = [
     name: "O&M Halyard Health India Pvt Ltd",
     items: ["DRAPES, GOWNS & MASK"],
   },
-  {
-    name: "B-BRAUN Medical India Ltd",
-    items: ["VASCULAR GRAFTS (SUB-DISTRIBUTOR)"],
+    {
+    name: "Terumo",
+    items: [
+      "Endovascular Harvesting System, HERC FLEX 360 ARM, TITAN FLEX 360 STABILIZER, VASCULAR GRAFT DIVISION (TERUMO AORTIC), OXYGENATION SYSTEMS",
+    ],
   },
+  // {
+  //   name: "B-BRAUN Medical India Ltd",
+  //   items: ["VASCULAR GRAFTS (SUB-DISTRIBUTOR)"],
+  // },
   {
     name: "Insightra-Dolphin",
     items: ["IABP BALLOONS"],
@@ -42,10 +48,5 @@ export const companies = [
     name: "Toray",
     items: ["HEEMOFEEL, TORAYMAXYN"],
   },
-  {
-    name: "Terumo",
-    items: [
-      "Endovascular Harvesting System, HERC FLEX 360 ARM, TITAN FLEX 360 STABILIZER, VASCULAR GRAFT DIVISION (TERUMO AORTIC), OXYGENATION SYSTEMS",
-    ],
-  },
+
 ];

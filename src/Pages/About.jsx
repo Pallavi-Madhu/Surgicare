@@ -51,7 +51,8 @@ const About = () => {
                 devices, and disposables. Our expertise lies in serving the
                 critical needs of{" "}
                 <span className="font-bold text-blue-900">
-                  Cardiology, Vascular, Anesthesia, and Neurology
+                 Cardiology, Thoracic Surgery,
+              Neurosurgery and Plastic Surgery
                 </span>{" "}
                 departments in both government and private hospitals.
               </motion.p>
