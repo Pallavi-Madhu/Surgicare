@@ -150,11 +150,11 @@ const Departments = ({ name, image, buttonImages }) => {
           <Navbar />
         </div>
       {/* Pulmonology Page Content */}
-      <div className="mt-40">
+       <div className=" sm:mt-40">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-20 p-12 items-center">
-          <h2 className="text-6xl font-bold text-left flex-1">
-            General Surgery
-          </h2>
+              <h2 className="z-20 text-5xl sm:text-6xl font-bold text-left flex-1">
+                {name}
+              </h2>
         </div>
 
         {/* Buttons */}

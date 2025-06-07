@@ -42,10 +42,12 @@ export default function Pulmonology() {
           </div>
 
       {/* Pulmonology Page Content */}
-      <div className="mt-40">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-20 p-12 items-center">
-          <h2 className="text-6xl font-bold text-left flex-1">PULMONOLOGY</h2>
-        </div>
+       <div className=" sm:mt-40">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-20 p-12 items-center">
+              <h2 className="z-20 text-4xl sm:text-6xl font-bold text-left flex-1">
+               PULMONOLOGY
+              </h2>
+                </div>
 
         {/* Company Details */}
         <div className="flex flex-col items-center mt-6">

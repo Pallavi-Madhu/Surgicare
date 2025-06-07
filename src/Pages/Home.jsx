@@ -37,7 +37,7 @@ const Home = () => {
             Your browser does not support the video tag.
           </video>
           <div className="absolute inset-0 flex items-center justify-center bg-black/30">
-            <span className="text-white text-6xl text-center font-black drop-shadow-lg">
+            <span className="text-white text-3xl sm:text-6xl text-center font-black drop-shadow-lg">
               "Delivering health solutions
               <br />
               for a better tomorrow."
@@ -211,7 +211,7 @@ const Home = () => {
 
           {/* Animated Paragraph */}
           <motion.p
-            className="font-semibold text-center text-2xl mx-auto max-w-4xl text-gray-800 drop-shadow-md"
+            className="p-6 sm: font-semibold text-center text-2xl mx-auto max-w-4xl text-gray-800 drop-shadow-md"
             initial={{ opacity: 0, translateY: 30 }}
             whileInView={{ opacity: 1, translateY: 0 }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
@@ -222,7 +222,7 @@ const Home = () => {
             solutions."
           </motion.p>
         </motion.div>
-        <div className="flex flex-col items-center justify-center py-10">
+        <div className="flex flex-col p-10 items-center justify-center py-20">
           <Swiper
             effect={"coverflow"}
             grabCursor={true}
