@@ -292,8 +292,7 @@ const DepartmentPage = ({ name, buttonImages }) => {
               href="https://www.bllifesciences.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 my-20 rounded-3xl border font-bold hover:border-black border-blue-700 "
-            >
+             className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out"  >
               Read More
             </a>
           </>
@@ -305,7 +304,7 @@ const DepartmentPage = ({ name, buttonImages }) => {
               href="https://insightra.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 my-20 rounded-3xl border font-bold hover:border-black border-blue-700"
+className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out"
             >
               Read More
             </a>

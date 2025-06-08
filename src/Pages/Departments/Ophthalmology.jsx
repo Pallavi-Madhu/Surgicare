@@ -88,7 +88,7 @@ const DepartmentPage = ({ name, buttonImages }) => {
                                                  className="no-underline"
                                                >
                                                  <motion.div
-                                                   className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
+                                                   className="relative group h-auto w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
                                                    whileHover={{ scale: 1.05 }}
                                                  >
                                                    <img
@@ -121,7 +121,7 @@ const DepartmentPage = ({ name, buttonImages }) => {
             href="https://www.baxter.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700"
+            className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out"
           >
             Read More
           </a>

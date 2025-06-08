@@ -17,7 +17,7 @@ import Insightra from "../../assets/insightra.png";
 import LSI from "../../assets/LSI.png";
 import bg from "../../assets/depBG.png";
 //Euroset products
-import oxygenerator from "../../assets/CardiacSurgery/Euroset/oxygenerator.webp";
+import oxygenerator from "../../assets/CardiacSurgery/Euroset/Kompass.png";
 import trilly1pdf from "../../assets/CardiacSurgery/Euroset/Trilly-brochure-32017.pdf.pdf"
 import trilly2pdf from "../..//assets/CardiacSurgery/Euroset/Trilly-pediatric-4P-32018.pdf.pdf";
 import trilly1 from "../../assets/CardiacSurgery/Euroset/trilly1.png";
@@ -113,7 +113,7 @@ import IABP from "../../assets/CardiacSurgery/Insightra/IABP.png";
 import corknot from "../../assets/CardiacSurgery/LSI/corknot.jpeg";
 
 //Scanlan
-import coverpg from "../../assets/CardiacSurgery/Scanlan/coverpg.png"
+import coverpg from "../../assets/CardiacSurgery/Scanlan/cover.jpg"
 import sc from "../../assets/CardiacSurgery/Scanlan/Scanlan.pdf"
 
 const DepartmentPage = ({ name, image, buttonImages }) => {
@@ -416,6 +416,18 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
       text: "Hemopatch",
       url:"https://advancedsurgery.baxter.eu/hemopatch"
     },
+    {
+      id: 3,
+      image: "/Ophthalmology/Tiseel.jpg", // Change this to the correct image
+      text: "Tiseel",
+      url: "https://www.baxter.com/healthcare-professionals/surgical-care/tisseel-fibrin-sealant",
+    },
+    {
+      id: 4,
+      image: "/coseal.png", // Change this to the correct image
+      text: "Coseal",
+      url: "https://advancedsurgery.baxter.com/coseal",
+    },
   ];
 
   const SynkromaxCards = [
@@ -712,7 +724,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                                  className="no-underline"
                                >
                                  <motion.div
-                                   className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
+                                   className="relative group h-96 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
                                    whileHover={{ scale: 1.05 }}
                                  >
                                    <img
@@ -740,7 +752,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                 BLCards.map((card) => (
                 <a key={card.id} href={card.url} className="no-underline">
                       <motion.div
-                        className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
+                        className="relative group h-80 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
                         whileHover={{ scale: 1.05 }}
                       >
                         <img
@@ -842,7 +854,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                                    className="no-underline"
                                  >
                                    <motion.div
-                                     className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
+                                     className="relative group h-auto w-auto bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
                                      whileHover={{ scale: 1.05 }}
                                    >
                                      <img
@@ -1047,8 +1059,8 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                 href="https://www.eurosets.com/en/products/cardiopulmonary/oxygenators/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700"
-              >
+              className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out"
+ >
                Read More
               </a>
             </>
@@ -1059,8 +1071,8 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                 href="https://www.bllifesciences.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700"
-              >
+className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out"
+ >
                 Read More
               </a>
             </>
@@ -1071,8 +1083,8 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                 href="https://www.baxter.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700 "
-              >
+className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out"
+   >
                 Read More
               </a>
             </>
@@ -1083,8 +1095,8 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                 href="http://www.synkromax.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700 "
-              >
+className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out"
+  >
                 Read More
               </a>
             </>
@@ -1096,7 +1108,8 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                 href="https://www.terumo.com/" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700 "
+className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out"
+
               >
                 Read More
               </a>
@@ -1109,8 +1122,8 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                 href="https://www.scanlaninternational.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700"
-              >
+             className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out"
+  >
                 Read More
               </a>
             </>
@@ -1122,8 +1135,8 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                 href="https://t.sinapibiomedical.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700 "
-              >
+className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out"
+ >
                 Read More
               </a>
             </>
@@ -1135,7 +1148,8 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                 href="https://www.halyardhealth.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700 "
+className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out"
+
               >
                 Read More
               </a>
@@ -1148,8 +1162,8 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                 href="https://insightra.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700"
-              >
+className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out"
+ >
                 Read More
               </a>
             </>
@@ -1161,7 +1175,8 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                 href="https://www.lsisolutions.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700 "
+            className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out"
+
               >
                 Read More
               </a>
