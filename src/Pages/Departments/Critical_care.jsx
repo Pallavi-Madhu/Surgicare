@@ -508,7 +508,7 @@ const DepartmentPage = ({ name, buttonImages }) => {
                 rel="noopener noreferrer"
                 className="flex justify-center "
               >
-                <button className=" hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 my-20 rounded-3xl border font-bold hover:border-black border-blue-700">
+                <button className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out">
                   Read More
                 </button>
               </a>
@@ -522,7 +522,7 @@ const DepartmentPage = ({ name, buttonImages }) => {
           rel="noopener noreferrer"
           className="flex justify-center mt-10"
         >
-          <button className="hover:bg-blue-300 hover:text-black text-blue-700 py-2 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700">
+          <button className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out">
             Read More
           </button>
         </a>
@@ -535,7 +535,7 @@ const DepartmentPage = ({ name, buttonImages }) => {
                 href="https://www.toray-medical.com/en/products/index.html"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700"
+      className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out"
               >
                 Read More
               </a>
@@ -547,7 +547,7 @@ const DepartmentPage = ({ name, buttonImages }) => {
                 href="https://meditecdevices.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700"
+className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out"
               >
                 Read More
               </a>
@@ -559,7 +559,7 @@ const DepartmentPage = ({ name, buttonImages }) => {
                 href="https://www.careessentials.com.au/  "
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700"
+className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out"
               >
                 Read More
               </a>
@@ -571,8 +571,7 @@ const DepartmentPage = ({ name, buttonImages }) => {
                 href="https://www.hico.de/en/hico.html"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:bg-blue-300 hover:text-black text-blue-700 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700"
-              >
+               className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out">
                Read More
               </a>
             </>

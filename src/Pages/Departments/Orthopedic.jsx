@@ -13,6 +13,7 @@ import GBone from "../../assets/Orthopedic/Surgiwear/GBone.webp";
 import GDress from "../../assets/Orthopedic/Surgiwear/GDress.jpg";
 import GPatch from "../../assets/Orthopedic/Surgiwear/GPatchFinal.png"
 import bg from "../../assets/depBG.png";
+import Baxter from "../../assets/Baxter.png"
 import { motion } from "framer-motion";
 
 const Departments = ({ name, image, buttonImages }) => {
@@ -57,6 +58,26 @@ const surgiwearCards = [
     text: "G Patch",
     url:"https://surgiwear.co.in/product-category/orthopaedics/implants-orthopaedics/g-patch-implants-orthopaedics/"
   }, 
+];
+const baxterCards = [
+  {
+    id: 1,
+    image: "/hemopatch.png",
+    text: "Hemopatch",
+    url:"https://advancedsurgery.baxter.com.tr/en/hemopatch"
+  },
+  {
+    id: 2,
+    image: "/Ophthalmology/floseal.png",
+    text: "Floseal",
+    url:"https://advancedsurgery.baxter.com/floseal"
+  },
+{
+      id: 3,
+      image: "/Ophthalmology/Tiseel.jpg", // Change this to the correct image
+      text: "Tiseel",
+      url: "https://www.baxter.com/healthcare-professionals/surgical-care/tisseel-fibrin-sealant",
+    },
 ];
 
   return (
@@ -111,13 +132,27 @@ const surgiwearCards = [
           )}
           {selected === "Surgiwear" && (
             <>
-              <img src={Surgiwear} alt="Surgiwear" className="h-40 w-auto" />
+              <img src={Surgiwear} alt="Surgiwear" className="h-42 w-auto" />
             <p className="text-center mt-4 p-7 sm:p-20 lg:p-30">
                 Surgiwear is an Indian medical device company specializing in
                 surgical implants, infection control, and wound care products.
                 They focus on innovation and quality to enhance patient safety
                 and surgical outcomes.
               </p>
+              <p className="text-center mt-4 p-7 sm:p-20 lg:p-30">
+  Baxter plays a critical role in orthopedic surgery by offering advanced hemostatic solutions such as Hemopatch, Tisseel, and Floseal. These products aid in effective bleeding control and tissue sealing, enhancing surgical precision and reducing complication risks. Baxter’s innovations support improved patient outcomes and promote faster recovery in a wide range of orthopedic procedures.
+</p>
+
+            </>
+          )}
+          {selected === "Baxter" && (
+            <>
+              <img src={Baxter} alt="Surgiwear" className="h-42 w-auto" />
+         
+              <p className="text-center mt-4 p-7 sm:p-20 lg:p-30">
+             Baxter plays a critical role in orthopedic surgery by offering advanced hemostatic solutions such as Hemopatch, Tisseel, and Floseal. These products aid in effective bleeding control and tissue sealing, enhancing surgical precision and reducing complication risks. Baxter’s innovations support improved patient outcomes and promote faster recovery in a wide range of orthopedic procedures.
+           </p>
+
             </>
           )}
         </div>
@@ -132,70 +167,105 @@ const surgiwearCards = [
             {selected === "Halyard" &&
               halyardCards.map((card) => (
                          <a
-                                                                                key={card.id}
-                                                                                href={card.url}
-                                                                                target="_blank"
-                                                                                rel="noopener noreferrer"
-                                                                                className="no-underline"
-                                                                              >
-                                                                                <motion.div
-                                                                                  className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
-                                                                                  whileHover={{ scale: 1.05 }}
-                                                                                >
-                                                                                  <img
-                                                                                    src={card.image}
-                                                                                    alt={`Card ${card.text}`}
-                                                                                    className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
-                                                                                  />
-                                                                                  <motion.div
-                                                                                    className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
-                                                                                    initial={{ opacity: 0 }}
-                                                                                    whileHover={{ opacity: 1 }}
-                                                                                  >
-                                                                                    <span className="text-white text-3xl text-center font-bold">
+                               key={card.id}
+                              href={card.url}
+                               target="_blank"
+                              rel="noopener noreferrer"
+                               className="no-underline"
+                                    
+                            >
+                              <motion.div
+                                                       className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
+                                                           whileHover={{ scale: 1.05 }}
+                              >
+                               <img
+                                                             src={card.image}
+                                                         alt={`Card ${card.text}`}
+                                                             className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
+                             />
+                                                          <motion.div
+                                 className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
+                                                        initial={{ opacity: 0 }}
+                                whileHover={{ opacity: 1 }}
+                               >
+                                 <span className="text-white text-3xl text-center font-bold">
                                                                                       {card.text}
-                                                                                    </span>
-                                                                                  </motion.div>
-                                                                                </motion.div>
-                                                                                <p className="flex justify-center text-gray-800 text-2xl p-6 text-center font-semibold">
-                                                                                  {card.text}
-                                                                                </p>
-                                                                              </a>
+                                 </span>
+                                                       </motion.div>
+                             </motion.div>
+                                                         <p className="flex justify-center text-gray-800 text-2xl p-6 text-center font-semibold">
+                              {card.text}
+                                               </p>
+                                                  </a>
               ))}
 
             {selected === "Surgiwear" &&
               surgiwearCards.map((card) => (
                          <a
-                                                                                key={card.id}
-                                                                                href={card.url}
-                                                                                target="_blank"
-                                                                                rel="noopener noreferrer"
+                                       key={card.id}
+                                       href={card.url}
+                                       target="_blank"
+                                      rel="noopener noreferrer"
                                                                                 className="no-underline"
-                                                                              >
-                                                                                <motion.div
+                                    >
+                                      <motion.div
                                                                                   className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
-                                                                                  whileHover={{ scale: 1.05 }}
+                                         whileHover={{ scale: 1.05 }}
                                                                                 >
                                                                                   <img
-                                                                                    src={card.image}
+                                    src={card.image}
                                                                                     alt={`Card ${card.text}`}
-                                                                                    className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
+                                           className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
                                                                                   />
-                                                                                  <motion.div
-                                                                                    className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
-                                                                                    initial={{ opacity: 0 }}
-                                                                                    whileHover={{ opacity: 1 }}
-                                                                                  >
-                                                                                    <span className="text-white text-3xl text-center font-bold">
-                                                                                      {card.text}
+                                         <motion.div
+                                          className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
+                                          initial={{ opacity: 0 }}
+                                          whileHover={{ opacity: 1 }}
+                                         >
+                                          <span className="text-white text-3xl text-center font-bold">
+                                            {card.text}
                                                                                     </span>
-                                                                                  </motion.div>
+                                         </motion.div>
                                                                                 </motion.div>
                                                                                 <p className="flex justify-center text-gray-800 text-2xl p-6 text-center font-semibold">
                                                                                   {card.text}
-                                                                                </p>
-                                                                              </a>
+                                       </p>
+                                     </a>
               ))}
+              {selected === "Baxter" &&
+              baxterCards.map((card) => (
+                         <a
+                                       key={card.id}
+                                       href={card.url}
+                                       target="_blank"
+                                      rel="noopener noreferrer"
+                                                                                className="no-underline"
+                                    >
+                                      <motion.div
+                                                                                  className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
+                                         whileHover={{ scale: 1.05 }}
+                                                                                >
+                                                                                  <img
+                                    src={card.image}
+                                                                                    alt={`Card ${card.text}`}
+                                           className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
+                                                                                  />
+                                         <motion.div
+                                          className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
+                                          initial={{ opacity: 0 }}
+                                          whileHover={{ opacity: 1 }}
+                                         >
+                                          <span className="text-white text-3xl text-center font-bold">
+                                            {card.text}
+                                                                                    </span>
+                                         </motion.div>
+                                                                                </motion.div>
+                                                                                <p className="flex justify-center text-gray-800 text-2xl p-6 text-center font-semibold">
+                                                                                  {card.text}
+                                       </p>
+                                     </a>
+              ))}
+   
    
         </div>
 
@@ -207,7 +277,7 @@ const surgiwearCards = [
               href="https://www.halyardhealth.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:bg-blue-300 hover:text-black text-blue-700 py-2 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700"
+className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out"
             >
               Read More
             </a>
@@ -220,7 +290,19 @@ const surgiwearCards = [
               href="https://surgiwear.co.in/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:bg-blue-300 hover:text-black text-blue-700 py-2 px-8 mb-14 rounded-3xl border font-bold hover:border-black border-blue-700"
+        className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out"
+            >
+              Read More
+            </a>
+          </>
+        )}
+           {selected === "Baxter" && (
+          <>
+            <a
+              href="https://www.baxter.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+        className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out"
             >
               Read More
             </a>
@@ -239,6 +321,7 @@ export default function Orthopedic() {
   const buttonImages = [
     { id: "Halyard", src: Halyard, alt: "Halyard" },
     { id: "Surgiwear", src: Surgiwear, alt: "Surgiwear" },
+     { id: "Baxter", src: Baxter, alt: "Baxter" },
   ]
 
 return (

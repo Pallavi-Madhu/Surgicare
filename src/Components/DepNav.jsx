@@ -41,7 +41,7 @@ return (
         {/* Department Button */}
         <button
           onClick={handleNavigate}
-          className="p-4 w-60 h-14 rounded-3xl hover:text-white text-black border hover:bg-black bg-blue-300 transition text-lg font-bold"
+          className="p-4 w-60 h-14 rounded-3xl hover:text-white text-white border hover:bg-black bg-blue-900 transition text-lg font-bold"
         >
           {departments[currentIndex].name}
         </button>

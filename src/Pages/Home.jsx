@@ -68,7 +68,7 @@ const Home = () => {
               comprehensive range of medical instruments and devices from some
               of the most respected brands in the industry. Whether you're
               looking for critical solutions in <span className="font-bold text-3xl text-blue-900">Cardiology, Thoracic Surgery,
-              Neurosurgery, or Plastic Surgery</span>, we have the right equipment to meet the
+              Neurosurgery, <span className="text-2xl text-black ">or</span> Plastic Surgery</span>, we have the right equipment to meet the
               needs of healthcare providers in both government and private
               sectors.
             </motion.p>

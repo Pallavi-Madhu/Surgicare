@@ -111,10 +111,10 @@ const Products = () => {
         }}
       >
         <Navbar />
-        <div className="text-center font-semibold text-6xl py-4">
+        <div className="text-center font-semibold text-4xl sm:text-6xl py-4">
           Equipments
         </div>
-        <div className="text-center text-3xl p-2 sm:p-4  text-black">
+        <div className="text-center sm:text-3xl p-2 sm:p-4  text-black">
           Offering a wide range of high-quality medical equipment designed to
           enhance patient care and improve healthcare outcomes
           <br />
@@ -122,7 +122,7 @@ const Products = () => {
         </div>
 
         {/* Product Grid */}
-        <div className="container mx-auto my-10 px-4 py-6">
+        <div className="container mx-auto my-10 px-8 sm:px-4 py-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-20">
             {products.map((product) => (
               <div key={product.id} className="flex flex-col items-center">
@@ -136,7 +136,7 @@ const Products = () => {
                       <img
                         src={product.image}
                         alt={product.name}
-                        className="w-full h-60 object-cover transition duration-300 transform group-hover:brightness-50"
+                        className="w-full h-80 object-cover transition duration-300 transform group-hover:brightness-50"
                       />
                       <motion.div
                         className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
@@ -162,7 +162,7 @@ const Products = () => {
                       <img
                         src={product.image}
                         alt={product.name}
-                        className="w-full h-60 object-cover transition duration-300 transform group-hover:brightness-50"
+                        className="w-full h-80 object-cover transition duration-300 transform group-hover:brightness-50"
                       />
                       <motion.div
                         className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"

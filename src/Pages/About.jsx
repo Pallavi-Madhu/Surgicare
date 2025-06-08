@@ -52,7 +52,7 @@ const About = () => {
                 critical needs of{" "}
                 <span className="font-bold text-blue-900">
                  Cardiology, Thoracic Surgery,
-              Neurosurgery and Plastic Surgery
+              Neurosurgery  <span className="text-3xl font-extralight text-black ">and</span> Plastic Surgery
                 </span>{" "}
                 departments in both government and private hospitals.
               </motion.p>
