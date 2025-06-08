@@ -18,16 +18,27 @@ import LSI from "../../assets/LSI.png";
 import bg from "../../assets/depBG.png";
 //Euroset products
 import oxygenerator from "../../assets/CardiacSurgery/Euroset/oxygenerator.webp";
+import trilly1pdf from "../../assets/CardiacSurgery/Euroset/Trilly-brochure-32017.pdf.pdf"
+import trilly2pdf from "../..//assets/CardiacSurgery/Euroset/Trilly-pediatric-4P-32018.pdf.pdf";
+import trilly1 from "../../assets/CardiacSurgery/Euroset/trilly1.png";
+import trilly2 from "../../assets/CardiacSurgery/Euroset/trilly2.png";
+import remowell from "../../assets/CardiacSurgery/Euroset/remowell.png";
+import remowellpdf from "../../assets/CardiacSurgery/Euroset/remowell.pdf";
+import horizonpdf from "../../assets/CardiacSurgery/Euroset/Horizon brochure 201808-P.pdf.pdf";
+import horizon from "../../assets/CardiacSurgery/Euroset/horizon.png";
+import ecmooxy from "../../assets/CardiacSurgery/Euroset/ecmooxy.png";
+import ecmooxypdf from "../../assets/CardiacSurgery/Euroset/ECMO OXY-EU5109.pdf";
 
 //BL products
 import image1 from "../../assets/Anastesiology/pressurelines.png";
 import image2 from "../../assets/Anastesiology/presseurtransducer.jpg";
 import image3 from "../../assets/Anastesiology/hmefilter.png";
-import image4 from "../../assets/Anastesiology/interphasecable.jpg";
+import image4 from "../../assets/Anastesiology/cables.png";
 import image5 from "../../assets/Anastesiology/3waywithextension.jpeg";
 import image7 from "../../assets/Anastesiology/lumen.jpg";
 import image8 from "../../assets/Anastesiology/adultexpandable.jpg";
 import image9 from "../../assets/Anastesiology/Lungexcerciser.jpg";
+import cable from "../../assets/Cablecatalogue.pdf";
 
 import image11 from "../../assets/Anastesiology/nebulizer.jpeg";
 import image12 from "../../assets/Anastesiology/Ventilator-Plain-Circuit.jpg";
@@ -115,6 +126,36 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
       text: "Oxygenator adult Kompass",
       url:"https://euromed.ch/wp-content/uploads/2023/01/kompass_brochure.pdf"
     },
+    {
+      id: "2",
+      image: trilly1,
+      text: "Pediatric oxygenerator with integrated arterial filter",
+      url: trilly2pdf
+    },
+    {
+      id: "3",
+      image: trilly2,
+      text: "Infant-paediatric oxygenator with modular cascade filtration",
+      url: trilly1pdf
+    },
+    {
+      id: "4",
+      image: remowell,
+      text: "Dual chamber ADULT oxygenator with lipids and leukocytes reduction",
+      url: remowellpdf
+    },
+    {
+      id: "5",
+      image: horizon,
+      text: "SINGLE CHAMBER ADULT oxygenator",
+      url:horizonpdf
+    },
+    {
+      id: "6",
+      image: ecmooxy,
+      text: "ECMO",
+      url:ecmooxypdf
+    },
   ];
 
   const ScanlanCards=[{
@@ -146,7 +187,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
       id: 4,
       image: image4,
       text: "Inter phase cable suit with your monitor",
-      // url: "https://www.bllifesciences.com/products/interventional-systems/",  //could not find link
+      url: cable
     },
     {
       id: 5,

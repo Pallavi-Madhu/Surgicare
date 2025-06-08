@@ -63,6 +63,9 @@ import image37 from "../../assets/Anastesiology/Adult Malleable Introducer.jpg";
 import image38 from "../../assets/Anastesiology/Sterile Adult Al Stylette.jpg";
 import image39 from "../../assets/Anastesiology/Wendl Nasopharyngeal Airways.jpeg";
 import cable from "../../assets/Cablecatalogue.pdf";
+import sheath from "../../assets/Anastesiology/sheath.png";
+import sheath2 from "../../assets/Anastesiology/sheath2.png";
+import aspiration from "../../assets/Anastesiology/aspiration.png";
 
 const DepartmentPage = ({ name, image, buttonImages }) => {
   const [selected, setSelected] = useState("BL");
@@ -258,6 +261,24 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
       image: image29,
       text: "INTRODUCER NEEDLE 18 Gx7CM",
       url: "https://www.suretechmedical.com/Cardiology-Introducer-Needle.html",
+    },
+    {
+      id: 2,
+      image: sheath,
+      text: "INTRODUCER SHEATH",
+      url: "https://www.suretechmedical.com/Cardiology-Introducer-Sheath.html",
+    },
+    {
+      id: 3,
+      image: sheath2,
+      text: "Radial Puncture Sheath",
+      url: "https://www.suretechmedical.com/Cardiology-Radial-Puncture-Sheath.html",
+    },
+    {
+      id: 4,
+      image: aspiration,
+      text: "Aspiration Needle",
+      url: "https://www.suretechmedical.com/Radiology-Aspiration-Needle.html",
     },
   ];
   const cards8 = [
