@@ -99,12 +99,12 @@ const Departments = ({ name, image, buttonImages }) => {
       text: "BULL DOG CLAMP",
       url:"https://www.scanlaninternational.com/product-category/instrumentation/clamps/"
     },
-    {
-      id: 2,
-      image: skinmarker,
-      text: "Skin Marker",
-      url:"https://www.scanlaninternational.com/products/1001-710/"
-    },
+    // {
+    //   id: 2,
+    //   image: skinmarker,
+    //   text: "Skin Marker",
+    //   url:"https://www.scanlaninternational.com/products/1001-710/"
+    // },
     {
       id: 3,
       image: instrument_care,

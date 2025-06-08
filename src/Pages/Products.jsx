@@ -10,9 +10,10 @@ import cirona from "../assets/Equipments/cirona.png";
 import soClean from "../assets/Equipments/soClean.png";
 import sunoptic from "../assets/Equipments/sunoptic.png";
 import novita from "../assets/Equipments/novita.png";
-import hico from "../assets/Equipments/HICO.png";
+import hico from "../assets/Equipments/hico.png";
 import oxygenerator from "../assets/Equipments/oxygenerator.png";
-
+import pro from "../assets/Neuro/Sunoptic/pro.png";
+import aortic from "../assets/CardiacSurgery/Terumo/aortic.jpeg";
 const products = [
   {
     id: 1,
@@ -79,10 +80,18 @@ const products = [
   },
   {
     id:10,
-    name:"",  //ADD
-    k: "",
+    name:"GelweaveTM- Aortic Surgical Grafts",  
+    image:aortic,
+    k: "GelweaveTM- Aortic Surgical Grafts",
     url:"https://terumoindia.com/vascular-graft-division-terumo-aortic"
-  }
+  },
+  {
+        id: 11,
+        name:"Pro300 Light Source",
+        image: pro,
+       k: "Pro300",
+        url:"https://sunopticsurgical.com/products/pro300/"
+      },
 ];
 
 const openPdfInNewTab = () => {

@@ -38,6 +38,7 @@ import masks from "../../assets/Orthopedic/Halyard/masks.jpg";
 
 //product images Sunoptic
 import light from "../../assets/Neuro/Sunoptic/light.jpg";
+import pro from "../../assets/Neuro/Sunoptic/pro.png";
 
 //product images Syncromax
 import bovinepatch from "../../assets/Neuro/Syncromax/bovinepatch.jpg";
@@ -151,6 +152,12 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
       text: "Sunoptic LX2 Battery Operated LED Headlight",
       url:"https://sunopticsurgical.com/products/ssl-lx2-led-best-in-class-portable-headlight/"
     },
+    {
+      id: 2,
+      image: pro,
+      text: "Pro300",
+      url:"https://sunopticsurgical.com/products/pro300/"
+    },
   ];
 
   const syncromaxCards = [
@@ -233,7 +240,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
       id:"2",
       image:evd,
       text:"EVD",
-      //url:"https://surgiwear.co.in/product/chhabra-slit-n-spring-hydrocephalus-shunt-system-va/"
+      url:"https://surgiwear.co.in/product/ventricular-external-drainage-system/"
     },
     {
       id:"3",

@@ -14,13 +14,14 @@ import { motion } from "framer-motion";
 import image1 from "../../assets/Anastesiology/pressurelines.png";
 import image2 from "../../assets/Anastesiology/presseurtransducer.jpg";
 import image3 from "../../assets/Anastesiology/hmefilter.png";
-import image4 from "../../assets/Anastesiology/interphasecable.jpg";
+import image4 from "../../assets/Anastesiology/cables.png";
 import image5 from "../../assets/Anastesiology/3waywithextension.jpeg";
 import image7 from "../../assets/Anastesiology/lumen.jpg";
 import image8 from "../../assets/Anastesiology/adultexpandable.jpg";
 import image9 from "../../assets/Anastesiology/Lungexcerciser.jpg";
 import chestdrain from "../../assets/Pulmo/chestdrain.png"
 import ChestDrain from "../../assets/ChestDrain.pdf";
+import cable from "../../assets/Cablecatalogue.pdf";
 
 const DepartmentPage = ({ name, buttonImages }) => {
   const [selected, setSelected] = useState("BL");
@@ -49,7 +50,7 @@ const DepartmentPage = ({ name, buttonImages }) => {
           id: 4,
           image: image4,
           text: "Inter phase cable suit with your monitor",
-          // url: "https://www.bllifesciences.com/products/interventional-systems/",  //could not find link
+          url: cable
         },
         {
           id: 5,
@@ -148,12 +149,12 @@ const DepartmentPage = ({ name, buttonImages }) => {
         text: "Aquatherm",
         url: "https://www.hico.de/en/hico-aquatherm-660.html",
       },
-      {
-        id: 3,
-        image: "/CriticalCare/hypo.png",
-        text: "Hypotherm",
-        url: "https://pdf.medicalexpo.com/pdf/hico/hico-hypotherm-680/68746-95065.html",
-      },
+      // {
+      //   id: 3,
+      //   image: "/CriticalCare/hypo.png",
+      //   text: "Hypotherm",
+      //   url: "https://pdf.medicalexpo.com/pdf/hico/hico-hypotherm-680/68746-95065.html",
+      // },
     ];
 
   return (

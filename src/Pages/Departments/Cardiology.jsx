@@ -9,6 +9,9 @@ import Insightra from "../../assets/insightra.png";
 import bg from "../../assets/depBG.png";
 import heart from "../../assets/heart.png";
 import DepNav from "../../Components/DepNav";
+import image4 from "../../assets/Anastesiology/cables.png";
+import cable from "../../assets/Cablecatalogue.pdf";
+
 
 const DepartmentPage = ({ name, buttonImages }) => {
   const [selected, setSelected] = useState("BL");
@@ -62,12 +65,12 @@ const DepartmentPage = ({ name, buttonImages }) => {
       text: "Manifold",
       url: "https://www.bllifesciences.com/products/interventional-systems/",
     },
-    {
-      id: 9,
-      image: "/Cardiology/jns.png",
-      text: "J & Straight",
-      url: "https://www.bllifesciences.com/products/interventional-systems/",
-    },
+    // {
+    //   id: 9,
+    //   image: "/Cardiology/jns.png",
+    //   text: "J & Straight",
+    //   url: "https://www.bllifesciences.com/products/interventional-systems/",
+    // },
     {
       id: 10,
       image: "/Cardiology/guideware.png",
@@ -76,13 +79,13 @@ const DepartmentPage = ({ name, buttonImages }) => {
     },
     {
       id: 11,
-      image: "/Cardiology/transcab.png",
+      image: image4,
       text: "BL Transducer Interface Cable",
-      url: "https://www.bllifesciences.com/products/interventional-systems/",
+      url: cable
     },
     {
       id: 12,
-      image: "/Cardiology/ACT.png",
+      image: "/Cardiology/act.png",
       text: "ACT Tube",
       url: "https://www.helena.com/actalykemini2.htm",
     },
@@ -116,12 +119,12 @@ const DepartmentPage = ({ name, buttonImages }) => {
       text: "Medex Reusable Pressure Infusor",
       url: "https://www.icumed.com/products/hemodynamic-monitoring/blood-pressure-monitoring/pressure-infusors/medex-clear-cuff-pressure-bag/",
     },
-    {
-      id: 18,
-      image: "/Cardiology/mask.png",
-      text: "CPAP/BIPAP Mask",
-      url: "https://www.bllifesciences.com/",
-    },
+    // {
+    //   id: 18,
+    //   image: "/Cardiology/mask.png",
+    //   text: "CPAP/BIPAP Mask",
+    //   url: "https://www.bllifesciences.com/",
+    // },
     {
       id: 19,
       image: "/Cardiology/hemostat.png",

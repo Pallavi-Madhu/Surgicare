@@ -75,7 +75,7 @@ import hemopatch from "../../assets/CardiacSurgery/Baxter/hemopatch.webp";
 import bovinepatch from "../../assets/CardiacSurgery/Syncromax/bovinepatch.jpg";
 
 //Terumo products
-import evhs from "../../assets/CardiacSurgery/Terumo/evhs.jpg";
+import evhs from "../../assets/CardiacSurgery/Terumo/evhs.png";
 import stabilizer from "../../assets/CardiacSurgery/Terumo/stabilizer.png";
 import brochure1 from "../../assets/CardiacSurgery/Terumo/Gelsoft-Plus-Brochure-A4-PM-07037-Global.pdf"
 import brochure2 from "../../assets/CardiacSurgery/Terumo/Gelweave%2BBrochure 2.pdf";
