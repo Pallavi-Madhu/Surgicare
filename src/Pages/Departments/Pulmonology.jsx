@@ -24,7 +24,7 @@ const card = {
   id: 1,
   image: chestdrain, 
   text: "Chest Drainage System 50ml,400ml,1000ml",
-  url:"https://sinapibiomedical.com/"
+  url:"https://t.sinapibiomedical.com/scd/"
 };
 
 export default function Pulmonology() {

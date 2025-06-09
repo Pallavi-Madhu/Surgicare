@@ -477,14 +477,6 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
     }
   ];
 
-  /*const ScanlanCards = [                //change
-    {
-      id: 1,
-      image: clamp,
-      text: "BULL DOG CLAMP",
-    },
-  ];*/
-
   const SinapiCards = [
     {
       id: 1,

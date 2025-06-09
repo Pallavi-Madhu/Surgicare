@@ -109,7 +109,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
       id: 1,
       image: floseal,
       text: "Floseal",
-      url:"https://ecatalog.baxter.com/ecatalog/loadproduct.html?cid=20016&lid=10001&hid=20001&pid=1472740"
+      url:"https://advancedsurgery.baxter.com/floseal"
     },
     {
       id: 2,
@@ -553,7 +553,7 @@ const DepartmentPage = ({ name, image, buttonImages }) => {
                 sunopticCards.map((card) => (
             <a key={card.id} href={card.url} className="no-underline">
                                                 <motion.div
-                                                  className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
+                                                  className="relative group h-96 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
                                                   whileHover={{ scale: 1.05 }}
                                                 >
                                                   <img

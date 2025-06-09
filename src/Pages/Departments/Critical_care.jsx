@@ -590,7 +590,7 @@ export default function CriticalCare() {
     { id: "BL", src: BL, alt: "BL Lifesciences" },
     { id: "Sinapi", src: Sinapi, alt: "Sinapi" },
     { id: "Toray", src: toray, alt: "Toray" },
-    { id: "Meditech", src: "/CriticalCare/meditech.png", alt: "Meditech devices" },
+    { id: "Meditech", src: meditech, alt: "Meditech devices" },
     { id: "Cocoon", src: cocoon, alt: "Cocoon" },
     { id: "HICO", src: hico, alt: "HICO" },
   ];
