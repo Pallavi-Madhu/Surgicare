@@ -123,7 +123,7 @@ const Products = () => {
 
         {/* Product Grid */}
         <div className="container mx-auto my-10 px-8 sm:px-4 py-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-20">
             {products.map((product) => (
               <div key={product.id} className="flex flex-col items-center">
                 {/* Conditional Click Behavior */}
