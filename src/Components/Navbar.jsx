@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import logo from "../assets/Surgicare logo.png";
 import { motion, AnimatePresence } from "framer-motion";
 
-
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isProductsOpen, setIsProductsOpen] = useState(false);
@@ -25,16 +24,16 @@ const Navbar = () => {
   ];
 
   const menuVariants = {
-  hidden: { opacity: 0, y: -10 },
-  visible: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: -10 },
-};
+    hidden: { opacity: 0, y: -10 },
+    visible: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: -10 },
+  };
  
-const dropdownVariants = {
-  hidden: { opacity: 0, y: -10 },
-  visible: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: -10 },
-};
+  const dropdownVariants = {
+    hidden: { opacity: 0, y: -10 },
+    visible: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: -10 },
+  };
 
   return (
     <>
@@ -116,54 +115,50 @@ const dropdownVariants = {
                     Products
                   </button>
                   {isProductsOpen && (
-<div className="relative w-full">
-  <div className="absolute left-0 mt-4 w-96 bg-white shadow-lg rounded-md text-black font-bold z-10">
-
-                      <a
-                        href="/products"
-                        className="block text-pink-700 px-6 py-2 text-2xl hover:bg-pink-200"
-                      >
-                        Equipments
-                      </a>
-                      <div>
-                <button
-                  onClick={toggleDisposablesMenu}
-                  className="w-full text-pink-700 text-left px-6 py-2 text-2xl font-bold hover:bg-pink-200"
-                >
-                  Disposables
-                </button>
-                <AnimatePresence>
-                  {isDisposablesOpen && (
-                    <motion.div
-                      initial="hidden"
-                      animate="visible"
-                      exit="exit"
-                      variants={dropdownVariants}
-                      transition={{ duration: 0.3 }}
-                      className="border-t border-gray-200"
-                    >
-                     <div className="grid grid-cols-2 gap-x-6 gap-y-2 px-6 py-4">
-  {departments.map((dept) => (
-    <a
-      key={dept.name}
-      href={dept.href}
-      className="text-xl font-semibold hover:bg-gray-200 px-2 py-2 rounded border border-gray-400"
-    >
-      {dept.name} Products
-    </a>
-  ))}
-</div>
-
-
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
+                    <div className="relative w-full">
+                      <div className="absolute left-0 mt-4 w-96 bg-white shadow-lg rounded-md text-black font-bold z-10">
+                        <a
+                          href="/products"
+                          className="block text-pink-700 px-6 py-2 text-2xl hover:bg-pink-200"
+                        >
+                          Equipments
+                        </a>
+                        <div>
+                          <button
+                            onClick={toggleDisposablesMenu}
+                            className="w-full text-pink-700 text-left px-6 py-2 text-2xl font-bold hover:bg-pink-200"
+                          >
+                            Disposables
+                          </button>
+                          <AnimatePresence>
+                            {isDisposablesOpen && (
+                              <motion.div
+                                initial="hidden"
+                                animate="visible"
+                                exit="exit"
+                                variants={dropdownVariants}
+                                transition={{ duration: 0.3 }}
+                                className="border-t border-gray-200"
+                              >
+                                <div className="grid grid-cols-2 gap-x-6 gap-y-2 px-6 py-4">
+                                  {departments.map((dept) => (
+                                    <a
+                                      key={dept.name}
+                                      href={dept.href}
+                                      className="text-xl font-semibold hover:bg-gray-200 px-2 py-2 rounded border border-gray-400"
+                                    >
+                                      {dept.name} Products
+                                    </a>
+                                  ))}
+                                </div>
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
+                        </div>
+                      </div>
                     </div>
-                     </div>
                   )}
                 </div>
-                
 
                 <a
                   href="/contact"
@@ -172,103 +167,102 @@ const dropdownVariants = {
                   Contact
                 </a>
               </div>
-               
 
               {/* Mobile Menu - Conditionally Rendered */}
-            <AnimatePresence>
-  {isMenuOpen && (
-    <motion.div
-      key="main-menu"
-      initial="hidden"
-      animate="visible"
-      exit="exit"
-      variants={menuVariants}
-      transition={{ duration: 0.3 }}
-      className="absolute top-24 left-0 w-full bg-black text-white p-4 lg:hidden"
-    >
-      <a
-        href="/"
-        className="block text-lg font-bold hover:text-pink-300"
-      >
-        Home
-      </a>
-      <a
-        href="/about-us"
-        className="block text-lg font-bold hover:text-pink-300"
-      >
-        About Us
-      </a>
-
-      {/* Mobile Products Dropdown */}
-      <div className="relative hover:cursor-pointer">
-        <button
-          onClick={toggleProductsMenu}
-          className="block text-lg font-bold hover:text-pink-300"
-        >
-          Products
-        </button>
-
-        <AnimatePresence>
-          {isProductsOpen && (
-            <motion.div
-              key="products-dropdown"
-              initial="hidden"
-              animate="visible"
-              exit="exit"
-              variants={dropdownVariants}
-              transition={{ duration: 0.3 }}
-              className="bg-white shadow-lg rounded-md text-black my-3"
-            >
-              <a
-                href="/products"
-                className="block px-4 py-2 text-lg text-pink-700 font-semibold hover:bg-pink-200"
-              >
-                Equipments
-              </a>
-              <div>
-                <button
-                  onClick={toggleDisposablesMenu}
-                  className="w-full text-left px-4 py-2 text-lg text-pink-700 font-semibold hover:bg-pink-200"
-                >
-                  Disposables
-                </button>
-                <AnimatePresence>
-                  {isDisposablesOpen && (
-                    <motion.div
-                      initial="hidden"
-                      animate="visible"
-                      exit="exit"
-                      variants={dropdownVariants}
-                      transition={{ duration: 0.3 }}
-                      className="border-t border-gray-200"
+              <AnimatePresence>
+                {isMenuOpen && (
+                  <motion.div
+                    key="main-menu"
+                    initial="hidden"
+                    animate="visible"
+                    exit="exit"
+                    variants={menuVariants}
+                    transition={{ duration: 0.3 }}
+                    className="absolute top-24 left-0 w-full bg-black text-white p-4 lg:hidden"
+                  >
+                    <a
+                      href="/"
+                      className="block text-lg font-bold hover:bg-gray-800 p-2 rounded-lg hover:text-pink-300"
                     >
-                      {departments.map((dept) => (
-                        <a
-                          key={dept.name}
-                          href={dept.href}
-                          className="block px-6 py-2 text-sm font-semibold hover:bg-gray-200"
-                        >
-                          {dept.name} Products
-                        </a>
-                      ))}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
+                      Home
+                    </a>
+                    <a
+                      href="/about-us"
+                      className="block hover:bg-gray-800 p-2 rounded-lg text-lg font-bold hover:text-pink-300"
+                    >
+                      About Us
+                    </a>
 
-      <a
-        href="/contact"
-        className="block text-lg font-bold hover:text-pink-300"
-      >
-        Contact
-      </a>
-    </motion.div>
-  )}
-</AnimatePresence>
+                    {/* Mobile Products Dropdown - FIXED */}
+                    <div className="block">
+                      <button
+                        onClick={toggleProductsMenu}
+                        className="w-full text-left cursor-pointer font-bold hover:bg-gray-800 p-2 rounded-lg text-lg hover:text-pink-300"
+                      >
+                        Products
+                      </button>
+
+                      <AnimatePresence>
+                        {isProductsOpen && (
+                          <motion.div
+                            key="products-dropdown"
+                            initial="hidden"
+                            animate="visible"
+                            exit="exit"
+                            variants={dropdownVariants}
+                            transition={{ duration: 0.3 }}
+                            className="bg-white shadow-lg rounded-md text-black my-3"
+                          >
+                            <a
+                              href="/products"
+                              className="block px-4 py-2 text-lg text-pink-700 font-semibold hover:bg-pink-200"
+                            >
+                              Equipments
+                            </a>
+                            <div>
+                              <button
+                                onClick={toggleDisposablesMenu}
+                                className="w-full text-left px-4 py-2 text-lg text-pink-700 font-semibold hover:bg-pink-200"
+                              >
+                                Disposables
+                              </button>
+                              <AnimatePresence>
+                                {isDisposablesOpen && (
+                                  <motion.div
+                                    initial="hidden"
+                                    animate="visible"
+                                    exit="exit"
+                                    variants={dropdownVariants}
+                                    transition={{ duration: 0.3 }}
+                                    className="border-t border-gray-200"
+                                  >
+                                    {departments.map((dept) => (
+                                      <a
+                                        key={dept.name}
+                                        href={dept.href}
+                                        className="block px-6 py-2 text-sm font-semibold hover:bg-gray-200"
+                                      >
+                                        {dept.name} Products
+                                      </a>
+                                    ))}
+                                  </motion.div>
+                                )}
+                              </AnimatePresence>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+
+                    <a
+                      href="/contact"
+                      className="block hover:bg-gray-800 p-2 rounded-lg text-lg font-bold hover:text-pink-300"
+                    >
+                      Contact
+                    </a>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           </div>
         </div>
