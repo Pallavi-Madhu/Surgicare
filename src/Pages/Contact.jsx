@@ -11,7 +11,7 @@ import { motion } from "framer-motion";
 const Contact = () => {
   return (
     <div
-      className="min-h-screen overflow-x-hidden bg-cover bg-fixed bg-center"
+      className="min-h-screen mt-20 overflow-x-hidden bg-cover bg-fixed bg-center"
       style={{ backgroundImage: `url(${contact})` }}
     >
       <div>

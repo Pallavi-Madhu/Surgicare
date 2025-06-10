@@ -103,7 +103,7 @@ const Navbar = () => {
               <img src={logo} alt="SurgiCare Logo" className="h-14 w-auto" />
             </div>
             <div>
-              <h1 className="text-gray-800 hover:text-blue-900 font-semibold text-4xl transition-colors duration-200 relative group">
+              <h1 className="text-gray-800 hover:text-blue-900 font-sans font-semibold text-2xl sm:text-4xl transition-colors duration-200 relative group">
                 Nandana SurgiCare
               </h1>
             </div>
