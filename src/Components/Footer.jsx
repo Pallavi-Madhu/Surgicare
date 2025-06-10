@@ -25,26 +25,32 @@ const Footer = () => {
             </li>
             {/* Phone */}
             <li className="flex items-center justify-center space-x-2">
-              <IoCallOutline className="text-white" />
+              <IoCallOutline className="text-gray-500" />
               <a
                 href="tel:+91 9847933898, +91 9207755944 "
-                className="text-xl hover:text-white"
+                className="text-xl hover:text-blue-700"
               >
-                +91 9847933898 ,+91 9207755944
+                +91 9847933898 
+              </a>
+                  <a
+                href="tel:+91 9847933898, +91 9207755944 "
+                className="text-xl hover:text-blue-700"
+              >
+                +91 9207755944
               </a>
             </li>
             {/* Email */}
             <li className="flex items-center justify-center space-x-2">
-              <FaEnvelope className="text-white" />
+              <FaEnvelope className="text-gray-500" />
               <a
                 href="mailto:office@nandanasurgicare.com"
-                className="text-xl hover:text-white"
+                className="text-xl hover:text-blue-700"
               >
                 office@nandanasurgicare.com
               </a>
             </li>
             {/* Privacy Policy */}
-            <li className="text-xl text-blue-900 hover:text-gray-500 cursor-pointer">
+            <li className="text-xl text-blue-900 font-semibold hover:text-gray-500 cursor-pointer">
               Privacy Policy
             </li>
           </ul>
