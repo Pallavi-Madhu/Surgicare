@@ -25,6 +25,10 @@ export default {
           "100%": { backgroundPosition: "0% 50%" },
         },
       },
+      fontFamily: {
+        inter: ['Inter', 'sans-serif'],
+        jet: ['JetBrains Mono', 'monospace'],
+      },
     },
   },
   plugins: [require("daisyui")], // DaisyUI plugin

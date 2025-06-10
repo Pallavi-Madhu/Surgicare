@@ -13,22 +13,58 @@ import surgeryVideo from "../assets/Surgeryequip.mp4";
 import positive from "../assets/positive.png"
 import dist from "../assets/dist.png"
 import { motion } from "framer-motion";
+import ParticleOverlay from '../Components/Particle';
+import { useState, useEffect } from "react";
+
+const AnimatedSection = ({ children, className = "", delay = 0 }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => setIsVisible(true), delay);
+        }
+      },
+      { threshold: 0.1 }
+    );
+    
+    const element = document.getElementById(`section-${delay}`);
+    if (element) observer.observe(element);
+    
+    return () => observer.disconnect();
+  }, [delay]);
+  
+  return (
+    <div 
+      id={`section-${delay}`}
+      className={`transition-all duration-1000 ${
+        isVisible 
+          ? 'opacity-100 translate-y-0' 
+          : 'opacity-0 translate-y-8'
+      } ${className}`}
+    >
+      {children}
+    </div>
+  );
+};
 
 const Home = () => {
-  return (
+  return (<>
+     <Navbar />
     <div
-      className="min-h-screen overflow-x-hidden bg-cover bg-fixed bg-center"
+      className=" overflow-x-hidden bg-cover bg-fixed bg-center"
       style={{
-        backgroundImage: `url(${bg})`,
+        //backgroundImage: `url(${bg})`,
         backgroundColor: "rgba(255, 255, 255, 0.5)",
         backgroundBlendMode: "overlay",
       }}
     >
       <div className="min-h-screen overflow-x-hidden">
-        <Navbar />
+       
         <div className="relative w-full ">
           <video
-            className="w-full h-96 object-cover opacity-80"
+            className="w-full min-h-screen max-h-screen object-cover opacity-60"
             autoPlay
             muted
             loop
@@ -36,18 +72,33 @@ const Home = () => {
             <source src={surgeryVideo} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-          <div className="absolute inset-0 flex items-center justify-center bg-black/30">
-            <span className="text-white text-3xl sm:text-6xl text-center font-black drop-shadow-lg">
+          {/* <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/50">
+            <span className="text-black text-3xl sm:text-6xl text-center font-sans drop-shadow-lg">
               "Delivering health solutions
               <br />
               for a better tomorrow."
             </span>
-          </div>
+          </div> */}
+          <div className="absolute inset-0  flex items-center flex-col justify-center bg-black/50 z-10 text-center max-w-5xl mx-auto px-4">
+          <h1 className="text-2xl  shadow-lg lg:text-4xl font-sans font-bold bg-blue-50 p-5 rounded-lg rounded text-gray-800 mb-6 leading-tight">
+            <span className="bg-gradient-to-r z-50 from-blue-600 to-blue-800 bg-clip-text text-transparent">
+              Delivering Health Solutions
+            </span>
+            <br />
+            <span className="text-gray-700">for a Better Tomorrow at</span>
+          </h1>
+          {/* <h1 className="ext-2xl lg:text-3xl font-sans font-bold  p-5 rounded-lg rounded text-gray-800 mb-6 leading-tight">At</h1> */}
+          <h1 className="text-2xl  shadow-lg lg:text-6xl font-sans font-bold bg-blue-50 p-5 rounded-lg rounded text-gray-800 mb-6 leading-tight">Nandana Surgi Care</h1>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto mb-8"></div>
+          <p className="text-lg sm:text-xl font-sans  text-black max-w-2xl mx-auto leading-relaxed">
+            Trusted partner in world-class biomedical equipment distribution
+          </p>
+        </div>
         </div>
 
-        <div className="relative px-10">
+        <div className="relative inset-0 bg-gradient-to-r from-blue-50 via-white to-blue-50 px-10">
           {/* First Section */}
-          <motion.div
+          {/* <motion.div
             className="bg-gradient-to-r from-blue-300 to-white flex flex-col-reverse lg:flex-row md:mx-20 gap-6 mt-10 p-6"
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -80,14 +131,159 @@ const Home = () => {
               transition={{ duration: 1.0, delay: 0.3 }}
               //viewport={{ once: true }}
             />
-          </motion.div>
+          </motion.div> */}
 
           <br />
+           <AnimatedSection className="max-w-7xl mx-auto px-4 py-20" delay={0}>
+          
+        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen">
+           <motion.p
+               initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1.0, delay: 0.2 }}
+              //viewport={{ once: true }}
+            >
+            <div className="space-y-6 ">
+              <div className="inline-block px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold">
+                About Nandana SurgiCare
+              </div>
+              <h2 className="text-2xl lg:text-5xl font-bold text-gray-800 leading-tight">
+                World-Class <span className="text-blue-600">Biomedical Equipment</span> Distribution
+              </h2>
+              <p className="lg:text-2xl text-sm sm:text-lg font-sans font-extralight text-gray-600 leading-relaxed">
+                At Nandana SurgiCare, we take pride in being a trusted distributor of world-class biomedical equipment, 
+                enabling healthcare professionals to deliver exceptional patient care. With our strong focus on quality, 
+                innovation, and reliability, we offer a comprehensive range of medical instruments and devices from some 
+                of the most respected brands in the industry.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                {['Cardiology', 'Thoracic Surgery', 'Neurosurgery', 'Plastic Surgery'].map((specialty) => (
+                  <span key={specialty} className="text-sm sm:text-lg lg:text-2xl px-4 py-2 bg-blue-50 text-blue-900 rounded-lg font-bold">
+                    {specialty}
+                  </span>
+                ))}
+              </div>
+            </div>
+            </motion.p>
+
+            <motion.div
+            className="flex flex-col lg:flex-row md:mx-20 p-6 gap-6"
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1.0 }}
+            //viewport={{ once: true }}
+           >
+            <div className="relative ">
+              <div className="absolute  -inset-4  rounded-2xl blur-xl opacity-30"></div>
+              <div className="relative bg-white p-2 rounded-2xl shadow-2xl">
+                <div className="  bg-gradient-to-br from-blue-100 to-slate-100 rounded-xl flex items-center justify-center">
+                  <span className="text-gray-500"> 
+                    <motion.img
+              src={positive}
+              className="w-full p-2 m-auto h-80 sm:h-auto max-w-sm rounded-2xl shadow-lg"
+              //initial={{ opacity: 0, x: 100 }}
+              //whileInView={{ opacity: 1, x: 0 }}
+              //transition={{ duration: 1.0, delay: 0.3 }}
+              //viewport={{ once: true }}
+               />
+              </span>
+                </div>
+              </div>
+            </div>
+            </motion.div>
+          </div>
+        </AnimatedSection>
           <br />
+
+            {/* Second Section */}
+            <div  className="min-h-screen bg-gradient-to-b  from-blue-50 to-slate-50">
+                  <AnimatedSection className=" py-20" delay={200}>
+                       <motion.div
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1.0 }}
+            //viewport={{ once: true }}
+          >
+          <div className="max-w-7xl mt-20 mx-auto px-4">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+           <div className="relative order-2 lg:order-1">
+  
+  <motion.div
+            className="flex flex-col lg:flex-row md:mx-20 p-6 gap-6"
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1.0 }}
+            //viewport={{ once: true }}
+           >
+            <div className="relative ">
+              <div className="absolute  -inset-4  rounded-2xl blur-xl opacity-30"></div>
+              <div className="relative bg-white p-2 rounded-2xl shadow-2xl">
+                <div className="  bg-gradient-to-br from-blue-100 to-slate-100 rounded-xl flex items-center justify-center">
+                  <span className="text-gray-500"> 
+                    <motion.img
+              src={dist}
+              className="p-2 m-auto h-80 sm:h-auto max-w-sm rounded-2xl shadow-lg"
+              //initial={{ opacity: 0, x: 100 }}
+              //whileInView={{ opacity: 1, x: 0 }}
+              //transition={{ duration: 1.0, delay: 0.3 }}
+              //viewport={{ once: true }}
+               />
+              </span>
+                </div>
+              </div>
+            </div>
+            </motion.div>
+
+</div>
+
+              <div className="space-y-6 order-1 lg:order-2">
+                      <motion.p
+              //className="text-2xl text-black text-center leading-relaxed font-bold max-w-3xl mt-6 lg:mt-14"
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1.0, delay: 0.2 }}
+              //viewport={{ once: true }}
+            >
+                <div className="inline-block px-4 py-2 bg-slate-100 text-slate-800 rounded-full bg-gray-200 text-sm font-semibold">
+                  Global Partnerships
+                </div>
+                <h2 className="text-2xl lg:text-5xl font-bold text-gray-800 py-4 sm:py-0 leading-tight">
+                  Strategic <span className="text-blue-600">Global Partnerships</span>
+                </h2>
+                </motion.p>
+                    <motion.p
+              //className="text-2xl text-black text-center leading-relaxed font-bold max-w-3xl mt-6 lg:mt-14"
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1.0, delay: 0.2 }}
+              //viewport={{ once: true }}
+            >
+                <p className="lg:text-2xl w-2/3 text-sm sm:text-lg font-sans font-extralight text-gray-600 leading-relaxed">
+                  Our strategic partnerships with leading global manufacturers ensure that we provide the latest and most 
+                  reliable medical technologies. From advanced ECMO machines to surgical instruments and disposables, 
+                  we're here to support healthcare professionals in their mission to save lives and improve patient outcomes.
+                </p>
+                </motion.p>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="text-center p-4 bg-white rounded-xl shadow-md">
+                    <div className="text-2xl font-bold text-blue-600">50+</div>
+                    <div className="text-sm text-gray-900">Global Partners</div>
+                  </div>
+                  <div className="text-center p-4 bg-white rounded-xl shadow-md">
+                    <div className="text-2xl font-bold text-blue-600">1000+</div>
+                    <div className="text-sm text-gray-900">Products</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </motion.div>
+        </AnimatedSection>
+</div>
 
           {/* Second Section */}
-          <motion.div
-            className="bg-gradient-to-l from-blue-300 to-white flex flex-col lg:flex-row md:mx-20 p-6 gap-6"
+          {/* <motion.div
+            className="bg-gradient-to-l  from-blue-300 to-white flex flex-col lg:flex-row md:mx-20 p-6 gap-6"
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.0 }}
@@ -114,83 +310,55 @@ const Home = () => {
               and disposables, we’re here to support healthcare professionals in
               their mission to save lives and improve patient outcomes.
             </motion.p>
-          </motion.div>
+          </motion.div> */}
         </div>
         <br />
-        <br />
-        <br />
+        <AnimatedSection  delay={400}>
+          <div className="max-w-7xl min-h-screen    lg:h-auto mx-auto pt-20 px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-5xl font-bold text-gray-800 mb-4">
+                Why Choose <span className="text-blue-600">Us?</span>
+              </h2>
+              <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto"></div>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                {
+                  title: "Quality Assurance",
+                  description: "We offer only top-tier products from globally recognized brands, ensuring the highest standards in patient care.",
+                  icon: "✓",
+                  gradient: "from-blue-500 to-blue-600"
+                },
+                {
+                  title: "End-to-End Solutions",
+                  description: "From delivery and installation to training and support, we provide comprehensive services to healthcare providers.",
+                  icon: "⚡",
+                  gradient: "from-blue-600 to-blue-700"
+                },
+                {
+                  title: "Customer-Centric Approach",
+                  description: "We are dedicated to understanding your unique needs and offering tailored solutions for your hospital or clinic.",
+                  icon: "♥",
+                  gradient: "from-blue-700 to-blue-800"
+                }
+              ].map((item, index) => (
+                <div key={index} className="group relative">
+                  <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl blur opacity-0 group-hover:opacity-20 transition duration-500"></div>
+                  <div className="relative  bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100">
+                    <div className={`w-16 h-16 bg-gradient-to-r ${item.gradient} rounded-xl flex items-center justify-center text-white text-2xl font-bold mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                      {item.icon}
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-800 mb-4">{item.title}</h3>
+                    <p className="text-gray-600 leading-relaxed">{item.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </AnimatedSection>
 
-        <div className="text-7xl text-black font-bold text-center p-10">
-          <h1>Why choose us?</h1>
-        </div>
-
-        <div className="grid grid-cols-1  sm:grid-cols-3 px-10 gap-8">
-          {/* Quality Assurance */}
-          <motion.div
-            className="p-14  rounded-lg shadow-md hover:bg-gray-200 transition-all mt-8"
-            initial={{ opacity: 0, translateY: 50, background: "white" }}
-            whileInView={{
-              opacity: 1,
-              translateY: 0,
-              background: "linear-gradient(to bottom, #BFDBFE, white)", // Blue-300 to White gradient
-            }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            //viewport={{ once: true }}
-          >
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4 text-center">
-              Quality Assurance
-            </h3>
-            <p className="text-gray-800">
-              We offer only top-tier products from globally recognized brands,
-              ensuring the highest standards in patient care.
-            </p>
-          </motion.div>
-
-          {/* End-to-End Solutions */}
-          <motion.div
-            className="p-10 rounded-lg shadow-md hover:bg-gray-200 transition-all mt-8"
-            initial={{ opacity: 0, translateY: 50, background: "white" }}
-            whileInView={{
-              opacity: 1,
-              translateY: 0,
-              background: "linear-gradient(to bottom, #BFDBFE, white)", // Blue-300 to White gradient
-            }}
-            transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-            //viewport={{ once: true }}
-          >
-            <h3 className="text-2xl font-semibold text-gray-800 mb-4 text-center">
-              End-to-End Solutions
-            </h3>
-            <p className="text-gray-800">
-              From delivery and installation to training and support, we provide
-              comprehensive services to healthcare providers.
-            </p>
-          </motion.div>
-
-          {/* Customer-Centric Approach */}
-          <motion.div
-            className="p-10 rounded-lg shadow-md hover:bg-gray-200 transition-all mt-8"
-            initial={{ opacity: 0, translateY: 50, background: "white" }}
-            whileInView={{
-              opacity: 1,
-              translateY: 0,
-              background: "linear-gradient(to bottom, #BFDBFE, white)", // Blue-300 to White gradient
-            }}
-            transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
-            //viewport={{ once: true }}
-          >
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4 text-center">
-              Customer-Centric Approach
-            </h3>
-            <p className="text-gray-800">
-              We are dedicated to understanding your unique needs and offering
-              tailored solutions for your hospital or clinic.
-            </p>
-          </motion.div>
-        </div>
-        <br />
-        <br />
-        <br />
+    
 
         <motion.div
           className="flex flex-col mt-20"
@@ -201,7 +369,7 @@ const Home = () => {
         >
           {/* Animated Heading */}
           <motion.h2
-            className="text-5xl text-center font-bold bg-gradient-to-r from-blue-500 to-blue-300 bg-clip-text text-transparent pb-7 pt-6 drop-shadow-lg"
+            className="text-5xl text-center font-bold bg-gradient-to-r from-blue-700 to-blue-300 bg-clip-text text-transparent pb-7 pt-6 drop-shadow-lg"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
@@ -254,6 +422,7 @@ const Home = () => {
       </div>
       <Footer />
     </div>
+    </>
   );
 };
 
