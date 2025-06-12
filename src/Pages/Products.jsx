@@ -163,14 +163,14 @@ const MedicalEquipmentPage = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-indigo-100 via-white to-indigo-100 flex items-center justify-center">
         <motion.div
           className="flex flex-col items-center space-y-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
         >
           <motion.div
-            className="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full"
+            className="w-16 h-16 border-4 border-indigo-500 border-t-transparent rounded-full"
             animate={{ rotate: 360 }}
             transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
           />
@@ -181,17 +181,20 @@ const MedicalEquipmentPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+    <>
+    <Navbar />
+
+    <div className="min-h-screen  bg-green-50 pb-48">
       
       <motion.div 
-        className="bg-white shadow-lg"
+        className="bg-white shadow-lg bg-green-700"
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6 }}
       >
-        <div className="container mx-auto px-6 py-8">
+        <div className="container mx-auto py-10 mt-20">
           <motion.h1 
-            className="text-5xl font-bold text-center text-gray-800 mb-4"
+            className="text-4xl lg:text-5xl font-bold text-center text-white mb-4"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.6 }}
@@ -199,7 +202,7 @@ const MedicalEquipmentPage = () => {
             Medical Equipment
           </motion.h1>
           <motion.p 
-            className="text-xl text-center text-gray-600 max-w-4xl mx-auto leading-relaxed"
+            className=" lg:text-3xl text-center text-gray-100 max-w-4xl mx-auto leading-relaxed"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.6 }}
@@ -214,7 +217,7 @@ const MedicalEquipmentPage = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.6 }}
           >
-            <div className="inline-flex items-center space-x-2 bg-blue-100 text-blue-800 px-4 py-2 rounded-full">
+            <div className="inline-flex items-center space-x-2 bg-blue-100 text-green-900 px-4 py-2 rounded-full">
               <span className="font-semibold">Click any card to explore</span>
               <ChevronRight className="w-4 h-4" />
             </div>
@@ -236,7 +239,7 @@ const MedicalEquipmentPage = () => {
               variants={itemVariants}
               layout
               whileHover={{ y: -8, scale: 1.02 }}
-              className="bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-2xl"
+              className="bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-2xl flex flex-col"
               onClick={() => handleProductClick(product)}
               onMouseEnter={() => setHoveredProduct(product.id)}
               onMouseLeave={() => setHoveredProduct(null)}
@@ -246,12 +249,12 @@ const MedicalEquipmentPage = () => {
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-full  transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-80 transition-transform duration-500 group-hover:scale-110"
                 />
 
                 {/* Category Badge */}
                 <div className="absolute top-4 left-4">
-                  <span className="bg-white text-black px-3 py-1 rounded-full text-sm font-medium shadow-lg">
+                  <span className="bg-white text-black px-3 py-1 rounded-full text-sm  shadow-lg">
                     {product.category}
                   </span>
                 </div>
@@ -271,17 +274,17 @@ const MedicalEquipmentPage = () => {
               </div>
 
               {/* Card Content */}
-              <div className="p-6  justify-end p-4 text-black">
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-xl font-bold text-gray-800">{product.name}</h3>
+              <div className="p-6 text-black flex flex-col flex-grow">
+                <div className=" items-center justify-between mb-3">
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-800">{product.name}</h3>
                 </div>
                 
-                <p className="text-gray-600 text-sm mb-4 line-clamp-2">{product.description}</p>
+                <p className="text-gray-900 text-lg sm:text-2xl f mb-4 line-clamp-2 flex flex-grow">{product.description}</p>
                 
 
                 {/* CTA */}
                 <motion.button
-                  className="w-full mt-auto bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-3 rounded-xl font-semibold hover:from-blue-600 hover:to-indigo-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+                  className="w-full mt-auto bg-green-700 text-white py-3 rounded-xl font-semibold hover:bg-green-900 transition-all duration-300 shadow-lg hover:shadow-xl"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -293,6 +296,8 @@ const MedicalEquipmentPage = () => {
         </motion.div>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 };
 
