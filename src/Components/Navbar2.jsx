@@ -78,7 +78,7 @@ const Navbar = () => {
     >
       {/* Static gradient background layer (only visible when NOT scrolled) */}
       {!isScrolled && (
-        <div className="absolute inset-0 z-[-2] bg-white transition-opacity duration-300" />
+        <div className="absolute inset-0 z-[-2] bg-transparent transition-opacity duration-300 " />
       )}
 
       {/* Framer Motion animated overlay */}
@@ -103,7 +103,7 @@ const Navbar = () => {
               <img src={logo} alt="SurgiCare Logo" className="h-14 w-auto" />
             </div>
             <div>
-              <h1 className="text-gray-800 hover:text-blue-900 font-sans font-semibold text-2xl sm:text-4xl transition-colors duration-200 relative group">
+              <h1 className="text-gray-800 hover:text-blue-900 font-sans  font-semibold text-2xl sm:text-4xl transition-colors duration-200 relative group">
                 Nandana SurgiCare
               </h1>
             </div>
@@ -216,7 +216,7 @@ const Navbar = () => {
 
             <a
               href="/contact"
-              className="text-gray-700 hover:text-blue-600 font-semibold text-2xl transition-colors duration-200 relative group"
+              className="text-gray-700 hover:text-indigo-600 font-semibold text-2xl transition-colors duration-200 relative group"
             >
               Contact
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-200 group-hover:w-full"></span>
