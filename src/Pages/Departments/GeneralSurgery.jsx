@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import Navbar from "../../Components/Navbar";
 import Footer from "../../Components/Footer";
-import DepNav from "../../Components/DepNav";
-import { motion } from "framer-motion";
-//companies
+import { motion, AnimatePresence } from 'framer-motion';
+import { ExternalLink, Globe, Package2, Building, ChevronRight, Star, ShoppingCart } from 'lucide-react';
+// import DepNav from "../../Components/DepNav";
+// import { motion } from "framer-motion";
+// //companies
 import BL from "../../assets/BLLifsciences.png";
 import Scanlan from "../../assets/Scanlan.png";
 import Sinapi from "../../assets/Sinapi.png";
@@ -32,418 +34,373 @@ import mister2 from "../../assets/GeneralSurgery/Bl/mister2.jpg";
 import surgiloop2 from "../../assets/GeneralSurgery/Bl/surgiloop.webp";
 import cannula from "../../assets/GeneralSurgery/Bl/cannula.png";
 
-import bg from "../../assets/depBG.png";
 
-const Departments = ({ name, image, buttonImages }) => {
-  const [selected, setSelected] = useState("Bl");
+const GenralSurgerySidebarDesign = () => {
+  const [activeCompany, setActiveCompany] = useState("BL");
+  const [hoveredProduct, setHoveredProduct] = useState(null);
 
-  const BLCards = [
-    {
-      id: "1",
-      image: thoracic1,
-      text: "THORACIC DRAINAGE CATHETER 12,20,24,28,32FR",
-      url:"https://www.bllifesciences.com/products/surgical-innovations/"
-    },
-    {
-      id: "2",
-      image: thoracic2,
-      text: "THORACIC DRAINAGE CATHETER 24,28,32,36'FR ANGLED",
-      url:"https://www.bllifesciences.com/products/surgical-innovations/"
-    },
-    {
-      id: "3",
-      image: chest1000ml,
-      text: "CHEST DRAIN.SYSTEM-2000ML",
-      url:"https://sinapibiomedical.com/"
-    },
-    {
-      id: "4",
-      image: suctionset,
-      text: "YANKUR SUCTION SET.- STANDARD TIP",
-      url:"https://www.bllifesciences.com/products/surgical-innovations/"
-    },
-    {
-      id: "5",
-      image: tipcleaner,
-      text: "CAUTERY TIP CLEANER",
-      url:"https://www.bllifesciences.com/products/surgical-innovations/"
-    },
-    {
-      id: "6",
-      image: tipcleaner2_actual,
-      text: "CAUTERY TIP  PENCIL WITH CLEANER ",
-      url:"https://www.bllifesciences.com/products/surgical-innovations/"
-    },
-    {
-      id: "7",
-      image: mister2,
-      image: "CARDIAC MISTER BLOWER WITH EXTENSION",
-      url:"https://www.bllifesciences.com/products/customised-perfusion-system/"
-    },
-    {
-      id: "8",
-      image: surgiloop2,
-      text: "Surgi I Loop Mini/Maxi ( Yellow/Blue/Red/White)",
-      url:"https://www.minogue-med.com/product/aspen-surgical-vessel-loops-maxi-blue/"
-    },
-    {
-      id: "9",
-      image: cannula,
-      text: "Vessel Cannula Transparant Flexible 5C",  //could  not find link
-    },
-  ];
-  const ScanlanCards = [
-    {
-      id: 1,
-      image: clamp,
-      text: "BULL DOG CLAMP",
-      url:"https://www.scanlaninternational.com/product-category/instrumentation/clamps/"
-    },
-    // {
-    //   id: 2,
-    //   image: skinmarker,
-    //   text: "Skin Marker",
-    //   url:"https://www.scanlaninternational.com/products/1001-710/"
-    // },
-    {
-      id: 3,
-      image: instrument_care,
-      text: "Instrument marker ( All colors are available)",
-      url:"https://www.scanlaninternational.com/scanlan-products/instrument-care/"
-    },
-    {
-      id: 4,
-      image: surgiloop,
-      text: "Surgi loop with blend needle",
-      url:"https://www.scanlaninternational.com/products/1001-81p/"
-    },
-  ];
-  const SinapiCards = [
-    {
-      id: "1",
-      image: chestdrain,
-      text: "CHEST DRAIN SINAPI  1000ml",
-      url:"https://sinapibiomedical.com/"
-    },
-  ];
-  const PetersCards = [
-    {
-      id: 1,
-      image: clips,
-      text: "S L S Clips, small, medium & Large",
-      url:"https://peters-surgical.com/wp-content/uploads/sites/4/2023/05/SLS-Titanium-clips-brochure.pdf"
-    },
-  ];
+ const companies = {
+  BL: {
+    logo: BL, 
+    name: "BL Life Sciences",
+    bgColor: "bg-green-50",
+    accentColor: "emerald",
+    description: "BL Life Sciences offers innovative surgical solutions including thoracic catheters, suction sets, and perfusion systems.",
+    website: "https://www.bllifesciences.com/",
+    headquarters: "India",
+    established:"2000",
+    products: [
+      {
+        id: "1",
+        image: thoracic1,
+        name: "Thoracic Drainage Catheter",
+        category: "Surgical Innovations",
+        description: "Catheter sizes: 12, 20, 24, 28, 32FR",
+        url: "https://www.bllifesciences.com/products/surgical-innovations/"
+      },
+      {
+        id: "2",
+        image: thoracic2,
+        name: "Thoracic Drainage Catheter Angled",
+        category: "Surgical Innovations",
+        description: "Catheter sizes: 24, 28, 32, 36FR",
+        url: "https://www.bllifesciences.com/products/surgical-innovations/"
+      },
+      {
+        id: "3",
+        image: chest1000ml,
+        name: "Chest Drain System",
+        category: "Surgical Innovations",
+        description: "Capacity: 2000ml",
+        url: "https://sinapibiomedical.com/"
+      },
+      {
+        id: "4",
+        image: suctionset,
+        name: "Yankur Suction Set",
+        category: "Surgical Innovations",
+        description: "Standard tip suction set",
+        url: "https://www.bllifesciences.com/products/surgical-innovations/"
+      },
+      {
+        id: "5",
+        image: tipcleaner,
+        name: "Cautery Tip Cleaner",
+        category: "Surgical Innovations",
+        description: "Cleaning tool for electrosurgical tips",
+        url: "https://www.bllifesciences.com/products/surgical-innovations/"
+      },
+      {
+        id: "6",
+        image: tipcleaner2_actual,
+        name: "Cautery Tip Pencil with Cleaner",
+        category: "Surgical Innovations",
+        description: "Integrated pencil with cleaner tip",
+        url: "https://www.bllifesciences.com/products/surgical-innovations/"
+      },
+      {
+        id: "7",
+        image: mister2,
+        name: "Cardiac Mister Blower with Extension",
+        category: "Perfusion System",
+        description: "Precise blow-misting device",
+        url: "https://www.bllifesciences.com/products/customised-perfusion-system/"
+      },
+      {
+        id: "8",
+        image: surgiloop2,
+        name: "Surgi I Loop Mini/Maxi",
+        category: "Vessel Loops",
+        description: "Color-coded vessel loops - Yellow, Blue, Red, White",
+        url: "https://www.minogue-med.com/product/aspen-surgical-vessel-loops-maxi-blue/"
+      },
+      {
+        id: "9",
+        image: cannula,
+        name: "Vessel Cannula",
+        category: "Surgical Tools",
+        description: "Transparent flexible 5C cannula",
+        // No URL provided
+      }
+    ]
+  },
+
+  Scanlan: {
+    logo: Scanlan, 
+    name: "Scanlan International",
+    bgColor: "bg-gray-50",
+    accentColor: "indigo",
+    description: "Scanlan International provides high-precision surgical instruments and care tools for medical professionals.",
+    website: "https://www.scanlaninternational.com/",
+    headquarters: "USA",
+    established:"1921",
+    products: [
+      {
+        id: "1",
+        image: clamp,
+        name: "Bull Dog Clamp",
+        category: "Clamps",
+        description: "High-quality clamp for surgical precision",
+        url: "https://www.scanlaninternational.com/product-category/instrumentation/clamps/"
+      },
+      {
+        id: "3",
+        image: instrument_care,
+        name: "Instrument Marker",
+        category: "Instrument Care",
+        description: "All colors available for marking instruments",
+        url: "https://www.scanlaninternational.com/scanlan-products/instrument-care/"
+      },
+      {
+        id: "4",
+        image: surgiloop,
+        name: "Surgi Loop with Blend Needle",
+        category: "Vessel Loops",
+        description: "Precise loop tool with blend needle",
+        url: "https://www.scanlaninternational.com/products/1001-81p/"
+      }
+    ]
+  },
+
+  Sinapi: {
+    logo: Sinapi,
+    name: "Sinapi Biomedical",
+    bgColor: "bg-red-50",
+    accentColor: "rose",
+    description: "Sinapi Biomedical manufactures reliable and high-capacity drainage systems used in critical care.",
+    website: "https://sinapibiomedical.com/",
+    headquarters: "South Africa",
+    established:"2001",
+    products: [
+      {
+        id: "1",
+        image: chestdrain,
+        name: "Chest Drain SINAPI",
+        category: "Drainage Systems",
+        description: "Capacity: 1000ml",
+        url: "https://sinapibiomedical.com/"
+      }
+    ]
+  },
+
+  Peters: {
+    logo: Peters, 
+    name: "Peters Surgical",
+    bgColor: "bg-yellow-50",
+    accentColor: "amber",
+    description: "Peters Surgical specializes in titanium clips and surgical solutions for cardiovascular procedures.",
+    website: "https://peters-surgical.com/",
+    headquarters: "France",
+    established:"1926",
+    products: [
+      {
+        id: "1",
+        image: clips,
+        name: "SLS Clips",
+        category: "Clipping Systems",
+        description: "Small, medium, and large titanium clips",
+        url: "https://peters-surgical.com/wp-content/uploads/sites/4/2023/05/SLS-Titanium-clips-brochure.pdf"
+      }
+    ]
+  }
+};
+
+
+  const currentCompany = companies[activeCompany];
 
   return (
-    <>
-     <div
-        className="min-h-screen overflow-x-hidden bg-cover bg-fixed bg-center"
-        style={{
-          backgroundImage: `url(${bg})`,
-          backgroundColor: "rgba(255, 255, 255, 0)",
-          backgroundBlendMode: "overlay",
-        }}
-      >
-        <div className="relative  z-50">
-          {" "}
-          <Navbar />
-        </div>
-      {/* Pulmonology Page Content */}
-       <div className=" sm:mt-40">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-20 p-12 items-center">
-              <h2 className="z-20 text-5xl sm:text-6xl font-bold text-left flex-1">
-                {name}
-              </h2>
+    <div className="min-h-screen bg-gray-50 flex">
+      
+      {/* Sidebar */}
+      <div className="w-80 bg-white shadow-2xl flex flex-col">
+        {/* Header */}
+        
+        <div className="p-6 border-b bg-gradient-to-br from-slate-800 to-slate-900 text-black bg-blue-200">
+          <h1 className="text-2xl font-bold mb-2">GENERAL SURGERY</h1>
+          <p className="text-slate-300 text-sm">Surgical Solutions</p>
         </div>
 
-        {/* Buttons */}
-      <div className="grid relative  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-6">
-            {buttonImages.map(({ src, alt, id }) => (
-             <button
-          key={id}
-           onClick={() => setSelected(id)}
-            className={`p-2 font-bold rounded-3xl text-black w-1/2 sm:w-3/4 lg:w-1/2 mx-14 h-14 border border-black flex justify-center items-center ${
-           selected === id ? "bg-gray-500 text-white border-gray-500" : "bg-white"
-         }` }
-           >
-                <img src={src} alt={alt} className="h-12 w-auto" />
-              </button>
-            ))}
+        {/* Company Navigation */}
+        <div className="flex-1 overflow-y-auto">
+          {Object.entries(companies).map(([key, company]) => (
+            <motion.button
+              key={key}
+              onClick={() => setActiveCompany(key)}
+              className={`w-full p-6 text-left border-b transition-all duration-300 ${
+                activeCompany === key 
+                  ? `${company.bgColor} border-l-4 border-${company.accentColor}-500` 
+                  : 'hover:bg-gray-50'
+              }`}
+              whileHover={{ x: activeCompany === key ? 0 : 4 }}
+            >
+              <div className="flex items-center justify-between">
+                <div className="flex-1">
+                  <h3 className={`font-bold text-lg mb-1 ${activeCompany === key ? `text-${company.accentColor}-700` : 'text-gray-900'}`}>
+                    {company.name}
+                  </h3>
+                  <p className="text-sm text-gray-600 mb-2">{company.tagline}</p>
+                  <div className="flex items-center gap-4 text-xs text-gray-500">
+                    <span className="flex items-center gap-1">
+                      <Building className="w-3 h-3" />
+                      {company.headquarters}
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <Package2 className="w-3 h-3" />
+                      {company.products.length} Products
+                    </span>
+                  </div>
+                </div>
+                <ChevronRight className={`w-5 h-5 transition-transform duration-300 ${
+                  activeCompany === key ? `rotate-90 text-${company.accentColor}-500` : 'text-gray-400'
+                }`} />
+              </div>
+            </motion.button>
+          ))}
+        </div>
+
+        {/* Quick Stats */}
+        <div className="p-6 bg-gray-100 border-t">
+          <div className="flex items-center justify-between text-sm text-gray-600">
+            <span>Est. {currentCompany.established}</span>
+            <motion.a
+              href={currentCompany.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`flex items-center gap-1 text-${currentCompany.accentColor}-600 hover:text-${currentCompany.accentColor}-700`}
+              whileHover={{ scale: 1.05 }}
+            >
+              <Globe className="w-4 h-4" />
+              Website
+            </motion.a>
           </div>
-        {/* Company Details */}
-        <div className="flex flex-col justify-center items-center mt-6">
-          {selected === "BL" && (
-            <>
-              <img src={BL} alt="BL" className="h-40 w-auto" />
-                 <p className="text-center mt-4 p-7 sm:p-20 lg:p-30">
-                BL Lifesciences contributes to anesthesiology by providing
-                advanced anesthesia delivery systems, breathing circuits, and
-                airway management solutions. Their products ensure precise gas
-                delivery, patient safety, and optimal ventilation during
-                surgical procedures. BL Lifesciences also offers high-quality
-                monitoring accessories to enhance anesthesia care.
-              </p>
-            </>
-          )}
-          {selected === "Scanlan" && (
-            <>
-              <img src={Scanlan} alt="Scanlan" className="h-30 w-auto" />
-                <p className="text-center mt-4 p-7 sm:p-20 lg:p-30">
-                Scanlan International is a leading manufacturer of high-quality
-                surgical instruments, specializing in cardiovascular,
-                microsurgical, and general surgical tools. Founded in 1921, the
-                company is known for precision craftsmanship and innovation in
-                medical device manufacturing.
-              </p>
-            </>
-          )}
-          {selected === "Sinapi" && (
-            <>
-              <img src={Sinapi} alt="Sinapi" className="h-40 w-auto" />
-                 <p className="text-center mt-4 p-7 sm:p-20 lg:p-30">
-                Sinapi Biomedicals specializes in developing innovative and
-                cost-effective medical devices, particularly in wound care,
-                critical care, and surgical solutions. Their product range
-                includes chest drains, urine meters, and negative pressure wound
-                therapy systems, designed to enhance patient recovery and
-                improve hospital efficiency.
-              </p>
-            </>
-          )}
-          {selected === "Peters" && (
-            <>
-              <img src={Peters} alt="Peters" className="h-30 w-auto" />
-                <p className="text-center mt-4 p-7 sm:p-20 lg:p-30">
-                Peters Surgical is a French company specializing in designing,
-                manufacturing, and distributing high-quality medical devices for
-                surgical procedures. It is well known for its expertise in
-                sutures, manual titanium clips, and surgical glue. The company
-                focuses on innovation and precision to enhance surgical safety
-                and efficiency.
-              </p>
-            </>
-          )}
         </div>
-
-        {/* Product Range Section */}
-        <div className="flex mt-10 text-4xl font-bold justify-center items-center">
-          Range of Products
-        </div>
-
-        {/* Product Cards */}
-         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 my-20 gap-28 sm:m-4 sm:gap-20 m-10 lg:p-20">
-            {selected === "BL" &&
-              BLCards.map((card) => (
-                 <a
-                                                                key={card.id}
-                                                                href={card.url}
-                                                                target="_blank"
-                                                                rel="noopener noreferrer"
-                                                                className="no-underline"
-                                                              >
-                                                                <motion.div
-                                                                  className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
-                                                                  whileHover={{ scale: 1.05 }}
-                                                                >
-                                                                  <img
-                                                                    src={card.image}
-                                                                    alt={`Card ${card.text}`}
-                                                                    className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
-                                                                  />
-                                                                  <motion.div
-                                                                    className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
-                                                                    initial={{ opacity: 0 }}
-                                                                    whileHover={{ opacity: 1 }}
-                                                                  >
-                                                                    <span className="text-white text-3xl text-center font-bold">
-                                                                      {card.text}
-                                                                    </span>
-                                                                  </motion.div>
-                                                                </motion.div>
-                                                                <p className="flex justify-center text-gray-800 text-2xl p-6 text-center font-semibold">
-                                                                  {card.text}
-                                                                </p>
-                                                              </a>
-              ))}
-
-            {selected === "Scanlan" &&
-              ScanlanCards.map((card) => (
-                <a
-                                                                key={card.id}
-                                                                href={card.url}
-                                                                target="_blank"
-                                                                rel="noopener noreferrer"
-                                                                className="no-underline"
-                                                              >
-                                                                <motion.div
-                                                                  className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
-                                                                  whileHover={{ scale: 1.05 }}
-                                                                >
-                                                                  <img
-                                                                    src={card.image}
-                                                                    alt={`Card ${card.text}`}
-                                                                    className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
-                                                                  />
-                                                                  <motion.div
-                                                                    className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
-                                                                    initial={{ opacity: 0 }}
-                                                                    whileHover={{ opacity: 1 }}
-                                                                  >
-                                                                    <span className="text-white text-3xl text-center font-bold">
-                                                                      {card.text}
-                                                                    </span>
-                                                                  </motion.div>
-                                                                </motion.div>
-                                                                <p className="flex justify-center text-gray-800 text-2xl p-6 text-center font-semibold">
-                                                                  {card.text}
-                                                                </p>
-                                                              </a>
-              ))}
-
-            {selected === "Sinapi" &&
-              SinapiCards.map((card) => (
-                 <a
-                                                                key={card.id}
-                                                                href={card.url}
-                                                                target="_blank"
-                                                                rel="noopener noreferrer"
-                                                                className="no-underline"
-                                                              >
-                                                                <motion.div
-                                                                  className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
-                                                                  whileHover={{ scale: 1.05 }}
-                                                                >
-                                                                  <img
-                                                                    src={card.image}
-                                                                    alt={`Card ${card.text}`}
-                                                                    className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
-                                                                  />
-                                                                  <motion.div
-                                                                    className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
-                                                                    initial={{ opacity: 0 }}
-                                                                    whileHover={{ opacity: 1 }}
-                                                                  >
-                                                                    <span className="text-white text-3xl text-center font-bold">
-                                                                      {card.text}
-                                                                    </span>
-                                                                  </motion.div>
-                                                                </motion.div>
-                                                                <p className="flex justify-center text-gray-800 text-2xl p-6 text-center font-semibold">
-                                                                  {card.text}
-                                                                </p>
-                                                              </a>
-              ))}
-
-            {selected === "Peters" &&
-              PetersCards.map((card) => (
-                  <a
-                                                                key={card.id}
-                                                                href={card.url}
-                                                                target="_blank"
-                                                                rel="noopener noreferrer"
-                                                                className="no-underline"
-                                                              >
-                                                                <motion.div
-                                                                  className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
-                                                                  whileHover={{ scale: 1.05 }}
-                                                                >
-                                                                  <img
-                                                                    src={card.image}
-                                                                    alt={`Card ${card.text}`}
-                                                                    className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
-                                                                  />
-                                                                  <motion.div
-                                                                    className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
-                                                                    initial={{ opacity: 0 }}
-                                                                    whileHover={{ opacity: 1 }}
-                                                                  >
-                                                                    <span className="text-white text-3xl text-center font-bold">
-                                                                      {card.text}
-                                                                    </span>
-                                                                  </motion.div>
-                                                                </motion.div>
-                                                                <p className="flex justify-center text-gray-800 text-2xl p-6 text-center font-semibold">
-                                                                  {card.text}
-                                                                </p>
-                                                              </a>
-              ))}
-       
-        </div>
-
-        {/*Read more*/}
-        <div className="flex justify-center mt-10 mb-14">
-        {selected === "BL" && (
-          <>
-            <a
-              href="https://www.bllifesciences.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out" >
-              Read More
-            </a>
-          </>
-        )}
-
-        {selected === "Sinapi" && (
-          <>
-            <a
-              href="https://t.sinapibiomedical.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out"
-            >
-              Read More
-            </a>
-          </>
-        )}
-
-        {selected === "Scanlan" && (
-          <>
-            <a
-              href="https://www.scanlaninternational.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-             className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out"
-            >
-              Read More
-            </a>
-          </>
-        )}
-
-        {selected === "Peters" && (
-          <>
-            <a
-              href="https://peters-surgical.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-    className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out"
-            >
-              Read More
-            </a>
-          </>
-        )}
       </div>
+
+      {/* Main Content */}
+      <div className="flex-1 overflow-y-auto">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeCompany}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -20 }}
+            transition={{ duration: 0.4 }}
+            className="p-8"
+          >
+            {/* Company Header */}
+           <div className={`rounded-3xl p-8 mb-8 ${currentCompany.bgColor} border border-${currentCompany.accentColor}-200`}>
+            <div className="flex flex-col lg:flex-row items-start gap-8">
+              <div className="flex-1">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className={`p-3 bg-${currentCompany.accentColor}-100 rounded-2xl`}>
+                    <Building className={`w-8 h-8 text-${currentCompany.accentColor}-600`} />
+                  </div>
+                <div className="flex flex-col gap-1 w-full">
+              <div className="flex items-center justify-between w-full pr-40">
+            <h2 className="text-4xl font-bold text-gray-900">{currentCompany.name}</h2>
+            <img
+              src={currentCompany.logo}
+              alt="Company Logo"
+              className="h-30 w-50" // Increase size here
+            />
+          </div>
+          <p className={`text-${currentCompany.accentColor}-600 font-medium`}>
+            {currentCompany.tagline}
+          </p>
         </div>
-      <DepNav />
-      <Footer />
+              </div>
+              <p className="text-gray-700 text-1xl leading-relaxed">{currentCompany.description}</p>
+            </div>
+          </div>
+        </div>
+
+
+            {/* Products Section */}
+            <div className="mb-8 pt-20">
+              <div className="flex items-center gap-3 mb-8">
+                <Package2 className={`w-8 h-8 text-${currentCompany.accentColor}-600`} />
+                <h3 className="text-3xl font-bold text-gray-900">Product Portfolio</h3>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+                {currentCompany.products.map((product, index) => (
+                  <motion.div
+                    key={product.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    onMouseEnter={() => setHoveredProduct(product.id)}
+                    onMouseLeave={() => setHoveredProduct(null)}
+                    className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300"
+                  >
+                    <div className="relative">
+                      <img
+                        src={product.image}
+                        alt={product.name}
+                        className="w-full h-64 object-cover transition-transform duration-500 hover:scale-110"
+                      />
+                      <div className={`absolute top-4 left-4 px-3 py-1 bg-${currentCompany.accentColor}-100 text-${currentCompany.accentColor}-700 rounded-full text-xs font-semibold`}>
+                        {product.category}
+                      </div>
+                      <AnimatePresence>
+                        {hoveredProduct === product.id && (
+                          <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            className="absolute inset-0 bg-black/50 flex items-center justify-center"
+                          >
+                            <motion.a
+                              href={product.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={`bg-${currentCompany.accentColor}-600 hover:bg-${currentCompany.accentColor}-700 text-white px-6 py-3 rounded-full font-semibold flex items-center gap-2 transition-all duration-300`}
+                              whileHover={{ scale: 1.05 }}
+                              whileTap={{ scale: 0.95 }}
+                            >
+                              View Details <ExternalLink className="w-4 h-4" />
+                            </motion.a>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                    
+                    <div className="p-6">
+                      <h4 className="text-xl font-bold text-gray-900 mb-2">{product.name}</h4>
+                      <p className="text-gray-600 mb-4 text-sm">{product.description}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Call to Action */}
+            <div className="pt-20">
+            <div className= "rounded-3xl p-8 text-black rounded-3xl p-8 bg-blue-100"> 
+              <div className="flex flex-col md:flex-row items-center justify-between ">
+                <div>
+                  <h3 className="text-2xl font-bold mb-2">Explore More Solutions</h3>
+                  <p className="opacity-90">Discover the complete range of {currentCompany.name} products</p>
+                </div>
+                <motion.a
+                  href={currentCompany.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 md:mt-0 bg-white/20 hover:bg-white/30 px-8 py-4 rounded-full font-semibold transition-all duration-300 flex items-center gap-2"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  Visit Website <ExternalLink className="w-5 h-5" />
+                </motion.a>
+              </div>
+            {/* </motion.div> */}
+            </div>
+            </div>
+          </motion.div>
+        </AnimatePresence>
+        <Footer/>
       </div>
-    </>
+    </div>
   );
 };
-export default function GeneralSurgery() {
-  const buttonImages = [
-    { id: "BL", src: BL, alt: "BL" },
-    { id: "Scanlan", src: Scanlan, alt: "Scanlan" },
-    { id: "Sinapi", src: Sinapi, alt: "Sinapi" },
-    { id: "Peters", src: Peters, alt: "Peters" },
-  ];
 
-  return (
-    <Departments
-      name="General Surgery"
-      //image="/src/assets/Mizuho.png"
-      buttonImages={buttonImages}
-    />
-  );
-}
+export default GenralSurgerySidebarDesign;
