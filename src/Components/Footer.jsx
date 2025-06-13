@@ -67,7 +67,7 @@ const Footer = () => {
             {/* Phone */}
             <div className="flex items-center justify-center space-x-3 p-4 bg-white/50 rounded-lg backdrop-blur-sm border border-indigo-200/50 hover:bg-white/70 transition-all duration-300">
               <IoCallOutline className="w-6 h-6 text-indigo-100 flex-shrink-0" />
-              <div className="text-lg">
+              <div className="text-lg flex">
                 <a
                   href="tel:+919847933898"
                   className="hover:text-indigo-300 text-white transition-colors duration-200 font-semibold"
