@@ -26,7 +26,7 @@ import ChestDrain from "../../assets/ChestDrain.pdf";
 import cable from "../../assets/Cablecatalogue.pdf";
 
 
-const OrthopedicSidebarDesign = () => {
+const CriticalSidebarDesign = () => {
   const [activeCompany, setActiveCompany] = useState("BL");
   const [hoveredProduct, setHoveredProduct] = useState(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -478,4 +478,4 @@ return (
   );
 };
 
-export default OrthopedicSidebarDesign;
+export default CriticalSidebarDesign;
