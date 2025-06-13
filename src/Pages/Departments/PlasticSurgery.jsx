@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Navbar from "../../Components/Navbar";
+import Navbar2 from "../../Components/Navbar2";
 import Footer from "../../Components/Footer";
 import DepNav from "../../Components/DepNav";
 import bg from "../../assets/depBG.png";
@@ -40,8 +40,8 @@ const PlasticSidebarDesign = () => {
 ReachMedical: {
   logo: Synkromax,
   name: "Synkromax Biotech Pvt. Ltd.",
-  bgColor: "bg-blue-50",
-  accentColor: "blue",
+  bgColor: "bg-green-50",
+  accentColor: "green",
   description:
     "Developer of synthetic vascular grafts and patches, supporting cardiovascular and surgical reconstruction.",
   website: "https://www.synkromax.com/",
@@ -62,8 +62,8 @@ ReachMedical: {
 Surgiwear: {
   logo: Surgiwear, 
   name: "Surgiwear",
-  bgColor: "bg-yellow-50",
-  accentColor: "yellow",
+  bgColor: "bg-green-50",
+  accentColor: "green",
   description:
     "Innovative Indian manufacturer of surgical implants and wound care solutions.",
   website: "https://surgiwear.co.in/",
@@ -103,16 +103,31 @@ Surgiwear: {
 
 return (
     <>
-      {/* <Navbar2/> */}
-      <div className="min-h-screen bg-gray-100 flex">
+    
+      <div className="min-h-screen  bg-gray-100 flex">
         
         {/* Mobile Menu Button */}
-  <button
+<div
   onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-  className="md:hidden fixed top-2 left-4 -translate-y-1/2 z-50 bg-green-900 text-white p-3 rounded-lg shadow-lg"
+  className="sm:hidden fixed top-2 left-4 -translate-y-1/2 z-50 bg-green-900 mt-16 text-white p-3 rounded-lg shadow-lg flex items-center space-x-2"
 >
-  {isSidebarOpen ? <X className="bg-transparent" /> : <ArrowRight className="w-6 h-6" />}
-</button>
+  {isSidebarOpen ? (
+    <X className="w-6 h-6  bg-transparent" />
+  ) : (
+    <>
+      <div className="flex  w-full"><button
+        className="text-white px-2 h-8 rounded"
+        onClick={(e) => {
+          e.stopPropagation(); // prevents sidebar toggle
+          console.log("Button clicked");
+        }}
+      >
+        Click for sidebar
+      </button>
+      <ArrowRight className="w-6 h-6 bg-transparent" /></div>
+    </>
+  )}
+</div>
 
 
         {/* Mobile Overlay */}
@@ -126,13 +141,13 @@ return (
         {/* Sidebar */}
         <div className={`
           w-80 bg-white shadow-2xl flex flex-col
-          md:relative md:translate-x-0
+          lg:relative lg:translate-x-0
           fixed inset-y-0 left-0 z-40 
           transform transition-transform duration-300 ease-in-out
-          ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
+          ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
         `}>
           {/* Header */}
-          <div className="p-6 border-b bg-green-900 text-white ">
+          <div className="p-6 border-b bg-gradient-to-br from-green-900 via-green-500 to-green-900 text-white ">
             <h1 className="text-4xl font-bold pt-10 sm:pt-0 mb-2">PLASTIC SURGERY</h1>
             <p className="text-gray-100 text-xl">Surgical Solutions</p>
           </div>
@@ -148,7 +163,7 @@ return (
                 }}
                 className={`w-full p-6 text-left border-b transition-all duration-300 ${
                   activeCompany === key 
-                    ? `${company.bgColor} border-l-4 border-${company.accentColor}-500` 
+                    ? `bg-green-50 border-l-4 border-${company.accentColor}-500` 
                     : 'hover:bg-gray-50'
                 }`}
                 whileHover={{ x: activeCompany === key ? 0 : 4 }}
@@ -198,6 +213,7 @@ return (
 
         {/* Main Content */}
         <div className="flex-1 overflow-y-auto  md:mt-0">
+            <Navbar2/>
           <AnimatePresence mode="wait">
             <motion.div
               key={activeCompany}
@@ -208,28 +224,36 @@ return (
               className="p-4 md:p-8"
             >
               {/* Company Header */}
-              <div className={`rounded-3xl p-4 md:p-8 mb-8 mt-12 bg-green-700 border border-${currentCompany.accentColor}-200`}>
+
+              <div className={`rounded-3xl p-4 md:p-8 mb-8 mt-28 sm:mt-16 bg-green-800 border border-${currentCompany.accentColor}-200`}>
                 <div className="flex flex-col lg:flex-row items-start gap-8">
                   <div className="flex-1">
                     <div className="flex items-center gap-4 mb-6">
-                      <div className={`p-3 bg-${currentCompany.accentColor}-100 rounded-2xl`}>
+                     
+                      <div className="flex flex-col gap-1 w-full">
+                        <div className="flex flex-col md:flex-row md:items-center justify-between w-full">
+                           <div className="flex gap-3 pb-3"
+                            ><div className={`p-3 w-14 bg-${currentCompany.accentColor}-100 rounded-2xl`}>
                         <Building className={`w-8 h-8 text-${currentCompany.accentColor}-600`} />
                       </div>
-                      <div className="flex flex-col gap-1 w-full">
-                        <div className="flex flex-col md:flex-row items-start md:items-center justify-between w-full">
                           <h2 className="text-3xl md:text-5xl font-bold text-white mb-2 md:mb-0">{currentCompany.name}</h2>
-                          <img
-                            src={currentCompany.logo}
-                            alt="Company Logo"
-                            className="h-20 w-32 md:h-30 md:w-50"
-                          />
+                         </div> 
+     {/* Centered Logo */}
+  <div className="flex justify-center items-center min-w-[120px]">
+    <img
+      src={currentCompany.logo}
+      alt="Company Logo"
+      className="h-20 w-auto object-contain"
+    />
+</div>
+
                         </div>
                         <p className={`text-${currentCompany.accentColor}-600 font-medium`}>
                           {currentCompany.tagline}
                         </p>
                       </div>
                     </div>
-                    <p className="text-gray-100 text-lg md:text-2xl leading-relaxed">{currentCompany.description}</p>
+                    <p className="text-gray-100 text-xl md:text-2xl text-center sm:text-left leading-relaxed">{currentCompany.description}</p>
                   </div>
                 </div>
               </div>
@@ -299,13 +323,13 @@ return (
                   <div className="flex flex-col md:flex-row items-center justify-between">
                     <div className="text-center md:text-left mb-4 md:mb-0">
                       <h3 className="text-xl md:text-2xl font-bold mb-2">Explore More Solutions</h3>
-                      <p className="opacity-90">Discover the complete range of {currentCompany.name} products</p>
+                      <p className="opacity-90 text-xl">Discover the complete range of {currentCompany.name} products</p>
                     </div>
                     <motion.a
                       href={currentCompany.website}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-white bg-green-600 hover:bg-green-800 px-6 md:px-8 py-3 rounded-full font-semibold transition-all duration-300 flex items-center gap-2"
+                      className="text-white text-xl bg-green-600 hover:bg-green-800 px-6 md:px-8 py-2 sm:py-3 rounded-full font-semibold transition-all duration-300 flex items-center gap-2"
                       whileHover={{ scale: 1.05 }}
                     >
                       Visit Website <ExternalLink className="w-5 text-white h-5" />

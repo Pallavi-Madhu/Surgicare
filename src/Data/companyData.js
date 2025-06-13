@@ -5,7 +5,6 @@ const companies = [
     products: ["CVTS Disposables", "Heart Valves & Bioglue", "ECMO Systems", "Oxygenators", "Micro-Surgery Instruments", "Neuro Implants"],
     items: [
       "BL LIFESCIENCES-CVTS Disposibles: Perfusion, Anesthesia & Surgery",
-      "ATRIVION-USA: OnX-Heart Valves and Bioglue",
       "HELENA LABORATORIES-USA: ACT Machine and Tubes",
       "XENIOS-GERMANY: ECMO Machine and Disposables",
       "EUROSETS-GERMANY: Oxygenators",
