@@ -175,7 +175,7 @@ const CardiologySidebarDesign = () => {
         }
       ]
     },
-  IABP: {
+  Insightra: {
     logo: Insightra, 
     name: "Insightra Medical",
     bgColor: "bg-yellow-50",

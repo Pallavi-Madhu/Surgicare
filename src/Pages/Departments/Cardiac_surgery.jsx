@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Navbar from "../../Components/Navbar";
 import Footer from "../../Components/Footer";
 import DepNav from "../../Components/DepNav";
-import { motion } from "framer-motion";
+//import { motion } from "framer-motion";
 
 //import company logo
 import Euroset from "../../assets/Euroset.png";
@@ -116,1095 +116,816 @@ import corknot from "../../assets/CardiacSurgery/LSI/corknot.jpeg";
 import coverpg from "../../assets/CardiacSurgery/Scanlan/cover.jpg"
 import sc from "../../assets/CardiacSurgery/Scanlan/Scanlan.pdf"
 
-const DepartmentPage = ({ name, image, buttonImages }) => {
-  const [selected, setSelected] = useState("BL");
+import { motion, AnimatePresence } from 'framer-motion';
+import { ExternalLink, Globe, Package2, Building, ChevronRight, Star, ShoppingCart, ArrowRight } from 'lucide-react';
+ 
 
-  const EuroCards = [
-    {
-      id: "1",
-      image: oxygenerator,
-      text: "Oxygenator adult Kompass",
-      url:"https://euromed.ch/wp-content/uploads/2023/01/kompass_brochure.pdf"
-    },
-    {
-      id: "2",
-      image: trilly1,
-      text: "Pediatric oxygenerator with integrated arterial filter",
-      url: trilly2pdf
-    },
-    {
-      id: "3",
-      image: trilly2,
-      text: "Infant-paediatric oxygenator with modular cascade filtration",
-      url: trilly1pdf
-    },
-    {
-      id: "4",
-      image: remowell,
-      text: "Dual chamber ADULT oxygenator with lipids and leukocytes reduction",
-      url: remowellpdf
-    },
-    {
-      id: "5",
-      image: horizon,
-      text: "SINGLE CHAMBER ADULT oxygenator",
-      url:horizonpdf
-    },
-    {
-      id: "6",
-      image: ecmooxy,
-      text: "ECMO",
-      url:ecmooxypdf
-    },
-  ];
 
-  const ScanlanCards=[{
-      id: 1,
-      image: coverpg,
-      text: "Scanlan Products",
-      url: sc,
-    },]
-  const BLCards = [
-    {
-      id: 1,
-      image: image1,
-      text: "Pressure Monitoring Lines",
-      url: "https://www.bllifesciences.com/products/invasive-pressure-system/",
-    },
-    {
-      id: 2,
-      image: image2,
-      text: "Disposable pressure transducer",
-      url: "https://www.bllifesciences.com/products/interventional-systems/",
-    },
-    {
-      id: 3,
-      image: image3,
-      text: "HME filter",
-      url: "https://www.bllifesciences.com/products/anesthesia-and-critical-care/",
-    },
-    {
-      id: 4,
-      image: image4,
-      text: "Inter phase cable suit with your monitor",
-      url: cable
-    },
-    {
-      id: 5,
-      image: image5,
-      text: "3 way with extension -10cm, 25/50cm",
-      url: "https://www.bllifesciences.com/products/interventional-systems/",
-    },
-    {
-      id: 6,
-      image: "/Cardiology/IVset.png",
-      text: "IV SET VENTED",
-      url: "https://bllifesciences.com/wp-content/uploads/2022/08/BL-Lifesciences.pdf",
-    },
-    {
-      id: 7,
-      image: image7,
-      text: "1 Lumen CVP CATH",
-      url: "https://www.bllifesciences.com/products/central-venous-catheters/",
-    },
-    {
-      id: 8,
-      image: image8,
-      text: "ADULT EXPANDABLE CIRCUIT",
-      url: "https://www.bllifesciences.com/products/anesthesia-and-critical-care/",
-    },
-    {
-      id: 9,
-      image: image9,
-      text: "Lung Exerciser",
-      url: "https://www.bllifesciences.com/products/anesthesia-and-critical-care/",
-    },
-    {
-      id: 10,
-      image: image11,
-      text: "Adult Nebulizer Mask Kit (3026)",           //venticare
-      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-    },
-    {
-      id: 11,
-      image: image12,
-      text: "VENTILATOR CIRCUIT PLAIN ADULT",
-      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-    },
-    {
-      id: 12,
-      image: image10,
-      text: "Warming Blankets",
-      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-    },
-    {
-      id: 13,
-      image: image16,
-      text: "ADULT BAINS CIRCUIT-AERO (2001)",
-      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-    },
-    {
-      id: 14,
-      image: image17,
-      text: "ADULT BREATHING CIRCUIT-EXPANDABLE (1010-E)",
-      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-    },
-    {
-      id: 15,
-      image: image18,
-      text: "ADULT BREATHING CIRCUIT EXP.WITH EXTRA LIMB &CONCTR (1010-01-E)",
-      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-    },
-    {
-      id: 16,
-      image: image19,
-      text: "ADULT BREATHING CIRCUIT-WHITE (REF:1010)",
-      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-    },
-    {
-      id: 17,
-      image: image20,
-      text: "Adult Double Water Trap Ventilator Circuit (REF:1012)",
-      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-    },
-    {
-      id: 18,
-      image: image21,
-      text: "BVL FILTER AERO (2010)",
-      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+const CardiacSidebarDesign = () => {
+  const [activeCompany, setActiveCompany] = useState("Euroset");
+  const [hoveredProduct, setHoveredProduct] = useState(null);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const companies = {
+      Euroset: {
+      logo: Euroset, 
+      name: "Eurosets",
+      bgColor: "bg-blue-50",
+      accentColor: "blue",
+      description: "Swiss manufacturer offering a range of advanced oxygenator systems for pediatric and adult use.",
+      website: "https://www.eurosets.com/en/",
+      established: "1991", // Update this if known
+      headquarters: "Italy",
+      products: [
+        {
+          id: "kompass",
+          image: oxygenerator,
+          name: "Oxygenator Adult Kompass",
+          category: "Oxygenator",
+          description: "Adult oxygenator for extracorporeal circulation",
+          url: "https://euromed.ch/wp-content/uploads/2023/01/kompass_brochure.pdf",
+        },
+        {
+          id: "trilly-ped",
+          image: trilly1,
+          name: "Trilly Pediatric Oxygenator",
+          category: "Oxygenator",
+          description: "Pediatric oxygenator with integrated arterial filter",
+          url: trilly2pdf,
+        },
+        {
+          id: "trilly-infant",
+          image: trilly2,
+          name: "Trilly Infant-Pediatric Oxygenator",
+          category: "Oxygenator",
+          description: "Infant-paediatric oxygenator with modular cascade filtration",
+          url: trilly1pdf,
+        },
+        {
+          id: "remowell",
+          image: remowell,
+          name: "Remowell Oxygenator",
+          category: "Oxygenator",
+          description: "Dual chamber adult oxygenator with lipid and leukocyte reduction",
+          url: remowellpdf,
+        },
+        {
+          id: "horizon",
+          image: horizon,
+          name: "Horizon Oxygenator",
+          category: "Oxygenator",
+          description: "Single chamber adult oxygenator",
+          url: horizonpdf,
+        },
+        {
+          id: "ecmo",
+          image: ecmooxy,
+          name: "ECMO",
+          category: "Oxygenator",
+          description: "Extracorporeal membrane oxygenation system",
+          url: ecmooxypdf,
+        },
+      ],
     },
 
-    {
-      id: 19,
-      image: image22,
-      text: "CPAP CIRCUIT (SMOOTH BORE TUBING) 1.8 MTR (4000)",
-      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+    Scanlan: {
+      logo: Scanlan, 
+      name: "Scanlan International",
+      bgColor: "bg-gray-50",
+      accentColor: "gray",
+      description: "Premier provider of high-quality surgical instruments trusted globally by healthcare professionals.",
+      website: "https://www.scanlaninternational.com/",
+      established: "1921",
+      headquarters: "US",
+      products: [
+        {
+          id: "product-catalog",
+          image: coverpg,
+          name: "Scanlan Product Catalog",
+          category: "Surgical Instruments",
+          description: "Comprehensive catalog showcasing Scanlan's surgical instrument range",
+          url: sc,
+        },
+      ],
     },
-    {
-      id: 20,
-      image: image23,
-      text: "Cpap Circuit with Mask and Harness-Adult",
-      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+    BL: {
+      logo: BL, 
+      name: "BL Lifesciences",
+      bgColor: "bg-blue-50",
+      accentColor: "blue",
+      description: "Indian manufacturer specializing in anesthesia, critical care, interventional systems, and monitoring equipment.",
+      website: "https://www.bllifesciences.com/",
+      established: "1995", 
+      headquarters: "India",
+      products: [
+        {
+          id: "pressure-monitoring-lines",
+          image: image1,
+          name: "Pressure Monitoring Lines",
+          category: "Invasive Pressure System",
+          description: "Used for accurate hemodynamic pressure monitoring",
+          url: "https://www.bllifesciences.com/products/invasive-pressure-system/",
+        },
+        {
+          id: "disposable-pressure-transducer",
+          image: image2,
+          name: "Disposable Pressure Transducer",
+          category: "Interventional Systems",
+          description: "Transducer for measuring blood pressure directly",
+          url: "https://www.bllifesciences.com/products/interventional-systems/",
+        },
+        {
+          id: "hme-filter",
+          image: image3,
+          name: "HME Filter",
+          category: "Anesthesia & Critical Care",
+          description: "Heat and moisture exchanger for ventilatory support",
+          url: "https://www.bllifesciences.com/products/anesthesia-and-critical-care/",
+        },
+        {
+          id: "cable-suit",
+          image: image4,
+          name: "Interface Cable for Monitor",
+          category: "Monitoring Accessories",
+          description: "Compatible interface cable for pressure monitors",
+          url: cable,
+        },
+        {
+          id: "three-way-extension",
+          image: image5,
+          name: "3-Way Extension (10/25/50cm)",
+          category: "Interventional Systems",
+          description: "Pressure line with three-way extension",
+          url: "https://www.bllifesciences.com/products/interventional-systems/",
+        },
+        {
+          id: "iv-set-vented",
+          image: "/Cardiology/IVset.png",
+          name: "IV SET VENTED",
+          category: "Infusion Systems",
+          description: "Sterile vented intravenous administration set",
+          url: "https://bllifesciences.com/wp-content/uploads/2022/08/BL-Lifesciences.pdf",
+        },
+        {
+          id: "cvp-catheter",
+          image: image7,
+          name: "1 Lumen CVP Catheter",
+          category: "Central Venous Catheters",
+          description: "Used for measuring central venous pressure",
+          url: "https://www.bllifesciences.com/products/central-venous-catheters/",
+        },
+        {
+          id: "expandable-circuit",
+          image: image8,
+          name: "Adult Expandable Circuit",
+          category: "Ventilation",
+          description: "Circuit designed for adult mechanical ventilation",
+          url: "https://www.bllifesciences.com/products/anesthesia-and-critical-care/",
+        },
+        {
+          id: "lung-exerciser",
+          image: image9,
+          name: "Lung Exerciser",
+          category: "Respiratory Care",
+          description: "Improves lung function and post-op recovery",
+          url: "https://www.bllifesciences.com/products/anesthesia-and-critical-care/",
+        },
+        {
+          id: "nebulizer-mask",
+          image: image11,
+          name: "Adult Nebulizer Mask Kit (3026)",
+          category: "Respiratory Therapy",
+          description: "Aerosol therapy kit with adult mask",
+        },
+        {
+          id: "ventilator-circuit-plain",
+          image: image12,
+          name: "Ventilator Circuit Plain Adult",
+          category: "Ventilation",
+          description: "Basic adult ventilator breathing circuit",
+        },
+        {
+          id: "warming-blankets",
+          image: image10,
+          name: "Warming Blankets",
+          category: "Patient Warming",
+          description: "Used in hypothermia prevention during surgery",
+        },
+        {
+          id: "bains-circuit-aero",
+          image: image16,
+          name: "Adult Bains Circuit-AERO (2001)",
+          category: "Anesthesia Circuit",
+          description: "Efficient adult circuit for anesthesia delivery",
+        },
+        {
+          id: "breathing-circuit-expandable",
+          image: image17,
+          name: "Adult Breathing Circuit Expandable (1010-E)",
+          category: "Ventilation",
+          description: "Expandable breathing circuit for adults",
+        },
+        {
+          id: "extra-limb-circuit",
+          image: image18,
+          name: "Expandable Circuit w/ Extra Limb (1010-01-E)",
+          category: "Ventilation",
+          description: "Includes additional limb and concentrator connection",
+        },
+        {
+          id: "white-circuit",
+          image: image19,
+          name: "Adult Breathing Circuit White (REF:1010)",
+          category: "Ventilation",
+          description: "Color-coded white adult ventilator circuit",
+        },
+        {
+          id: "double-trap-circuit",
+          image: image20,
+          name: "Double Water Trap Ventilator Circuit (REF:1012)",
+          category: "Ventilation",
+          description: "Designed with two water traps for safety",
+        },
+        {
+          id: "bvl-filter-aero",
+          image: image21,
+          name: "BVL Filter AERO (2010)",
+          category: "Air Filtration",
+          description: "Bacterial and viral filter for ventilator use",
+        },
+        {
+          id: "cpap-circuit-4000",
+          image: image22,
+          name: "CPAP Circuit Smooth Bore (4000)",
+          category: "CPAP",
+          description: "1.8m smooth bore tubing for CPAP support",
+        },
+        {
+          id: "cpap-with-mask",
+          image: image23,
+          name: "CPAP Circuit w/ Mask & Harness (Adult)",
+          category: "CPAP",
+          description: "Complete CPAP circuit for adult patients",
+        },
+        {
+          id: "jackson-rees",
+          image: image24,
+          name: "Pediatric Bain Circuit - Jackson Rees (2002)",
+          category: "Anesthesia Pediatric",
+          description: "Jackson Rees circuit for pediatric patients",
+        },
+        {
+          id: "pediatric-breathing-circuit",
+          image: image25,
+          name: "Pediatric Breathing Circuit (1020)",
+          category: "Ventilation Pediatric",
+          description: "Ventilator breathing support for children",
+        },
+        {
+          id: "t-connector",
+          image: image26,
+          name: "T-Connector (1500)",
+          category: "Connectors",
+          description: "Sterile T-type tubing connector",
+        },
+        {
+          id: "bougie-adult",
+          image: image27,
+          name: "Bougie (Adult)",
+          category: "Airway Management",
+          description: "Introducer for difficult airway management",
+        },
+        {
+          id: "bronchial-double-lumen",
+          image: image13,
+          name: "Bronchial Double Lumen Tube",
+          category: "Endotracheal Tubes",
+          description: "Used for lung isolation during thoracic surgery",
+        },
+        {
+          id: "cuff-meter",
+          image: image14,
+          name: "Cuff Measuring Meter for E.T. Tube",
+          category: "Airway Accessories",
+          description: "Measures cuff pressure accurately",
+        },
+        {
+          id: "nasopharyngeal-airway",
+          image: image15,
+          name: "Nasopharyngeal Airway (28, 30, 34)",
+          category: "Airway Management",
+          description: "Soft, flexible airway access tool",
+        },
+        {
+          id: "fiberoptic-laryngoscope",
+          image: image28,
+          name: "Fiberoptic Laryngoscope (4 Blades)",
+          category: "Airway Equipment",
+          description: "Laryngoscope set with fiberoptic lighting",
+        },
+        {
+          id: "introducer-needle",
+          image: image29,
+          name: "Introducer Needle 18 G x 7 cm",
+          category: "IV Access",
+          description: "Sterile introducer needle for catheterization",
+        },
+        {
+          id: "bougie-adult-coude",
+          image: image30,
+          name: "Bougie Introducer Adult, Coudé Tip (15FR x 70cm)",
+          category: "Airway Management",
+          description: "Coudé tip helps with tracheal intubation",
+        },
+        {
+          id: "bougie-pediatric",
+          image: image31,
+          name: "Bougie Introducer Pediatric, Coudé Tip (10FR x 70cm)",
+          category: "Pediatric Airway",
+          description: "Specialized for pediatric intubation",
+        },
+        {
+          id: "ported-adult",
+          image: image32,
+          name: "Adult Ported Introducer (15FR x 70cm)",
+          category: "Airway Management",
+          description: "Ported for suction or oxygen delivery",
+        },
+        {
+          id: "ported-pediatric",
+          image: image33,
+          name: "Pediatric Ported Introducer (10FR x 70cm)",
+          category: "Pediatric Airway",
+          description: "Allows additional access during intubation",
+        },
+        {
+          id: "neonatal-stylette",
+          image: image34,
+          name: "Neonatal Stylette (2.0mm, 6FR x 255mm)",
+          category: "Neonatal",
+          description: "Stylette for neonatal airway placement",
+        },
+        {
+          id: "pediatric-stylette",
+          image: image35,
+          name: "Pediatric Stylette (3.0mm, 8FR x 300mm)",
+          category: "Pediatric Airway",
+          description: "For guiding ETT during pediatric intubation",
+        },
+        {
+          id: "adult-stylette",
+          image: image36,
+          name: "Adult Stylette (4.0mm, 10FR x 335mm)",
+          category: "Airway Equipment",
+          description: "Reusable adult stylette for ETT placement",
+        },
+        {
+          id: "malleable-introducer",
+          image: image37,
+          name: "Adult Malleable Introducer (15FR x 70cm)",
+          category: "Airway Management",
+          description: "Adjustable for ease of intubation",
+        },
+        {
+          id: "aluminum-stylette",
+          image: image38,
+          name: "Sterile Adult Aluminum Stylette (9FR x 16)",
+          category: "Airway Equipment",
+          description: "Made of durable aluminum, sterile packed",
+        },
+        {
+          id: "wendl-airways",
+          image: image39,
+          name: "Wendl Nasopharyngeal Airways (Silicone) 12FR",
+          category: "Airway Management",
+          description: "Flexible silicone for nasopharyngeal access",
+        },
+      ],
     },
-    {
-      id: 21,
-      image: image24,
-      text: "PAEDIATRIC BAIN CIRCUIT-JACKSON REES (2002)",
-      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
+  Baxter : {
+      logo: Baxter, 
+      name: "Baxter",
+      bgColor: "bg-blue-50", 
+      accentColor: "blue",
+      description:
+        "Baxter delivers advanced surgical products and solutions that improve patient care in the operating room.",
+      website: "https://www.baxter.com",
+      established: "1931",
+      headquarters: "US",
+      products: [
+        {
+          id: "floseal",
+          image: floseal,
+          name: "Floseal",
+          category: "Hemostatic Agent",
+          description: "A hemostatic matrix for rapid and effective bleeding control.",
+          url: "https://ecatalog.baxter.com/ecatalog/loadproduct.html?cid=20016&lid=10001&hid=20001&pid=1472740",
+        },
+        {
+          id: "hemopatch",
+          image: hemopatch,
+          name: "Hemopatch",
+          category: "Hemostatic Patch",
+          description: "Sealing hemostat patch for surgical bleeding management.",
+          url: "https://advancedsurgery.baxter.eu/hemopatch",
+        },
+        {
+          id: "tiseel",
+          image: "/Ophthalmology/Tiseel.jpg",
+          name: "Tiseel",
+          category: "Fibrin Sealant",
+          description: "Fibrin-based surgical sealant used to support hemostasis.",
+          url: "https://www.baxter.com/healthcare-professionals/surgical-care/tisseel-fibrin-sealant",
+        },
+        {
+          id: "coseal",
+          image: "/coseal.png",
+          name: "Coseal",
+          category: "Surgical Sealant",
+          description: "Synthetic surgical sealant designed to prevent leaks post-operation.",
+          url: "https://advancedsurgery.baxter.com/coseal",
+        },
+      ],
     },
+ Synkromax : {
+  logo: Synkromax, 
+  name: "Synkromax",
+  bgColor: "bg-green-50", 
+  accentColor: "green",
+  description:
+    "Synkromax provides specialized cardiovascular surgical solutions, including pericardial patches designed for optimal biocompatibility.",
+  website: "https://www.reachmedicalsystems.com/synkromax",
+  established: "2009", 
+  headquarters: "India",
+  products: [
     {
-      id: 22,
-      image: image25,
-      text: "PEADIATRIC BREATHING CIRUIT (1020)",
-      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-    },
-    {
-      id: 23,
-      image: image26,
-      text: "T- CONNECTOR (1500)",
-      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-    },
-    {
-      id: 24,
-      image: image27,
-      text: "Bougie (Adult) ",
-      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-    },
-    {
-      id: 25,
-      image: image13,
-      text: "Bronchial Double Lumen Tube",
-      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-    },
-    {
-      id: 26,
-      image: image14,
-      text: "Cuff measuring meter for E.T.Tube",
-      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-    },
-    {
-      id: 27,
-      image: image15,
-      text: "Nasopharyngeal Air way 28,30,34",
-      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-    },
-    {
-      id: 28,
-      image: image28,
-      text: "Laryngoscope with 4 blades -Fiberoptic",
-      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-    },
-    {
-      id: 29,
-      image: image29,
-      text: "INTRODUCER NEEDLE 18 Gx7CM",
-      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-    },
-    {
-      id: 30,
-      image: image30,
-      text: "BougieInroducer -Adult, Coudé Tip-15 FR x 70 cm",
-      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-    },
-    {
-      id: 31,
-      image: image31,
-      text: "BougieInroducer -Pediatric, Coudé Tip-10 FR x 70 cm",
-      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-    },
-    {
-      id: 32,
-      image: image32,
-      text: "Adult Ported Introducer-15 FR x 70 cm",
-      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-    },
-    {
-      id: 33,
-      image: image33,
-      text: "Pediatric Ported Introducer-10 FR x 70 cm",
-      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-    },
-    {
-      id: 34,
-      image: image34,
-      text: "Neonatal Stylette (2.0mm)-6 FR x 255 mm",
-      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-    },
-    {
-      id: 35,
-      image: image35,
-      text: "Pediatric Stylette (3.0mm)-8FR x 300 mm",
-      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-    },
-
-    {
-      id: 36,
-      image: image36,
-      text: "Adult Stylette (4.0mm)-10 FR x 335 mm",
-      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-    },
-    {
-      id: 37,
-      image: image37,
-      text: "Adult Malleable Introducer-15 FR x 70 cm",
-      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-    },
-    {
-      id: 38,
-      image: image38,
-      text: "Sterile Adult Al Stylette-9FR x 16",
-      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-    },
-    {
-      id: 39,
-      image: image39,
-      text: "Wendl Nasopharyngeal Airways (Silicone)12 Fr-  3/4.0mm",
-      //url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-    },
-  ];
-
-  const BaxterCards = [
-    {
-      id: 1,
-      image: floseal,
-      text: "Floseal",
-      url:"https://ecatalog.baxter.com/ecatalog/loadproduct.html?cid=20016&lid=10001&hid=20001&pid=1472740"
-    },
-    {
-      id: 2,
-      image: hemopatch,
-      text: "Hemopatch",
-      url:"https://advancedsurgery.baxter.eu/hemopatch"
-    },
-    {
-      id: 3,
-      image: "/Ophthalmology/Tiseel.jpg", // Change this to the correct image
-      text: "Tiseel",
-      url: "https://www.baxter.com/healthcare-professionals/surgical-care/tisseel-fibrin-sealant",
-    },
-    {
-      id: 4,
-      image: "/coseal.png", // Change this to the correct image
-      text: "Coseal",
-      url: "https://advancedsurgery.baxter.com/coseal",
-    },
-  ];
-
-  const SynkromaxCards = [
-    { id: 1,
+      id: "bovine-patch",
       image: bovinepatch,
-      text: "Bovine pericardial patch",
+      name: "Bovine Pericardial Patch",
+      category: "Cardiovascular",
+      description: "Durable bovine pericardial patch for cardiovascular surgical applications.",
       url: "https://www.reachmedicalsystems.com/synkromax",
     },
-  ];
-
-  const TerumoCards = [
+  ],
+},
+ Terumo : {
+  logo: Terumo, 
+  name: "Terumo",
+  bgColor: "bg-red-50",
+  accentColor: "red",
+  description:
+    "Terumo offers advanced cardiac and vascular surgical technologies including EVH systems, stabilizers, and synthetic grafts.",
+  website: "https://www.terumo.com/",
+  established:"1921",
+  headquarters:"Japan",
+  products: [
     {
-      id: 1,
+      id: "evh",
       image: evhs,
-      text: "Endoscopic Vessel Harvesting (EVH) System",
-      url:"https://terumocv.com/evh/"
+      name: "Endoscopic Vessel Harvesting (EVH) System",
+      category: "Cardiovascular",
+      description: "Minimally invasive EVH system for coronary artery bypass grafting.",
+      url: "https://terumocv.com/evh/"
     },
     {
-      id: 2,
+      id: "stabilizer",
       image: stabilizer,
-      text: "Stabilizer",
-      url:"https://www.terumo-europe.com/en-emea/products/titan%E2%84%A2-stabilizer-attachments-beating-heart"
+      name: "Stabilizer",
+      category: "Cardiac Surgery",
+      description: "Titan™ Stabilizer Attachments for beating heart procedures.",
+      url: "https://www.terumo-europe.com/en-emea/products/titan%E2%84%A2-stabilizer-attachments-beating-heart"
     },
     {
-      id:3,
-      image:gelsoft,
-      text:"Gelsoft Plus",
-      url:brochure1
+      id: "gelsoft",
+      image: gelsoft,
+      name: "Gelsoft Plus",
+      category: "Vascular Graft",
+      description: "Knitted gelatin-coated vascular graft.",
+      url: brochure1
     },
     {
-      id:4,
-      image:gelwieve,
-      text:"GelweaveTM",
-      url:brochure2
+      id: "gelweave",
+      image: gelwieve,
+      name: "Gelweave™",
+      category: "Vascular Graft",
+      description: "Knitted woven polyester vascular prostheses.",
+      url: brochure2
     },
     {
-      id:5,
-      image:aortic,
-      text:"GelweaveTM- Aortic Surgical Grafts",
-      url:brochure3
+      id: "aortic",
+      image: aortic,
+      name: "Gelweave™ Aortic Surgical Grafts",
+      category: "Aortic Surgery",
+      description: "Specialized grafts for aortic root and arch surgery.",
+      url: brochure3
     },
     {
-      id:6,
-      image:valsalva,
-      text:"Gelweave ValsalvaTM",
-      url:brochure4
+      id: "valsalva",
+      image: valsalva,
+      name: "Gelweave Valsalva™",
+      category: "Aortic Graft",
+      description: "Aortic root graft with natural sinus design.",
+      url: brochure4
     }
-  ];
-
-  const SinapiCards = [
+  ]
+},
+Sinapi : {
+  logo: Sinapi, 
+  name: "Sinapi Biomedical",
+  bgColor: "bg-cyan-50",
+  accentColor: "cyan",
+  description:
+    "Sinapi Biomedical develops innovative drainage systems focused on patient comfort and clinical efficiency.",
+  website: "https://sinapi.co.za/",
+  products: [
     {
-      id: 1,
+      id: "chestdrain",
       image: chestdrain,
-      text: "Chest Drain System",
-      url:"https://sinapibiomedical.com/"
-    },
-  ];
-
-  const HalyardCards = [
+      name: "Chest Drain System",
+      category: "Thoracic Surgery",
+      description: "Advanced chest drainage system with fluid and air evacuation.",
+      url: "https://t.sinapibiomedical.com/"
+    }
+  ]
+},
+Halyard : {
+  logo: Halyard,
+  name: "Halyard Health",
+  bgColor: "bg-blue-50",
+  accentColor: "green",
+  description:
+    "Halyard contributes to the surgical domain with high-quality gowns, drapes, and PPE ensuring infection control and comfort.",
+  website: "https://products.halyardhealth.com/",
+  products: [
     {
       id: "drapes",
       image: drapes,
-      text: "Surgical Drapes",
-      url:"https://products.halyardhealth.com/products/surgical-solutions/surgical-drapes"
+      name: "Surgical Drapes",
+      category: "Infection Control",
+      description: "Sterile drapes for various surgical applications.",
+      url: "https://products.halyardhealth.com/products/surgical-solutions/surgical-drapes"
     },
     {
       id: "gowns",
       image: gowns,
-      text: "Surgical Gowns",
-      url:"https://products.halyardhealth.com/products/surgical-solutions/surgical-gowns"
+      name: "Surgical Gowns",
+      category: "Surgical Apparel",
+      description: "Surgical gowns designed for protection and comfort.",
+      url: "https://products.halyardhealth.com/products/surgical-solutions/surgical-gowns"
     },
     {
       id: "masks",
       image: masks,
-      text: "Surgical Masks",
-      url:"https://products.halyardhealth.com/products/personal-protection/facial-respiratory-protection/medical-surgical-masks"
-    },
-  ];
+      name: "Surgical Masks",
+      category: "Personal Protection",
+      description: "Medical-grade masks offering fluid resistance and breathability.",
+      url: "https://products.halyardhealth.com/products/personal-protection/facial-respiratory-protection/medical-surgical-masks"
+    }
+  ]
+},
+Insightra: {
+    logo: Insightra, 
+    name: "Insightra Medical",
+    bgColor: "bg-yellow-50",
+    accentColor: "yellow",
+    description: "Advanced intra-aortic balloon pump for hemodynamic support.",
+    website: "https://insightra.com/",
+    established: "2001",
+    headquarters: "USA",
+    products: [
+      {
+        id: "iabp",
+        image: "/Cardiology/IABP.png",
+        name: "IABP",
+        category: "Cardiovascular Support",
+        description: "Intra-aortic balloon pump system.",
+        url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf"
+      }
+    ]
+    }
+};
 
-  const InsightraCards = [
-    {
-      id: 1,
-      image: IABP,
-      text: "ULTRA - IABP 7Fr Intra Aortic Balloon Catheter Ki",
-      url:"https://insightra.com/ultra-7fr-iab-catheter-kit/"
-    },
-  ];
+  const currentCompany = companies[activeCompany];
 
-  const LSICards = [
-    {
-      id: 1,
-      image: corknot,
-      text: "COR-KNOT",
-      url:"https://www.lsisolutions.com/products/cor-knot"
-    },
-  ];
-
-  return (
+return (
     <>
-      
-       <div
-            className="min-h-screen overflow-x-hidden bg-cover bg-fixed bg-center"
-            style={{
-              backgroundImage: `url(${bg})`,
-              backgroundColor: "rgba(255, 255, 255, 0)",
-              backgroundBlendMode: "overlay",
-            }}
-          ><div className="relative  z-50">
-            <Navbar />
-          </div>
-        {/* Pulmonology Page Content */}
-        <div className=" sm:mt-40">
-         <div className="grid grid-cols-1 sm:grid-cols-2 gap-20 p-12 items-center">
-              <h2 className="z-20 text-5xl sm:text-6xl font-bold text-left flex-1">
-                {name}
-              </h2>
+      {/* <Navbar2/> */}
+      <div className="min-h-screen bg-gray-100 flex">
+        
+        {/* Mobile Menu Button */}
+      <button
+      onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+      className="md:hidden fixed top-2 left-4 -translate-y-1/2 z-50 bg-green-900 text-white p-3 rounded-lg shadow-lg"
+      >
+      {isSidebarOpen ? <X className="bg-transparent" /> : <ArrowRight className="w-6 h-6" />}
+        </button>
+
+
+        {/* Mobile Overlay */}
+        {isSidebarOpen && (
+          <div 
+            className="md:hidden fixed inset-0 bg-black bg-opacity-50 z-30"
+            onClick={() => setIsSidebarOpen(false)}
+          />
+        )}
+
+        {/* Sidebar */}
+        <div className={`
+          w-80 bg-white shadow-2xl flex flex-col
+          md:relative md:translate-x-0
+          fixed inset-y-0 left-0 z-40 
+          transform transition-transform duration-300 ease-in-out
+          ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
+        `}>
+          {/* Header */}
+          <div className="p-6 border-b bg-green-900 text-white ">
+            <h1 className="text-4xl font-bold pt-10 sm:pt-0 mb-2">CARDIAC SURGERY</h1>
+            <p className="text-gray-100 text-xl">Surgical Solutions</p>
           </div>
 
-          {/* Buttons */}
-         <div className="grid relative grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-8">
-            {buttonImages.map(({ src, alt, id }) => (
-             <button
-          key={id}
-           onClick={() => setSelected(id)}
-            className={`p-4 font-bold rounded-full text-black w-1/2 sm:w-3/4 lg:w-1/2 mx-14 h-14 border border-black flex justify-center items-center ${
-           selected === id ? "bg-gray-500 text-white border-gray-500" : "bg-white"
-         }` }
-           >
-                <img src={src} alt={alt} className="h-12  w-auto" />
-              </button>
+          {/* Company Navigation */}
+          <div className="flex-1 overflow-y-auto">
+            {Object.entries(companies).map(([key, company]) => (
+              <motion.button
+                key={key}
+                onClick={() => {
+                  setActiveCompany(key);
+                  setIsSidebarOpen(false); // Close sidebar on mobile after selection
+                }}
+                className={`w-full p-6 text-left border-b transition-all duration-300 ${
+                  activeCompany === key 
+                    ? `${company.bgColor} border-l-4 border-${company.accentColor}-500` 
+                    : 'hover:bg-gray-50'
+                }`}
+                whileHover={{ x: activeCompany === key ? 0 : 4 }}
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex-1">
+                    <h3 className={`font-bold text-xl mb-1 ${activeCompany === key ? `text-${company.accentColor}-700` : 'text-gray-900'}`}>
+                      {company.name}
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-2">{company.tagline}</p>
+                    <div className="flex items-center gap-4 text-xs text-gray-700">
+                      <span className="flex items-center text-lg gap-1">
+                        <Building className="w-3 h-3" />
+                        {company.headquarters}
+                      </span>
+                      <span className="flex items-center text-lg gap-1">
+                        <Package2 className="w-3 h-3" />
+                        {company.products.length} Products
+                      </span>
+                    </div>
+                  </div>
+                  <ChevronRight className={`w-5 h-5 transition-transform duration-300 ${
+                    activeCompany === key ? `rotate-90 text-${company.accentColor}-500` : 'text-gray-400'
+                  }`} />
+                </div>
+              </motion.button>
             ))}
           </div>
 
-          {/* Company Details */}
-          
-          <div className="flex flex-col justify-center items-center mt-6">
-            {selected === "Euroset" && (
-              <>
-                <img src={Euroset} alt="Euroset" className="h-30 mt-10 w-auto" />
-                <p className="text-center mt-4 p-7 sm:p-20 lg:p-30">
-                  Eurosets contributes to cardiac surgery by providing advanced
-                  extracorporeal circulation systems, including oxygenators and
-                  heart-lung machines. Their innovative solutions, such as the
-                  ECMO and CPB systems, support life-saving procedures during
-                  cardiac and thoracic surgeries. Eurosets focuses on patient
-                  safety and surgical efficiency through continuous
-                  technological advancements.
-                </p>
-              </>
-            )}
-            {selected === "BL" && (
-              <>
-                <img src={BL} alt="BL" className="h-40 w-auto" />
-                                <p className="text-center mt-4 p-7 sm:p-20 lg:p-30">
-                  BL Lifesciences contributes to anesthesiology by providing
-                  advanced anesthesia delivery systems, breathing circuits, and
-                  airway management solutions. Their products ensure precise gas
-                  delivery, patient safety, and optimal ventilation during
-                  surgical procedures. BL Lifesciences also offers high-quality
-                  monitoring accessories to enhance anesthesia care.
-                </p>
-              </>
-            )}
-            {selected === "Scanlan" && (
-              <>
-                <img src={Scanlan} alt="Scanlan" className="h-40 w-auto" />
-                               <p className="text-center mt-4 p-7 sm:p-20 lg:p-30">
-                  Scanlan International is a leading manufacturer of
-                  high-quality surgical instruments, specializing in
-                  cardiovascular, microsurgical, and general surgical tools.
-                  Founded in 1921, the company is known for precision
-                  craftsmanship and innovation in medical device manufacturing.
-                </p>
-              </>
-            )}
-            {selected === "Sinapi" && (
-              <>
-                <img src={Sinapi} alt="Sinapi" className="h-40 w-auto" />
-                <p className="text-center mt-4 p-7 sm:p-20 lg:p-30">
-                  Sinapi Biomedicals specializes in developing innovative and
-                  cost-effective medical devices, particularly in wound care,
-                  critical care, and surgical solutions. Their product range
-                  includes chest drains, urine meters, and negative pressure
-                  wound therapy systems, designed to enhance patient recovery
-                  and improve hospital efficiency.
-                </p>
-              </>
-            )}
-            {selected === "Baxter" && (
-              <>
-                <img src={Baxter} alt="Baxter" className="h-30 w-auto" />
-                <p className="text-center mt-4 p-7 sm:p-20 lg:p-30">
-                  Baxter plays a vital role in cardiac surgery by providing
-                  advanced perfusion systems and oxygenators that support
-                  cardiopulmonary bypass procedures. Their innovative solutions
-                  help maintain blood circulation and oxygenation during
-                  open-heart surgeries. Baxter’s technologies enhance patient
-                  safety and surgical outcomes through precise monitoring and
-                  control.
-                </p>
-              </>
-            )}
-            {selected === "Synkromax" && (
-              <>
-                <img src={Synkromax} alt="Synkromax" className="h-40 w-auto" />
-                            <p className="text-center mt-4 p-7 sm:p-20 lg:p-30">
-                  Syncromax contributes to cardiac surgery by offering
-                  high-quality perfusion accessories and devices used during
-                  cardiopulmonary bypass. Their products, such as tubing sets
-                  and cannulas, ensure efficient blood flow management and
-                  surgical precision. Syncromax supports cardiac teams with
-                  reliable, sterile, and performance-driven solutions for
-                  critical procedures.
-                </p>
-              </>
-            )}
-            {selected === "Terumo" && (
-              <>
-                <img src={Terumo} alt="Terumo" className="h-40 w-auto" />
-                <p className="text-center mt-4 p-7 sm:p-20 lg:p-30">
-                  Terumo is a global leader in cardiac surgery, providing
-                  cutting-edge technologies like heart-lung machines,
-                  oxygenators, and perfusion systems. Their solutions support
-                  cardiopulmonary bypass by ensuring safe and effective blood
-                  circulation and oxygenation during surgery. Terumo's
-                  innovations enhance surgical precision, patient safety, and
-                  overall outcomes in open-heart procedures.
-                </p>
-              </>
-            )}
-            {selected === "Halyard" && (
-              <>
-                <img src={Halyard} alt="Halyard" className="h-40 w-auto" />
-                <p className="text-center mt-4 p-7 sm:p-20 lg:p-30">
-                  Halyard contributes to cardiac surgery by supplying
-                  high-quality sterile gowns and surgical drapes designed for
-                  complex procedures. Their products offer excellent barrier
-                  protection, fluid control, and comfort for surgical teams.
-                  Halyard's solutions help maintain a sterile field, reducing
-                  infection risk and supporting patient safety in cardiac
-                  operations.
-                </p>
-              </>
-            )}
-            {selected === "Insightra" && (
-              <>
-                <img src={Insightra} alt="Insightra" className="h-20 w-auto" />
-                             <p className="text-center mt-4 p-7 sm:p-20 lg:p-30">
-                  The Insightra Ultra 7Fr catheter allows common fluid-filled
-                  technology in a smaller catheter with no compromise on lumen
-                  size.
-                </p>
-              </>
-            )}
-            {selected === "LSI" && (
-              <>
-                <img src={LSI} alt="LSI" className="h-20 w-auto" />
-                               <p className="text-center mt-4 p-7 sm:p-20 lg:p-30">
-                  LSI Solutions contributes to cardiac surgery by developing
-                  innovative minimally invasive surgical devices, such as
-                  suture-based closure systems. Their technologies, like
-                  COR-KNOT®, streamline valve replacement and repair procedures
-                  by improving speed, precision, and consistency. LSI Solutions
-                  enhances surgical efficiency and patient recovery through
-                  advanced cardiac device engineering.
-                </p>
-              </>
-            )}
-          </div>
-
-          {/* Product Range Section */}
-          <div className="flex mt-10 text-4xl font-bold justify-center items-center">
-            Range of Products
-          </div>
-
-          {/* Product Cards */}
-          <div className="container mx-auto my-10 px-4 py-4">
-                     <div className="grid grid-cols-1 sm:grid-cols-2 sm:mt-20 sm:mb-20 lg:grid-cols-3 my-20 gap-28 sm:m-4 sm:gap-20 m-10 lg:p-20">
-              {selected === "Euroset" &&
-                EuroCards.map((card) => (
-               <a
-                                 key={card.id}
-                                 href={card.url}
-                                 target="_blank"
-                                 rel="noopener noreferrer"
-                                 className="no-underline"
-                               >
-                                 <motion.div
-                                   className="relative group h-96 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
-                                   whileHover={{ scale: 1.05 }}
-                                 >
-                                   <img
-                                     src={card.image}
-                                     alt={`Card ${card.text}`}
-                                     className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
-                                   />
-                                   <motion.div
-                                     className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
-                                     initial={{ opacity: 0 }}
-                                     whileHover={{ opacity: 1 }}
-                                   >
-                                     <span className="text-white text-3xl text-center font-bold">
-                                       {card.text}
-                                     </span>
-                                   </motion.div>
-                                 </motion.div>
-                                 <p className="flex justify-center text-gray-800 text-2xl p-6 text-center font-semibold">
-                                   {card.text}
-                                 </p>
-                               </a>
-                ))}
-
-              {selected === "BL" &&
-                BLCards.map((card) => (
-                <a key={card.id} href={card.url} className="no-underline">
-                      <motion.div
-                        className="relative group h-80 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
-                        whileHover={{ scale: 1.05 }}
-                      >
-                        <img
-                          src={card.image}
-                          alt={`Card ${card.text}`}
-                          className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
-                        />
-                        <motion.div
-                          className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
-                          initial={{ opacity: 0 }}
-                          whileHover={{ opacity: 1 }}
-                        >
-                          <span className="text-white text-3xl text-center font-bold">
-                            {card.text}
-                          </span>
-                        </motion.div>
-                      </motion.div>
-                      <p className="flex justify-center text-gray-800 text-2xl p-6 text-center font-semibold">
-                        {card.text}
-                      </p>
-                    </a>
-                ))}
-
-              {selected === "Baxter" &&
-                BaxterCards.map((card) => (
-                  <a
-                                    key={card.id}
-                                    href={card.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="no-underline"
-                                  >
-                                    <motion.div
-                                      className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
-                                      whileHover={{ scale: 1.05 }}
-                                    >
-                                      <img
-                                        src={card.image}
-                                        alt={`Card ${card.text}`}
-                                        className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
-                                      />
-                                      <motion.div
-                                        className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
-                                        initial={{ opacity: 0 }}
-                                        whileHover={{ opacity: 1 }}
-                                      >
-                                        <span className="text-white text-3xl text-center font-bold">
-                                          {card.text}
-                                        </span>
-                                      </motion.div>
-                                    </motion.div>
-                                    <p className="flex justify-center text-gray-800 text-2xl p-6 text-center font-semibold">
-                                      {card.text}
-                                    </p>
-                                  </a>
-                ))}
-
-              {selected === "Synkromax" &&
-                SynkromaxCards.map((card) => (
-                 <a
-                                   key={card.id}
-                                   href={card.url}
-                                   target="_blank"
-                                   rel="noopener noreferrer"
-                                   className="no-underline"
-                                 >
-                                   <motion.div
-                                     className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
-                                     whileHover={{ scale: 1.05 }}
-                                   >
-                                     <img
-                                       src={card.image}
-                                       alt={`Card ${card.text}`}
-                                       className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
-                                     />
-                                     <motion.div
-                                       className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
-                                       initial={{ opacity: 0 }}
-                                       whileHover={{ opacity: 1 }}
-                                     >
-                                       <span className="text-white text-3xl text-center font-bold">
-                                         {card.text}
-                                       </span>
-                                     </motion.div>
-                                   </motion.div>
-                                   <p className="flex justify-center text-gray-800 text-2xl p-6 text-center font-semibold">
-                                     {card.text}
-                                   </p>
-                                 </a>
-                ))}
-
-              {selected === "Terumo" &&
-                TerumoCards.map((card) => (
-                 <a
-                                   key={card.id}
-                                   href={card.url}
-                                   target="_blank"
-                                   rel="noopener noreferrer"
-                                   className="no-underline"
-                                 >
-                                   <motion.div
-                                     className="relative group h-auto w-auto bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
-                                     whileHover={{ scale: 1.05 }}
-                                   >
-                                     <img
-                                       src={card.image}
-                                       alt={`Card ${card.text}`}
-                                       className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
-                                     />
-                                     <motion.div
-                                       className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
-                                       initial={{ opacity: 0 }}
-                                       whileHover={{ opacity: 1 }}
-                                     >
-                                       <span className="text-white text-3xl text-center font-bold">
-                                         {card.text}
-                                       </span>
-                                     </motion.div>
-                                   </motion.div>
-                                   <p className="flex justify-center text-gray-800 text-2xl p-6 text-center font-semibold">
-                                     {card.text}
-                                   </p>
-                                 </a>
-                ))}
-
-              {selected === "Scanlan" &&
-                ScanlanCards.map((card) => (
-                 <a
-                                   key={card.id}
-                                   href={card.url}
-                                   target="_blank"
-                                   rel="noopener noreferrer"
-                                   className="no-underline"
-                                 >
-                                   <motion.div
-                                     className="relative group h-auto w-auto bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
-                                     whileHover={{ scale: 1.05 }}
-                                   >
-                                     <img
-                                       src={card.image}
-                                       alt={`Card ${card.text}`}
-                                       className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
-                                     />
-                                     <motion.div
-                                       className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
-                                       initial={{ opacity: 0 }}
-                                       whileHover={{ opacity: 1 }}
-                                     >
-                                       <span className="text-white text-3xl text-center font-bold">
-                                         {card.text}
-                                       </span>
-                                     </motion.div>
-                                   </motion.div>
-                                   <p className="flex justify-center text-gray-800 text-2xl p-6 text-center font-semibold">
-                                    Click card to know more!
-                                   </p>
-                                 </a>
-                ))}
-               
-
-              {selected === "Sinapi" &&
-                SinapiCards.map((card) => (
-                 <a
-                                   key={card.id}
-                                   href={card.url}
-                                   target="_blank"
-                                   rel="noopener noreferrer"
-                                   className="no-underline"
-                                 >
-                                   <motion.div
-                                     className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
-                                     whileHover={{ scale: 1.05 }}
-                                   >
-                                     <img
-                                       src={card.image}
-                                       alt={`Card ${card.text}`}
-                                       className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
-                                     />
-                                     <motion.div
-                                       className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
-                                       initial={{ opacity: 0 }}
-                                       whileHover={{ opacity: 1 }}
-                                     >
-                                       <span className="text-white text-3xl text-center font-bold">
-                                         {card.text}
-                                       </span>
-                                     </motion.div>
-                                   </motion.div>
-                                   <p className="flex justify-center text-gray-800 text-2xl p-6 text-center font-semibold">
-                                     {card.text}
-                                   </p>
-                                 </a>
-                ))}
-
-              {selected === "Halyard" &&
-                HalyardCards.map((card) => (
-                 <a
-                                   key={card.id}
-                                   href={card.url}
-                                   target="_blank"
-                                   rel="noopener noreferrer"
-                                   className="no-underline"
-                                 >
-                                   <motion.div
-                                     className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
-                                     whileHover={{ scale: 1.05 }}
-                                   >
-                                     <img
-                                       src={card.image}
-                                       alt={`Card ${card.text}`}
-                                       className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
-                                     />
-                                     <motion.div
-                                       className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
-                                       initial={{ opacity: 0 }}
-                                       whileHover={{ opacity: 1 }}
-                                     >
-                                       <span className="text-white text-3xl text-center font-bold">
-                                         {card.text}
-                                       </span>
-                                     </motion.div>
-                                   </motion.div>
-                                   <p className="flex justify-center text-gray-800 text-2xl p-6 text-center font-semibold">
-                                     {card.text}
-                                   </p>
-                                 </a>
-                ))}
-
-              {selected === "Insightra" &&
-                InsightraCards.map((card) => (
-               <a
-                                 key={card.id}
-                                 href={card.url}
-                                 target="_blank"
-                                 rel="noopener noreferrer"
-                                 className="no-underline"
-                               >
-                                 <motion.div
-                                   className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
-                                   whileHover={{ scale: 1.05 }}
-                                 >
-                                   <img
-                                     src={card.image}
-                                     alt={`Card ${card.text}`}
-                                     className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
-                                   />
-                                   <motion.div
-                                     className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
-                                     initial={{ opacity: 0 }}
-                                     whileHover={{ opacity: 1 }}
-                                   >
-                                     <span className="text-white text-3xl text-center font-bold">
-                                       {card.text}
-                                     </span>
-                                   </motion.div>
-                                 </motion.div>
-                                 <p className="flex justify-center text-gray-800 text-2xl p-6 text-center font-semibold">
-                                   {card.text}
-                                 </p>
-                               </a>
-                ))}
-
-              {selected === "LSI" &&
-                LSICards.map((card) => (
-               <a
-                                 key={card.id}
-                                 href={card.url}
-                                 target="_blank"
-                                 rel="noopener noreferrer"
-                                 className="no-underline"
-                               >
-                                 <motion.div
-                                   className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
-                                   whileHover={{ scale: 1.05 }}
-                                 >
-                                   <img
-                                     src={card.image}
-                                     alt={`Card ${card.text}`}
-                                     className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
-                                   />
-                                   <motion.div
-                                     className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
-                                     initial={{ opacity: 0 }}
-                                     whileHover={{ opacity: 1 }}
-                                   >
-                                     <span className="text-white text-3xl text-center font-bold">
-                                       {card.text}
-                                     </span>
-                                   </motion.div>
-                                 </motion.div>
-                                 <p className="flex justify-center text-gray-800 text-2xl p-6 text-center font-semibold">
-                                   {card.text}
-                                 </p>
-                               </a>
-                ))}
+          {/* Quick Stats */}
+          <div className="p-6  bg-green-100 to-purple-500 border-t">
+            <div className="flex items-center justify-between text-xl text-gray-800">
+              <span>Est. {currentCompany.established}</span>
+              <motion.a
+                href={currentCompany.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`flex items-center gap-1 font-bold text-${currentCompany.accentColor}-800 hover:text-${currentCompany.accentColor}-700`}
+                whileHover={{ scale: 1.05 }}
+              >
+                <Globe className="w-4  h-4" />
+                Website
+              </motion.a>
             </div>
           </div>
-
-          {/*Read more*/}
-          <div className="flex justify-center mt-10 mb-14">
-          {selected === "Euroset" && (
-            <>
-              <a
-                href="https://www.eurosets.com/en/products/cardiopulmonary/oxygenators/"
-                target="_blank"
-                rel="noopener noreferrer"
-              className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out"
- >
-               Read More
-              </a>
-            </>
-          )}
-          {selected === "BL" && (
-            <>
-              <a
-                href="https://www.bllifesciences.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out"
- >
-                Read More
-              </a>
-            </>
-          )}
-          {selected === "Baxter" && (
-            <>
-              <a
-                href="https://www.baxter.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out"
-   >
-                Read More
-              </a>
-            </>
-          )}
-          {selected === "SynKromax" && (
-            <>
-              <a
-                href="http://www.synkromax.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out"
-  >
-                Read More
-              </a>
-            </>
-          )}
-
-          {selected === "Terumo" && (
-            <>
-              <a
-                href="https://www.terumo.com/" 
-                target="_blank"
-                rel="noopener noreferrer"
-className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out"
-
-              >
-                Read More
-              </a>
-            </>
-          )}
-
-          {selected === "Scanlan" && (
-            <>
-              <a
-                href="https://www.scanlaninternational.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-             className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out"
-  >
-                Read More
-              </a>
-            </>
-          )}
-
-          {selected === "Sinapi" && (
-            <>
-              <a
-                href="https://t.sinapibiomedical.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out"
- >
-                Read More
-              </a>
-            </>
-          )}
-
-          {selected === "Halyard" && (
-            <>
-              <a
-                href="https://www.halyardhealth.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out"
-
-              >
-                Read More
-              </a>
-            </>
-          )}
-
-          {selected === "Insightra" && (
-            <>
-              <a
-                href="https://insightra.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out"
- >
-                Read More
-              </a>
-            </>
-          )}
-
-          {selected === "LSI" && (
-            <>
-              <a
-                href="https://www.lsisolutions.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-            className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out"
-
-              >
-                Read More
-              </a>
-            </>
-          )}
-        </div>
         </div>
 
-        <DepNav />
-        <Footer />
+        {/* Main Content */}
+        <div className="flex-1 overflow-y-auto  md:mt-0">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeCompany}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.4 }}
+              className="p-4 md:p-8"
+            >
+              {/* Company Header */}
+              <div className={`rounded-3xl p-4 md:p-8 mb-8 mt-12 bg-green-700 border border-${currentCompany.accentColor}-200`}>
+                <div className="flex flex-col lg:flex-row items-start gap-8">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className={`p-3 bg-${currentCompany.accentColor}-100 rounded-2xl`}>
+                        <Building className={`w-8 h-8 text-${currentCompany.accentColor}-600`} />
+                      </div>
+                      <div className="flex flex-col gap-1 w-full">
+                        <div className="flex flex-col md:flex-row items-start md:items-center justify-between w-full">
+                          <h2 className="text-3xl md:text-5xl font-bold text-white mb-2 md:mb-0">{currentCompany.name}</h2>
+                          <img
+                            src={currentCompany.logo}
+                            alt="Company Logo"
+                            className="h-20 w-32 md:h-30 md:w-50"
+                          />
+                        </div>
+                        <p className={`text-${currentCompany.accentColor}-600 font-medium`}>
+                          {currentCompany.tagline}
+                        </p>
+                      </div>
+                    </div>
+                    <p className="text-gray-100 text-lg md:text-2xl leading-relaxed">{currentCompany.description}</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Products Section */}
+              <div className="mb-8 pt-8 md:pt-20">
+                <div className="flex items-center gap-3 mb-8">
+                  <Package2 className={`w-8 h-8 text-${currentCompany.accentColor}-600`} />
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900">Product Portfolio</h3>
+                </div>
+
+                <div className="grid grid-cols-1 p-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-16">
+                  {currentCompany.products.map((product, index) => (
+                    <motion.div
+                      key={product.id}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                      onMouseEnter={() => setHoveredProduct(product.id)}
+                      onMouseLeave={() => setHoveredProduct(null)}
+                      className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300"
+                    >
+                      <div className="relative">
+                        <img
+                          src={product.image}
+                          alt={product.name}
+                          className="w-full h-60 md:h-80 object-cover transition-transform duration-500 hover:scale-110"
+                        />
+                        <div className={`absolute top-4 left-4 px-3 py-1 bg-${currentCompany.accentColor}-100 text-${currentCompany.accentColor}-700 rounded-full text-xs font-semibold`}>
+                          {product.category}
+                        </div>
+                        <AnimatePresence>
+                          {hoveredProduct === product.id && (
+                            <motion.div
+                              initial={{ opacity: 0 }}
+                              animate={{ opacity: 1 }}
+                              exit={{ opacity: 0 }}
+                              className="absolute inset-0 bg-black/50 flex items-center justify-center"
+                            >
+                              <motion.a
+                                href={product.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={`bg-green-500 hover:bg-${currentCompany.accentColor}-700 text-white px-6 py-3 rounded-full font-semibold flex items-center gap-2 transition-all duration-300`}
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                              >
+                                View Details <ExternalLink className="w-4 h-4" />
+                              </motion.a>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                      
+                      <div className="p-4 md:p-6">
+                        <h4 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">{product.name}</h4>
+                        <p className="text-gray-700 mb-4 text-lg md:text-xl">{product.description}</p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Call to Action */}
+              <div className="pt-8 md:pt-20">
+                <div className={`bg-${currentCompany.accentColor}-700 rounded-3xl p-6 md:p-8 text-gray-100`}>
+                  <div className="flex flex-col md:flex-row items-center justify-between">
+                    <div className="text-center md:text-left mb-4 md:mb-0">
+                      <h3 className="text-xl md:text-2xl font-bold mb-2">Explore More Solutions</h3>
+                      <p className="opacity-90">Discover the complete range of {currentCompany.name} products</p>
+                    </div>
+                    <motion.a
+                      href={currentCompany.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white bg-green-600 hover:bg-green-800 px-6 md:px-8 py-3 rounded-full font-semibold transition-all duration-300 flex items-center gap-2"
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      Visit Website <ExternalLink className="w-5 text-white h-5" />
+                    </motion.a>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+          <Footer/>
+        </div>
       </div>
     </>
   );
 };
 
-
-export default function Cardiac_surgery() {
-  const buttonImages = [
-    { id: "Euroset", src: Euroset, alt: "Euroset" },
-    { id: "BL", src: BL, alt: "BL Lifesciences" },
-    { id: "Baxter", src: Baxter, alt: "Baxter" },
-    { id: "Synkromax", src: Synkromax, alt: "Synkromax" },
-    { id: "Terumo", src: Terumo, alt: "Terumo" },
-    { id: "Scanlan", src: Scanlan, alt: "Scanlan" },
-    { id: "Sinapi", src: Sinapi, alt: "Sinapi" },
-    { id: "Halyard", src: Halyard, alt: "Halyard" },
-    { id: "Insightra", src: Insightra, alt: "Insightra" },
-    { id: "LSI", src: LSI, alt: "LSI" },
-  ];
-
-
-  return (
-    <DepartmentPage
-      name="CARDIAC SURGERY"
-      //image={Mizuho}
-      buttonImages={buttonImages}
-    />
-  );
-}
+export default CardiacSidebarDesign;
