@@ -9,8 +9,10 @@ import toray from "../../assets/Toray.png";
 import meditech from "../../assets/meditec.png";
 import cocoon from "../../assets/Cocoon.png";
 import hico from "../../assets/Hico.png";
-import { motion } from "framer-motion";
-
+//import { motion } from "framer-motion";
+import { motion, AnimatePresence } from 'framer-motion';
+import { ExternalLink, Globe, Package2, Building, ChevronRight, Star, ShoppingCart, ArrowRight } from 'lucide-react';
+ 
 import image1 from "../../assets/Anastesiology/pressurelines.png";
 import image2 from "../../assets/Anastesiology/presseurtransducer.jpg";
 import image3 from "../../assets/Anastesiology/hmefilter.png";
@@ -23,577 +25,457 @@ import chestdrain from "../../assets/Pulmo/chestdrain.png"
 import ChestDrain from "../../assets/ChestDrain.pdf";
 import cable from "../../assets/Cablecatalogue.pdf";
 
-const DepartmentPage = ({ name, buttonImages }) => {
-  const [selected, setSelected] = useState("BL");
 
-  const cards1 = [
-        //BL
+const CriticalSidebarDesign = () => {
+  const [activeCompany, setActiveCompany] = useState("BL");
+  const [hoveredProduct, setHoveredProduct] = useState(null);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const companies = {
+    BL : {
+      logo: BL,
+      name: "BL Lifesciences",
+      bgColor: "bg-blue-50",
+      accentColor: "blue",
+      description: "BL Lifesciences offers a wide range of advanced medical devices for anesthesia, critical care, and interventional systems.",
+      website: "https://www.bllifesciences.com/",
+      established: "1996",
+      headquarters: "India",
+      products: [
         {
-          id: 1,
+          id: "pressure-monitoring-lines",
           image: image1,
-          text: "Pressure Monitoring Lines",
+          name: "Pressure Monitoring Lines",
+          category: "Invasive Pressure System",
+          description: "Accurate invasive pressure line system",
           url: "https://www.bllifesciences.com/products/invasive-pressure-system/",
         },
         {
-          id: 2,
+          id: "disposable-pressure-transducer",
           image: image2,
-          text: "Disposable pressure transducer",
+          name: "Disposable Pressure Transducer",
+          category: "Invasive Pressure System",
+          description: "Single-use transducer for pressure monitoring",
           url: "https://www.bllifesciences.com/products/invasive-pressure-system/",
         },
         {
-          id: 3,
+          id: "hme-filter",
           image: image3,
-          text: "HME filter",
+          name: "HME Filter",
+          category: "Anesthesia & Critical Care",
+          description: "Moisture exchange and bacterial filtration",
           url: "https://www.bllifesciences.com/products/anesthesia-and-critical-care/",
         },
         {
-          id: 4,
+          id: "interphase-cable",
           image: image4,
-          text: "Inter phase cable suit with your monitor",
-          url: cable
+          name: "Interphase Cable",
+          category: "Monitor Accessories",
+          description: "Cable suit compatible with your monitor",
+          url: cable,
         },
         {
-          id: 5,
+          id: "3way-extension",
           image: image5,
-          text: "3 way with extension -10cm, 25/50cm",
+          name: "3 Way with Extension - 10cm, 25/50cm",
+          category: "Interventional Systems",
+          description: "IV fluid direction control with extension",
           url: "https://www.bllifesciences.com/products/interventional-systems/",
         },
         {
-          id: 6,
+          id: "iv-set-vented",
           image: "/Cardiology/IVset.png",
-          text: "IV SET VENTED",
+          name: "IV Set Vented",
+          category: "Infusion",
+          description: "Vented set for controlled infusion",
           url: "https://bllifesciences.com/wp-content/uploads/2022/08/BL-Lifesciences.pdf",
         },
         {
-          id: 7,
+          id: "central-venous-catheters",
           image: image7,
-          text: "Central Venous Catheters",
+          name: "Central Venous Catheters",
+          category: "Catheters",
+          description: "Multi-lumen venous access device",
           url: "https://www.bllifesciences.com/products/central-venous-catheters/",
         },
         {
-          id: 8,
+          id: "adult-expandable-circuit",
           image: image8,
-          text: "ADULT EXPANDABLE CIRCUIT",
+          name: "Adult Expandable Circuit",
+          category: "Anesthesia & Critical Care",
+          description: "Expandable circuit for anesthesia delivery",
           url: "https://www.bllifesciences.com/products/anesthesia-and-critical-care/",
         },
         {
-          id: 9,
+          id: "lung-exerciser",
           image: image9,
-          text: "Lung Exerciser",
+          name: "Lung Exerciser",
+          category: "Anesthesia & Critical Care",
+          description: " Respiratory strengthening post-operative device",
           url: "https://www.bllifesciences.com/products/anesthesia-and-critical-care/",
-        },
+        }
       ]
+    },
 
-    const cards2 = [
-    {
-       id: 1,
-        image: chestdrain, 
-        text: "Chest Drainage System 50ml,400ml,1000ml",
-        url: ChestDrain
+  Sinapi : {
+      logo: Sinapi,
+      name: "Sinapi Biomedical",
+      bgColor: "bg-purple-50",
+      accentColor: "purple",
+      description: "Innovative devices for thoracic drainage and critical care.",
+      website: "https://www.sinapi.co.za/",
+      established: "2006",
+      headquarters: "South Africa",
+      products: [
+        {
+          id: "chest-drain",
+          image: chestdrain,
+          name: "Chest Drainage System 50ml, 400ml, 1000ml",
+          category: "Thoracic Drainage",
+          description: " Fluid and air removal from thorax",
+          url: ChestDrain
+        }
+      ]
+    },
+
+   Toray : {
+      logo: toray,
+      name: "Toray Medical",
+      bgColor: "bg-red-50",
+      accentColor: "red",
+      description: "Advanced therapies for emergency and intensive care settings.",
+      website: "https://www.toray-medical.com/en/",
+      established: "1980",
+      headquarters: "Japan",
+      products: [
+        {
+          id: "hemofeel",
+          image: "/CriticalCare/hemofeel.png",
+          name: "Hemofeel",
+          category: "Emergency Therapy",
+          description: "Hemoperfusion cartridge for blood purification",
+          url: "https://www.toray-medical.com/en/products/emergency/eme_0020.html"
+        },
+        {
+          id: "toraymyxin",
+          image: "/CriticalCare/myxin.png",
+          name: "Toraymyxin",
+          category: "Emergency Therapy",
+          description: "Toxin-absorbing cartridge for sepsis management",
+          url: "https://www.toray-medical.com/en/products/emergency/eme_0010.html"
+        }
+      ]
+    },
+
+    Meditec : {
+      logo: meditech,
+      name: "Meditec Devices",
+      bgColor: "bg-yellow-50",
+      accentColor: "yellow",
+      description: "Manufacturers of airway management devices and surgical accessories.",
+      website: "https://meditecdevices.com/",
+      established: "2011",
+      headquarters: "India",
+      products: [
+        {
+          id: "nasopharyngeal-airway",
+          image: "/CriticalCare/airway.png",
+          name: "Nasopharyngeal Airway",
+          category: "Airway Management",
+          description: "Soft tube for nasal airway access",
+          url: "https://meditecdevices.com/products/search/?q=nasopharyngeal%20airway"
+        },
+        {
+          id: "bougie",
+          image: "/CriticalCare/bougie.png",
+          name: "Bougie",
+          category: "Intubation Aid",
+          description: "Intubation aid for airway access",
+          url: "https://meditecdevices.com/products/search/?q=bougie"
+        },
+        {
+          id: "stylet",
+          image: "/CriticalCare/stylet.png",
+          name: "Stylet",
+          category: "Intubation Aid",
+          description: "Rigid guide for endotracheal tube",
+          url: "https://meditecdevices.com/products/search/?q=stylet"
+        }
+      ]
+    },
+
+    CareEssentials : {
+      logo: cocoon,
+      name: "Care Essentials",
+      bgColor: "bg-pink-50",
+      accentColor: "pink",
+      description: "Specialized in warming therapy and infection control solutions.",
+      website: "https://www.careessentials.com.au/",
+      established:"1996",
+      headquarters:"Australia",
+      products: [
+        {
+          id: "body-warmer",
+          image: "/CriticalCare/cocoon.png",
+          name: "Body Warmer",
+          category: "Warming Therapy",
+          description: " Patient warming system for surgery",
+          url: "https://www.careessentials.com.au/product/cws-5000/"
+        }
+      ]
+    },
+
+   Hico : {
+      logo: hico,
+      name: "Hico",
+      bgColor: "bg-orange-50",
+      accentColor: "orange",
+      description: "High-quality warming therapy devices for critical care.",
+      website: "https://www.hico.de/en/",
+      established:"1945",
+      headquarters:"Germany",
+      products: [
+        {
+          id: "variotherm",
+          image: "/CriticalCare/vari.png",
+          name: "Variotherm",
+          category: "Warming Therapy",
+          description: "Water-based patient warming system",
+          url: "https://www.hico.de/en/hico-variotherm-550.html"
+        },
+        {
+          id: "aquatherm",
+          image: "/CriticalCare/aqua.png",
+          name: "Aquatherm",
+          category: "Warming Therapy",
+          description: "Automatic fluid and patient warming unit",
+          url: "https://www.hico.de/en/hico-aquatherm-660.html"
+        }
+      ]
     }
-    ] 
+  };
 
+  const currentCompany = companies[activeCompany];
 
-  const cards3 = [
-    {
-      id: 1,
-      image: "/CriticalCare/hemofeel.png",
-      text: "Hemofeel",
-      url: "https://www.toray-medical.com/en/products/emergency/eme_0020.html",
-    },
-    {
-      id: 2,
-      image: "/CriticalCare/myxin.png",
-      text: "Toraymyxin",
-      url: "https://www.toray-medical.com/en/products/emergency/eme_0010.html",
-    },
-  ];
-    const cards4 = [
-      {
-        id: 1,
-        image: "/CriticalCare/airway.png",
-        text: "Nasopharyngeal airway",
-        url: "https://meditecdevices.com/products/search/?q=nasopharyngeal%20airway",
-      },
-      {
-        id: 2,
-        image: "/CriticalCare/bougie.png",
-        text: "Bougie",
-        url: "https://meditecdevices.com/products/search/?q=bougie",
-      },
-      {
-        id: 3,
-        image: "/CriticalCare/stylet.png",
-        text: "Stylet",
-        url: "https://meditecdevices.com/products/search/?q=stylet",                
-      },
-    ];
-  const cards5 = [
-    {
-      id: 1,
-      image: "/CriticalCare/cocoon.png",
-      text: "Body Warmer",
-      url: "https://www.careessentials.com.au/product/cws-5000/",
-    },
-  ];
-    const cards6 = [
-      {
-        id: 1,
-        image: "/CriticalCare/vari.png",
-        text: "Variotherm",
-        url: "https://www.hico.de/en/hico-variotherm-550.html",
-      },
-      {
-        id: 2,
-        image: "/CriticalCare/aqua.png",
-        text: "Aquatherm",
-        url: "https://www.hico.de/en/hico-aquatherm-660.html",
-      },
-      // {
-      //   id: 3,
-      //   image: "/CriticalCare/hypo.png",
-      //   text: "Hypotherm",
-      //   url: "https://pdf.medicalexpo.com/pdf/hico/hico-hypotherm-680/68746-95065.html",
-      // },
-    ];
-
-  return (
+return (
     <>
-      <div>
-        <div
-          className="min-h-screen overflow-x-hidden bg-cover bg-fixed bg-center"
-          style={{
-            backgroundImage: `url(${bg})`,
-            backgroundColor: "rgba(255, 255, 255, 0)",
-            backgroundBlendMode: "overlay",
-          }}
-        >
-          <div className="relative  z-50">
-            {" "}
-            <Navbar />
+      {/* <Navbar2/> */}
+      <div className="min-h-screen bg-gray-100 flex">
+        
+        {/* Mobile Menu Button */}
+      <button
+      onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+      className="md:hidden fixed top-2 left-4 -translate-y-1/2 z-50 bg-green-900 text-white p-3 rounded-lg shadow-lg"
+      >
+      {isSidebarOpen ? <X className="bg-transparent" /> : <ArrowRight className="w-6 h-6" />}
+        </button>
+
+
+        {/* Mobile Overlay */}
+        {isSidebarOpen && (
+          <div 
+            className="md:hidden fixed inset-0 bg-black bg-opacity-50 z-30"
+            onClick={() => setIsSidebarOpen(false)}
+          />
+        )}
+
+        {/* Sidebar */}
+        <div className={`
+          w-80 bg-white shadow-2xl flex flex-col
+          md:relative md:translate-x-0
+          fixed inset-y-0 left-0 z-40 
+          transform transition-transform duration-300 ease-in-out
+          ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
+        `}>
+          {/* Header */}
+          <div className="p-6 border-b bg-green-900 text-white ">
+            <h1 className="text-4xl font-bold pt-10 sm:pt-0 mb-2">CRITICAL CARE</h1>
+            <p className="text-gray-100 text-xl">Surgical Solutions</p>
           </div>
-          <div className=" sm:mt-40">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-20 p-12 items-center">
-              <h2 className="z-20 text-5xl sm:text-6xl font-bold text-left flex-1">
-                {name}
-              </h2>
-              {/* <img
-              src={heart}
-              alt={name}
-              className="absolute -top-20 -right-4 opacity-70  transform -rotate-45 w-4/5 sm:w-3/5 lg:w-1/3 rounded-3xl shadow-2xl z-0"
-            /> */}
-            </div>
-            <div
-              className="min-h-screen overflow-x-hidden bg-cover bg-fixed bg-center"
-              style={{
-                backgroundImage: `url(${bg})`,
-                backgroundColor: "rgba(255, 255, 255, 0)",
-                backgroundBlendMode: "overlay",
-              }}
-            >
-              {/* Buttons  */}
-               <div className="grid relative grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-8">
-            {buttonImages.map(({ src, alt, id }) => (
-             <button
-          key={id}
-           onClick={() => setSelected(id)}
-            className={`p-2 font-bold rounded-full text-black w-1/2 sm:w-3/4 lg:w-1/2 mx-14 h-14 border border-black flex justify-center items-center ${
-           selected === id ? "bg-gray-500 text-white border-gray-500" : "bg-white"
-         }` }
-           >
-                <img src={src} alt={alt} className="h-12  w-auto" />
-              </button>
+
+          {/* Company Navigation */}
+          <div className="flex-1 overflow-y-auto">
+            {Object.entries(companies).map(([key, company]) => (
+              <motion.button
+                key={key}
+                onClick={() => {
+                  setActiveCompany(key);
+                  setIsSidebarOpen(false); // Close sidebar on mobile after selection
+                }}
+                className={`w-full p-6 text-left border-b transition-all duration-300 ${
+                  activeCompany === key 
+                    ? `${company.bgColor} border-l-4 border-${company.accentColor}-500` 
+                    : 'hover:bg-gray-50'
+                }`}
+                whileHover={{ x: activeCompany === key ? 0 : 4 }}
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex-1">
+                    <h3 className={`font-bold text-xl mb-1 ${activeCompany === key ? `text-${company.accentColor}-700` : 'text-gray-900'}`}>
+                      {company.name}
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-2">{company.tagline}</p>
+                    <div className="flex items-center gap-4 text-xs text-gray-700">
+                      <span className="flex items-center text-lg gap-1">
+                        <Building className="w-3 h-3" />
+                        {company.headquarters}
+                      </span>
+                      <span className="flex items-center text-lg gap-1">
+                        <Package2 className="w-3 h-3" />
+                        {company.products.length} Products
+                      </span>
+                    </div>
+                  </div>
+                  <ChevronRight className={`w-5 h-5 transition-transform duration-300 ${
+                    activeCompany === key ? `rotate-90 text-${company.accentColor}-500` : 'text-gray-400'
+                  }`} />
+                </div>
+              </motion.button>
             ))}
           </div>
 
-
-              {/* Conditionally Rendered Content */}
-              <div className="flex z-50 flex-col justify-center items-center mt-6">
-                {selected === "BL" && (
-                  <>
-                    <img
-                      src={BL}
-                      alt="BL Lifesciences"
-                      className="h-40 w-auto m-10"
-                    />
-                    <p className="text-center w-3/4 mt-4">
-                    BL Lifesciences plays a vital role in critical care by providing
-                    high-quality medical devices such as invasive pressure monitoring systems ,
-                    anesthesia and ventilation circuits, and customized perfusion products. 
-                    Their innovative and reliable solutions help improve patient monitoring,
-                    respiratory support, and life-saving interventions in intensive care units. 
-                    </p>
-                  </>
-                )}
-
-                {selected === "Sinapi" && (
-                  <>
-                    <img
-                      src={Sinapi}
-                      alt="Sinapi"
-                      className="h-40 w-auto m-10"
-                    />
-                    <p className="text-center w-3/4 mt-4">
-                      The Sinapi Chest Drain plays a crucial role in critical care by
-                      efficiently removing air, blood, or fluid from the pleural space,
-                      helping re-expand the lungs and stabilize patients post-surgery or trauma.
-                      Its reliable, lightweight design and advanced water-seal system
-                      reduce infection risk and promote patient recovery. 
-                      With user-friendly setup and monitoring, Sinapi enhances patient safety and
-                      optimizes critical care outcomes.
-
-                    </p>
-                  </>
-                )}
-
-                {selected === "Toray" && (
-                  <>
-                    <img
-                      src={toray}
-                      alt="Toray"
-                      className="h-40 w-auto flex m-10"
-                    />
-                    <p className="text-center w-3/4 mt-4">
-                      HEMOFEEL CH is a polymethylmethacrylate (PMMA) hemofilter
-                      designed for continuous renal support, offering excellent
-                      biocompatibility and cytokine adsorption. <br />
-                      TORAYMYXI (PMX™) is an extracorporeal hemoperfusion
-                      cartridge that removes endotoxins from the blood, using
-                      polymyxin B-immobilized fibers to treat sepsis and septic
-                      shock caused by Gram-negative bacterial infections.
-                    </p>
-                  </>
-                )}
-                {selected === "Meditech" && (
-                  <>
-                    <img
-                      src={meditech}
-                      alt="meditech"
-                      className="h-30 w-auto flex m-10"
-                    />
-                    <p className="text-center w-3/4 mt-4">
-                      ​Meditech offers a range of airway management devices,
-                      including bougies, stylets, and nasopharyngeal airways
-                      <br />
-                      Bougies: These single-use, latex-free devices assist in
-                      the placement of endotracheal tubes during challenging
-                      intubations by facilitating positive tracheal location.
-                      <br />
-                      Stylets: Designed to aid intubation, Meditech's stylets
-                      are malleable, allowing clinicians to shape them as needed
-                      for optimal tube placement.
-                      <br />
-                      Nasopharyngeal Airways: These single-use airways are
-                      blue-colored for easy identification and are intended to
-                      maintain an open airway by inserting through the nasal
-                      passage.
-                    </p>
-                  </>
-                )}
-                {selected === "Cocoon" && (
-                  <>
-                    <img
-                      src={cocoon}
-                      alt="Toray"
-                      className="h-20 w-auto flex m-10"
-                    />
-                    <p className="text-center w-3/4 mt-4">
-                      The Cocoon Convective Patient Warming System helps
-                      maintain patient normothermia using a
-                      microprocessor-controlled warming unit and specialized
-                      blankets. It ensures uniform heat distribution, is
-                      lightweight, and meets FDA, CE, and TGA standards for
-                      safety.
-                    </p>
-                  </>
-                )}
-                {selected === "HICO" && (
-                  <>
-                    <img
-                      src={hico}
-                      alt="Toray"
-                      className="h-40 w-auto flex m-10"
-                    />
-                    <p className="text-center w-3/4 mt-4">
-                      ​HICO offers a range of patient temperature management
-                      devices designed to prevent hypothermia and maintain
-                      normothermia during medical procedures
-                    </p>
-                  </>
-                )}
-              </div>
-
-              {/* Hover Cards (Conditionally Rendered) */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 sm:mt-20 sm:mb-20 lg:grid-cols-3 my-20 gap-28 sm:m-4 sm:gap-20 m-10 lg:p-20">
-
-                {selected === "BL" &&
-                  cards1.map((card) => (
-                    <a key={card.id} href={card.url} className="no-underline">
-                      <motion.div
-                        className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
-                        whileHover={{ scale: 1.05 }}
-                      >
-                        <img
-                          src={card.image}
-                          alt={`Card ${card.text}`}
-                          className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
-                        />
-                        <motion.div
-                          className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
-                          initial={{ opacity: 0 }}
-                          whileHover={{ opacity: 1 }}
-                        >
-                          <span className="text-white text-3xl text-center font-bold">
-                            {card.text}
-                          </span>
-                        </motion.div>
-                      </motion.div>
-                      <p className="flex justify-start text-gray-800 text-2xl p-6 text-center font-semibold">
-                        {card.text}
-                      </p>
-                    </a>
-                  ))}
-
-                  {selected === "Sinapi" &&
-                  cards2.map((card) => (
-                    <a key={card.id} href={card.url} className="no-underline">
-                      <motion.div
-                        className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
-                        whileHover={{ scale: 1.05 }}
-                      >
-                        <img
-                          src={card.image}
-                          alt={`Card ${card.text}`}
-                          className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
-                        />
-                        <motion.div
-                          className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
-                          initial={{ opacity: 0 }}
-                          whileHover={{ opacity: 1 }}
-                        >
-                          <span className="text-white text-3xl text-center font-bold">
-                            {card.text}
-                          </span>
-                        </motion.div>
-                      </motion.div>
-                      <p className="flex justify-start text-gray-800 text-2xl p-6 text-center font-semibold">
-                        {card.text}
-                      </p>
-                    </a>
-                  ))}
-
-                {selected === "HICO" &&
-                  cards6.map((card) => (
-                    <a key={card.id} href={card.url} className="no-underline">
-                      <motion.div
-                        className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
-                        whileHover={{ scale: 1.05 }}
-                      >
-                        <img
-                          src={card.image}
-                          alt={`Card ${card.text}`}
-                          className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
-                        />
-                        <motion.div
-                          className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
-                          initial={{ opacity: 0 }}
-                          whileHover={{ opacity: 1 }}
-                        >
-                          <span className="text-white text-3xl text-center font-bold">
-                            {card.text}
-                          </span>
-                        </motion.div>
-                      </motion.div>
-                      <p className="flex justify-start text-gray-800 text-2xl p-6 text-center font-semibold">
-                        {card.text}
-                      </p>
-                    </a>
-                  ))}
-
-                {selected === "Toray" &&
-                  cards3.map((card) => (
-                    <a key={card.id} href={card.url} className="no-underline">
-                      <motion.div
-                        className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
-                        whileHover={{ scale: 1.05 }}
-                      >
-                        <img
-                          src={card.image}
-                          alt={`Card ${card.text}`}
-                          className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
-                        />
-                        <motion.div
-                          className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
-                          initial={{ opacity: 0 }}
-                          whileHover={{ opacity: 1 }}
-                        >
-                          <span className="text-white text-3xl text-center font-bold">
-                            {card.text}
-                          </span>
-                        </motion.div>
-                      </motion.div>
-                      <p className="flex justify-start text-gray-800 text-2xl p-6 text-center font-semibold">
-                        {card.text}
-                      </p>
-                    </a>
-                  ))}
-               {selected === "Cocoon" && (
-  <div className="flex flex-wrap justify-center gap-6 my-10">
-    {cards5.map((card) => (
-      <a key={card.id} href={card.url} className="no-underline">
-        <motion.div
-          className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
-          whileHover={{ scale: 1.05 }}
-        >
-          <img
-            src={card.image}
-            alt={`Card ${card.text}`}
-            className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
-          />
-          <motion.div
-            className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
-            initial={{ opacity: 0 }}
-            whileHover={{ opacity: 1 }}
-          >
-            <span className="text-white text-3xl text-center font-bold">
-              {card.text}
-            </span>
-          </motion.div>
-        </motion.div>
-        <p className="text-center text-gray-800 text-2xl pt-4 font-semibold">
-          {card.text}
-        </p>
-      </a>
-    ))}
-  </div>
-)}
-
-                {selected === "Meditech" &&
-                  cards4.map((card) => (
-                    <a key={card.id} href={card.url} className="no-underline">
-                      <motion.div
-                        className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
-                        whileHover={{ scale: 1.05 }}
-                      >
-                        <img
-                          src={card.image}
-                          alt={`Card ${card.text}`}
-                          className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
-                        />
-                        <motion.div
-                          className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
-                          initial={{ opacity: 0 }}
-                          whileHover={{ opacity: 1 }}
-                        >
-                          <span className="text-white text-3xl text-center font-bold">
-                            {card.text}
-                          </span>
-                        </motion.div>
-                      </motion.div>
-                      <p className="flex justify-center text-gray-800 text-2xl p-6 text-center font-semibold">
-                        {card.text}
-                      </p>
-                    </a>
-                  ))}
-              </div>
+          {/* Quick Stats */}
+          <div className="p-6  bg-green-100 to-purple-500 border-t">
+            <div className="flex items-center justify-between text-xl text-gray-800">
+              <span>Est. {currentCompany.established}</span>
+              <motion.a
+                href={currentCompany.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`flex items-center gap-1 font-bold text-${currentCompany.accentColor}-800 hover:text-${currentCompany.accentColor}-700`}
+                whileHover={{ scale: 1.05 }}
+              >
+                <Globe className="w-4  h-4" />
+                Website
+              </motion.a>
             </div>
           </div>
-          {/* conditionally rendered read more */}
-           <div className="flex justify-center mt-10 mb-14">
-          {selected === "BL" && (
-            <>
-              <a
-                href="https://www.bllifesciences.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex justify-center "
-              >
-                <button className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out">
-                  Read More
-                </button>
-              </a>
-            </>
-          )}
-        {selected == "Sinapi" && (
-          <>
-          <a
-          href="https://t.sinapibiomedical.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex justify-center mt-10"
-        >
-          <button className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out">
-            Read More
-          </button>
-        </a>
-        </>
-        )}
-
-          {selected === "Toray" && (
-            <>
-              <a
-                href="https://www.toray-medical.com/en/products/index.html"
-                target="_blank"
-                rel="noopener noreferrer"
-      className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out"
-              >
-                Read More
-              </a>
-            </>
-          )}
-          {selected === "Meditech" && (
-            <>
-              <a
-                href="https://meditecdevices.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out"
-              >
-                Read More
-              </a>
-            </>
-          )}
-          {selected === "Cocoon" && (
-            <>
-              <a
-                href="https://www.careessentials.com.au/  "
-                target="_blank"
-                rel="noopener noreferrer"
-className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out"
-              >
-                Read More
-              </a>
-            </>
-          )}
-          {selected === "HICO" && (
-            <>
-              <a
-                href="https://www.hico.de/en/hico.html"
-                target="_blank"
-                rel="noopener noreferrer"
-               className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out">
-               Read More
-              </a>
-            </>
-          )}
         </div>
-        <DepNav />
-        <Footer />
-      </div>
+
+        {/* Main Content */}
+        <div className="flex-1 overflow-y-auto  md:mt-0">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeCompany}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.4 }}
+              className="p-4 md:p-8"
+            >
+              {/* Company Header */}
+              <div className={`rounded-3xl p-4 md:p-8 mb-8 mt-12 bg-green-700 border border-${currentCompany.accentColor}-200`}>
+                <div className="flex flex-col lg:flex-row items-start gap-8">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className={`p-3 bg-${currentCompany.accentColor}-100 rounded-2xl`}>
+                        <Building className={`w-8 h-8 text-${currentCompany.accentColor}-600`} />
+                      </div>
+                      <div className="flex flex-col gap-1 w-full">
+                        <div className="flex flex-col md:flex-row items-start md:items-center justify-between w-full">
+                          <h2 className="text-3xl md:text-5xl font-bold text-white mb-2 md:mb-0">{currentCompany.name}</h2>
+                          <img
+                            src={currentCompany.logo}
+                            alt="Company Logo"
+                            className="h-20 w-32 md:h-30 md:w-50"
+                          />
+                        </div>
+                        <p className={`text-${currentCompany.accentColor}-600 font-medium`}>
+                          {currentCompany.tagline}
+                        </p>
+                      </div>
+                    </div>
+                    <p className="text-gray-100 text-lg md:text-2xl leading-relaxed">{currentCompany.description}</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Products Section */}
+              <div className="mb-8 pt-8 md:pt-20">
+                <div className="flex items-center gap-3 mb-8">
+                  <Package2 className={`w-8 h-8 text-${currentCompany.accentColor}-600`} />
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900">Product Portfolio</h3>
+                </div>
+
+                <div className="grid grid-cols-1 p-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-16">
+                  {currentCompany.products.map((product, index) => (
+                    <motion.div
+                      key={product.id}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                      onMouseEnter={() => setHoveredProduct(product.id)}
+                      onMouseLeave={() => setHoveredProduct(null)}
+                      className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300"
+                    >
+                      <div className="relative">
+                        <img
+                          src={product.image}
+                          alt={product.name}
+                          className="w-full h-60 md:h-80 object-cover transition-transform duration-500 hover:scale-110"
+                        />
+                        <div className={`absolute top-4 left-4 px-3 py-1 bg-${currentCompany.accentColor}-100 text-${currentCompany.accentColor}-700 rounded-full text-xs font-semibold`}>
+                          {product.category}
+                        </div>
+                        <AnimatePresence>
+                          {hoveredProduct === product.id && (
+                            <motion.div
+                              initial={{ opacity: 0 }}
+                              animate={{ opacity: 1 }}
+                              exit={{ opacity: 0 }}
+                              className="absolute inset-0 bg-black/50 flex items-center justify-center"
+                            >
+                              <motion.a
+                                href={product.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={`bg-green-500 hover:bg-${currentCompany.accentColor}-700 text-white px-6 py-3 rounded-full font-semibold flex items-center gap-2 transition-all duration-300`}
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                              >
+                                View Details <ExternalLink className="w-4 h-4" />
+                              </motion.a>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                      
+                      <div className="p-4 md:p-6">
+                        <h4 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">{product.name}</h4>
+                        <p className="text-gray-700 mb-4 text-lg md:text-xl">{product.description}</p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Call to Action */}
+              <div className="pt-8 md:pt-20">
+                <div className={`bg-${currentCompany.accentColor}-700 rounded-3xl p-6 md:p-8 text-gray-100`}>
+                  <div className="flex flex-col md:flex-row items-center justify-between">
+                    <div className="text-center md:text-left mb-4 md:mb-0">
+                      <h3 className="text-xl md:text-2xl font-bold mb-2">Explore More Solutions</h3>
+                      <p className="opacity-90">Discover the complete range of {currentCompany.name} products</p>
+                    </div>
+                    <motion.a
+                      href={currentCompany.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white bg-green-600 hover:bg-green-800 px-6 md:px-8 py-3 rounded-full font-semibold transition-all duration-300 flex items-center gap-2"
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      Visit Website <ExternalLink className="w-5 text-white h-5" />
+                    </motion.a>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+          <Footer/>
+        </div>
       </div>
     </>
   );
 };
 
-export default function CriticalCare() {
-  const buttonImages = [
-    { id: "BL", src: BL, alt: "BL Lifesciences" },
-    { id: "Sinapi", src: Sinapi, alt: "Sinapi" },
-    { id: "Toray", src: toray, alt: "Toray" },
-    { id: "Meditech", src: meditech, alt: "Meditech devices" },
-    { id: "Cocoon", src: cocoon, alt: "Cocoon" },
-    { id: "HICO", src: hico, alt: "HICO" },
-  ];
-
-  return <DepartmentPage name="CRITICAL CARE" buttonImages={buttonImages} />;
-}
+export default CriticalSidebarDesign;

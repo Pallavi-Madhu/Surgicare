@@ -2,326 +2,422 @@ import React, { useState } from "react";
 import Navbar from "../../Components/Navbar";
 import Footer from "../../Components/Footer";
 import BL from "../../assets/BLLifsciences.png";
-
-import { motion } from "framer-motion";
-
 import Insightra from "../../assets/insightra.png";
 import bg from "../../assets/depBG.png";
 import heart from "../../assets/heart.png";
 import DepNav from "../../Components/DepNav";
 import image4 from "../../assets/Anastesiology/cables.png";
 import cable from "../../assets/Cablecatalogue.pdf";
+import { motion, AnimatePresence } from 'framer-motion';
+import { ExternalLink, Globe, Package2, Building, ChevronRight, Star, ShoppingCart, ArrowRight } from 'lucide-react';
+ 
 
 
-const DepartmentPage = ({ name, buttonImages }) => {
-  const [selected, setSelected] = useState("BL");
+const CardiologySidebarDesign = () => {
+  const [activeCompany, setActiveCompany] = useState("BL");
+  const [hoveredProduct, setHoveredProduct] = useState(null);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  const cards = [
-    {
-      id: 1,
-      image: "/Cardiology/transducer.png",
-      text: "Disposable Transducer",
-      url: "https://www.bllifesciences.com/products/invasive-pressure-system/",
+  const companies = {
+   BL: {
+      logo: BL, 
+      name: "BL Lifesciences",
+      bgColor: "bg-blue-50",
+      accentColor: "blue",
+      description: "Offering advanced cardiovascular consumables for interventional procedures, pressure monitoring, and catheterization support.",
+      website: "https://www.bllifesciences.com/",
+      established: "2001", 
+      headquarters: "India",
+      products: [
+        {
+          id: "transducer",
+          image: "/Cardiology/transducer.png",
+          name: "Disposable Transducer",
+          category: "Pressure Monitoring",
+          description: "Sterile sensor for invasive pressure readings.",
+          url: "https://www.bllifesciences.com/products/invasive-pressure-system/"
+        },
+        {
+          id: "ptca",
+          image: "/Cardiology/PTCA.png",
+          name: "PTCA Kit",
+          category: "Interventional System",
+          description: "Comprehensive kit for balloon angioplasty.",
+          url: "https://www.bllifesciences.com/products/interventional-systems/"
+        },
+        {
+          id: "syringe",
+          image: "/Cardiology/control.png",
+          name: "Control Syringe",
+          category: "Injection",
+          description: "Precise contrast injection syringe.",
+          url: "https://www.bllifesciences.com/products/interventional-systems/"
+        },
+        {
+          id: "needle",
+          image: "/Cardiology/needle.png",
+          name: "Needle",
+          category: "Access Device",
+          description: "Reliable access needle for vascular procedures.",
+          url: "https://www.bllifesciences.com/products/interventional-systems/"
+        },
+        {
+          id: "highpress",
+          image: "/Cardiology/highpress.png",
+          name: "High Pressure Tubing",
+          category: "Tubing",
+          description: "For high-pressure fluid delivery systems.",
+          url: "https://www.bllifesciences.com/products/interventional-systems/"
+        },
+        {
+          id: "ivset",
+          image: "/Cardiology/IVset.png",
+          name: "IV Set Vented",
+          category: "Infusion",
+          description: "Vented set for fluid administration.",
+          url: "https://bllifesciences.com/wp-content/uploads/2022/08/BL-Lifesciences.pdf"
+        },
+        {
+          id: "inflation",
+          image: "/Cardiology/inflation.png",
+          name: "Inflation Device",
+          category: "Balloon Accessories",
+          description: "Used to inflate angioplasty balloons.",
+          url: "https://www.bllifesciences.com/wp-content/uploads/2022/06/24_IFU_Inflation_device.pdf"
+        },
+        {
+          id: "manifold",
+          image: "/Cardiology/manifold.png",
+          name: "Manifold",
+          category: "Flow Control",
+          description: "Controls multiple fluid channels.",
+          url: "https://www.bllifesciences.com/products/interventional-systems/"
+        },
+        {
+          id: "guideware",
+          image: "/Cardiology/guideware.png",
+          name: "Guide Wire",
+          category: "Navigation",
+          description: "Supports catheter placement in vessels.",
+          url: "https://www.bllifesciences.com/products/interventional-systems/"
+        },
+        {
+          id: "cable",
+          image: image4,
+          name: "Transducer Interface Cable",
+          category: "Accessories",
+          description: "Cable for pressure monitor connectivity.",
+          url: cable
+        },
+        {
+          id: "act",
+          image: "/Cardiology/act.png",
+          name: "ACT Tube",
+          category: "Coagulation Monitoring",
+          description: "Used for Activated Clotting Time tests.",
+          url: "https://www.helena.com/actalykemini2.htm"
+        },
+        {
+          id: "pressmon",
+          image: "/Cardiology/pressmon.png",
+          name: "Pressure Monitoring Line",
+          category: "Pressure Monitoring",
+          description: "Connects transducer to pressure catheter.",
+          url: "https://www.bllifesciences.com/products/invasive-pressure-system/"
+        },
+        {
+          id: "flowreg",
+          image: "/Cardiology/flowreg.png",
+          name: "Flow Regulator",
+          category: "IV Control",
+          description: "Regulates flow rate in IV lines.",
+          url: "https://www.bllifesciences.com/products/interventional-systems/"
+        },
+        {
+          id: "snare",
+          image: "/Cardiology/snare.png",
+          name: "Snare Kit",
+          category: "Retrieval Tools",
+          description: "Used to retrieve foreign objects.",
+          url: "https://www.argonmedical.com/product/atrieve-vascular-snare-kit/"
+        },
+        {
+          id: "infusion",
+          image: "/Cardiology/infusion.png",
+          name: "Pressure Infusion Bag",
+          category: "Infusion Device",
+          description: "Infuses fluid under controlled pressure.",
+          url: "https://www.medzell.net/company/bl-lifesciences/"
+        },
+        {
+          id: "reuse",
+          image: "/Cardiology/reuse.png",
+          name: "Reusable Pressure Infusor",
+          category: "Infusion Device",
+          description: "Reusable cuff for IV pressure infusion.",
+          url: "https://www.icumed.com/products/hemodynamic-monitoring/blood-pressure-monitoring/pressure-infusors/medex-clear-cuff-pressure-bag/"
+        },
+        {
+          id: "hemostat",
+          image: "/Cardiology/hemostat.png",
+          name: "Haemostasis Valve",
+          category: "Valve",
+          description: "Prevents backflow during procedures.",
+          url: "https://meritoem.com/product-category/valves/hemostasis-valves/#:~:text=Merit%20Medical's%20hemostasis%20valves%20and,during%20interventional%20and%20diagnostic%20procedures."
+        },
+        {
+          id: "prelude",
+          image: "/Cardiology/prelude.png",
+          name: "Prelude Femoral Sheath",
+          category: "Access Sheath",
+          description: "Facilitates femoral vascular access.",
+          url: "https://www.merit.com/product/prelude-pro-sheath-introducers/"
+        }
+      ]
     },
-    {
-      id: 2,
-      image: "/Cardiology/PTCA.png",
-      text: "PTCA Kit",
-      url: "https://www.bllifesciences.com/products/interventional-systems/",
-    },
-    {
-      id: 3,
-      image: "/Cardiology/control.png",
-      text: "Control Syringe",
-      url: "https://www.bllifesciences.com/products/interventional-systems/",
-    },
-    {
-      id: 4,
-      image: "/Cardiology/needle.png",
-      text: "Needle",
-      url: "https://www.bllifesciences.com/products/interventional-systems/",
-    },
-    {
-      id: 5,
-      image: "/Cardiology/highpress.png",
-      text: "High Pressure Tubing",
-      url: "https://www.bllifesciences.com/products/interventional-systems/",
-    },
-    {
-      id: 6,
-      image: "/Cardiology/IVset.png",
-      text: "IV SET VENTED",
-      url: "https://bllifesciences.com/wp-content/uploads/2022/08/BL-Lifesciences.pdf",
-    },
-    {
-      id: 7,
-      image: "/Cardiology/inflation.png",
-      text: "Inflation Device",
-      url: "https://www.bllifesciences.com/wp-content/uploads/2022/06/24_IFU_Inflation_device.pdf",
-    },
-    {
-      id: 8,
-      image: "/Cardiology/manifold.png",
-      text: "Manifold",
-      url: "https://www.bllifesciences.com/products/interventional-systems/",
-    },
-    // {
-    //   id: 9,
-    //   image: "/Cardiology/jns.png",
-    //   text: "J & Straight",
-    //   url: "https://www.bllifesciences.com/products/interventional-systems/",
-    // },
-    {
-      id: 10,
-      image: "/Cardiology/guideware.png",
-      text: "Guide Ware",
-      url: "https://www.bllifesciences.com/products/interventional-systems/",
-    },
-    {
-      id: 11,
-      image: image4,
-      text: "BL Transducer Interface Cable",
-      url: cable
-    },
-    {
-      id: 12,
-      image: "/Cardiology/act.png",
-      text: "ACT Tube",
-      url: "https://www.helena.com/actalykemini2.htm",
-    },
-    {
-      id: 13,
-      image: "/Cardiology/pressmon.png",
-      text: "Pressure Monitoring Line",
-      url: "https://www.bllifesciences.com/products/invasive-pressure-system/",
-    },
-    {
-      id: 14,
-      image: "/Cardiology/flowreg.png",
-      text: "Flow Regulator",
-      url: "https://www.bllifesciences.com/products/interventional-systems/",
-    },
-    {
-      id: 15,
-      image: "/Cardiology/snare.png",
-      text: "Snare Kit",
-      url: "https://www.argonmedical.com/product/atrieve-vascular-snare-kit/",
-    },
-    {
-      id: 16,
-      image: "/Cardiology/infusion.png",
-      text: "Cuff clean pressure infusion bag",
-      url: "https://www.medzell.net/company/bl-lifesciences/",
-    },
-    {
-      id: 17,
-      image: "/Cardiology/reuse.png",
-      text: "Medex Reusable Pressure Infusor",
-      url: "https://www.icumed.com/products/hemodynamic-monitoring/blood-pressure-monitoring/pressure-infusors/medex-clear-cuff-pressure-bag/",
-    },
-    // {
-    //   id: 18,
-    //   image: "/Cardiology/mask.png",
-    //   text: "CPAP/BIPAP Mask",
-    //   url: "https://www.bllifesciences.com/",
-    // },
-    {
-      id: 19,
-      image: "/Cardiology/hemostat.png",
-      text: "Haemostasis valve",
-      url: "https://meritoem.com/product-category/valves/hemostasis-valves/#:~:text=Merit%20Medical's%20hemostasis%20valves%20and,during%20interventional%20and%20diagnostic%20procedures.",
-    },
-    {
-      id: 20,
-      image: "/Cardiology/prelude.png",
-      text: "Prelude Femoral Sheath",
-      url: "https://www.merit.com/product/prelude-pro-sheath-introducers/",
-    },
-  ];
+  IABP: {
+    logo: Insightra, 
+    name: "Insightra Medical",
+    bgColor: "bg-yellow-50",
+    accentColor: "yellow",
+    description: "Advanced intra-aortic balloon pump for hemodynamic support.",
+    website: "https://insightra.com/",
+    established: "2001",
+    headquarters: "USA",
+    products: [
+      {
+        id: "iabp",
+        image: "/Cardiology/IABP.png",
+        name: "IABP",
+        category: "Cardiovascular Support",
+        description: "Intra-aortic balloon pump system.",
+        url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf"
+      }
+    ]
+    }
+};
 
-  const cards1 = [
-    {
-      id: 1,
-      image: "/Cardiology/IABP.png",
-      text: "IABP",
-      url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf",
-    },
-  ];
+  const currentCompany = companies[activeCompany];
 
-  return (
+return (
     <>
-  
-      <div
-        className="min-h-screen overflow-x-hidden bg-cover bg-fixed bg-center"
-        style={{
-          backgroundImage: `url(${bg})`,
-          backgroundColor: "rgba(255, 255, 255, 0)",
-          backgroundBlendMode: "overlay",
-        }}
-      ><div className="relative  z-50">
-            <Navbar />
-          </div>
-      <div className=" sm:mt-40">
-<div className="grid grid-cols-1 sm:grid-cols-2 gap-20 p-12 items-center">
-              <h2 className="z-20 text-5xl sm:text-6xl font-bold text-left flex-1">
-                {name}
-              </h2>
-            {/* <img
-              //src={heart}
-              alt={name}
-              className="absolute -top-20 -right-4 opacity-70  transform -rotate-45 w-4/5 sm:w-3/5 lg:w-1/3 rounded-3xl shadow-2xl z-0"
-            /> */}
+      {/* <Navbar2/> */}
+      <div className="min-h-screen bg-gray-100 flex">
+        
+        {/* Mobile Menu Button */}
+      <button
+      onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+      className="md:hidden fixed top-2 left-4 -translate-y-1/2 z-50 bg-green-900 text-white p-3 rounded-lg shadow-lg"
+      >
+      {isSidebarOpen ? <X className="bg-transparent" /> : <ArrowRight className="w-6 h-6" />}
+        </button>
+
+
+        {/* Mobile Overlay */}
+        {isSidebarOpen && (
+          <div 
+            className="md:hidden fixed inset-0 bg-black bg-opacity-50 z-30"
+            onClick={() => setIsSidebarOpen(false)}
+          />
+        )}
+
+        {/* Sidebar */}
+        <div className={`
+          w-80 bg-white shadow-2xl flex flex-col
+          md:relative md:translate-x-0
+          fixed inset-y-0 left-0 z-40 
+          transform transition-transform duration-300 ease-in-out
+          ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
+        `}>
+          {/* Header */}
+          <div className="p-6 border-b bg-green-900 text-white ">
+            <h1 className="text-4xl font-bold pt-10 sm:pt-0 mb-2">CARDIOLOGY</h1>
+            <p className="text-gray-100 text-xl">Surgical Solutions</p>
           </div>
 
-          {/* Buttons for BL and Insightra */}
-            <div className="grid relative grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-8">
-            {buttonImages.map(({ src, alt, id }) => (
-             <button
-          key={id}
-           onClick={() => setSelected(id)}
-            className={`p-4 font-bold rounded-full text-black w-1/2 sm:w-3/4 lg:w-1/2 mx-14 h-14 border border-black flex justify-center items-center ${
-           selected === id ? "bg-gray-500 text-white border-gray-500" : "bg-white"
-         }` }
-           >
-                <img src={src} alt={alt} className="h-12  w-auto" />
-              </button>
+          {/* Company Navigation */}
+          <div className="flex-1 overflow-y-auto">
+            {Object.entries(companies).map(([key, company]) => (
+              <motion.button
+                key={key}
+                onClick={() => {
+                  setActiveCompany(key);
+                  setIsSidebarOpen(false); // Close sidebar on mobile after selection
+                }}
+                className={`w-full p-6 text-left border-b transition-all duration-300 ${
+                  activeCompany === key 
+                    ? `${company.bgColor} border-l-4 border-${company.accentColor}-500` 
+                    : 'hover:bg-gray-50'
+                }`}
+                whileHover={{ x: activeCompany === key ? 0 : 4 }}
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex-1">
+                    <h3 className={`font-bold text-xl mb-1 ${activeCompany === key ? `text-${company.accentColor}-700` : 'text-gray-900'}`}>
+                      {company.name}
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-2">{company.tagline}</p>
+                    <div className="flex items-center gap-4 text-xs text-gray-700">
+                      <span className="flex items-center text-lg gap-1">
+                        <Building className="w-3 h-3" />
+                        {company.headquarters}
+                      </span>
+                      <span className="flex items-center text-lg gap-1">
+                        <Package2 className="w-3 h-3" />
+                        {company.products.length} Products
+                      </span>
+                    </div>
+                  </div>
+                  <ChevronRight className={`w-5 h-5 transition-transform duration-300 ${
+                    activeCompany === key ? `rotate-90 text-${company.accentColor}-500` : 'text-gray-400'
+                  }`} />
+                </div>
+              </motion.button>
             ))}
           </div>
 
-          {/* Conditionally Rendered Content */}
-          <div className="flex z-50 flex-col justify-center items-center mt-6">
-            {selected === "BL" && (
-              <>
-                <img
-                  src={BL}
-                  alt="BL Lifesciences"
-                  className="h-40 w-auto m-10"
-                />
-                  <p className="text-center mt-4 p-7 sm:p-20 lg:p-30">
-                  Customized Cath lab Procedure Packs are available as per
-                  user-defined requirements and specifications.
-                </p>
-              </>
-            )}
-            {selected === "Insightra" && (
-              <>
-                <img
-                  src={Insightra}
-                  alt="Insightra"
-                  className="h-20 w-80 flex m-10"
-                />
-                 <p className="text-center mt-4 p-7 sm:p-20 lg:p-30">
-                  The Insightra Ultra 7Fr catheter allows common fluid-filled
-                  technology in a smaller catheter with no compromise on lumen
-                  size.
-                </p>
-              </>
-            )}
-          </div>
-
-          <div className="flex mt-10 text-4xl font-bold justify-center items-center">
-            Range of products
-          </div>
-
-          {/* Hover Cards (Conditionally Rendered) */}
-        <div className="container mx-auto my-10 px-4 py-4">
-                     <div className="grid grid-cols-1 sm:grid-cols-2 sm:mt-20 sm:mb-20 lg:grid-cols-3 my-20 gap-28 sm:m-4 sm:gap-20 m-10 lg:p-20">
-            {selected === "BL" &&
-              cards.map((card) => (
-               <a key={card.id} href={card.url} className="no-underline">
-                                    <motion.div
-                                      className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
-                                      whileHover={{ scale: 1.05 }}
-                                    >
-                                      <img
-                                        src={card.image}
-                                        alt={`Card ${card.text}`}
-                                        className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
-                                      />
-                                      <motion.div
-                                        className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
-                                        initial={{ opacity: 0 }}
-                                        whileHover={{ opacity: 1 }}
-                                      >
-                                        <span className="text-white text-3xl text-center font-bold">
-                                          {card.text}
-                                        </span>
-                                      </motion.div>
-                                    </motion.div>
-                                    <p className="flex justify-start text-gray-800 text-2xl p-6 text-center font-semibold">
-                                      {card.text}
-                                    </p>
-                                  </a>
-              ))}
-
-            {selected === "Insightra" &&
-              cards1.map((card) => (
-                 <a key={card.id} href={card.url} className="no-underline">
-                                      <motion.div
-                                        className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
-                                        whileHover={{ scale: 1.05 }}
-                                      >
-                                        <img
-                                          src={card.image}
-                                          alt={`Card ${card.text}`}
-                                          className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
-                                        />
-                                        <motion.div
-                                          className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
-                                          initial={{ opacity: 0 }}
-                                          whileHover={{ opacity: 1 }}
-                                        >
-                                          <span className="text-white text-3xl text-center font-bold">
-                                            {card.text}
-                                          </span>
-                                        </motion.div>
-                                      </motion.div>
-                                      <p className="flex justify-start text-gray-800 text-2xl p-6 text-center font-semibold">
-                                        {card.text}
-                                      </p>
-                                    </a>
-              ))}
+          {/* Quick Stats */}
+          <div className="p-6  bg-green-100 to-purple-500 border-t">
+            <div className="flex items-center justify-between text-xl text-gray-800">
+              <span>Est. {currentCompany.established}</span>
+              <motion.a
+                href={currentCompany.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`flex items-center gap-1 font-bold text-${currentCompany.accentColor}-800 hover:text-${currentCompany.accentColor}-700`}
+                whileHover={{ scale: 1.05 }}
+              >
+                <Globe className="w-4  h-4" />
+                Website
+              </motion.a>
+            </div>
           </div>
         </div>
-</div>
-        {/* conditionally rendered read more */}
-        <div className="flex justify-center mt-10 mb-14">
-        {selected === "BL" && (
-          <>
-            <a
-              href="https://www.bllifesciences.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-             className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out"  >
-              Read More
-            </a>
-          </>
-        )}
 
-        {selected === "Insightra" && (
-          <>
-            <a
-              href="https://insightra.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out"
+        {/* Main Content */}
+        <div className="flex-1 overflow-y-auto  md:mt-0">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeCompany}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.4 }}
+              className="p-4 md:p-8"
             >
-              Read More
-            </a>
-          </>
-        )}
+              {/* Company Header */}
+              <div className={`rounded-3xl p-4 md:p-8 mb-8 mt-12 bg-green-700 border border-${currentCompany.accentColor}-200`}>
+                <div className="flex flex-col lg:flex-row items-start gap-8">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className={`p-3 bg-${currentCompany.accentColor}-100 rounded-2xl`}>
+                        <Building className={`w-8 h-8 text-${currentCompany.accentColor}-600`} />
+                      </div>
+                      <div className="flex flex-col gap-1 w-full">
+                        <div className="flex flex-col md:flex-row items-start md:items-center justify-between w-full">
+                          <h2 className="text-3xl md:text-5xl font-bold text-white mb-2 md:mb-0">{currentCompany.name}</h2>
+                          <img
+                            src={currentCompany.logo}
+                            alt="Company Logo"
+                            className="h-20 w-32 md:h-30 md:w-50"
+                          />
+                        </div>
+                        <p className={`text-${currentCompany.accentColor}-600 font-medium`}>
+                          {currentCompany.tagline}
+                        </p>
+                      </div>
+                    </div>
+                    <p className="text-gray-100 text-lg md:text-2xl leading-relaxed">{currentCompany.description}</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Products Section */}
+              <div className="mb-8 pt-8 md:pt-20">
+                <div className="flex items-center gap-3 mb-8">
+                  <Package2 className={`w-8 h-8 text-${currentCompany.accentColor}-600`} />
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900">Product Portfolio</h3>
+                </div>
+
+                <div className="grid grid-cols-1 p-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-16">
+                  {currentCompany.products.map((product, index) => (
+                    <motion.div
+                      key={product.id}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                      onMouseEnter={() => setHoveredProduct(product.id)}
+                      onMouseLeave={() => setHoveredProduct(null)}
+                      className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300"
+                    >
+                      <div className="relative">
+                        <img
+                          src={product.image}
+                          alt={product.name}
+                          className="w-full h-60 md:h-80 object-cover transition-transform duration-500 hover:scale-110"
+                        />
+                        <div className={`absolute top-4 left-4 px-3 py-1 bg-${currentCompany.accentColor}-100 text-${currentCompany.accentColor}-700 rounded-full text-xs font-semibold`}>
+                          {product.category}
+                        </div>
+                        <AnimatePresence>
+                          {hoveredProduct === product.id && (
+                            <motion.div
+                              initial={{ opacity: 0 }}
+                              animate={{ opacity: 1 }}
+                              exit={{ opacity: 0 }}
+                              className="absolute inset-0 bg-black/50 flex items-center justify-center"
+                            >
+                              <motion.a
+                                href={product.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={`bg-green-500 hover:bg-${currentCompany.accentColor}-700 text-white px-6 py-3 rounded-full font-semibold flex items-center gap-2 transition-all duration-300`}
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                              >
+                                View Details <ExternalLink className="w-4 h-4" />
+                              </motion.a>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                      
+                      <div className="p-4 md:p-6">
+                        <h4 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">{product.name}</h4>
+                        <p className="text-gray-700 mb-4 text-lg md:text-xl">{product.description}</p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Call to Action */}
+              <div className="pt-8 md:pt-20">
+                <div className={`bg-${currentCompany.accentColor}-700 rounded-3xl p-6 md:p-8 text-gray-100`}>
+                  <div className="flex flex-col md:flex-row items-center justify-between">
+                    <div className="text-center md:text-left mb-4 md:mb-0">
+                      <h3 className="text-xl md:text-2xl font-bold mb-2">Explore More Solutions</h3>
+                      <p className="opacity-90">Discover the complete range of {currentCompany.name} products</p>
+                    </div>
+                    <motion.a
+                      href={currentCompany.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white bg-green-600 hover:bg-green-800 px-6 md:px-8 py-3 rounded-full font-semibold transition-all duration-300 flex items-center gap-2"
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      Visit Website <ExternalLink className="w-5 text-white h-5" />
+                    </motion.a>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+          <Footer/>
+        </div>
       </div>
-      </div>
-      <DepNav />
-      <Footer />
     </>
   );
 };
 
-export default function Cardiology() {
-  const buttonImages = [
-    { id: "BL", src: BL, alt: "BL Lifesciences" },
-    { id: "Insightra", src: Insightra, alt: "Insightra" },
-  ];
-  return <DepartmentPage name="CARDIOLOGY" buttonImages={buttonImages} />;
-}
+export default CardiologySidebarDesign;
