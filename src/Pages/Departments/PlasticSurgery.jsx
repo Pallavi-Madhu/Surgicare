@@ -4,308 +4,323 @@ import Footer from "../../Components/Footer";
 import DepNav from "../../Components/DepNav";
 import bg from "../../assets/depBG.png";
 import Baxter from "../../assets/Baxter.png";
-import Sunkromax from "../../assets/Syncromax.png";
+import Synkromax from "../../assets/Syncromax.png";
 import Surgiwear from "../../assets/Surgiwear.png";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from 'framer-motion';
+import { ExternalLink, Globe, Package2, Building, ChevronRight, Star, ShoppingCart,ArrowRight } from 'lucide-react';
 
+const PlasticSidebarDesign = () => {
+  const [activeCompany, setActiveCompany] = useState("Baxter");
+  const [hoveredProduct, setHoveredProduct] = useState(null);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-const DepartmentPage = ({ name, buttonImages }) => {
-  const [selected, setSelected] = useState("Baxter");
-
-  const cards1 = [
+  const companies = {
+    Baxter: {
+  logo: Baxter,
+  name: "Baxter Healthcare",
+  bgColor: "bg-green-50",
+  accentColor: "green",
+  description:
+    "Global leader in hemostatic solutions for surgery, offering advanced products that enhance surgical outcomes.",
+  website: "https://www.baxter.com/",
+  established: "1931",
+  headquarters: "USA",
+  products: [
     {
-      id: 1,
-      image: "/Ophthalmology/Tiseel.jpg", // Change this to the correct image
-      text: "Tiseel",
+      id: "tiseel",
+      image: "/Ophthalmology/Tiseel.jpg",
+      name: "Tiseel",
+      category: "Fibrin Sealant",
+      description: "Fibrin sealant for surgical tissue adhesion",
       url: "https://www.baxter.com/healthcare-professionals/surgical-care/tisseel-fibrin-sealant",
     },
-  ];
-  const cards2 = [
+  ],
+},
+
+ReachMedical: {
+  logo: Synkromax,
+  name: "Synkromax Biotech Pvt. Ltd.",
+  bgColor: "bg-blue-50",
+  accentColor: "blue",
+  description:
+    "Developer of synthetic vascular grafts and patches, supporting cardiovascular and surgical reconstruction.",
+  website: "https://www.synkromax.com/",
+  established: "2009", 
+  headquarters: "India",
+  products: [
     {
-      id: 1,
-      image: "/Plastic/bovine.png", // Change this to the correct image
-      text: "Bovine Patch",
+      id: "bovine-patch",
+      image: "/Plastic/bovine.png",
+      name: "Bovine Patch",
+      category: "Vascular Grafts",
+      description: "Biocompatible patch used for cardiovascular repair",
       url: "https://www.reachmedicalsystems.com/synkromax",
     },
-  ];
+  ],
+},
 
-  const cards3 = [
+Surgiwear: {
+  logo: Surgiwear, 
+  name: "Surgiwear",
+  bgColor: "bg-yellow-50",
+  accentColor: "yellow",
+  description:
+    "Innovative Indian manufacturer of surgical implants and wound care solutions.",
+  website: "https://surgiwear.co.in/",
+  established: "1982",
+  headquarters: "India",
+  products: [
     {
-      id: 1,
-      image: "/Plastic/gplast.png", // Change this to the correct image
-      text: "G Plast",
+      id: "g-plast",
+      image: "/Plastic/gplast.png",
+      name: "G Plast",
+      category: "Wound Dressing",
+      description: "Plastic dressing used post-surgery or trauma",
       url: "https://surgiwear.co.in/?product_cat=0&s=g+plast&post_type=product",
     },
     {
-      id: 2,
-      image: "/Plastic/gdress.png", // Change this to the correct image
-      text: "G Dress",
+      id: "g-dress",
+      image: "/Plastic/gdress.png",
+      name: "G Dress",
+      category: "Adhesive Dressing",
+      description: "Transparent adhesive dressing with absorbent pad",
       url: "https://surgiwear.co.in/product/owntone-g-dress-transparent-adhesive-dressing-with-pad/",
     },
     {
-      id: 3,
-      image: "/Plastic/burnmesh.png", // Change this to the correct image
-      text: "Burn Mesh",
+      id: "burn-mesh",
+      image: "/Plastic/burnmesh.png",
+      name: "Burn Mesh",
+      category: "Burn Care",
+      description: "Mesh dressing designed for burn wound healing",
       url: "https://surgiwear.co.in/?product_cat=0&s=burn+mesh&post_type=product",
     },
-  ];
+  ],
 
-  return (
+    }
+  };
+
+  const currentCompany = companies[activeCompany];
+
+return (
     <>
-      <div
-        className="min-h-screen overflow-x-hidden bg-cover bg-fixed bg-center"
-        style={{
-          backgroundImage: `url(${bg})`,
-          backgroundColor: "rgba(255, 255, 255, 0)",
-          backgroundBlendMode: "overlay",
-        }}
-      >
-        <div className="relative  z-50">
-          {" "}
-          <Navbar />
-        </div>
-       <div className=" sm:mt-40">
-<div className="grid grid-cols-1 sm:grid-cols-2 gap-20 p-12 items-center">
-              <h2 className="z-20 text-5xl sm:text-6xl font-bold text-left flex-1">
-                {name}
-              </h2>
-            {/* <img
-              src={heart}
-              alt={name}
-              className="absolute -top-20 -right-4 opacity-70  transform -rotate-45 w-4/5 sm:w-3/5 lg:w-1/3 rounded-3xl shadow-2xl z-0"
-            /> */}
+      {/* <Navbar2/> */}
+      <div className="min-h-screen bg-gray-100 flex">
+        
+        {/* Mobile Menu Button */}
+  <button
+  onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+  className="md:hidden fixed top-2 left-4 -translate-y-1/2 z-50 bg-green-900 text-white p-3 rounded-lg shadow-lg"
+>
+  {isSidebarOpen ? <X className="bg-transparent" /> : <ArrowRight className="w-6 h-6" />}
+</button>
+
+
+        {/* Mobile Overlay */}
+        {isSidebarOpen && (
+          <div 
+            className="md:hidden fixed inset-0 bg-black bg-opacity-50 z-30"
+            onClick={() => setIsSidebarOpen(false)}
+          />
+        )}
+
+        {/* Sidebar */}
+        <div className={`
+          w-80 bg-white shadow-2xl flex flex-col
+          md:relative md:translate-x-0
+          fixed inset-y-0 left-0 z-40 
+          transform transition-transform duration-300 ease-in-out
+          ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
+        `}>
+          {/* Header */}
+          <div className="p-6 border-b bg-green-900 text-white ">
+            <h1 className="text-4xl font-bold pt-10 sm:pt-0 mb-2">PLASTIC SURGERY</h1>
+            <p className="text-gray-100 text-xl">Surgical Solutions</p>
           </div>
 
-          {/* Buttons for BL and Insightra */}
-         <div className="grid relative  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-6">
-            {buttonImages.map(({ src, alt, id }) => (
-             <button
-          key={id}
-           onClick={() => setSelected(id)}
-            className={`p-2 font-bold rounded-3xl text-black w-1/2 sm:w-3/4 lg:w-1/2 mx-14 h-14 border border-black flex justify-center items-center ${
-           selected === id ? "bg-gray-500 text-white border-gray-500" : "bg-white"
-         }` }
-           >
-                <img src={src} alt={alt} className="h-12 w-auto" />
-              </button>
+          {/* Company Navigation */}
+          <div className="flex-1 overflow-y-auto">
+            {Object.entries(companies).map(([key, company]) => (
+              <motion.button
+                key={key}
+                onClick={() => {
+                  setActiveCompany(key);
+                  setIsSidebarOpen(false); // Close sidebar on mobile after selection
+                }}
+                className={`w-full p-6 text-left border-b transition-all duration-300 ${
+                  activeCompany === key 
+                    ? `${company.bgColor} border-l-4 border-${company.accentColor}-500` 
+                    : 'hover:bg-gray-50'
+                }`}
+                whileHover={{ x: activeCompany === key ? 0 : 4 }}
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex-1">
+                    <h3 className={`font-bold text-xl mb-1 ${activeCompany === key ? `text-${company.accentColor}-700` : 'text-gray-900'}`}>
+                      {company.name}
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-2">{company.tagline}</p>
+                    <div className="flex items-center gap-4 text-xs text-gray-700">
+                      <span className="flex items-center text-lg gap-1">
+                        <Building className="w-3 h-3" />
+                        {company.headquarters}
+                      </span>
+                      <span className="flex items-center text-lg gap-1">
+                        <Package2 className="w-3 h-3" />
+                        {company.products.length} Products
+                      </span>
+                    </div>
+                  </div>
+                  <ChevronRight className={`w-5 h-5 transition-transform duration-300 ${
+                    activeCompany === key ? `rotate-90 text-${company.accentColor}-500` : 'text-gray-400'
+                  }`} />
+                </div>
+              </motion.button>
             ))}
           </div>
 
-          {/* Conditionally Rendered Content */}
-          <div className="flex z-50 flex-col justify-center items-center mt-6">
-            {selected === "Baxter" && (
-              <>
-                <img
-                  src={Baxter}
-                  alt="BL Lifesciences"
-                  className="h-20 w-auto m-10"
-                />
-                <p className="text-center w-3/4 mt-4">
-                  Baxter TISSEEL is a fibrin sealant used in surgical procedures
-                  to control bleeding and support wound healing. It mimics the
-                  body’s natural clotting process by combining fibrinogen and
-                  thrombin to form a stable fibrin clot.
-                </p>
-              </>
-            )}
-            {selected === "Synkromax" && (
-              <>
-                <img
-                  src={Sunkromax}
-                  alt="Synkromax"
-                  className="h-20 w-80 flex m-10"
-                />
-                <p className="text-center w-3/4 mt-4">
-                  SynkroMax's Synkroscaff is a tissue-engineered, decellularized
-                  bovine pericardial patch designed for surgical anatomical
-                  repairs.
-                </p>
-              </>
-            )}
-            {selected === "Surgiwear" && (
-              <>
-                <img
-                  src={Surgiwear}
-                  alt="Surgiwear"
-                  className="h-20 w-80 flex m-10"
-                />
-                <p className="text-center w-3/4 mt-4">
-                  Surgiwear's G-Dress is a sterilized adhesive bandage made from
-                  SMS non-woven fabric, featuring a fluid-resistant middle layer
-                  that allows for regular activities like bathing without
-                  compromising the dressing. <br />
-                  G-Plast is Surgiwear's surgical tape, designed to secure
-                  dressings and medical devices to the skin, providing reliable
-                  adhesion while being gentle on the skin. <br />
-                  Finally Burnmesh by Surgiwear is a paraffin gauze dressing
-                  designed to protect burn wounds, minimize pain, and prevent
-                  adherence to the wound.
-                </p>
-              </>
-            )}
-          </div>
-
-          <div className="flex mt-10 text-4xl font-bold justify-center items-center">
-            Range of products
-          </div>
-
-          {/* Hover Cards (Conditionally Rendered) */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 my-20 gap-28 sm:m-4 sm:gap-20 m-10 lg:p-20">
-            {selected === "Baxter" &&
-              cards1.map((card) => (
-                <a
-                  key={card.id}
-                  href={card.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="no-underline"
-                >
-                  <motion.div
-                    className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    <img
-                      src={card.image}
-                      alt={`Card ${card.text}`}
-                      className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
-                    />
-                    <motion.div
-                      className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
-                      initial={{ opacity: 0 }}
-                      whileHover={{ opacity: 1 }}
-                    >
-                      <span className="text-white text-3xl text-center font-bold">
-                        {card.text}
-                      </span>
-                    </motion.div>
-                  </motion.div>
-                  <p className="flex justify-center text-gray-800 text-2xl p-6 text-center font-semibold">
-                    {card.text}
-                  </p>
-                </a>
-              ))}
-
-            {selected === "Synkromax" &&
-              cards2.map((card) => (
-                <a
-                  key={card.id}
-                  href={card.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="no-underline"
-                >
-                  <motion.div
-                    className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    <img
-                      src={card.image}
-                      alt={`Card ${card.text}`}
-                      className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
-                    />
-                    <motion.div
-                      className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
-                      initial={{ opacity: 0 }}
-                      whileHover={{ opacity: 1 }}
-                    >
-                      <span className="text-white text-3xl text-center font-bold">
-                        {card.text}
-                      </span>
-                    </motion.div>
-                  </motion.div>
-                  <p className="flex justify-center text-gray-800 text-2xl p-6 text-center font-semibold">
-                    {card.text}
-                  </p>
-                </a>
-              ))}
-
-            {selected === "Surgiwear" &&
-              cards3.map((card) => (
-                <a
-                  key={card.id}
-                  href={card.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="no-underline"
-                >
-                  <motion.div
-                    className="relative group h-60 w-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg transition-transform duration-300"
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    <img
-                      src={card.image}
-                      alt={`Card ${card.text}`}
-                      className="w-full h-full object-cover transition duration-300 transform group-hover:brightness-50"
-                    />
-                    <motion.div
-                      className="absolute inset-0 flex items-center justify-center bg-blue-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition duration-300"
-                      initial={{ opacity: 0 }}
-                      whileHover={{ opacity: 1 }}
-                    >
-                      <span className="text-white text-3xl text-center font-bold">
-                        {card.text}
-                      </span>
-                    </motion.div>
-                  </motion.div>
-                  <p className="flex justify-center text-gray-800 text-2xl p-6 text-center font-semibold">
-                    {card.text}
-                  </p>
-                </a>
-              ))}
+          {/* Quick Stats */}
+          <div className="p-6  bg-green-100 to-purple-500 border-t">
+            <div className="flex items-center justify-between text-xl text-gray-800">
+              <span>Est. {currentCompany.established}</span>
+              <motion.a
+                href={currentCompany.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`flex items-center gap-1 font-bold text-${currentCompany.accentColor}-800 hover:text-${currentCompany.accentColor}-700`}
+                whileHover={{ scale: 1.05 }}
+              >
+                <Globe className="w-4  h-4" />
+                Website
+              </motion.a>
+            </div>
           </div>
         </div>
+
+        {/* Main Content */}
+        <div className="flex-1 overflow-y-auto  md:mt-0">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeCompany}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.4 }}
+              className="p-4 md:p-8"
+            >
+              {/* Company Header */}
+              <div className={`rounded-3xl p-4 md:p-8 mb-8 mt-12 bg-green-700 border border-${currentCompany.accentColor}-200`}>
+                <div className="flex flex-col lg:flex-row items-start gap-8">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className={`p-3 bg-${currentCompany.accentColor}-100 rounded-2xl`}>
+                        <Building className={`w-8 h-8 text-${currentCompany.accentColor}-600`} />
+                      </div>
+                      <div className="flex flex-col gap-1 w-full">
+                        <div className="flex flex-col md:flex-row items-start md:items-center justify-between w-full">
+                          <h2 className="text-3xl md:text-5xl font-bold text-white mb-2 md:mb-0">{currentCompany.name}</h2>
+                          <img
+                            src={currentCompany.logo}
+                            alt="Company Logo"
+                            className="h-20 w-32 md:h-30 md:w-50"
+                          />
+                        </div>
+                        <p className={`text-${currentCompany.accentColor}-600 font-medium`}>
+                          {currentCompany.tagline}
+                        </p>
+                      </div>
+                    </div>
+                    <p className="text-gray-100 text-lg md:text-2xl leading-relaxed">{currentCompany.description}</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Products Section */}
+              <div className="mb-8 pt-8 md:pt-20">
+                <div className="flex items-center gap-3 mb-8">
+                  <Package2 className={`w-8 h-8 text-${currentCompany.accentColor}-600`} />
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900">Product Portfolio</h3>
+                </div>
+
+                <div className="grid grid-cols-1 p-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-16">
+                  {currentCompany.products.map((product, index) => (
+                    <motion.div
+                      key={product.id}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                      onMouseEnter={() => setHoveredProduct(product.id)}
+                      onMouseLeave={() => setHoveredProduct(null)}
+                      className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300"
+                    >
+                      <div className="relative">
+                        <img
+                          src={product.image}
+                          alt={product.name}
+                          className="w-full h-60 md:h-80 object-cover transition-transform duration-500 hover:scale-110"
+                        />
+                        <div className={`absolute top-4 left-4 px-3 py-1 bg-${currentCompany.accentColor}-100 text-${currentCompany.accentColor}-700 rounded-full text-xs font-semibold`}>
+                          {product.category}
+                        </div>
+                        <AnimatePresence>
+                          {hoveredProduct === product.id && (
+                            <motion.div
+                              initial={{ opacity: 0 }}
+                              animate={{ opacity: 1 }}
+                              exit={{ opacity: 0 }}
+                              className="absolute inset-0 bg-black/50 flex items-center justify-center"
+                            >
+                              <motion.a
+                                href={product.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={`bg-green-500 hover:bg-${currentCompany.accentColor}-700 text-white px-6 py-3 rounded-full font-semibold flex items-center gap-2 transition-all duration-300`}
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                              >
+                                View Details <ExternalLink className="w-4 h-4" />
+                              </motion.a>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                      
+                      <div className="p-4 md:p-6">
+                        <h4 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">{product.name}</h4>
+                        <p className="text-gray-700 mb-4 text-lg md:text-xl">{product.description}</p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Call to Action */}
+              <div className="pt-8 md:pt-20">
+                <div className={`bg-${currentCompany.accentColor}-700 rounded-3xl p-6 md:p-8 text-gray-100`}>
+                  <div className="flex flex-col md:flex-row items-center justify-between">
+                    <div className="text-center md:text-left mb-4 md:mb-0">
+                      <h3 className="text-xl md:text-2xl font-bold mb-2">Explore More Solutions</h3>
+                      <p className="opacity-90">Discover the complete range of {currentCompany.name} products</p>
+                    </div>
+                    <motion.a
+                      href={currentCompany.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white bg-green-600 hover:bg-green-800 px-6 md:px-8 py-3 rounded-full font-semibold transition-all duration-300 flex items-center gap-2"
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      Visit Website <ExternalLink className="w-5 text-white h-5" />
+                    </motion.a>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+          <Footer/>
+        </div>
       </div>
-      <div className="flex justify-center mt-10 mb-14">
-        
-      
-      {selected === "Baxter" && (
-            <>
-              <a
-                href="https://www.baxter.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out"
-              >
-               Read More
-              </a>
-            </>
-          )}
-          {selected === "Synkromax" && (
-            <>
-              <a
-                href="http://www.synkromax.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out"
-              >
-               Read More
-              </a>
-            </>
-          )}
-          {selected === "Surgiwear" && (
-            <>
-              <a
-                href="https://surgiwear.co.in/"
-                target="_blank"
-                rel="noopener noreferrer"
-className="hover:bg-blue-900 hover:text-white text-blue-900 py-1 px-8 mb-14 rounded-3xl border font-bold hover:border-white border-blue-900 transition-all duration-300 ease-in-out"
-              >
-               Read More
-              </a>
-            </>
-          )}
-          </div>
-      <DepNav />
-      <Footer />
     </>
   );
 };
 
-export default function PlasticSurgery() {
-  const buttonImages = [
-    { id: "Baxter", src: Baxter, alt: "Baxter" },
-    { id: "Synkromax", src: Sunkromax, alt: "Synkromax" },
-    { id: "Surgiwear", src: Surgiwear, alt: "Surgiwear" },
-  ];
-  return <DepartmentPage name="PLASTIC SURGERY" buttonImages={buttonImages} />;
-}
+export default PlasticSidebarDesign;
+
