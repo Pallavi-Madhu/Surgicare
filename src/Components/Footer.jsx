@@ -4,7 +4,7 @@ import { IoCallOutline } from "react-icons/io5";
 
 const Footer = () => {
   return (
-    <footer className={`bg-gray-600`}>
+    <footer className={`bg-gray-700`}>
       <div className="max-w-7xl mx-auto px-4 py-12">
         {/* Main Footer Content */}
         <div className="text-center mb-12">

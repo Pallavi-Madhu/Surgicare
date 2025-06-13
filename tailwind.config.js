@@ -8,12 +8,11 @@ export default {
 
   theme: {
     extend: {
-      colors: {
-        primary: "#213555", // Custom primary color
-        secondary: "#3E5879", // Custom secondary color (fixed with '#')
-        gradientPink: "#ffb3d9", // Lighter pink
-        gradientBlue: "#b3e0ff", // Lighter blue
-        gradientLavender: "#c2c2f0", // Lighter lavender
+ colors: {
+        rose: colors.rose,
+        emerald: colors.emerald,
+        amber: colors.amber,
+        primary: '#ff0000',
       },
       animation: {
         gradientBackground: "gradientAnimation 10s infinite", // Gradient animation

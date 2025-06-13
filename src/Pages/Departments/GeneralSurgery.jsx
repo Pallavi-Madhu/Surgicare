@@ -215,7 +215,7 @@ const GenralSurgerySidebarDesign = () => {
       <div className="w-80 bg-white shadow-2xl flex flex-col">
         {/* Header */}
         
-        <div className="p-6 border-b bg-gradient-to-br from-slate-800 to-slate-900 text-black bg-blue-200">
+        <div className="p-6 border-b bg-gradient-to-br from-yellow-800 to-slate-900 text-black bg-indigo-200">
           <h1 className="text-2xl font-bold mb-2">GENERAL SURGERY</h1>
           <p className="text-slate-300 text-sm">Surgical Solutions</p>
         </div>

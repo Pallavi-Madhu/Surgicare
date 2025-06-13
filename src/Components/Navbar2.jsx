@@ -65,7 +65,7 @@ const Navbar = () => {
 
   return (
     <motion.nav 
-      className="fixed top-0 w-full z-50"
+      className="fixed top-0 w-full z-30"
       initial={false}
       animate={{
         y: isVisible ? 0 : -100,
@@ -228,7 +228,7 @@ const Navbar = () => {
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div 
-              className="lg:hidden absolute top-full left-0 w-full bg-white shadow-2xl border-b border-gray-200/50"
+              className="lg:hidden absolute top-full  left-0 w-full bg-white shadow-2xl border-b border-gray-200/50"
               variants={menuVariants}
               initial="hidden"
               animate="visible"
@@ -238,7 +238,7 @@ const Navbar = () => {
               <div className="p-4 space-y-2">
                    <a
                    href="/"
-                   className="block text-gray-700 hover:text-blue-700 font-bold text-lg p-3 transition duration-200 hover:shadow-lg"
+                   className="block text-gray-700  hover:text-blue-700 font-bold text-lg p-3 transition duration-200 hover:shadow-lg"
                  >
                    Home
                  </a>
