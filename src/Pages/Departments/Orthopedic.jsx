@@ -180,7 +180,7 @@ return (
           ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
         `}>
           {/* Header */}
-          <div className="p-6 border-b bg-green-900 text-white ">
+          <div className="p-6 border-b bg-gradient-to-br from-green-900 via-green-500 to-green-900 text-white ">
             <h1 className="text-4xl font-bold pt-10 sm:pt-0 mb-2">ORTHOPEDIC</h1>
             <p className="text-gray-100 text-xl">Surgical Solutions</p>
           </div>
@@ -196,7 +196,7 @@ return (
                 }}
                 className={`w-full p-6 text-left border-b transition-all duration-300 ${
                   activeCompany === key 
-                    ? `${company.bgColor} border-l-4 border-${company.accentColor}-500` 
+                    ? `bg-green-50 border-l-4 border-${company.accentColor}-500` 
                     : 'hover:bg-gray-50'
                 }`}
                 whileHover={{ x: activeCompany === key ? 0 : 4 }}
@@ -256,7 +256,7 @@ return (
               className="p-4 md:p-8"
             >
               {/* Company Header */}
-              <div className={`rounded-3xl p-4 md:p-8 mb-8 mt-12 bg-green-700 border border-${currentCompany.accentColor}-200`}>
+              <div className={`rounded-3xl p-4 md:p-8 mb-8 mt-16 bg-green-800 border border-${currentCompany.accentColor}-200`}>
                 <div className="flex flex-col lg:flex-row items-start gap-8">
                   <div className="flex-1">
                     <div className="flex items-center gap-4 mb-6">
@@ -269,7 +269,7 @@ return (
                           <img
                             src={currentCompany.logo}
                             alt="Company Logo"
-                            className="h-20 w-32 md:h-30 md:w-50"
+                            className="h-20 w-auto md:h-30 md:w-50"
                           />
                         </div>
                         <p className={`text-${currentCompany.accentColor}-600 font-medium`}>

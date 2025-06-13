@@ -187,7 +187,7 @@ const MedicalEquipmentPage = () => {
     <div className="min-h-screen  bg-green-50 pb-48">
       
       <motion.div 
-        className="bg-white shadow-lg bg-green-700"
+        className="bg-white shadow-lg bg-gradient-to-r from-green-900 via-green-500 to-green-900"
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6 }}
@@ -217,7 +217,7 @@ const MedicalEquipmentPage = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.6 }}
           >
-            <div className="inline-flex items-center space-x-2 bg-blue-100 text-green-900 px-4 py-2 rounded-full">
+            <div className="inline-flex items-center space-x-2 bg-green-100 text-green-900 px-4 py-2 rounded-full">
               <span className="font-semibold">Click any card to explore</span>
               <ChevronRight className="w-4 h-4" />
             </div>
