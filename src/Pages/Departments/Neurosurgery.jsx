@@ -714,4 +714,3 @@ return (
 
 export default NeuroSidebarDesign;
 
-
