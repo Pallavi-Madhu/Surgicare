@@ -1,7 +1,6 @@
-import React, { useState,useEffect } from "react";
-import Navbar from "../../Components/Navbar";
+import React, { useState,useEffect   } from "react";
+import Navbar2 from "../../Components/Navbar2";
 import Footer from "../../Components/Footer";
-import bg from "../../assets/depBG.png";
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Globe, Package2, Building, ChevronRight, Star, ShoppingCart,ArrowRight } from 'lucide-react';
@@ -89,8 +88,8 @@ const companies = {
   BL: {
   logo: BL,
   name: "BL Lifesciences",
-  bgColor: "bg-purple-50",
-  accentColor: "purple",
+  bgColor: "bg-green-50",
+  accentColor: "green",
   description: "A provider of innovative medical devices across anesthesia, cardiology, and critical care domains.",
   website: "https://www.bllifesciences.com/",
   established: "1996",
@@ -173,8 +172,8 @@ const companies = {
 Venticare: {
   logo: Venticare,
   name: "Venticare Medical Inc.",
-  bgColor: "bg-blue-50",
-  accentColor: "blue",
+  bgColor: "bg-green-50",
+  accentColor: "green",
   description: "Specialized in respiratory care and critical care products.",
   website: "https://venticaremedicalinc.com/",
   established: "Not specified",
@@ -221,8 +220,8 @@ CareEssentials: {
 Aero: {
   logo: Aero,
   name: "AERO Healthcare",
-  bgColor: "bg-sky-50",
-  accentColor: "sky",
+  bgColor: "bg-green-50",
+  accentColor: "green",
   description: "Aero specializes in respiratory and anesthesia circuits for both adults and pediatrics.",
   website: "https://aerohealthcare.com/us/",
   established: "N/A",
@@ -310,8 +309,8 @@ Aero: {
 Portex: {
   logo: Portex,
   name: "Portex",
-  bgColor: "bg-indigo-50",
-  accentColor: "indigo",
+  bgColor: "bg-green-50",
+  accentColor: "green",
   description: "Portex is known for advanced airway management products used in anesthesia and critical care.",
   website: "https://www.smiths-medical.com/products/airway-management",
   established:"N/A",
@@ -330,8 +329,8 @@ Portex: {
 Rusch: {
   logo: Rusch,
   name: "Rusch",
-  bgColor: "bg-cyan-50",
-  accentColor: "cyan",
+  bgColor: "bg-green-50",
+  accentColor: "green",
   description: "Rüsch, a Teleflex brand, offers specialized solutions in airway management and intubation.",
   website: "https://www.teleflex.com/emea/en/product-areas/anaesthesia/",
   established:"N/A",
@@ -358,8 +357,8 @@ Rusch: {
 Medisafe: {
   logo: Medisafe,
   name: "Medisafe",
-  bgColor: "bg-teal-50",
-  accentColor: "teal",
+  bgColor: "bg-green-50",
+  accentColor: "green",
   description: "Medisafe Resuscitators provides emergency medical tools including laryngoscopes and ventilators.",
   website: "https://www.medisaferesuscitators.com/",
   established:"N/A",
@@ -378,8 +377,8 @@ Medisafe: {
 Suretech: {
   logo: Suretech,
   name: "SURETECH MEDICAL INC.",
-  bgColor: "bg-rose-50",
-  accentColor: "rose",
+  bgColor: "bg-green-50",
+  accentColor: "green",
   description: "Suretech Medical offers a comprehensive range of cardiology and radiology access devices including introducer needles and sheaths.",
   website: "https://www.suretechmedical.com/",
   established:"1994",
@@ -422,8 +421,8 @@ Suretech: {
 Meditech: {
   logo: Meditec,
   name: "Meditech",
-  bgColor: "bg-violet-50",
-  accentColor: "violet",
+  bgColor: "bg-green-50",
+  accentColor: "green",
   description: "Meditech specializes in advanced airway management tools including bougies, introducers, and stylets for all age groups.",
   website: "https://www.meditechsystems.co.uk/",
   established:"N/A",
@@ -563,7 +562,7 @@ Meditech: {
         `}>
           {/* Header */}
           <div className="p-4 border-b bg-gradient-to-br from-green-900 via-green-500 to-green-900 text-white ">
-            <h1 className="text-4xl font-bold pt-10 sm:pt-0 mb-2"> ANESTHESIOLOGY</h1>
+            <h1 className="text-3xl font-bold pt-10 sm:pt-0 mb-2"> ANESTHESIOLOGY</h1>
             <p className="text-gray-100 text-xl">Surgical Solutions</p>
           </div>
 
@@ -628,7 +627,7 @@ Meditech: {
 
         {/* Main Content */}
         <div className="flex-1 overflow-y-auto  md:mt-0">
-            {/* <Navbar2/> */}
+            <Navbar2/>
           <AnimatePresence mode="wait">
             <motion.div
               key={activeCompany}
