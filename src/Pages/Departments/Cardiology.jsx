@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Navbar2 from "../../Components/Navbar2";
 import Footer from "../../Components/Footer";
 import BL from "../../assets/BLLifsciences.png";
@@ -10,6 +10,7 @@ import image4 from "../../assets/Anastesiology/cables.png";
 import cable from "../../assets/Cablecatalogue.pdf";
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Globe, Package2, Building, ChevronRight, Star, ShoppingCart, ArrowRight } from 'lucide-react';
+import Loading from "../../Components/Loading";
  
 
 
@@ -17,6 +18,18 @@ const CardiologySidebarDesign = () => {
   const [activeCompany, setActiveCompany] = useState("BL");
   const [hoveredProduct, setHoveredProduct] = useState(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const [loading, setLoading] = useState(true);
+  
+       useEffect(() => {
+          setTimeout(() => setLoading(false), 4000); // 4 second delay
+        }, []);
+        
+  if(loading) {
+    return(
+    <Loading department = "Cardiology"/>
+    )
+  }
 
   const companies = {
    BL: {

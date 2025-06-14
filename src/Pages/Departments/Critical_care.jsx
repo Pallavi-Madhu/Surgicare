@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Navbar2 from "../../Components/Navbar2";
 import Footer from "../../Components/Footer";
 import DepNav from "../../Components/DepNav";
@@ -24,12 +24,25 @@ import image9 from "../../assets/Anastesiology/Lungexcerciser.jpg";
 import chestdrain from "../../assets/Pulmo/chestdrain.png"
 import ChestDrain from "../../assets/ChestDrain.pdf";
 import cable from "../../assets/Cablecatalogue.pdf";
+import Loading from "../../Components/Loading";
 
 
 const CriticalSidebarDesign = () => {
   const [activeCompany, setActiveCompany] = useState("BL");
   const [hoveredProduct, setHoveredProduct] = useState(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const [loading, setLoading] = useState(true);
+  
+       useEffect(() => {
+          setTimeout(() => setLoading(false), 4000); // 4 second delay
+        }, []);
+        
+  if(loading) {
+    return(
+    <Loading department = "Critical Care"/>
+    )
+  }
 
   const companies = {
     BL : {

@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
 import Navbar2 from "../../Components/Navbar2";
 import Footer from "../../Components/Footer";
 import DepNav from "../../Components/DepNav";
+import Loading from "../../Components/Loading";
 //import { motion } from "framer-motion";
 
 //import company logo
@@ -125,6 +126,18 @@ const CardiacSidebarDesign = () => {
   const [activeCompany, setActiveCompany] = useState("Euroset");
   const [hoveredProduct, setHoveredProduct] = useState(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const [loading, setLoading] = useState(true);
+  
+       useEffect(() => {
+          setTimeout(() => setLoading(false), 4000); // 4 second delay
+        }, []);
+        
+  if(loading) {
+    return(
+    <Loading department = "Cardiac Surgery"/>
+    )
+  }
 
   const companies = {
       Euroset: {
