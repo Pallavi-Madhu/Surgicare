@@ -74,9 +74,9 @@ const MapComponent = ({ coordinates, markericon, onClick }) => {
   };
 
   return (
-    <div className="p-9 w-full flex flex-col sm:flex-row justify-center items-center gap-8">
+    <div className="p-9 w-full flex flex-col sm:flex-row justify-center items-center gap-5">
       <div
-        style={{ width: "600px", height: "300px" }} // Retaining the fixed width and height
+        style={{ width: "400px", height: "300px" }} // Retaining the fixed width and height
         className="rounded-lg  shadow-lg overflow-hidden border border-gray-300 relative"
       >
         <div
@@ -150,7 +150,7 @@ const TwoMaps = () => {
 
   const handleMapClickErnakulam = (e) => {
     e.stopPropagation();
-    const gmapurl = "https://www.google.com/maps?q=76.286105,10.060137";
+    const gmapurl = "https://www.google.com/maps?q=10.060137,76.286105";
     window.open(gmapurl, "_blank");
   };
 
