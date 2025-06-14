@@ -108,10 +108,10 @@ const Navbar = () => {
         }`}
       />
 
-      <div className="max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+      <div className="max-w-7xl  px-4 sm:px-6 lg:px-8">
+        <div className="flex  lg:flex-col lg:ml-80 lg:mx-20 sm:ml-0 sm:mx-0 justify-between items-center h-20">
           {/* Logo Section */}
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center  space-x-3">
             <div className="w-20 h-12 transition-colors duration-200 relative group bg-gradient-to-br from-indigo-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
 
               <img src={logo} alt="SurgiCare Logo" className="h-14 w-auto" />
