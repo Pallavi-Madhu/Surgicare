@@ -11,7 +11,7 @@ import cocoon from "../../assets/Cocoon.png";
 import hico from "../../assets/Hico.png";
 //import { motion } from "framer-motion";
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Globe, Package2, Building, ChevronRight, Star, ShoppingCart, ArrowRight } from 'lucide-react';
+import { ExternalLink, Globe, Package2, Building, ChevronRight, Star, ShoppingCart, ArrowRight,X } from 'lucide-react';
  
 import image1 from "../../assets/Anastesiology/pressurelines.png";
 import image2 from "../../assets/Anastesiology/presseurtransducer.jpg";
@@ -272,7 +272,7 @@ const CriticalSidebarDesign = () => {
 
 return (
     <>
-    
+     
       <div className="min-h-screen  bg-gray-100 flex">
         
         {/* Mobile Menu Button */}
@@ -382,7 +382,8 @@ return (
 
         {/* Main Content */}
         <div className="flex-1 overflow-y-auto  md:mt-0">
-            <Navbar2/>
+           <Navbar2/>
+          
           <AnimatePresence mode="wait">
             <motion.div
               key={activeCompany}

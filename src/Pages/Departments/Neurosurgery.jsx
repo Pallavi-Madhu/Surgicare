@@ -1,5 +1,5 @@
-import React, { useState ,useEffect} from "react";
-import Navbar from "../../Components/Navbar";
+import React, { useState,useEffect } from "react";
+import Navbar2 from "../../Components/Navbar2";
 import Footer from "../../Components/Footer";
 import departments from "../../Data/departments";
 import DepNav from "../../Components/DepNav";
@@ -14,8 +14,6 @@ import Syncromax from "../../assets/Syncromax.png";
 import Cocoon from "../../assets/Cocoon.png";
 import BL from "../../assets/BLLifsciences.png";
 import Surgiwear from "../../assets/Surgiwear.png";
-
-import bg from "../../assets/depBG.png"; 
 
 //product images-Mizuho
 import clips from "../../assets/Neuro/Mizuho/image.png";
@@ -92,8 +90,8 @@ const NeuroSidebarDesign = () => {
    Mizuho: {
   logo: Mizuho, 
   name: "Mizuho",
-  bgColor: "bg-blue-50",
-  accentColor: "blue",
+  bgColor: "bg-green-50",
+  accentColor: "green",
   description: "Leading provider of advanced neurosurgical instruments and vascular systems.",
   website: "http://www.mizuhomedical.co.jp/",
   established: "1919",
@@ -128,8 +126,8 @@ const NeuroSidebarDesign = () => {
 Kinamed: {
   logo: Kinamed,
   name: "Kinamed",
-  bgColor: "bg-gray-50",
-  accentColor: "gray",
+  bgColor: "bg-green-50",
+  accentColor: "green",
   description: "Innovators in neurosurgical fixation and implant systems.",
   website: "https://www.kinamed.com/",
   established: "1987",
@@ -156,8 +154,8 @@ Kinamed: {
 Baxter: {
   logo: Baxter, 
   name: "Baxter",
-  bgColor: "bg-blue-50",
-  accentColor: "blue",
+  bgColor: "bg-green-50",
+  accentColor: "green",
   description: "Global leader in surgical care and advanced hemostatic solutions.",
   website: "https://advancedsurgery.baxter.com/",
   established: "1931",
@@ -192,8 +190,8 @@ Baxter: {
 Halyard: {
   logo: Halyard,
   name: "Halyard Health",
-  bgColor: "bg-blue-50",
-  accentColor: "blue",
+  bgColor: "bg-green-50",
+  accentColor: "green",
   description: "Provider of innovative solutions in infection prevention and surgical protection.",
   website: "https://products.halyardhealth.com/",
   established: "2014", 
@@ -228,8 +226,8 @@ Halyard: {
 Sunoptic: {
   logo: Sunoptic,
   name: "Sunoptic Surgical",
-  bgColor: "bg-yellow-50",
-  accentColor: "yellow",
+  bgColor: "bg-green-50",
+  accentColor: "green",
   description: "Industry leaders in surgical lighting and visualization solutions.",
   website: "https://sunopticsurgical.com/",
   established: "2001",
@@ -306,8 +304,8 @@ CareEssentials: {
 BLLifeSciences: {
   logo: BL,
   name: "BL Life Sciences",
-  bgColor: "bg-indigo-50",
-  accentColor: "indigo",
+  bgColor: "bg-green-50",
+  accentColor: "green",
   description: "Manufacturer and supplier of surgical and perfusion solutions including drainage systems, suction sets, and cannulas.",
   website: "https://www.bllifesciences.com/",
   established: "2000",
@@ -390,8 +388,8 @@ BLLifeSciences: {
 Surgiwear: {
   logo: Surgiwear,
   name: "Surgiwear",
-  bgColor: "bg-yellow-50",
-  accentColor: "yellow",
+  bgColor: "bg-green-50",
+  accentColor: "green",
   description: "Leading manufacturer of neurosurgical and infection control products based in India.",
   website: "https://surgiwear.co.in/",
   established: "1976",
@@ -579,6 +577,7 @@ return (
 
         {/* Main Content */}
         <div className="flex-1 overflow-y-auto  md:mt-0">
+          <Navbar2/>
             {/* <Navbar2/> */}
           <AnimatePresence mode="wait">
             <motion.div

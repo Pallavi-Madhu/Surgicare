@@ -163,14 +163,14 @@ const MedicalEquipmentPage = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-indigo-100 via-white to-indigo-100 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-green-100 via-white to-green-100 flex items-center justify-center">
         <motion.div
           className="flex flex-col items-center space-y-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
         >
           <motion.div
-            className="w-16 h-16 border-4 border-indigo-500 border-t-transparent rounded-full"
+            className="w-16 h-16 border-4 border-green-700 border-t-transparent rounded-full"
             animate={{ rotate: 360 }}
             transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
           />
@@ -202,7 +202,7 @@ const MedicalEquipmentPage = () => {
             Medical Equipment
           </motion.h1>
           <motion.p 
-            className=" lg:text-3xl text-center text-gray-100 max-w-4xl mx-auto leading-relaxed"
+            className="text-xl px-4 lg:text-3xl text-center text-gray-100 max-w-4xl mx-auto leading-relaxed"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.6 }}
