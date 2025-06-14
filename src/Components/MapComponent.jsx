@@ -150,7 +150,7 @@ const TwoMaps = () => {
 
   const handleMapClickErnakulam = (e) => {
     e.stopPropagation();
-    const gmapurl = "https://www.google.com/maps?q=76.286105,10.060137";
+    const gmapurl = "https://www.google.com/maps?q=10.060137,76.286105";
     window.open(gmapurl, "_blank");
   };
 
