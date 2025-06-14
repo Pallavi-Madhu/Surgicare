@@ -186,14 +186,14 @@ const Navbar = () => {
                       >
                         <a
                           href="/products"
-                          className="block text-lg bg-green-50 text-green-600 font-bold p-2 rounded hover:bg-green-100 hover:text-green-800 hover:shadow-lg transition-colors duration-200"
+                          className="block text-lg bg-green-50 text-green-600 font-sans p-2 rounded hover:bg-green-100 hover:text-green-800 hover:shadow-lg transition-colors duration-200"
                         >
                           Equipments
                         </a>
                         <div>
                           <button
                             onClick={toggleDisposablesMenu}
-                            className="w-full text-lg text-left text-green-600 font-bold bg-green-50 rounded p-2 hover:text-green-800 hover:shadow-lg hover:bg-green-100 transition-colors duration-200 flex items-center justify-between"
+                            className="w-full text-lg text-left text-green-600 font-sans bg-green-50 rounded p-2 hover:text-green-800 hover:shadow-lg hover:bg-green-100 transition-colors duration-200 flex items-center justify-between"
                           >
                             <span>Disposables</span>
                             <svg className={`w-4 h-4 transition-transform duration-200 ${isDisposablesOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">

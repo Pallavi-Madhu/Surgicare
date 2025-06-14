@@ -259,7 +259,7 @@ const CriticalSidebarDesign = () => {
 
 return (
     <>
-      <Navbar2/>
+     
       <div className="min-h-screen  bg-gray-100 flex">
         
         {/* Mobile Menu Button */}
@@ -369,6 +369,7 @@ return (
 
         {/* Main Content */}
         <div className="flex-1 overflow-y-auto  md:mt-0">
+           <Navbar2/>
           
           <AnimatePresence mode="wait">
             <motion.div

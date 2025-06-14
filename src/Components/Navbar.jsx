@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import logo from "../assets/Surgicare logo.png";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -9,6 +9,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const navbarRef = useRef(null);
 
   const departments = [
     { name: "Critical Care", href: "/critical-care" },
@@ -27,18 +28,13 @@ const Navbar = () => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       
-      // Update scroll state
       setIsScrolled(currentScrollY > 50);
       
-      // Show/hide navbar based on scroll direction
       if (currentScrollY < lastScrollY || currentScrollY < 100) {
         setIsVisible(true);
-      } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+      } else if (currentScrollY > lastScrollY && currentScrollY > 100 && !isProductsOpen && !isDisposablesOpen) {
         setIsVisible(false);
-        // Close mobile menu when hiding navbar
         setIsMenuOpen(false);
-        setIsProductsOpen(false);
-        setIsDisposablesOpen(false);
       }
       
       setLastScrollY(currentScrollY);
@@ -46,7 +42,21 @@ const Navbar = () => {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  }, [lastScrollY, isProductsOpen, isDisposablesOpen]);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navbarRef.current && !navbarRef.current.contains(event.target)) {
+        setIsProductsOpen(false);
+        setIsDisposablesOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   const toggleProductsMenu = () => setIsProductsOpen(!isProductsOpen);
   const toggleDisposablesMenu = () => setIsDisposablesOpen(!isDisposablesOpen);
@@ -65,7 +75,8 @@ const Navbar = () => {
 
   return (
     <motion.nav 
-      className="fixed top-0 w-full z-50"
+      ref={navbarRef}
+      className="fixed top-0 w-full z-30"
       initial={false}
       animate={{
         y: isVisible ? 0 : -100,
@@ -76,12 +87,10 @@ const Navbar = () => {
         ease: "easeInOut" 
       }}
     >
-      {/* Static gradient background layer (only visible when NOT scrolled) */}
       {!isScrolled && (
         <div className="absolute inset-0 z-[-2] bg-white transition-opacity duration-300" />
       )}
 
-      {/* Framer Motion animated overlay */}
       <motion.div
         initial={false}
         animate={{
@@ -99,22 +108,20 @@ const Navbar = () => {
           {/* Logo Section */}
           <div className="flex items-center space-x-3">
             <div className="w-20 h-12 transition-colors duration-200 relative group bg-gradient-to-br from-indigo-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
-
               <img src={logo} alt="SurgiCare Logo" className="h-14 w-auto" />
             </div>
             <div>
-              <h1 className="text-gray-800 hover:text-blue-900 font-sans font-semibold text-2xl sm:text-4xl transition-colors duration-200 relative group">
+              <h1 className="text-gray-800 hover:text-green-900 font-sans font-semibold text-2xl sm:text-4xl transition-colors duration-200 relative group">
                 Nandana SurgiCare
               </h1>
             </div>
           </div>
           
-
-          {/* Hamburger Icon for Mobile */}
-          <div className="lg:hidden">
+          {/* Hamburger Icon */}
+          <div>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 relative hover:text-blue-600 focus:outline-none transition-colors duration-200"
+              className="lg:hidden text-gray-700 relative hover:text-green-600 focus:outline-none transition-colors duration-200"
             >
               {isMenuOpen ? (
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -129,39 +136,39 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden lg:flex space-x-8 items-center">
+          <div className="hidden lg:flex space-x-8  items-center">
             <a
               href="/"
-              className="text-gray-700 hover:text-indigo-600 font-semibold text-2xl transition-colors duration-200 relative group"
+              className="text-gray-700 hover:text-green-600 font-semibold text-2xl transition-colors duration-200 relative group"
             >
               Home
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-200 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-200 group-hover:w-full"></span>
             </a>
             <a
               href="/about-us"
-              className="text-gray-700 hover:text-indigo-600 font-semibold text-2xl transition-colors duration-200 relative group"
+              className="text-gray-700 hover:text-green-600 font-semibold text-2xl transition-colors duration-200 relative group"
             >
               About Us
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-200 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-200 group-hover:w-full"></span>
             </a>
 
             {/* Products Dropdown */}
             <div className="relative">
               <button
                 onClick={toggleProductsMenu}
-                className="text-gray-700 hover:text-indigo-600 font-semibold text-2xl transition-colors duration-200 relative group flex items-center space-x-1"
+                className="text-gray-700 hover:text-green-600 font-semibold text-2xl transition-colors duration-200 relative group flex items-center space-x-1"
               >
                 <span>Products</span>
                 <svg className={`w-4 h-4 transition-transform duration-200 ${isProductsOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-200 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-200 group-hover:w-full"></span>
               </button>
 
               <AnimatePresence>
                 {isProductsOpen && (
                   <motion.div 
-                   className="absolute left-0 mt-2 w-96 bg-white shadow-2xl rounded-2xl border border-gray-200 overflow-hidden"
+                   className="absolute -left-32 mt-4 w-96 bg-white shadow-2xl rounded-2xl border border-gray-200 overflow-hidden"
                     variants={dropdownVariants}
                     initial="hidden"
                     animate="visible"
@@ -170,14 +177,14 @@ const Navbar = () => {
                   >
                     <a
                       href="/products"
-                      className="block px-6 py-3 text-indigo-600 hover:shadow-lg hover:text-indigo-900 font-semibold text-lg hover:bg-indigo-50 transition-colors duration-200"
+                      className="block px-6 py-3 text-green-600 hover:shadow-lg hover:text-green-900 font-sans text-xl hover:bg-green-50 transition-colors duration-200"
                     >
                       Equipments
                     </a>
                     <div>
                       <button
                         onClick={toggleDisposablesMenu}
-                        className="w-full text-left px-6 py-3 text-indigo-600 hover:shadow-lg hover:text-indigo-900 font-semibold text-lg hover:bg-indigo-50 transition-colors duration-200 flex items-center justify-between"
+                        className="w-full text-left px-6 py-3 text-green-600 hover:shadow-lg hover:text-green-900 font-sans text-xl hover:bg-green-50 transition-colors duration-200 flex items-center justify-between"
                       >
                         <span>Disposables</span>
                         <svg className={`w-4 h-4 transition-transform duration-200 ${isDisposablesOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -199,7 +206,7 @@ const Navbar = () => {
                                 <a
                                   key={dept.name}
                                   href={dept.href}
-                                  className="text-gray-700 hover:text-indigo-600 hover:bg-white px-3 py-2 rounded-lg transition-all duration-200 text-xl font-bold border border-transparent hover:border-indigo-200"
+                                  className="text-gray-700 hover:text-green-700 hover:bg-white px-3 py-2 rounded-lg transition-all duration-200 text-xl font-sans border border-transparent hover:border-green-200"
                                 >
                                   {dept.name} Products
                                 </a>
@@ -216,10 +223,10 @@ const Navbar = () => {
 
             <a
               href="/contact"
-              className="text-gray-700 hover:text-blue-600 font-semibold text-2xl transition-colors duration-200 relative group"
+              className="text-gray-700 hover:text-green-600 font-semibold text-2xl transition-colors duration-200 relative group"
             >
               Contact
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-200 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-200 group-hover:w-full"></span>
             </a>
           </div>
         </div>
@@ -235,16 +242,16 @@ const Navbar = () => {
               exit="exit"
               transition={{ duration: 0.3 }}
             >
-              <div className="p-4 space-y-2">
+              <div className="p-4">
                    <a
                    href="/"
-                   className="block text-gray-700 hover:text-blue-700 font-bold text-lg p-3 transition duration-200 hover:shadow-lg"
+                   className="block text-gray-700 hover:text-green-700 font-bold text-lg p-3 transition duration-200 hover:shadow-lg"
                  >
                    Home
                  </a>
                 <a
                   href="/about-us"
-                   className="block text-gray-700 hover:text-blue-700 font-bold text-lg p-3 transition duration-200 hover:shadow-lg"
+                   className="block text-gray-700 hover:text-green-700 font-bold text-lg p-3 transition duration-200 hover:shadow-lg"
                 >
                   About Us
                 </a>
@@ -253,7 +260,7 @@ const Navbar = () => {
                 <div>
                   <button
                     onClick={toggleProductsMenu}
-                    className="w-full text-left text-gray-700 hover:text-blue-600 font-semibold text-lg p-3 transition-colors duration-200 flex items-center hover:shadow-lg justify-between"
+                    className="w-full text-left text-gray-700 hover:text-green-600 font-semibold text-lg p-3 transition-colors duration-200 flex items-center hover:shadow-lg justify-between"
                   >
                     <span>Products</span>
                     <svg className={`w-4 h-4 transition-transform duration-200 ${isProductsOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -264,7 +271,7 @@ const Navbar = () => {
                   <AnimatePresence>
                     {isProductsOpen && (
                       <motion.div 
-                        className="ml-4  space-y-2"
+                        className="ml-4 space-y-2"
                         variants={dropdownVariants}
                         initial="hidden"
                         animate="visible"
@@ -273,14 +280,14 @@ const Navbar = () => {
                       >
                         <a
                           href="/products"
-                          className="block bg-blue-50 text-blue-600 font-bold p-2 rounded hover:bg-blue-100 hover:text-blue-800 hover:shadow-lg transition-colors duration-200"
+                          className="block text-lg bg-green-50 text-green-600 font-sans p-2 rounded hover:bg-green-100 hover:text-green-800 hover:shadow-lg transition-colors duration-200"
                         >
                           Equipments
                         </a>
                         <div>
                           <button
                             onClick={toggleDisposablesMenu}
-                            className="w-full text-left text-blue-600 font-bold bg-blue-50 rounded p-2 hover:text-blue-800 hover:shadow-lg hover:bg-blue-100 transition-colors duration-200 flex items-center justify-between"
+                            className="w-full text-left text-green-600 text-lg  font-sans bg-green-50 rounded p-2 hover:text-green-800 hover:shadow-lg hover:bg-green-100 transition-colors duration-200 flex items-center justify-between"
                           >
                             <span>Disposables</span>
                             <svg className={`w-4 h-4 transition-transform duration-200 ${isDisposablesOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -301,9 +308,9 @@ const Navbar = () => {
                               <a
                                 key={dept.name}
                                 href={dept.href}
-                                className="text-gray-600 pl-4 rounded hover:text-blue-900 hover:bg-blue-100 font-bold text-lg transition-colors duration-200 flex items-center space-x-2"
+                                className="text-gray-600 pl-4 rounded hover:text-green-900 hover:bg-green-100 font-sans text-lg transition-colors duration-200 flex items-center space-x-2"
                               >
-                                <span className="text-3xl text-blue-700">•</span>
+                                <span className="text-3xl text-green-700">•</span>
                                 <span>{dept.name}</span>
                               </a>
 
@@ -319,7 +326,7 @@ const Navbar = () => {
 
                 <a
                   href="/contact"
-                   className="block text-gray-700 hover:text-blue-700 font-bold text-lg p-3 transition duration-200 hover:shadow-lg"
+                   className="block text-gray-700 hover:text-green-700 font-bold text-lg p-3 transition duration-200 hover:shadow-lg"
                 >
                   Contact
                 </a>

@@ -202,7 +202,7 @@ const MedicalEquipmentPage = () => {
             Medical Equipment
           </motion.h1>
           <motion.p 
-            className=" lg:text-3xl text-center text-gray-100 max-w-4xl mx-auto leading-relaxed"
+            className="text-xl px-4 lg:text-3xl text-center text-gray-100 max-w-4xl mx-auto leading-relaxed"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.6 }}
