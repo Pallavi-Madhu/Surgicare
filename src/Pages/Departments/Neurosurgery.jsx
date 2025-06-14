@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
 import Navbar from "../../Components/Navbar";
 import Footer from "../../Components/Footer";
 import departments from "../../Data/departments";
@@ -69,12 +69,24 @@ import silicon from "../../assets/Neuro/Surgiwear/silicon_patties.jpg";
 import bonecement from "../../assets/Neuro/Surgiwear/bonecement.jpg";
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Globe, Package2, Building, ChevronRight, Star, ShoppingCart, ArrowRight } from 'lucide-react';
- 
+import Loading from "../../Components/Loading";
 
 const NeuroSidebarDesign = () => {
   const [activeCompany, setActiveCompany] = useState("Mizuho");
   const [hoveredProduct, setHoveredProduct] = useState(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const [loading, setLoading] = useState(true);
+  
+       useEffect(() => {
+          setTimeout(() => setLoading(false), 4000); // 4 second delay
+        }, []);
+        
+  if(loading) {
+    return(
+    <Loading department = "Neurosurgery"/>
+    )
+  }
 
   const companies = {
    Mizuho: {

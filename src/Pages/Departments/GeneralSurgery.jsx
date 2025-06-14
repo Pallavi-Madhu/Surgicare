@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Navbar2 from "../../Components/Navbar2";
 import { ArrowRight, X } from 'lucide-react';
 import Footer from "../../Components/Footer";
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Globe, Package2, Building, ChevronRight, Star, ShoppingCart } from 'lucide-react';
+import Loading from "../../Components/Loading";
 // import DepNav from "../../Components/DepNav";
 // import { motion } from "framer-motion";
 // //companies
@@ -40,6 +41,18 @@ const GenralSurgerySidebarDesign = () => {
   const [activeCompany, setActiveCompany] = useState("BL");
   const [hoveredProduct, setHoveredProduct] = useState(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const [loading, setLoading] = useState(true);
+  
+       useEffect(() => {
+          setTimeout(() => setLoading(false), 4000); // 4 second delay
+        }, []);
+        
+  if(loading) {
+    return(
+    <Loading department = "General Surgery"/>
+    )
+  }
 
  const companies = {
   BL: {

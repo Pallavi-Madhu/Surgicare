@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ArrowRight, X } from 'lucide-react';
 import Navbar2 from "../../Components/Navbar2";
 import Footer from "../../Components/Footer";
@@ -18,12 +18,23 @@ import Baxter from "../../assets/Baxter.png"
 //import { motion } from "framer-motion";
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Globe, Package2, Building, ChevronRight, Star, ShoppingCart } from 'lucide-react';
+import Loading from "../../Components/Loading";
 
 const OrthopedicSidebarDesign = () => {
   const [activeCompany, setActiveCompany] = useState("Halyard"); // Changed from "Sinapi" to "Halyard"
   const [hoveredProduct, setHoveredProduct] = useState(null);
-    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [loading, setLoading] = useState(true);
 
+     useEffect(() => {
+        setTimeout(() => setLoading(false), 4000); // 4 second delay
+      }, []);
+      
+if(loading) {
+  return(
+  <Loading department = "Orthopedic "/>
+  )
+}
   const companies = {
     Halyard: {
       logo: Halyard,
