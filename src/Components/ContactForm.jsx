@@ -89,12 +89,12 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen font-b">
+    <div className="flex justify-center items-center">
       <form
         onSubmit={handleSubmit}
-        className=" bg-white p-6 rounded-lg shadow-md w-full max-w-lg"
+        className="bg-gray-50 to-green-900 p-6 rounded-lg shadow-2xl w-full max-w-lg"
       >
-        <h2 className="text-2xl font-semibold text-center text-gray-800 mb-4">
+        <h2 className="text-3xl text-green-700 font-semibold text-center text-gray-800 mb-4">
           Contact Us
         </h2>
         <div className="space-y-">
@@ -113,7 +113,7 @@ const ContactForm = () => {
               value={formData.name}
               onChange={handleChange}
               required
-              className="mt-1 block w-full p-3 border border-blue-700 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="mt-1 block w-full p-3 border border-green-700 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
             />
           </div>
           {/* Email Input */}
@@ -131,7 +131,7 @@ const ContactForm = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="mt-1 block w-full p-3 border border-blue-700 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="mt-1 block w-full p-3 border border-green-700 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
             />
           </div>
           {/* Phone Input */}
@@ -149,7 +149,7 @@ const ContactForm = () => {
               value={formData.phone}
               onChange={handleChange}
               required
-              className="mt-1 block w-full p-3 border border-blue-700 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="mt-1 block w-full p-3 border border-green-700 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
             />
           </div>
           {/* Enquiry Input */}
@@ -166,14 +166,14 @@ const ContactForm = () => {
               value={formData.enquiry}
               onChange={handleChange}
               required
-              className="mt-1 block w-full p-3 border border-blue-700 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="mt-1 block w-full p-3 border border-green-700 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
             ></textarea>
           </div>
         </div>
         {/* Submit Button */}
         <button
           type="submit"
-          className="w-full mt-6 p-3 bg-green-500 text-white font-semibold rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500"
+          className="w-full mt-6 p-3 bg-green-600 text-white font-semibold rounded-md hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-green-500"
         >
           Submit Form
         </button>

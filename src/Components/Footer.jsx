@@ -107,7 +107,7 @@ const Footer = () => {
 
           </div>
           
-          <div className="text-center">
+          {/* <div className="text-center">
             <h4 className="text-xl font-bold mb-4 text-white">Follow Us</h4>
             <div className="flex justify-center text-right space-x-4">
               {[
@@ -123,7 +123,7 @@ const Footer = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Copyright Section */}
