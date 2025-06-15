@@ -15,15 +15,15 @@ const AccordionSection = () => {
         <div key={index} className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
           <button
             onClick={() => toggleAccordion(index)}
-            className="w-full px-8 py-6 text-left bg-gradient-to-r from-slate-50 to-green-50 hover:from-slate-100 hover:to-blue-100 transition-all duration-200 flex justify-between items-center group"
+            className="w-full px-4 sm:px-8 py-6 text-left bg-gradient-to-r from-slate-50 to-green-50 hover:from-slate-100 hover:to-blue-100 transition-all duration-200 flex justify-between items-center group"
           >
             <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center group-hover:bg-green-700 transition-colors">
+              <div className="w-10 h-10  sm:w-12 sm:h-12 bg-green-600 rounded-lg flex items-center justify-center group-hover:bg-green-700 transition-colors">
                 <span className="text-white font-bold text-lg">{company.name.charAt(0)}</span>
               </div>
               <div>
-                <span className="text-xl font-bold text-slate-800">{company.name}</span>
-                <p className="text-lg text-gray-600 mt-1">{company.specialty}</p>
+                <span className="text-lg sm:text-xl font-bold text-slate-800">{company.name}</span>
+                <p className="text-sm sm:text-lg text-gray-600 mt-1">{company.specialty}</p>
               </div>
             </div>
             <div className="flex items-center space-x-4">

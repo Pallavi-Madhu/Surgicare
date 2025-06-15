@@ -17,7 +17,7 @@ const About = () => {
       >
      <div className="">  
        <motion.div
-                className="text-center bg-gradient-to-r from-green-900 via-green-700 to-green-900 py-10 sm:py-24"
+                className="text-center bg-gradient-to-r from-green-900 via-green-600 to-green-900 py-10 px-2 sm:py-24"
                 initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
@@ -26,7 +26,7 @@ const About = () => {
                   Welcome to
                 </h1>
                 <h1 className="text-4xl sm:text-6xl font-extrabold text-white mb-6">
-                  Nandana SurgiCare
+                  Nandana Surgi Care
                 </h1>
                 
               </motion.div>
@@ -39,7 +39,7 @@ const About = () => {
         {/* Enhanced Content Section */}
         
             <div className="space-y-8 text-lg sm:text-xl px-4 sm:px-20 mt-20 lg:px-80  leading-relaxed">
-                <h2 className="text-4xl font-bold text-slate-800 mb-8">
+                <h2 className="text-3xl sm:text-4xl px-2 font-bold text-slate-800 mb-8">
                 About Our <span className="text-green-700">Company</span>
               </h2>
                 <motion.div
@@ -48,7 +48,7 @@ const About = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
                 >
-                  <p className="text-gray-700 leading-8">
+                  <p className="text-gray-700  leading-8">
                     
                     We are a <span className="font-semibold text-green-800">trusted distributor</span> based in 
                     <span className="font-semibold text-green-800"> Kochi, Kerala</span>, specializing in a comprehensive range of 
@@ -69,7 +69,7 @@ const About = () => {
                     {['Cardiology', 'Thoracic Surgery', 'Neurosurgery', 'Plastic Surgery'].map((specialty, index) => (
                       <div
                         key={specialty}
-                        className="bg-green-900 text-green-100 px-4 py-2 rounded-lg font-semibold text-center shadow-sm hover:bg-green-700 transition-colors duration-200 cursor-pointer"
+                        className="bg-green-800 text-white px-4 py-2 rounded-lg font-semibold text-center shadow-sm hover:bg-green-700 transition-colors duration-200 cursor-pointer"
                         style={{ animationDelay: `${0.8 + index * 0.1}s` }}
                       >
                         {specialty}
@@ -105,19 +105,25 @@ const About = () => {
      
 <section className="py-20 sm:mt-40 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <motion.div
+                 initial={{ opacity: 0, y: -20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+              >
           <div className="text-center mb-16">
             {/* <span className="inline-block px-4 py-2 bg-green-600 text-white text-sm font-semibold rounded-full mb-4">
               INDUSTRY PARTNERSHIPS
             </span> */}
-            <h2 className="text-4xl font-bold text-gray-800 mb-6">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-6">
                <span className="text-gray-800">Key Companies</span> we Represent
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl lg:text-2xl  text-gray-600 max-w-3xl mx-auto">
               We collaborate with world-renowned medical technology companies to deliver 
               innovative healthcare solutions and maintain the highest standards of quality.
             </p>
           </div>
-          
+          </motion.div>
           <AccordionSection />
         </div>
       </section>

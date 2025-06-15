@@ -74,7 +74,7 @@ const MapComponent = ({ coordinates, markericon, onClick }) => {
   };
 
   return (
-    <div className="p-9 w-full flex flex-col sm:flex-row justify-center items-center gap-5">
+    <div className=" lg:px-60 py-10  justify-center items-center gap-5">
       <div
         style={{ width: "400px", height: "300px" }} // Retaining the fixed width and height
         className="rounded-lg  shadow-lg overflow-hidden border border-gray-300 relative"
@@ -82,7 +82,7 @@ const MapComponent = ({ coordinates, markericon, onClick }) => {
         <div
           ref={mapRef}
           onClick={onClick}
-          style={{ width: "100%", height: "100%" }}
+          style={{ width: "100%", height: "100%",}}
         />
         {/* Zoom Controls */}
         <div
@@ -155,15 +155,15 @@ const TwoMaps = () => {
   };
 
   return (
-    <div className="sm:flex sm:justify-between flex lg:flex-row flex-col items-center gap-20 p-4">
-      <div className="rounded-xl bg-white bg-opacity-5 shadow-xl">
+    <div className="justify-center flex flex-col items-center gap-20 p-2">
+      <div className="rounded-xl bg-green-900 bg-opacity-5 shadow-xl">
         <MapComponent
           coordinates={[76.286105, 10.060137]}// Ernakulam coordinates
           markericon="https://openlayers.org/en/v6.5.0/examples/data/icon.png"
           onClick={handleMapClickErnakulam}
         />
       </div>
-      <div className="rounded-xl bg-white bg-opacity-5 shadow-xl">
+      <div className="rounded-xl bg-green-900 bg-white bg-opacity-5 shadow-xl">
         <MapComponent
           coordinates={[75.785949, 11.279657]} // Kozhikode coordinates
           markericon="https://openlayers.org/en/v6.5.0/examples/data/icon.png"

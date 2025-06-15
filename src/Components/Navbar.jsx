@@ -112,7 +112,7 @@ const Navbar = () => {
             </div>
             <div>
               <h1 className="text-gray-800 hover:text-green-900 font-sans font-semibold text-2xl sm:text-4xl transition-colors duration-200 relative group">
-                Nandana SurgiCare
+                Nandana Surgi Care
               </h1>
             </div>
           </div>
