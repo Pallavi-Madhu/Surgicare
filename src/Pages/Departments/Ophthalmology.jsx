@@ -20,7 +20,7 @@ import DepNav from "../../Components/DepNav";
     const [loading, setLoading] = useState(true);
     
     useEffect(() => {
-      setTimeout(() => setLoading(false), 4000); // 4 second delay
+      setTimeout(() => setLoading(false), 3000); // 4 second delay
     }, []);
     
     // Touch event handlers for swipe gesture
@@ -147,7 +147,7 @@ import DepNav from "../../Components/DepNav";
           </button>
 
           <div className="p-6 border-b bg-gradient-to-br from-green-900 via-green-500 to-green-900 text-white relative">
-            <h1 className="text-3xl font-bold pt-10 sm:pt-10 mb-2">OPHTHALMOLOGY</h1>
+            <h1 className="text-3xl font-bold pt-10 lg:pt-0  mb-2">OPHTHALMOLOGY</h1>
             <p className="text-gray-100 text-xl">Surgical Solutions</p>
           </div>
 

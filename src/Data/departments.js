@@ -1,14 +1,27 @@
+import { 
+  FaHeartbeat, 
+  FaUserMd, 
+  FaEye, 
+  FaStethoscope,
+  FaCut, 
+  FaBrain, 
+  FaUserNurse, 
+  FaSyringe,
+  FaAmbulance,
+  FaMedkit
+} from "react-icons/fa";
+
 const departments = [
-  { id: "critical-care", name: "Critical Care" },
-  { id: "cardiac-surgery", name: "Cardiac Surgery" },
-  { id: "cardiology", name: "Cardiology" },
-  { id: "neurosurgery", name: "Neurosurgery" },
-  { id: "ophthalmology", name: "Ophthalmology" },
-  { id: "pulmonology", name: "Pulmonology" },
-  { id: "general-surgery", name: "General Surgery" },
-  { id: "plastic-surgery", name: "Plastic Surgery" },
-  { id: "orthopedic", name: "Orthopedic" },
-  { id: "anesthesiology", name: "Anesthesiology" },
+  { id: "critical-care", name: "Critical Care", icon: FaAmbulance },
+  { id: "cardiac-surgery", name: "Cardiac Surgery", icon: FaHeartbeat },
+  { id: "cardiology", name: "Cardiology", icon: FaStethoscope },
+  { id: "neurosurgery", name: "Neurosurgery", icon: FaBrain },
+  { id: "ophthalmology", name: "Ophthalmology", icon: FaEye },
+  { id: "pulmonology", name: "Pulmonology", icon: FaMedkit },
+  { id: "general-surgery", name: "General Surgery", icon: FaCut },
+  { id: "plastic-surgery", name: "Plastic Surgery", icon: FaUserMd },
+  { id: "orthopedic", name: "Orthopedic", icon: FaUserNurse },
+  { id: "anesthesiology", name: "Anesthesiology", icon: FaSyringe },
 ];
 
 export default departments;
