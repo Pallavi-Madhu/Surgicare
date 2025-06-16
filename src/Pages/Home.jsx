@@ -61,56 +61,15 @@ const Home = () => {
       }}
     >
       <div className="min-h-screen overflow-x-hidden">
-       
         <div className="w-full h-1 bg-gradient-to-r from-green-500 to-green-600 bg-white "></div>
-         
-
         <div className="relative inset-0 bg-gradient-to-r from-green-50 via-white to-green-50 px-10">
-          {/* First Section */}
-          {/* <motion.div
-            className="bg-gradient-to-r from-blue-300 to-white flex flex-col-reverse lg:flex-row md:mx-20 gap-6 mt-10 p-6"
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1.0 }}
-            //viewport={{ once: true }}
-          >
-            <motion.p
-              className="text-2xl text-black text-center leading-relaxed font-bold max-w-3xl mt-6 lg:mt-28"
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1.0, delay: 0.2 }}
-              //viewport={{ once: true }}
-            >
-              At Nandana SurgiCare, we take pride in being a trusted distributor
-              of world-class biomedical equipment, enabling healthcare
-              professionals to deliver exceptional patient care. With our strong
-              focus on quality, innovation, and reliability, we offer a
-              comprehensive range of medical instruments and devices from some
-              of the most respected brands in the industry. Whether you're
-              looking for critical solutions in <span className="font-bold text-3xl text-blue-900">Cardiology, Thoracic Surgery,
-              Neurosurgery, <span className="text-2xl text-black ">or</span> Plastic Surgery</span>, we have the right equipment to meet the
-              needs of healthcare providers in both government and private
-              sectors.
-            </motion.p>
-            <motion.img
-              src={positive}
-              className="w-full m-auto h-auto max-w-sm rounded-2xl shadow-lg"
-              initial={{ opacity: 0, x: 100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1.0, delay: 0.3 }}
-              //viewport={{ once: true }}
-            />
-          </motion.div> */}
-
           <br />
            <AnimatedSection className="max-w-7xl mx-auto px-4 py-20" delay={0}>
-          
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-">
            <motion.p
                initial={{ opacity: 0, x: 100 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 1.0, delay: 0.2 }}
-              //viewport={{ once: true }}
             >
             <div className="space-y-6 ">
               <div className="inline-block px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-semibold">
@@ -140,7 +99,6 @@ const Home = () => {
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.0 }}
-            //viewport={{ once: true }}
            >
             <div className="relative ">
               <div className="absolute  -inset-4  rounded-2xl blur-xl opacity-30"></div>
@@ -150,10 +108,6 @@ const Home = () => {
                     <motion.img
               src={positive}
               className="w-full p-2 m-auto h-80 sm:h-auto max-w-sm rounded-2xl shadow-lg"
-              //initial={{ opacity: 0, x: 100 }}
-              //whileInView={{ opacity: 1, x: 0 }}
-              //transition={{ duration: 1.0, delay: 0.3 }}
-              //viewport={{ once: true }}
                />
               </span>
                 </div>
@@ -165,73 +119,72 @@ const Home = () => {
           <br />
 
             {/* Second Section */}
+            
             <div  className="min-h-screen bg-gradient-to-b  from-green-50 to-slate-50">
+              <div className="flex flex-col px-4 py-12 sm:px-6 sm:py-16 lg:px-20 lg:py-20 items-center justify-center">
+
                   <AnimatedSection className=" py-20" delay={200}>
                        <motion.div
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.0 }}
-            //viewport={{ once: true }}
           >
-          <div className="max-w-7xl mt-20">
-            <div className="grid lg:grid-cols-2 gap-10 items-center">
+          <div className="max-w-7xl w-full px-4 mt-20">
+            <div className="grid lg:grid-cols-2 gap-20 items-center">
            <div className="relative order-2 lg:order-1">
   
             <motion.div
-            className="flex flex-col lg:flex-row md:mx-20 p-6 gap-6"
+            className="flex flex-col lg:flex-row md:mx-1 p-30 gap-10"
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.0 }}
-            //viewport={{ once: true }}
            >
             <div className="relative ">
-              <div className="absolute rounded-2xl blur-xl opacity-30"></div>
+              <div className="absolute rounded-2xl blur-xl opacity-30 "></div>
               <div className="relative bg-white p-2 rounded-2xl shadow-2xl">
-                <div className="  bg-gradient-to-br from-green-100 to-slate-100 rounded-xl flex items-center justify-center">
+                <div className=" bg-gradient-to-br from-green-100 to-slate-100 rounded-xl flex items-center justify-center ">
                   <span className="text-gray-500"> 
                     <motion.img
-              src={dist}
-              className="p-2 m-auto h-80 sm:h-auto max-w-sm rounded-2xl shadow-lg"
-              //initial={{ opacity: 0, x: 100 }}
-              //whileInView={{ opacity: 1, x: 0 }}
-              //transition={{ duration: 1.0, delay: 0.3 }}
-              //viewport={{ once: true }}
-               />
-              </span>
+                      src={dist}
+                      className=" m-auto lg:mr-4 h-80 sm:h-auto max-w-sm rounded-2xl shadow-lg"
+                    />
+                </span>
                 </div>
               </div>
-            </div>
+              </div>
+            
             </motion.div>
           </div>
 
-          <div className="space-y-6 order-1 mr-12 sm:mr-0 lg:order-2">
+          <div className="space-y-6 order-1 mr-0 sm:mr-0 lg:order-2 text-center lg:text-left items-center lg:items-start flex flex-col">
+
             <motion.p
-              //className="text-2xl text-black text-center leading-relaxed font-bold max-w-3xl mt-6 lg:mt-14"
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 1.0, delay: 0.2 }}
-              //viewport={{ once: true }}
             >
-                <div className="inline-block px-4 py-2 bg-slate-100 text-slate-800 rounded-full bg-gray-200 text-sm font-semibold">
+                {/* <div className="inline-block px-4 py-2 bg-slate-100 text-slate-800 rounded-full bg-gray-200 text-sm font-semibold">
                   Global Partnerships
-                </div>
-                <h2 className="text-2xl lg:text-5xl font-bold text-gray-800 py-4 sm:py-0 leading-tight">
+                </div> */}
+                <h2 className="text-2xl lg:text-5xl font-bold text-gray-800 py-4 sm:py-0 leading-tight px-4">
                   Strategic <span className="text-green-700">Global Partnerships</span>
                 </h2>
                 </motion.p>
-                    <motion.p
-              //className="text-2xl text-black text-center leading-relaxed font-bold max-w-3xl mt-6 lg:mt-14"
+              <motion.div
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 1.0, delay: 0.2 }}
-              //viewport={{ once: true }}
               >
-                <p className="lg:text-2xl w-2/3 text-sm sm:text-lg font-sans font-extralight text-gray-600 leading-relaxed">
-                  Our strategic partnerships with leading global manufacturers ensure that we provide the latest and most 
+                <div className="w-full flex justify-center sm:justify-start">
+                <p className="lg:text-2xl text-sm md:pl-5 text-center sm:text-lg font-sans font-extralight text-gray-600 leading-relaxed text-center sm:text-left px-7 ">
+
+                  Our strategic partnerships with leading global 
+                  manufacturers ensure that we provide the latest and most 
                   reliable medical technologies. From advanced ECMO machines to surgical instruments and disposables, 
                   we're here to support healthcare professionals in their mission to save lives and improve patient outcomes.
                 </p>
-                </motion.p>
+                </div>
+                </motion.div>
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div className="text-center p-4 bg-white rounded-xl shadow-md">
                     <div className="text-2xl font-bold text-green-700">100+</div>
@@ -247,38 +200,8 @@ const Home = () => {
           </div>
           </motion.div>
         </AnimatedSection>
-</div>
-
-          {/* Second Section */}
-          {/* <motion.div
-            className="bg-gradient-to-l  from-blue-300 to-white flex flex-col lg:flex-row md:mx-20 p-6 gap-6"
-            initial={{ opacity: 0, x: 100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1.0 }}
-            //viewport={{ once: true }}
-          >
-            <motion.img
-              src={dist}
-              className="w-full m-auto h-auto max-w-sm rounded-2xl shadow-lg"
-              initial={{ opacity: 0, x: -100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1.0, delay: 0.3 }}
-              //viewport={{ once: true }}
-            />
-            <motion.p
-              className="text-2xl text-black text-center leading-relaxed font-bold max-w-3xl mt-6 lg:mt-14"
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1.0, delay: 0.2 }}
-              //viewport={{ once: true }}
-            >
-              Our strategic partnerships with leading global manufacturers
-              ensure that we provide the latest and most reliable medical
-              technologies. From advanced ECMO machines to surgical instruments
-              and disposables, we’re here to support healthcare professionals in
-              their mission to save lives and improve patient outcomes.
-            </motion.p>
-          </motion.div> */}
+      </div>
+      </div>
         </div>
         <br />
         <AnimatedSection  delay={400}>

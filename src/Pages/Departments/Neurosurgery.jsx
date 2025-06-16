@@ -712,4 +712,3 @@ return (
 };
 
 export default NeuroSidebarDesign;
-
