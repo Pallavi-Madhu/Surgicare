@@ -6,6 +6,7 @@ import tiseel from "../../assets/Neuro/Baxter/Tisseel.webp";
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Globe, Package2, Building, ChevronRight, Star, ShoppingCart, ArrowRight, X } from 'lucide-react';
 import Loading from "../../Components/Loading";
+import DepNav from "../../Components/DepNav";
 
 const OphthalSidebarDesign = () => {
   const [activeCompany, setActiveCompany] = useState("Baxter");
@@ -331,6 +332,7 @@ const OphthalSidebarDesign = () => {
               </div>
             </motion.div>
           </AnimatePresence>
+          <DepNav/>
           <Footer/>
         </div>
       </div>

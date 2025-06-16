@@ -66,8 +66,6 @@ const Loading = ({department}) => {
       </div>
     );
   }
-
-  return <div>Loading Complete. (Replace this with your actual content.)</div>;
 };
 
 export default Loading;
