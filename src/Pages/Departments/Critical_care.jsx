@@ -32,6 +32,10 @@ const CriticalSidebarDesign = () => {
   const [hoveredProduct, setHoveredProduct] = useState(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
+
+      const swipeAreaRef = useRef(null);
+      const sidebarRef = useRef(null);
+
   const [loading, setLoading] = useState(true);
   
        useEffect(() => {
@@ -407,7 +411,7 @@ const CriticalSidebarDesign = () => {
                             <img
                               src={currentCompany.logo}
                               alt="Company Logo"
-                              className="h-14 rounded rounded-lg  sm:h-20 w-auto object-contain"
+                              className="h-16 rounded rounded-lg  sm:h-20 w-auto object-contain"
                             />
                           </div>
                         </div>

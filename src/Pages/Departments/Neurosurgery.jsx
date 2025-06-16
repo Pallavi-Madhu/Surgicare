@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState,useEffect,useRef } from "react";
 import Navbar2 from "../../Components/Navbar2";
 import Footer from "../../Components/Footer";
 import departments from "../../Data/departments";
@@ -66,13 +66,18 @@ import neuropatties from "../../assets/Neuro/Surgiwear/NEUROSURGICAL_patties.jpg
 import silicon from "../../assets/Neuro/Surgiwear/silicon_patties.jpg";
 import bonecement from "../../assets/Neuro/Surgiwear/bonecement.jpg";
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Globe, Package2, Building, ChevronRight, Star, ShoppingCart, ArrowRight } from 'lucide-react';
+import { ExternalLink, Globe, Package2, Building, ChevronRight, Star, ShoppingCart, ArrowLeft,X } from 'lucide-react';
 import Loading from "../../Components/Loading";
 
 const NeuroSidebarDesign = () => {
   const [activeCompany, setActiveCompany] = useState("Mizuho");
   const [hoveredProduct, setHoveredProduct] = useState(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+
+              const swipeAreaRef = useRef(null);
+              const sidebarRef = useRef(null);
+  
 
   const [loading, setLoading] = useState(true);
   
@@ -465,34 +470,24 @@ Surgiwear: {
 
   const currentCompany = companies[activeCompany];
 
-return (
-    <>
-    
-      <div className="min-h-screen  bg-gray-100 flex">
+   return (
+  <>
+    <div ref={swipeAreaRef}>
+      <div className="min-h-screen bg-gray-100 flex relative">
         
-        {/* Mobile Menu Button */}
-<div
-  onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-  className="sm:hidden fixed top-2 left-4 -translate-y-1/2 z-50 bg-green-900 mt-16 text-white p-3 rounded-lg shadow-lg flex items-center space-x-2"
->
-  {isSidebarOpen ? (
-    <X className="w-6 h-6  bg-transparent" />
-  ) : (
-    <>
-      <div className="flex  w-full"><button
-        className="text-white px-2 h-8 rounded"
-        onClick={(e) => {
-          e.stopPropagation(); // prevents sidebar toggle
-          console.log("Button clicked");
-        }}
-      >
-        Click for sidebar
-      </button>
-      <ArrowRight className="w-6 h-6 bg-transparent" /></div>
-    </>
-  )}
-</div>
-
+        {/* Sidebar Protruding Edge - Mobile Only */}
+        <div ref={sidebarRef} className="...sidebar styles">
+          <div 
+            className={`lg:hidden fixed left-0 top-1/3 sm:top-1/4 -translate-y-1/2 z-30 transition-all duration-300 ${
+              isSidebarOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'
+            }`}
+            onClick={() => setIsSidebarOpen(true)}
+          >
+            <div className="w-4 h-80 sm:h-96 bg-green-900 rounded-r-full shadow-lg flex items-center justify-center cursor-pointer hover:w-4 transition-all duration-200">
+              <div className="w-1 h-40 sm:h-60 bg-white rounded-full opacity-60"></div>
+            </div>
+          </div>
+        </div>
 
         {/* Mobile Overlay */}
         {isSidebarOpen && (
@@ -510,20 +505,25 @@ return (
           transform transition-transform duration-300 ease-in-out
           ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
         `}>
-          {/* Header */}
-          <div className="p-6 border-b bg-gradient-to-br from-green-900 via-green-500 to-green-900 text-white ">
-            <h1 className="text-4xl font-bold pt-10 sm:pt-0 mb-2">NEUROSURGERY</h1>
+          <button
+            onClick={() => setIsSidebarOpen(false)}
+            className="lg:hidden absolute top-4 right-4 z-50 p-2 text-white hover:text-gray-200 transition-colors"
+          >
+            <X className="w-6 h-6" />
+          </button>
+
+          <div className="p-6 border-b bg-gradient-to-br from-green-900 via-green-500 to-green-900 text-white relative">
+            <h1 className="text-3xl font-bold pt-10 sm:pt-10 mb-2">OPHTHALMOLOGY</h1>
             <p className="text-gray-100 text-xl">Surgical Solutions</p>
           </div>
 
-          {/* Company Navigation */}
           <div className="flex-1 overflow-y-auto">
             {Object.entries(companies).map(([key, company]) => (
               <motion.button
                 key={key}
                 onClick={() => {
                   setActiveCompany(key);
-                  setIsSidebarOpen(false); // Close sidebar on mobile after selection
+                  setIsSidebarOpen(false);
                 }}
                 className={`w-full p-6 text-left border-b transition-all duration-300 ${
                   activeCompany === key 
@@ -557,8 +557,7 @@ return (
             ))}
           </div>
 
-          {/* Quick Stats */}
-          <div className="p-6  bg-green-100 to-purple-500 border-t">
+          <div className="p-6 bg-green-100 to-purple-500 border-t">
             <div className="flex items-center justify-between text-xl text-gray-800">
               <span>Est. {currentCompany.established}</span>
               <motion.a
@@ -568,7 +567,7 @@ return (
                 className={`flex items-center gap-1 font-bold text-${currentCompany.accentColor}-800 hover:text-${currentCompany.accentColor}-700`}
                 whileHover={{ scale: 1.05 }}
               >
-                <Globe className="w-4  h-4" />
+                <Globe className="w-4 h-4" />
                 Website
               </motion.a>
             </div>
@@ -576,9 +575,11 @@ return (
         </div>
 
         {/* Main Content */}
-        <div className="flex-1 overflow-y-auto  md:mt-0">
-          <Navbar2/>
-            {/* <Navbar2/> */}
+        <div className="flex-1 overflow-y-auto md:mt-0 relative">
+          <div className={`transition-opacity duration-300 ${isSidebarOpen ? 'lg:opacity-100 opacity-0 pointer-events-none lg:pointer-events-auto' : 'opacity-100'}`}>
+            <Navbar2/>
+          </div>
+          
           <AnimatePresence mode="wait">
             <motion.div
               key={activeCompany}
@@ -586,32 +587,29 @@ return (
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.4 }}
-              className="p-4 md:p-8"
+              className="p-4 ml-3 sm:ml-0 md:p-8"
             >
-              {/* Company Header */}
 
-              <div className={`rounded-3xl p-4 md:p-8 mb-8 mt-28 sm:mt-16 bg-green-800 border border-${currentCompany.accentColor}-200`}>
+                {/* Company Header */}
+              <div className={`rounded-3xl p-4 md:p-8 mb-8 mt-16 sm:mt-16 bg-green-800 border border-${currentCompany.accentColor}-200`}>
                 <div className="flex flex-col lg:flex-row items-start gap-8">
                   <div className="flex-1">
                     <div className="flex items-center gap-4 mb-6">
-                     
                       <div className="flex flex-col gap-1 w-full">
                         <div className="flex flex-col md:flex-row md:items-center justify-between w-full">
-                           <div className="flex gap-3 pb-3"
-                            ><div className={`p-3 w-14 bg-${currentCompany.accentColor}-100 rounded-2xl`}>
-                        <Building className={`w-8 h-8 text-${currentCompany.accentColor}-600`} />
-                      </div>
-                          <h2 className="text-3xl md:text-5xl font-bold text-white mb-2 md:mb-0">{currentCompany.name}</h2>
-                         </div> 
-     {/* Centered Logo */}
-  <div className="flex justify-center items-center min-w-[120px]">
-    <img
-      src={currentCompany.logo}
-      alt="Company Logo"
-      className="h-20 w-auto object-contain"
-    />
-</div>
-
+                          <div className="flex gap-3 pb-3">
+                            <div className={`p-3 w-14 h-14 bg-${currentCompany.accentColor}-100 rounded-2xl`}>
+                              <Building className={`w-8 h-8 text-${currentCompany.accentColor}-600`} />
+                            </div>
+                            <h2 className="text-3xl md:text-5xl font-bold text-white mb-2 md:mb-0">{currentCompany.name}</h2>
+                          </div>
+                          <div className="flex justify-center items-center  min-w-[120px]">
+                            <img
+                              src={currentCompany.logo}
+                              alt="Company Logo"
+                              className="h-16 rounded rounded-lg  sm:h-20 w-auto object-contain"
+                            />
+                          </div>
                         </div>
                         <p className={`text-${currentCompany.accentColor}-600 font-medium`}>
                           {currentCompany.tagline}
@@ -623,8 +621,30 @@ return (
                 </div>
               </div>
 
+              {/* Sidebar Arrow */}
+              <div className="text-xl sm:w-1/3 font-extralight font-sans text-indigo-700">
+                <div 
+                  className={`lg:hidden relative -translate-y-1/2  transition-all duration-300 ${
+                    isSidebarOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'
+                  }`}
+                >
+                  <motion.div
+                    className="flex flex-wrap items-center gap-2 cursor-pointer"
+                    animate={{ x: [0, 7, 0] }}
+                    transition={{
+                      repeat: Infinity,
+                      duration: 1,
+                      ease: "easeInOut"
+                    }}
+                  >
+                    <ArrowLeft className="text-white bg-gradient-to-br from-indigo-700 via-blue-200 to-purple-700 rounded-full"  onClick={() => setIsSidebarOpen(true)}/>
+                    <span onClick={() => setIsSidebarOpen(true)}>Click here for Sidebar</span>
+                  </motion.div>
+                </div>
+              </div>
+
               {/* Products Section */}
-              <div className="mb-8 pt-8 md:pt-20">
+              <div className="mb-8 pt-8 md:pt-10">
                 <div className="flex items-center gap-3 mb-8">
                   <Package2 className={`w-8 h-8 text-${currentCompany.accentColor}-600`} />
                   <h3 className="text-2xl md:text-3xl font-bold text-gray-900">Product Portfolio</h3>
@@ -672,7 +692,6 @@ return (
                           )}
                         </AnimatePresence>
                       </div>
-                      
                       <div className="p-4 md:p-6">
                         <h4 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">{product.name}</h4>
                         <p className="text-gray-700 mb-4 text-lg md:text-xl">{product.description}</p>
@@ -704,12 +723,13 @@ return (
               </div>
             </motion.div>
           </AnimatePresence>
-          <DepNav/>
-          <Footer/>
+          <DepNav />
+          <Footer />
         </div>
       </div>
-    </>
-  );
+    </div>
+  </>
+);
 };
 
 export default NeuroSidebarDesign;
