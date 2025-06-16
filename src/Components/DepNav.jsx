@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import departments from "../Data/departments";
@@ -22,13 +22,18 @@ const handleNavigate = () => {
   navigate(`/${departments[currentIndex].id}`);
 };
 
+ useEffect(() => {
+    const interval = setInterval(() => {
+      handleNext();
+    }, 3000); // change every 3 seconds
 
-// const handleNavigate = () => {
-//   navigate(`/${departments[currentIndex].id}`);
-// };
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, []);
+
+
 return (
   <>
-    {/* Department Navigation (Just Above Footer) */}
+    {/* Department Navigation  */}
     <div className="mt-10 mb-20 flex flex-col items-center">
       <div className="flex items-center gap-6">
         <button
@@ -41,7 +46,7 @@ return (
         {/* Department Button */}
         <button
           onClick={handleNavigate}
-          className="p-4 w-60 h-14 rounded-3xl hover:text-white text-white border hover:bg-black bg-blue-900 transition text-lg font-bold"
+          className="p-4 w-60 h-14 rounded-3xl hover:text-white text-white border hover:bg-black bg-green-400 transition text-lg font-bold"
         >
           {departments[currentIndex].name}
         </button>
