@@ -6,11 +6,10 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: 
-    radial-gradient(2px 2px at 20px 30px, rgba(56, 189, 248, 0.3), transparent),
-    radial-gradient(2px 2px at 40px 70px, rgba(139, 92, 246, 0.2), transparent),
-    radial-gradient(1px 1px at 90px 40px, rgba(236, 72, 153, 0.3), transparent),
-    radial-gradient(1px 1px at 130px 80px, rgba(34, 197, 94, 0.2), transparent);
+  background-image: radial-gradient(3px 3px at 20px 30px, rgba(56, 189, 248, 0.6), transparent),
+  radial-gradient(3px 3px at 40px 70px, rgba(139, 92, 246, 0.5), transparent),
+  radial-gradient(2px 2px at 90px 40px, rgba(236, 72, 153, 0.5), transparent),
+  radial-gradient(1px 1px at 130px 80px, rgba(34, 197, 94, 0.5), transparent);
   background-repeat: repeat;
   background-size: 200px 200px;
   animation: float 20s ease-in-out infinite;
@@ -18,8 +17,13 @@ body::before {
   z-index: -1;
 }
 
-@keyframes float {
+@keyframes float {  
   0%, 100% { transform: translateY(0px) rotate(0deg); }
   33% { transform: translateY(-30px) rotate(120deg); }
   66% { transform: translateY(-60px) rotate(240deg); }
 }
+
+    /* radial-gradient(2px 2px at 20px 30px, rgba(56, 189, 248, 0.3), transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(139, 92, 246, 0.2), transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(236, 72, 153, 0.3), transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(34, 197, 94, 0.2), transparent); */

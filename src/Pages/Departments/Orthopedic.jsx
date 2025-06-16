@@ -13,7 +13,6 @@ import masks from "../../assets/Orthopedic/Halyard/masks.jpg";
 import GBone from "../../assets/Orthopedic/Surgiwear/GBone.webp";
 import GDress from "../../assets/Orthopedic/Surgiwear/GDress.jpg";
 import GPatch from "../../assets/Orthopedic/Surgiwear/GPatchFinal.png"
-import bg from "../../assets/depBG.png";
 import Baxter from "../../assets/Baxter.png"
 //import { motion } from "framer-motion";
 import { motion, AnimatePresence } from 'framer-motion';
@@ -398,6 +397,7 @@ return (
               </div>
             </motion.div>
           </AnimatePresence>
+          <DepNav/>
           <Footer/>
         </div>
       </div>

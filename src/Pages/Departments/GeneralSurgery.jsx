@@ -5,7 +5,7 @@ import Footer from "../../Components/Footer";
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Globe, Package2, Building, ChevronRight, Star, ShoppingCart } from 'lucide-react';
 import Loading from "../../Components/Loading";
-// import DepNav from "../../Components/DepNav";
+import DepNav from "../../Components/DepNav";
 // import { motion } from "framer-motion";
 // //companies
 import BL from "../../assets/BLLifsciences.png";
@@ -461,6 +461,7 @@ const GenralSurgerySidebarDesign = () => {
               </div>
             </motion.div>
           </AnimatePresence>
+          <DepNav/>
           <Footer/>
         </div>
       </div>

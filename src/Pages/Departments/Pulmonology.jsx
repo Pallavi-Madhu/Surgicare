@@ -311,6 +311,7 @@ return (
               </div>
             </motion.div>
           </AnimatePresence>
+          <DepNav/>
           <Footer/>
         </div>
       </div>
