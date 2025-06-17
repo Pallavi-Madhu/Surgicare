@@ -56,19 +56,19 @@ const Home = () => {
       className="mt-20 overflow-x-hidden bg-cover bg-fixed bg-center"
       style={{
         //backgroundImage: `url(${bg})`,
-        backgroundColor: "white",
+        //backgroundColor: "white",
         backgroundBlendMode: "overlay",
       }}
     >
       <div className=" overflow-x-hidden">
-        <div className="w-full h-1 bg-gradient-to-r from-green-500 to-green-600 bg-white "></div>
-        <div className="relative inset-0 bg-gradient-to-r from-green-50 via-white to-green-50 px-10">
+        {/* <div className="w-full h-1 bg-gradient-to-r from-green-500 to-green-600 bg-white "></div> */}
+        <div className="relative inset-0  px-10">
           <br />
 
           
            <AnimatedSection className="max-w-7xl mx-auto px-4 sm:py-20 my-0" delay={0}>
         <div className="grid lg:grid-cols-2 items-center ">
-           <motion.p
+           <motion.div
                initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 1.0, delay: 0.2 }}
@@ -80,7 +80,7 @@ const Home = () => {
               <h2 className="text-2xl lg:text-4xl font-bold text-gray-800 leading-tight">
                 World-Class <span className="text-green-700">Biomedical Equipment</span> Distribution
               </h2>
-              <p className="lg:text-xl text-sm sm:text-lg font-sans font-extralight text-gray-600 leading-relaxed">
+              <p className="lg:text-xl text-sm sm:text-lg font-sans font-extralight text-gray-900 leading-relaxed">
                 At Nandana SurgiCare, we take pride in being a trusted distributor of world-class biomedical equipment, 
                 enabling healthcare professionals to deliver exceptional patient care. With our strong focus on quality, 
                 innovation, and reliability, we offer a comprehensive range of medical instruments and devices from some 
@@ -94,7 +94,7 @@ const Home = () => {
                 ))}
               </div>
             </div>
-            </motion.p>
+            </motion.div>
 
             <motion.div
             className="flex flex-col lg:flex-row md:mx-20 p-6 gap-4"
@@ -145,7 +145,7 @@ const Home = () => {
             </div>
             </motion.div>
            
-           <motion.p
+           <motion.div
                initial={{ opacity: 0, x: 100 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 1.0, delay: 0.2 }}
@@ -157,7 +157,7 @@ const Home = () => {
               <h2 className="text-2xl lg:text-4xl font-bold text-gray-800 leading-tight">
                 Strategic <span className="text-green-700">      Global Partnerships</span> 
               </h2>
-              <p className="lg:text-xl text-sm sm:text-lg font-sans font-extralight text-gray-600 leading-relaxed">
+              <p className="lg:text-xl text-sm sm:text-lg font-sans font-extralight text-gray-900 leading-relaxed">
                 Our strategic partnerships with leading global 
                   manufacturers ensure that we provide the latest and most 
                   reliable medical technologies. From advanced ECMO machines to surgical instruments and disposables, 
@@ -174,7 +174,7 @@ const Home = () => {
                   </div>
                 </div>
             </div>
-            </motion.p>
+            </motion.div>
            
           </div>
         </AnimatedSection>
@@ -272,7 +272,7 @@ const Home = () => {
               <div className="w-24 h-1 bg-gradient-to-r from-green-500 to-green-600 mx-auto"></div>
             </div>
             
-            <div className="grid md:grid-cols-3 gap-14">
+            <div className="grid  md:grid-cols-3 gap-14">
               {[
                 {
                   title: "Quality Assurance",
@@ -300,7 +300,7 @@ const Home = () => {
                       {item.icon}
                     </div>
                     <h3 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">{item.title}</h3>
-                    <p className="text-gray-600 text-xl sm:text-2xl leading-relaxed">{item.description}</p>
+                    <p className="text-gray-600 text-lg font-sans font-light sm:text-2xl leading-relaxed">{item.description}</p>
                   </div>
                 </div>
               ))}
