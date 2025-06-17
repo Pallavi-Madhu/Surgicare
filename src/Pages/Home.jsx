@@ -68,7 +68,7 @@ const Home = () => {
           
            <AnimatedSection className="max-w-7xl mx-auto px-4 sm:py-20 my-0" delay={0}>
         <div className="grid lg:grid-cols-2 items-center ">
-           <motion.p
+           <motion.div
                initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 1.0, delay: 0.2 }}
@@ -94,7 +94,7 @@ const Home = () => {
                 ))}
               </div>
             </div>
-            </motion.p>
+            </motion.div>
 
             <motion.div
             className="flex flex-col lg:flex-row md:mx-20 p-6 gap-4"
@@ -145,7 +145,7 @@ const Home = () => {
             </div>
             </motion.div>
            
-           <motion.p
+           <motion.div
                initial={{ opacity: 0, x: 100 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 1.0, delay: 0.2 }}
@@ -174,7 +174,7 @@ const Home = () => {
                   </div>
                 </div>
             </div>
-            </motion.p>
+            </motion.div>
            
           </div>
         </AnimatedSection>

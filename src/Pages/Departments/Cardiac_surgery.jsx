@@ -778,6 +778,7 @@ Insightra: {
                 onClick={() => {
                   setActiveCompany(key);
                   setIsSidebarOpen(false);
+                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
                 className={`w-full p-6 text-left border-b transition-all duration-300 ${
                   activeCompany === key 
