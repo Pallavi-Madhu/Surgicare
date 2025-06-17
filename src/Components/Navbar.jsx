@@ -128,7 +128,7 @@ const Navbar = () => {
         }`}
       />
 
-      <div className=" md:max-w-2xl px-4 sm:px-6  lg:px-8">
+      <div className=" md:max-w-7xl px-4 sm:px-6 mx-auto lg:px-8">
         <div className="flex justify-between items-center h-16 sm:h-20">
           {/* Logo Section */}
           <div className="flex items-center space-x-3">

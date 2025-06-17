@@ -45,7 +45,7 @@ const Footer = () => {
 
 
         {/* Main Footer Content */}
-      <div className="relative lg:mx-40 md:mx-20 mx-4  py-10 z-20 ">
+      <div className="relative lg:mx-40 md:mx-20 mx-6  py-10 z-20 ">
         <div className="text-center  mb-12">
           <h2 className="text-4xl font-bold mb-8  bg-clip-text text-white">
             Get in Touch with Us!
