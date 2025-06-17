@@ -1,6 +1,9 @@
 import React from "react";
 import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 import { IoCallOutline } from "react-icons/io5";
+import star from "../assets/star.svg";
+import person from "../assets/person.svg";
+import {Link} from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -90,8 +93,18 @@ const Footer = () => {
               </a>
             </div>
 
+        {/* Contact-Us svg */}
+        <div className="flex justify-center pt-4">
+          <Link to="/contact">
+          <div className="inline-flex justify-center  space-x-2 px-4 py-3 bg-white-400 border border-white/40 rounded-md ">
+          <img src={person} alt="person" className="w-6 h-6" ></img>
+          <span className="text-white text-sm hover:text-indigo-200 text-white transition-colors duration-200 font-bold">Contact</span>
+        </div>
+        </Link>
+        </div>
+
             {/* Privacy Policy */}
-          <div className="pt-4 flex justify-center pb-10">
+          <div className="pt-6 flex justify-center pb-4">
             <a
             href="/privacy-policy"
             className="text-white hover:text-indigo-200 font-semibold text-lg transition-colors duration-200  underline decoration-2 underline-offset-1"
@@ -101,11 +114,21 @@ const Footer = () => {
           </div>
         
         {/* Copyright Section */}
-        <div className="border-t border-indigo-400/30 pt-8 text-center"></div>
+        
+        
+        <div className="relative w-full flex items-center justify-center py-8">
+        <div className="absolute inset-0 flex items-center" aria-hidden="true">
+          <div className="w-full border-t border-white/40" />
+        </div>
+        <div className="relative z-10 bg-gray-700 px-2">
+          <img src={star} alt="Star" className="w-6 h-6" />
+          {/* Or <Star className="w-6 h-6" /> if imported as component */}
+        </div>
+      </div>
+
           <p className="text-gray-100 text-lg text-center">
             &copy; {new Date().getFullYear()} Nandana SurgiCare. All rights reserved.
           </p>
-        
       </div>
     </footer>
   );

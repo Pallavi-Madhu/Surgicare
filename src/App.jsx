@@ -5,6 +5,7 @@ import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Products from "./Pages/Products";
 import Contact from "./Pages/Contact";
+import ScrollToTop from "./Components/ScrollToTop";
 
 // Import Department Pages
 import CriticalCare from "./Pages/Departments/Critical_care";
@@ -22,6 +23,7 @@ const App = () => {
   return (
     <>
       <Router>
+        <ScrollToTop/>
         <div>
           <Routes>
             {/* Main Pages */}
