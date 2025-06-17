@@ -245,8 +245,8 @@ const CriticalSidebarDesign = () => {
    Hico : {
       logo: hico,
       name: "Hico",
-      bgColor: "bg-orange-50",
-      accentColor: "orange",
+      bgColor: "bg-green-50",
+      accentColor: "green",
       description: "High-quality warming therapy devices for critical care.",
       website: "https://www.hico.de/en/",
       established:"1945",

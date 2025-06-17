@@ -75,11 +75,11 @@ const DepNav = () => {
         >
               <span className="relative flex items-center justify-center gap-2">
             <Icon className="text-green-800 text-xl" />
-            {departments[currentIndex].name}
+            {departments[currentIndex].name}  
           </span>
         </button>
 
-        <button
+        <button 
           onClick={handleNext}
           className="group relative p-2 md:p-5 rounded-full bg-white border-2 transition-all duration-300 hover:scale-110 hover:border-green-500 hover:shadow-lg"
           style={{ WebkitTapHighlightColor: 'transparent' }}
@@ -99,6 +99,7 @@ const DepNav = () => {
           ? 'bg-green-700 shadow-lg scale-125'
           : 'bg-gray-300 hover:bg-green-500'
       }`}
+      style={{ WebkitTapHighlightColor: "transparent", touchAction: "manipulation" }}
     />
   ))}
 </div>
