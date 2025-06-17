@@ -15,6 +15,7 @@ import dist from "../assets/dist.png"
 import { motion } from "framer-motion";
 import ParticleOverlay from '../Components/Particle';
 import { useState, useEffect } from "react";
+import HeroSlideshow from "../Components/HeroSlideshow";
 
 const AnimatedSection = ({ children, className = "", delay = 0 }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -50,10 +51,12 @@ const AnimatedSection = ({ children, className = "", delay = 0 }) => {
 };
 
 const Home = () => {
-  return (<>
+  return (<>   
      <Navbar />
+     <div className="bg-gradient-to-r from-green-900 via-green-400 to-green-900 "> <HeroSlideshow /></div>
+         
     <div
-      className="mt-20 overflow-x-hidden bg-cover bg-fixed bg-center"
+      className=" overflow-x-hidden bg-cover bg-fixed bg-center"
       style={{
         //backgroundImage: `url(${bg})`,
         //backgroundColor: "white",
@@ -66,7 +69,7 @@ const Home = () => {
           <br />
 
           
-           <AnimatedSection className="max-w-7xl mx-auto px-4 sm:py-20 my-0" delay={0}>
+           <AnimatedSection className="max-w-7xl mx-auto px-4 lg:my-10" delay={0}>
         <div className="grid lg:grid-cols-2 items-center ">
            <motion.div
                initial={{ opacity: 0, x: -100 }}
@@ -74,9 +77,11 @@ const Home = () => {
               transition={{ duration: 1.0, delay: 0.2 }}
             >
             <div className="space-y-6 ">
+              
               <div className="inline-block px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-semibold">
                 About Nandana Surgi Care
               </div>
+                <div className="w-30 h-1 bg-gradient-to-r my-2 from-green-500 to-green-900 mx-auto rounded-full"></div>
               <h2 className="text-2xl lg:text-4xl font-bold text-gray-800 leading-tight">
                 World-Class <span className="text-green-700">Biomedical Equipment</span> Distribution
               </h2>
@@ -122,7 +127,7 @@ const Home = () => {
 
           
 
-             <AnimatedSection className="m-20 max-w-7xl mx-auto py-20" delay={0}>
+             <AnimatedSection className=" max-w-7xl mx-auto md:py-20" delay={0}>
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-40 items-center">
             <motion.div
             className="flex flex-col lg:flex-row md:mx-20 p-6 gap-4"
@@ -150,13 +155,15 @@ const Home = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 1.0, delay: 0.2 }}
             >
-            <div className="space-y-6 ">
-              <div className="inline-block px-4 py-2 bg-gray-100 text-gray-800 rounded-full text-sm font-semibold">
+            <div className="space-y-6 mx-4 sm:mx-0">
+              <div className="inline-block px-4 py-2 bg-gray-100 text-gray-800 rounded-full text-sm  font-semibold">
               Global Synergy
               </div>
+                <div className="w-30 h-1 bg-gradient-to-r my-2 from-green-500 to-green-900 mx-auto rounded-full"></div>
               <h2 className="text-2xl lg:text-4xl font-bold text-gray-800 leading-tight">
                 Strategic <span className="text-green-700">      Global Partnerships</span> 
               </h2>
+              
               <p className="lg:text-xl text-sm sm:text-lg font-sans font-extralight text-gray-900 leading-relaxed">
                 Our strategic partnerships with leading global 
                   manufacturers ensure that we provide the latest and most 
@@ -265,7 +272,7 @@ const Home = () => {
         <br />
         <AnimatedSection  delay={400}>
           <div className="max-w-7xl  mx-auto  lg:h-auto sm:mb-40 lg:mt-20 lg:mb-80 pt-20 px-4">
-            <div className="text-center mb-16">
+            <div className="text-center mb-6">
               <h2 className="text-3xl sm:text-5xl font-bold text-gray-800 mb-4">
                 Why Choose <span className="text-green-600">Us?</span>
               </h2>
@@ -296,11 +303,11 @@ const Home = () => {
                 <div key={index} className="group relative">
                   <div className="absolute -inset-0.5 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl blur opacity-0 group-hover:opacity-20 transition duration-500"></div>
                   <div className="relative  bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100">
-                    <div className={`w-16 h-16 bg-gradient-to-r ${item.gradient} rounded-xl flex items-center justify-center text-white text-2xl font-bold mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    <div className={`sm:w-16 sm:h-16 mx-auto w-12  h-12 bg-gradient-to-r ${item.gradient} rounded-xl flex items-center justify-center text-white text-2xl font-bold mb-6 group-hover:scale-110 transition-transform duration-300`}>
                       {item.icon}
                     </div>
-                    <h3 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">{item.title}</h3>
-                    <p className="text-gray-600 text-lg font-sans font-light sm:text-2xl leading-relaxed">{item.description}</p>
+                    <h3 className="text-2xl sm:text-3xl text-center font-bold text-gray-800 mb-4">{item.title}</h3>
+                    <p className="text-gray-600 text-lg text-center font-sans font-light sm:text-2xl leading-relaxed">{item.description}</p>
                   </div>
                 </div>
               ))}
@@ -329,7 +336,7 @@ const Home = () => {
 
           {/* Animated Paragraph */}
           <motion.p
-            className="p-6 sm: font-sans text-center text-2xl mx-auto max-w-4xl text-gray-800 drop-shadow-md"
+            className="p-6 font-sans text-center text-xl md:text-2xl mx-auto max-w-4xl text-gray-800 drop-shadow-md"
             initial={{ opacity: 0, translateY: 30 }}
             whileInView={{ opacity: 1, translateY: 0 }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
