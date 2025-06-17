@@ -184,7 +184,7 @@ const MedicalEquipmentPage = () => {
     <>
     <Navbar />
 
-    <div className="min-h-screen  bg-green-50 pb-48">
+    <div className="min-h-screen pb-48">
       
       <motion.div 
         className="bg-white shadow-lg bg-gradient-to-r from-green-900 via-green-500 to-green-900"

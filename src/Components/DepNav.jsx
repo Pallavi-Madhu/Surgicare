@@ -56,19 +56,20 @@ const DepNav = () => {
   const Icon = departments[currentIndex].icon;
 
   return (
-    <div className="mt-10 mb-20 flex flex-col items-center">
-      <div className="flex items-center gap-8">
+    <div className="mt-10 mb-20 sm:ml-0 ml-2 flex flex-col items-center">
+      <div className="flex items-center gap-4 md:gap-8">
         <button
           onClick={handlePrev}
-          className="group relative p-5 rounded-full bg-white border-2 transition-all duration-300 hover:scale-110 hover:border-green-500 hover:shadow-lg"
+          className="group relative p-2 md:p-5 rounded-full bg-white border-2 transition-all duration-300 hover:scale-110 hover:border-green-500 hover:shadow-lg"
+        style={{ WebkitTapHighlightColor: 'transparent' }}
         >
-          <FaArrowLeft className="h-6 w-6 text-green-700 group-hover:text-green-900 transition-colors duration-300" />
+          <FaArrowLeft className="h-4 w-4 md:h-6 md:w-6 text-green-700 group-hover:text-green-900 transition-colors duration-300" />
           <div className="absolute inset-0 rounded-full bg-green-100 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
         </button>
 
         <button
           onClick={handleNavigate}
-          className={`relative w-80 h-16 hover:bg-green-50 hover:text-green-900 rounded-full bg-white text-green-800 border-2 border-green-500 hover:border-green-600 transition-all duration-500 text-xl font-bold shadow-lg hover:shadow-2xl hover:shadow-green-300/50 hover:scale-105 overflow-hidden  ${
+          className={`relative w-60 md:w-80 h-14 md:h-16 hover:bg-green-50 hover:text-green-900 rounded-full bg-white text-green-800 border-2 border-green-500 hover:border-green-600 transition-all duration-500 text-xl font-bold shadow-lg hover:shadow-2xl hover:shadow-green-300/50 hover:scale-105 overflow-hidden  ${
             isTransitioning ? 'scale-95 opacity-80' : ''
           }`}
         >
@@ -80,9 +81,10 @@ const DepNav = () => {
 
         <button
           onClick={handleNext}
-          className="group relative p-5 rounded-full bg-white border-2 transition-all duration-300 hover:scale-110 hover:border-green-500 hover:shadow-lg"
+          className="group relative p-2 md:p-5 rounded-full bg-white border-2 transition-all duration-300 hover:scale-110 hover:border-green-500 hover:shadow-lg"
+          style={{ WebkitTapHighlightColor: 'transparent' }}
         >
-          <FaArrowRight className="h-6 w-6 text-green-700 group-hover:text-green-900 transition-colors duration-300" />
+          <FaArrowRight className="h-4 w-4 md:h-6 md:w-6 text-green-700 group-hover:text-green-900 transition-colors duration-300" />
           <div className="absolute inset-0 rounded-full bg-green-100 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
         </button>
       </div>
@@ -95,7 +97,7 @@ const DepNav = () => {
       className={`w-3 h-3 cursor-pointer rounded-full transition-all duration-500 ${
         index === currentIndex
           ? 'bg-green-700 shadow-lg scale-125'
-          : 'bg-green-300 hover:bg-green-500'
+          : 'bg-gray-300 hover:bg-green-500'
       }`}
     />
   ))}

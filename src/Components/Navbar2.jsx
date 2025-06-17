@@ -102,7 +102,7 @@ const Navbar = () => {
       }}
     >
       {!isScrolled && (
-        <div className="absolute inset-0 z-[-2] bg-transparent transition-opacity duration-300" />
+        <div className="absolute inset-0 z-[-2] bg-white sm:bg-transparent transition-opacity duration-300" />
       )}
 
       <motion.div
@@ -118,7 +118,7 @@ const Navbar = () => {
       />
 
       <div className=" md:max-w-2xl px-4 sm:px-6  lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-16 sm:h-20">
           {/* Logo Section */}
           <div className="flex items-center space-x-3">
             <div className=" transition-colors duration-200 relative group  rounded-xl flex items-center justify-center">
@@ -136,6 +136,7 @@ const Navbar = () => {
   <button
     onClick={() => setIsMenuOpen(!isMenuOpen)}
     className="text-gray-700 hover:text-green-800 focus:outline-none transition-colors duration-200"
+     style={{ WebkitTapHighlightColor: 'transparent' }}
   >
     {isMenuOpen ? (
       <svg className="w-10 h-10 rounded rounded-xl bg-white p-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -178,12 +179,14 @@ const Navbar = () => {
                 <a
                   href="/"
                   className="block text-gray-700 rounded rounded-xl hover:text-green-700 font-bold text-lg p-3 transition duration-200 hover:shadow-lg"
+                  style={{ WebkitTapHighlightColor: 'transparent' }}
                 >
                   Home
                 </a>
                 <a
                   href="/about-us"
                   className="block text-gray-700 rounded rounded-xl hover:text-green-700 font-bold text-lg p-3 transition duration-200 hover:shadow-lg"
+                  style={{ WebkitTapHighlightColor: 'transparent' }}
                 >
                   About Us
                 </a>
@@ -192,8 +195,9 @@ const Navbar = () => {
                 <div>
                   <button
                     onClick={toggleProductsMenu}
-                    className="w-full text-left text-gray-700 rounded rounded-xl hover:text-green-600 font-semibold text-lg p-3 transition-colors duration-200 flex items-center hover:shadow-lg justify-between"
-                  >
+                   className="w-full text-left text-gray-700 rounded-xl font-semibold text-lg p-3 transition-colors duration-200 flex items-center justify-between hover:text-green-600 hover:shadow-lg focus:outline-none focus:text-gray-700 active:text-gray-700"
+                    style={{ WebkitTapHighlightColor: 'transparent' }}
+                 >
                     <span>Products</span>
                     <svg className={`w-4 h-4 transition-transform duration-200 ${isProductsOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -213,6 +217,7 @@ const Navbar = () => {
                         <a
                           href="/products"
                           className="block rounded rounded-xl text-lg bg-green-50 text-green-600 font-sans p-2  hover:bg-green-100 hover:text-green-800 hover:shadow-lg transition-colors duration-200"
+                          style={{ WebkitTapHighlightColor: 'transparent' }}
                         >
                           Equipments
                         </a>
@@ -220,6 +225,7 @@ const Navbar = () => {
                           <button
                             onClick={toggleDisposablesMenu}
                             className="w-full text-lg  text-left text-green-600 font-sans bg-green-50 rounded rounded-xl p-2 hover:text-green-800 hover:shadow-lg hover:bg-green-100 transition-colors duration-200 flex items-center justify-between"
+                            style={{ WebkitTapHighlightColor: 'transparent' }}
                           >
                             <span>Disposables</span>
                             <svg className={`w-4 h-4 transition-transform duration-200 ${isDisposablesOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -258,6 +264,7 @@ const Navbar = () => {
                 <a
                   href="/contact"
                   className="block text-gray-700 hover:text-green-700 font-bold text-lg p-3 transition duration-200 rounded rounded-xl hover:shadow-lg"
+                  style={{ WebkitTapHighlightColor: 'transparent' }}
                 >
                   Contact
                 </a>
