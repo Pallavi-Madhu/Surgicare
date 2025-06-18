@@ -14,13 +14,14 @@ const Slideshow = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
 
   const slides = [
-    {
-      image: hands,
-      title: "Hands That Heal, Tools That Empower"
-    },
+ 
     {
       image: vision,
       title: "Vision for Better Healthcare "
+    },
+       {
+      image: hands,
+      title: "Hands That Heal, Tools That Empower"
     },
     {
       image: doctor,
@@ -56,7 +57,7 @@ const Slideshow = () => {
   }, [currentIndex]);
 
   return (
-    <div className="max-w-7xl w-full mt-16 md:mt-20 mx-auto p-4">
+    <div className="max-w-7xl w-full mt-16 md:mt-20 mx-auto sm:p-4">
       <div 
         className="relative group"
         onMouseEnter={() => setIsHovered(true)}
@@ -64,7 +65,7 @@ const Slideshow = () => {
       >
         
         {/* Main Container with advanced styling */}
-        <div className="relative overflow-hidden rounded-3xl shadow-2xl bg-gradient-to-br from-gray-900 via-gray-800 to-black">
+        <div className="relative overflow-hidden  shadow-2xl bg-gradient-to-br from-gray-900 via-gray-800 to-black">
           
           {/* Background Animation */}
           <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-pink-600/20 animate-pulse"></div>
@@ -75,11 +76,11 @@ const Slideshow = () => {
             
             {/* Loading Animation */}
             {!imageLoaded && (
-              <div className="absolute inset-0 flex items-center justify-center bg-gray-800">
-                <div className="flex space-x-2">
-                  <div className="w-3 h-3 bg-blue-500 rounded-full animate-bounce"></div>
-                  <div className="w-3 h-3 bg-purple-500 rounded-full animate-bounce" style={{animationDelay: '0.1s'}}></div>
-                  <div className="w-3 h-3 bg-pink-500 rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
+              <div className="absolute inset-0 flex items-center  justify-center bg-gray-800">
+                <div className="flex space-x-2  lg:space-x-6  sm:space-x-4">
+                  <div className="w-2 h-2 sm:w-3 sm:h-3 lg:w-4 lg:h-4 bg-pink-500 rounded-full animate-bounce"></div>
+                  <div className="w-2 h-2 sm:w-3 sm:h-3 lg:w-4 lg:h-4 bg-blue-500 rounded-full animate-bounce" style={{animationDelay: '0.1s'}}></div>
+                  <div className="w-2 h-2 sm:w-3 sm:h-3 lg:w-4 lg:h-4  bg-yellow-400 rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
                 </div>
               </div>
             )}
@@ -95,14 +96,15 @@ const Slideshow = () => {
             />
             
             
-            {/* Animated Border */}
-            <div className="absolute inset-0 border-4 border-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+            {/* Animated Border*/} 
+            <div className="absolute inset-0 border-4 border-transparent bg-gradient-to-r from-pink-500 via-indigo-400 to-yellow-400 opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
             
+
             {/* Title with Enhanced Typography */}
-            <div className="absolute bottom-12 left-12 z-10">
+            <div className="absolute  bottom-4 left-4 z-20 lg:bottom-12 lg:left-12   md:bottom-8 md:left-10 ">
               <div className="space-y-2">
-                <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
-                <h3 className="text-white lg:text-5xl sm:text-xl md:text-2xl font-black tracking-tight drop-shadow-2xl">
+                {/* <div className="w-16 h-1 bg-gradient-to-r from-pink-500 via-indigo-500 to-yellow-400 rounded-full"></div> */}
+                <h3 className="text-white text-sm lg:text-5xl sm:text-xl md:text-3xl font-black tracking-tight drop-shadow-2xl">
                   {slides[currentIndex].title.split(' ').map((word, index) => (
                     <span 
                       key={index} 
@@ -137,26 +139,27 @@ const Slideshow = () => {
            
 
          
-          {/* Auto-play Control */}
-          <div className="absolute top-8 right-8 z-20">
-            <button
-              onClick={() => setIsAutoPlay(!isAutoPlay)}
-              className="p-3 rounded-full bg-black/20 backdrop-blur-xl border border-white/20 hover:bg-black/30 transition-all duration-300 group/play"
-            >
-              {isAutoPlay ? (
-                <Pause size={20} className="text-white group-hover/play:text-green-400" />
-              ) : (
-                <Play size={20} className="text-white group-hover/play:text-green-400" />
-              )}
-            </button>
-          </div>
+ {/* Auto-play Control */}
+<div className="absolute top-2 right-2 sm:top-8 sm:right-8 z-20">
+  <button
+    onClick={() => setIsAutoPlay(!isAutoPlay)}
+    className="w-10 h-10 lg:w-14 lg:h-14 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-black/30 backdrop-blur-xl border-2 border-white/20 hover:bg-black/50 transition-all duration-300 shadow-md group"
+  >
+    {isAutoPlay ? (
+      <Pause size={24} className="text-white group-hover:text-green-400" />
+    ) : (
+      <Play size={24} className="text-white group-hover:text-green-400" />
+    )}
+  </button>
+</div>
+
 
           
           {/* Advanced Progress Bar */}
-          <div className="absolute bottom-0 left-0 right-0 h-2 bg-black/30">
+          <div className="absolute bottom-0 left-0 right-0 h-1 sm:h-2 bg-black/30">
             <div className="relative h-full overflow-hidden">
               <div 
-                className="h-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 transition-all duration-1000 ease-out relative"
+                className="h-full bg-gradient-to-r from-pink-800 via-indigo-500 to-yellow-400 transition-all duration-1000 ease-out relative"
                 style={{ 
                   width: `${((currentIndex + 1) / slides.length) * 100}%`
                 }}
@@ -167,7 +170,7 @@ const Slideshow = () => {
           </div>
 
           {/* Floating Particles Animation */}
-          <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          {/* <div className="absolute inset-0 pointer-events-none overflow-hidden">
             {[...Array(6)].map((_, i) => (
               <div
                 key={i}
@@ -180,12 +183,12 @@ const Slideshow = () => {
                 }}
               ></div>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
 
       {/* CSS Animations */}
-      <style jsx>{`
+      <style>{`
         @keyframes slideInUp {
           from {
             opacity: 0;

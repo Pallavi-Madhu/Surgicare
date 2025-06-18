@@ -53,7 +53,7 @@ const AnimatedSection = ({ children, className = "", delay = 0 }) => {
 const Home = () => {
   return (<>   
      <Navbar />
-     <div className="bg-gradient-to-r from-gray-900 via-green-400 to-gray-900 "> 
+     <div className="bg-gradient-to-r from-gray-900 via-green-300 to-gray-900 "> 
       <HeroSlideshow />
       </div>
          
@@ -70,7 +70,7 @@ const Home = () => {
         <div className="relative inset-0  px-10">
           <br />
 
- <AnimatedSection className="max-w-7xl mx-auto px-4 lg:my-10" delay={0}>
+ <AnimatedSection className="max-w-7xl mx-auto lg:my-10" delay={0}>
         <div className="grid lg:grid-cols-2 items-center ">
            <motion.div
                initial={{ opacity: 0, x: -100 }}
@@ -131,7 +131,7 @@ const Home = () => {
              <AnimatedSection className=" max-w-7xl mx-auto md:py-20" delay={0}>
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-40 items-center">
             <motion.div
-            className="flex flex-col lg:flex-row md:mx-20 p-6 gap-4"
+            className="flex flex-col lg:flex-row md:mx-20 gap-4"
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.0 }}

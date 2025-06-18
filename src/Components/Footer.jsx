@@ -47,7 +47,7 @@ const Footer = () => {
         {/* Main Footer Content */}
       <div className="relative lg:mx-40 md:mx-20 mx-6  py-10 z-20 ">
         <div className="text-center  mb-12">
-          <h2 className="text-4xl font-bold mb-8  bg-clip-text text-white">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-8  bg-clip-text text-white">
             Get in Touch with Us!
           </h2>
           
@@ -59,7 +59,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="text-center lg:text-left">
             <div className="flex items-center justify-center lg:justify-start space-x-3 mb-4">
-              <h3 className="text-3xl font-bold text-white">
+              <h3 className="text-2xl sm:text-3xl font-bold text-white">
                 Nandana SurgiCare
               </h3>
             </div>
@@ -100,7 +100,7 @@ const Footer = () => {
             {/* Phone */}
             <div className="flex items-center space-x-3 p-3 bg-white/50 rounded-lg backdrop-blur-sm border border-indigo-200/50 hover:bg-white/70 transition-all duration-300 w-fit">
               <IoCallOutline className="w-6 h-6 text-indigo-100 flex-shrink-0" />
-              <div className="text-lg flex">
+              <div className="text-sm sm:text-lg flex">
                 <a
                   href="tel:+919847933898"
                   className="hover:text-indigo-300 text-white transition-colors duration-200 font-semibold"

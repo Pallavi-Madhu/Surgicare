@@ -47,7 +47,7 @@ const Contact = () => {
       <div className="w-30 h-1 bg-gradient-to-r my-2 from-green-500 to-green-900 mx-auto rounded-full"></div>
 
     <div className="max-w-5xl mx-auto m-8">
-          <div className="flex mx-4 gap-3 mt-4 md:mt-8 flex-col sm:flex-row  justify-center bg-white rounded-xl  shadow-2xl p-3">
+          <div className="flex text-lg sm:text-2xl mx-4 gap-3 mt-4 md:mt-8 flex-col sm:flex-row  justify-center bg-white rounded-xl  shadow-2xl p-3">
            <button
                 onClick={() => setActiveTab('form')}
                 className={`px-6 py-3 mx-2 rounded-lg font-semibold transition-all ${
@@ -117,7 +117,7 @@ const Contact = () => {
               Got Questions? <span className="text-green-700">Reach Out!</span>
             </h2>
             <motion.p
-              className="text-black text-center w-full sm:w-2/3 lg:w-1/2 mt-8 "
+              className="text-black text-xl sm:text-2xl text-center w-full sm:w-2/3 lg:w-1/2 mt-8 "
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
