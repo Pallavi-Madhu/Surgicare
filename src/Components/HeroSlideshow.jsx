@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Play, Pause } from 'lucide-react';
 //import hand from "../assets/hand.jpeg";
-import vision from "../assets/sees.png";
+import vision from "../assets/perf.png";
 import patient from "../assets/patient.jpg";
-import doctor from "../assets/doctor.png"
+import doctor from "../assets/ffinal.png"
 import hands from "../assets/hands.png"
 
 
@@ -71,7 +71,7 @@ const Slideshow = () => {
           
           {/* Image Container */}
           
-         <div className="relative w-full h-[500px] md:h-[700px] lg:h-[900px] xl:h-[1000px] overflow-hidden">
+         <div className="relative w-full h-[500px] md:h-[700px] h-5xl xl:h-[1000px] overflow-hidden">
             
             {/* Loading Animation */}
             {!imageLoaded && (
