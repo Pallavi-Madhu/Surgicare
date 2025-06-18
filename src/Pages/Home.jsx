@@ -53,7 +53,9 @@ const AnimatedSection = ({ children, className = "", delay = 0 }) => {
 const Home = () => {
   return (<>   
      <Navbar />
-     <div className="bg-gradient-to-r from-green-900 via-green-400 to-green-900 "> <HeroSlideshow /></div>
+     <div className="bg-gradient-to-r from-gray-900 via-green-400 to-gray-900 "> 
+      <HeroSlideshow />
+      </div>
          
     <div
       className=" overflow-x-hidden bg-cover bg-fixed bg-center"
@@ -68,8 +70,7 @@ const Home = () => {
         <div className="relative inset-0  px-10">
           <br />
 
-          
-           <AnimatedSection className="max-w-7xl mx-auto px-4 lg:my-10" delay={0}>
+ <AnimatedSection className="max-w-7xl mx-auto px-4 lg:my-10" delay={0}>
         <div className="grid lg:grid-cols-2 items-center ">
            <motion.div
                initial={{ opacity: 0, x: -100 }}
