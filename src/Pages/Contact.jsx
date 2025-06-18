@@ -146,8 +146,8 @@ const Contact = () => {
                       <div className="flex items-start gap-3">
                         <MapPin className="text-indigo-700 mt-1 flex-shrink-0" />
                         <div>
-                          <p className="font-medium text-gray-900">Address</p>
-                          <p className="text-gray-700">
+                          <p className="font-medium text-gray-900 ">Address</p>
+                          <p className="text-gray-700 text-sm sm:text-xl text-gray-800">
                             17/85/A1, "Vyshnavam",<br />
                             Near Palakkal Bhagavathi Temple,<br />
                             Container Terminal Road,<br />
@@ -159,7 +159,7 @@ const Contact = () => {
                         <Mail className="text-indigo-700 flex-shrink-0" />
                         <div>
                           <p className="font-medium text-gray-900">Email</p>
-                          <a href="mailto:office@nandanasurgicare.com" className="text-gray-700 text-xl  hover:underline">
+                          <a href="mailto:office@nandanasurgicare.com" className="text-gray-700 text-sm sm:text-xl hover:underline">
                             office@nandanasurgicare.com
                           </a>
                         </div>
@@ -168,7 +168,7 @@ const Contact = () => {
                         <Phone className="text-indigo-700 flex-shrink-0" />
                         <div>
                           <p className="font-medium text-gray-900">Phone</p>
-                          <a href="tel:+919207755944" className="text-gray-700  hover:underline">
+                          <a href="tel:+919207755944" className="text-gray-700 text-sm sm:text-xl  hover:underline">
                             +91 9207755944
                           </a>
                         </div>
@@ -187,7 +187,7 @@ const Contact = () => {
                         <MapPin className="text-indigo-700  mt-1 flex-shrink-0" />
                         <div>
                           <p className="font-medium text-gray-900">Address</p>
-                          <p className="text-gray-700">
+                          <p className="text-gray-700 text-sm sm:text-xl">
                             Vyapara Bhavan,<br />
                             Eranhipalam,<br />
                             Kozhikode, Kerala-673021
@@ -197,8 +197,8 @@ const Contact = () => {
                       <div className="flex items-center gap-3">
                         <Mail className="text-indigo-700 flex-shrink-0" />
                         <div>
-                          <p className="font-medium text-gray-900">Email</p>
-                          <a href="mailto:office@nandanasurgicare.com" className="text-gray-700 text-xl hover:underline">
+                          <p className="font-medium text-gray-900 ">Email</p>
+                          <a href="mailto:office@nandanasurgicare.com" className="text-gray-700 text-sm sm:text-xl  hover:underline">
                             office@nandanasurgicare.com
                           </a>
                         </div>
@@ -207,7 +207,7 @@ const Contact = () => {
                         <Phone className="text-indigo-700  flex-shrink-0" />
                         <div>
                           <p className="font-medium text-gray-900">Phone</p>
-                          <a href="tel:+919207755922" className="text-gray-700  hover:underline">
+                          <a href="tel:+919207755922" className="text-gray-700 text-sm sm:text-xl  hover:underline">
                             +91 9207755922
                           </a>
                         </div>
