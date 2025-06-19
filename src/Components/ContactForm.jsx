@@ -94,7 +94,7 @@ const ContactForm = () => {
         onSubmit={handleSubmit}
         className="bg-gray-50 to-green-900 p-6 rounded-lg shadow-2xl w-full max-w-lg"
       >
-        <h2 className="text-3xl text-green-700 font-semibold text-center text-gray-800 mb-4">
+        <h2 className="sm:text-3xl text-2xl text-green-700 font-semibold text-center text-gray-800 mb-4">
           Contact Us
         </h2>
         <div className="space-y-">
@@ -102,7 +102,7 @@ const ContactForm = () => {
           <div>
             <label
               htmlFor="name"
-              className="block text-md font-medium text-gray-700"
+              className="block text-xl sm:text-2xl font-medium text-gray-700"
             >
               Name
             </label>
@@ -120,7 +120,7 @@ const ContactForm = () => {
           <div>
             <label
               htmlFor="email"
-              className="block text-md font-medium text-gray-700"
+              className="block text-xl sm:text-2xl text-md font-medium text-gray-700"
             >
               Email
             </label>
@@ -138,7 +138,7 @@ const ContactForm = () => {
           <div>
             <label
               htmlFor="phone"
-              className="block text-md font-medium text-gray-700"
+              className="block text-xl sm:text-2xl text-md font-medium text-gray-700"
             >
               Phone
             </label>
@@ -149,14 +149,14 @@ const ContactForm = () => {
               value={formData.phone}
               onChange={handleChange}
               required
-              className="mt-1 block w-full p-3 border border-green-700 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="mt-1 block  w-full p-3 border border-green-700 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
             />
           </div>
           {/* Enquiry Input */}
           <div>
             <label
               htmlFor="enquiry"
-              className="block text-md font-medium text-gray-700"
+              className="block text-xl sm:text-2xl text-md font-medium text-gray-700"
             >
               Enquiry
             </label>
@@ -173,7 +173,7 @@ const ContactForm = () => {
         {/* Submit Button */}
         <button
           type="submit"
-          className="w-full mt-6 p-3 bg-green-600 text-white font-semibold rounded-md hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-green-500"
+          className="w-full text-xl sm:text-2xl mt-6 p-3 bg-green-600 text-white font-semibold rounded-md hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-green-500"
         >
           Submit Form
         </button>

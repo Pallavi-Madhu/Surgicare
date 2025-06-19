@@ -47,7 +47,7 @@ const Footer = () => {
         {/* Main Footer Content */}
       <div className="relative lg:mx-40 md:mx-20 mx-6  py-10 z-20 ">
         <div className="text-center  mb-12">
-          <h2 className="text-4xl font-bold mb-8  bg-clip-text text-white">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-8  bg-clip-text text-white">
             Get in Touch with Us!
           </h2>
           
@@ -59,7 +59,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="text-center lg:text-left">
             <div className="flex items-center justify-center lg:justify-start space-x-3 mb-4">
-              <h3 className="text-3xl font-bold text-white">
+              <h3 className="text-2xl sm:text-3xl font-bold text-white">
                 Nandana SurgiCare
               </h3>
             </div>
@@ -98,9 +98,9 @@ const Footer = () => {
             {/* Phone */}
             <div className="flex flex-col items-center space-y-4 mb-4 sm:mb-8">
             {/* Phone */}
-            <div className="flex items-center space-x-3 p-3 bg-white/50 rounded-lg backdrop-blur-sm border border-indigo-200/50 hover:bg-white/70 transition-all duration-300 w-fit">
+            <div className="flex items-center space-x-3 p-3 bg-white/50 rounded-lg backdrop-blur-sm border sm:border-0  hover:bg-white/70 transition-all duration-300 w-fit">
               <IoCallOutline className="w-6 h-6 text-indigo-100 flex-shrink-0" />
-              <div className="text-lg flex">
+              <div className="text-sm sm:text-lg xl:text-2xl flex">
                 <a
                   href="tel:+919847933898"
                   className="hover:text-indigo-300 text-white transition-colors duration-200 font-semibold"
@@ -123,7 +123,7 @@ const Footer = () => {
               <FaEnvelope className="w-6 h-6 text-indigo-200 flex-shrink-0" />
               <a
                 href="mailto:office@nandanasurgicare.com"
-                className="text-lg hover:text-indigo-200 text-white transition-colors duration-200 font-semibold"
+                className="text-lg md:text-xl hover:text-indigo-200 text-white transition-colors duration-200 font-semibold"
               >
                 office@nandanasurgicare.com
               </a>
@@ -131,21 +131,21 @@ const Footer = () => {
              {/* Contact-Us svg */}
             <div className="flex justify-center pt-4">
              <Link to="/contact">
-             <div className="  bg-white flex  flex-row items-center space-x-2 px-4 py-3 bg-white-400 border border-white/40  ">
+             <div className=" hover:text-white   bg-white flex hover:bg-indigo-200  flex-row items-center space-x-2 px-4 py-3 bg-white-400  ">
               <img
                    src={person}
                    alt="person"
                    className="w-6 h-6 filter grayscale brightness-50"
                  />
 
-          <span className="text-gray-600 text-lg hover:text-indigo-600 text-white transition-colors duration-200 font-bold">Contact</span>
+          <span className="text-gray-600 text-lg text-whitetransition-colors duration-200 font-bold">Contact</span>
         </div>
         </Link>
         </div>
 
              {/* Star Line */}
         <div className="relative w-full flex items-center justify-center py-4 sm:py-8">
-          <div className="w-full border-t border-white/40" />
+          <div className="w-full border-t border-white" />
         <div className="relative z-10 px-2">
           <img src={star} alt="Star" className="w-12 h-12 sm:h-18 sm:w-18 " />
           {/* Or <Star className="w-6 h-6" /> if imported as component */}

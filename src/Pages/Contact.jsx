@@ -14,8 +14,7 @@ import { Mail, MapPin, Clock, Phone, MessageCircle, Building, Send } from "lucid
 const Contact = () => {
    const [activeTab, setActiveTab] = useState('form');
    const officeHours = [
-    { day: 'Monday - Friday', time: '9:00 AM - 6:00 PM' },
-    { day: 'Saturday', time: '9:00 AM - 4:00 PM' },
+    { day: 'Monday - Saturday', time: '9:30 AM - 5:30 PM' },
     { day: 'Sunday', time: 'Closed' }
   ];
 
@@ -23,7 +22,7 @@ const Contact = () => {
    
       <div>
         <Navbar />
-        <div className="pt-24 pb-16 bg-gradient-to-r from-green-900 via-green-600 to-green-900 text-white">
+        <div className="pt-24 pb-16 bg-green-700 text-white">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-4xl mx-auto pt-10">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
@@ -32,11 +31,11 @@ const Contact = () => {
             <p className="text-xl md:text-2xl mb-8 text-green-50 leading-relaxed">
               We're here to help with your medical equipment needs. 
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <a href="tel:+919207755944" className="bg-white text-green-600 px-6 py-3 rounded-full font-semibold hover:bg-green-900 hover:text-white transition-colors inline-flex items-center gap-2">
+            <div className="text-lg  sm:text-xl lg:text-2xl flex flex-wrap justify-center gap-4">
+              <a href="tel:+919207755944" className="bg-white text-green-600 px-6 py-3 rounded-full font-semibold hover:bg-green-500 hover:text-white transition-colors inline-flex items-center gap-2">
                 <Phone size={16} /> Call Now
               </a>
-              <a href="https://wa.me/919207755944" className="bg-green-700 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-900 transition-colors inline-flex items-center gap-2">
+              <a href="https://wa.me/919207755944" className="bg-green-800 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-500 transition-colors inline-flex items-center gap-2">
                 <MessageCircle size={16} /> WhatsApp
               </a>
             </div>
@@ -44,10 +43,10 @@ const Contact = () => {
         </div>
       </div>
 
-      <div className="w-30 h-1 bg-gradient-to-r my-2 from-green-500 to-green-900 mx-auto rounded-full"></div>
+      <div className="w-30 h-1  my-2 bg-gradient-to-r from-gray-500 via-green-400 to-gray-500 mx-auto rounded-full"></div>
 
     <div className="max-w-5xl mx-auto m-8">
-          <div className="flex mx-4 gap-3 mt-4 md:mt-8 flex-col sm:flex-row  justify-center bg-white rounded-xl  shadow-2xl p-3">
+          <div className="flex text-lg sm:text-2xl mx-4 gap-3 mt-4 md:mt-8 flex-col sm:flex-row  justify-center bg-white rounded-xl  shadow-2xl p-3">
            <button
                 onClick={() => setActiveTab('form')}
                 className={`px-6 py-3 mx-2 rounded-lg font-semibold transition-all ${
@@ -89,20 +88,25 @@ const Contact = () => {
                     <h3 className="text-2xl font-bold">Office Hours</h3>
                     <p className="text-purple-100">We're here when you need us</p>
                   </div>
-                  <div className="p-8">
-                    <div className="space-y-4">
-                      {officeHours.map((hour, index) => (
-                        <div key={index} className="flex justify-between items-center py-3 border-b border-gray-100 last:border-b-0">
-                          <span className="text-sm sm:text-xl text-gray-800">{hour.day}</span>
-                          <span className=" text-sm sm:text-xl text-gray-600">{hour.time}</span>
-                        </div>
-                      ))}
-                    </div>
-                   
-                  </div>
+               <div className="p-8">
+  <div className="space-y-4">
+    {officeHours.map((hour, index) => (
+      <div key={index} className="flex justify-between items-center py-3 border-b border-gray-100 last:border-b-0">
+        <span className="text-sm sm:text-xl text-gray-800">{hour.day}</span>
+        <span className="text-sm sm:text-xl text-gray-600">{hour.time}</span>
+      </div>
+    ))}
+  </div>
+
+  <p className="mt-6 text-center text-sm sm:text-lg md:text-xl text-gray-500 italic">
+  In the event of an emergency, our dedicated team remains available even outside regular office hours, including Sundays.</p>
+</div>
+
                 </div>
               </div>
             )}
+
+            
             {activeTab === 'form' && (
               <div className=" p-10">
 
@@ -117,7 +121,7 @@ const Contact = () => {
               Got Questions? <span className="text-green-700">Reach Out!</span>
             </h2>
             <motion.p
-              className="text-black text-center w-full sm:w-2/3 lg:w-1/2 mt-8 "
+              className="text-black text-xl sm:text-2xl text-center w-full sm:w-2/3 lg:w-1/2 mt-8 "
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
@@ -135,7 +139,7 @@ const Contact = () => {
             )}
             {activeTab === 'offices' && (
               <div>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 my-20 md:mx-20 mx-4">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 my-12 md:mx-20 mx-4">
                   {/* Ernakulam Office */}
                   <div className="bg-white rounded-2xl shadow-2xl overflow-hidden hover:shadow-xl transition-shadow">
                     <div className="bg-gray-600 text-white p-8">

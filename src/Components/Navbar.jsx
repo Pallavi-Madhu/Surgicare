@@ -131,16 +131,16 @@ const Navbar = () => {
       <div className=" md:max-w-7xl px-4 sm:px-6 mx-auto lg:px-8">
         <div className="flex justify-between items-center h-16 sm:h-20">
           {/* Logo Section */}
-          <div className="flex items-center space-x-3">
-            <div className="w-20 h-12 transition-colors duration-200 relative group bg-gradient-to-br from-indigo-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
-              <img src={logo} alt="SurgiCare Logo" className="h-14 w-auto" />
-            </div>
-            <div>
-              <h1 className="text-gray-800 hover:text-green-900 font-sans font-semibold text-2xl sm:text-4xl transition-colors duration-200 relative group">
-                Nandana Surgi Care
-              </h1>
-            </div>
-          </div>
+                    <div className="flex items-center space-x-3">
+                      <div className=" transition-colors duration-200 relative group  rounded-xl flex items-center justify-center">
+                        <img src={logo} alt="SurgiCare Logo" className="mb-2 sm:mb-0 w-14 h-10 sm:w-20 sm:h-12" />
+                      </div>
+                      <div>
+                        <h1 className="text-gray-800 hover:text-blue-900 font-sans font-semibold text-2xl sm:text-4xl transition-colors duration-200 relative group">
+                          Nandana Surgi Care
+                        </h1>
+                      </div>
+                    </div>
           
           {/* Hamburger Icon */}
           <div>

@@ -44,8 +44,8 @@ const StatsSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 sm:gap-8">
           {stats.map((stat, index) => (
-            <div key={index} className="text-center border rounded rounded-xl bg-green-50 border-green-500 p-8 group">
-              <div className="text-2xl sm:text-4xl font-bold text-slate-800 mb-2">
+            <div key={index} className="text-center shadow-2xl border rounded rounded-2xl bg-white  p-8 group">
+              <div className="text-2xl sm:text-4xl font-bold text-black mb-2">
                 {typeof stat.number === 'string'
                   ? stat.number
                   : `${counts[index]}${stat.suffix || ''}`}
