@@ -53,7 +53,7 @@ const AnimatedSection = ({ children, className = "", delay = 0 }) => {
 const Home = () => {
   return (<>   
      <Navbar />
-     <div className="bg-gradient-to-r from-gray-900 via-green-300 to-gray-900 "> 
+     <div className="bg-gradient-to-r from-gray-500 via-green-400 to-gray-500 "> 
       <HeroSlideshow />
       </div>
          
@@ -79,10 +79,10 @@ const Home = () => {
             >
             <div className="space-y-6 ">
               
-              <div className="inline-block px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-semibold">
+              <div className="inline-block px-4 py-2 bg-gray-100 text-gray-800 rounded-full text-sm font-semibold">
                 About Nandana Surgi Care
               </div>
-                <div className="w-30 h-1 bg-gradient-to-r my-2 from-green-500 to-green-900 mx-auto rounded-full"></div>
+
               <h2 className="text-2xl lg:text-4xl font-bold text-gray-800 leading-tight">
                 World-Class <span className="text-green-700">Biomedical Equipment</span> Distribution
               </h2>
@@ -94,7 +94,7 @@ const Home = () => {
               </p>
               <div className="flex flex-wrap gap-3">
                 {['Cardiology', 'Thoracic Surgery', 'Neurosurgery', 'Plastic Surgery'].map((specialty) => (
-                  <span key={specialty} className="text-sm sm:text-lg lg:text-xl px-4 py-2 bg-green-50 text-green-900 rounded-lg font-bold">
+                  <span key={specialty} className="text-sm sm:text-lg lg:text-xl px-4 py-2 bg-gray-100 text-gray-800 rounded-lg font-bold">
                     {specialty}
                   </span>
                 ))}
@@ -103,7 +103,7 @@ const Home = () => {
             </motion.div>
 
             <motion.div
-            className="flex flex-col lg:flex-row md:mx-20 p-6 gap-4"
+            className="flex flex-col lg:flex-row md:mx-16 xl:mx-44 p-6 gap-4"
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.0 }}
@@ -129,7 +129,7 @@ const Home = () => {
           
 
              <AnimatedSection className=" max-w-7xl mx-auto md:py-20" delay={0}>
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-40 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 2xl:gap-40 items-center">
             <motion.div
             className="flex flex-col lg:flex-row md:mx-20 gap-4"
             initial={{ opacity: 0, x: 100 }}
@@ -156,11 +156,11 @@ const Home = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 1.0, delay: 0.2 }}
             >
-            <div className="space-y-6 mx-4 sm:mx-0">
+            <div className="space-y-6 mx-4 sm:mx-0 md:mr-10 2xl:mr-0">
               <div className="inline-block px-4 py-2 bg-gray-100 text-gray-800 rounded-full text-sm  font-semibold">
               Global Synergy
               </div>
-                <div className="w-30 h-1 bg-gradient-to-r my-2 from-green-500 to-green-900 mx-auto rounded-full"></div>
+
               <h2 className="text-2xl lg:text-4xl font-bold text-gray-800 leading-tight">
                 Strategic <span className="text-green-700">      Global Partnerships</span> 
               </h2>

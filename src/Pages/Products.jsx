@@ -163,7 +163,7 @@ const MedicalEquipmentPage = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-green-100 via-white to-green-100 flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center">
         <motion.div
           className="flex flex-col items-center space-y-4"
           initial={{ opacity: 0 }}
@@ -174,7 +174,7 @@ const MedicalEquipmentPage = () => {
             animate={{ rotate: 360 }}
             transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
           />
-          <p className="text-gray-600 text-lg">Loading medical equipment...</p>
+          <p className="text-gray-600 text-lg">Loading Medical Equipment...</p>
         </motion.div>
       </div>
     );
@@ -187,12 +187,14 @@ const MedicalEquipmentPage = () => {
     <div className="min-h-screen pb-48">
       
       <motion.div 
-        className="bg-white shadow-lg bg-gradient-to-r from-green-900 via-green-500 to-green-900"
+        className="bg-white shadow-lg bg-gradient-to-r from-gray-500 via-green-500 to-gray-500"
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6 }}
       >
-        <div className="container mx-auto py-10 mt-20">
+        
+        <div className="container  mx-auto py-10 sm:py-16 lg:py-20 mt-16 sm:mt-20">
+          
           <motion.h1 
             className="text-4xl lg:text-5xl font-bold text-center text-white mb-4"
             initial={{ scale: 0.8, opacity: 0 }}
@@ -210,7 +212,7 @@ const MedicalEquipmentPage = () => {
             Discover our comprehensive range of high-quality medical equipment designed to enhance patient care and improve healthcare outcomes
           </motion.p>
           
-          
+{/*           
           <motion.div 
             className="text-center mt-6"
             initial={{ y: 20, opacity: 0 }}
@@ -221,10 +223,12 @@ const MedicalEquipmentPage = () => {
               <span className="font-semibold">Click any card to explore</span>
               <ChevronRight className="w-4 h-4" />
             </div>
-          </motion.div>
+          </motion.div> */}
         </div>
       </motion.div>
 
+            <div className="w-30 h-1  my-2 bg-gradient-to-r from-gray-500 via-green-500 to-gray-500 mx-auto rounded-full"></div>
+     
       {/* Products Section */}
       <div className="container mx-auto px-6 py-12">
         <motion.div
@@ -262,11 +266,11 @@ const MedicalEquipmentPage = () => {
                 {/* Action Icon */}
                 <div className="absolute top-4 right-4">
                   {product.isPdf ? (
-                    <div className="bg-white/90 backdrop-blur-sm p-2 rounded-full shadow-lg">
+                    <div className="bg-white backdrop-blur-sm p-2 rounded-full shadow-lg">
                       <FileText className="w-4 h-4 text-gray-700" />
                     </div>
                   ) : (
-                    <div className="bg-white/90 backdrop-blur-sm p-2 rounded-full shadow-lg">
+                    <div className="bg-white backdrop-blur-sm p-2 rounded-full shadow-lg">
                       <ExternalLink className="w-4 h-4 text-gray-700" />
                     </div>
                   )}
@@ -284,7 +288,7 @@ const MedicalEquipmentPage = () => {
 
                 {/* CTA */}
                 <motion.button
-                  className="w-full mt-auto bg-green-700 text-white py-3 rounded-xl font-semibold hover:bg-green-900 transition-all duration-300 shadow-lg hover:shadow-xl"
+                  className="w-full mt-auto text-lg sm:text-2xl  bg-green-500 text-white py-3 rounded-full font-semibold hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-xl"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >

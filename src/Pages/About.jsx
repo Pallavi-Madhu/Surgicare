@@ -17,7 +17,7 @@ const About = () => {
       >
      <div className="">  
        <motion.div
-                className="text-center bg-gradient-to-r from-green-900 via-green-600 to-green-900 py-10 px-2 sm:py-24"
+                className="text-center bg-gradient-to-r from-gray-500 via-green-500 to-gray-500 py-10 px-2 sm:py-24"
                 initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
@@ -30,7 +30,7 @@ const About = () => {
                 </h1>
                 
               </motion.div>
-              <div className="w-30 h-1 bg-gradient-to-r my-2 from-green-500 to-green-900 mx-auto rounded-full"></div>
+      <div className="w-30 h-1  my-2 bg-gradient-to-r from-gray-500 via-green-500 to-gray-500 mx-auto rounded-full"></div>
  
        
            {/* Stats section */}
@@ -43,7 +43,7 @@ const About = () => {
                 About Our <span className="text-green-700">Company</span>
               </h2>
                 <motion.div
-                  className="bg-gradient-to-r from-green-50 to-white p-6  rounded-xl border-l-4 border-green-500 shadow-lg hover:shadow-md transition-shadow duration-300"
+                  className="bg-white p-6  rounded-xl border-l-4 border-green-500 shadow-lg hover:shadow-md transition-shadow duration-300"
                   initial={{ opacity: 0, x: -50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
@@ -57,7 +57,7 @@ const About = () => {
                 </motion.div>
 
                 <motion.div
-                  className="bg-gradient-to-r from-white to-green-50 p-6 rounded-xl border-l-4 border-green-600 shadow-lg hover:shadow-md transition-shadow duration-300"
+                  className="bg-white p-6 rounded-xl border-l-4 border-green-600 shadow-lg hover:shadow-md transition-shadow duration-300"
                   initial={{ opacity: 0, x: -50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
@@ -82,7 +82,7 @@ const About = () => {
                 </motion.div>
 
                 <motion.div
-                  className="bg-gradient-to-br from-green-900 via-green-500 to-green-900 text-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+                  className="bg-gradient-to-br from-gray-500 via-green-500 to-gray-500 text-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1, ease: "easeOut", delay: 0.8 }}
