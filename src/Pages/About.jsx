@@ -17,7 +17,7 @@ const About = () => {
       >
      <div className="">  
        <motion.div
-                className="text-center bg-gradient-to-r from-gray-500 via-green-500 to-gray-500 py-10 px-2 sm:py-24"
+                className="text-center bg-green-700  py-10 px-2 sm:py-24"
                 initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
@@ -82,7 +82,7 @@ const About = () => {
                 </motion.div>
 
                 <motion.div
-                  className="bg-gradient-to-br from-gray-500 via-green-500 to-gray-500 text-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+                  className="bg-gradient-to-br from-green-800 via-green-500 to-green-800 text-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1, ease: "easeOut", delay: 0.8 }}

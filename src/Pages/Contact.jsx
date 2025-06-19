@@ -22,7 +22,7 @@ const Contact = () => {
    
       <div>
         <Navbar />
-        <div className="pt-24 pb-16 bg-gradient-to-r from-gray-500 via-green-500 to-gray-500 text-white">
+        <div className="pt-24 pb-16 bg-green-700 text-white">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-4xl mx-auto pt-10">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
@@ -32,10 +32,10 @@ const Contact = () => {
               We're here to help with your medical equipment needs. 
             </p>
             <div className="text-lg  sm:text-xl lg:text-2xl flex flex-wrap justify-center gap-4">
-              <a href="tel:+919207755944" className="bg-white text-green-600 px-6 py-3 rounded-full font-semibold hover:bg-green-900 hover:text-white transition-colors inline-flex items-center gap-2">
+              <a href="tel:+919207755944" className="bg-white text-green-600 px-6 py-3 rounded-full font-semibold hover:bg-green-500 hover:text-white transition-colors inline-flex items-center gap-2">
                 <Phone size={16} /> Call Now
               </a>
-              <a href="https://wa.me/919207755944" className="bg-green-700 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-900 transition-colors inline-flex items-center gap-2">
+              <a href="https://wa.me/919207755944" className="bg-green-700 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-500 transition-colors inline-flex items-center gap-2">
                 <MessageCircle size={16} /> WhatsApp
               </a>
             </div>

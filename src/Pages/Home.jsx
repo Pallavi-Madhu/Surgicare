@@ -53,7 +53,7 @@ const AnimatedSection = ({ children, className = "", delay = 0 }) => {
 const Home = () => {
   return (<>   
      <Navbar />
-     <div className="bg-gradient-to-r from-gray-500 via-green-400 to-gray-500 "> 
+     <div className="bg-green-700 "> 
       <HeroSlideshow />
       </div>
          

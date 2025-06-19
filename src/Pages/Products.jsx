@@ -187,7 +187,7 @@ const MedicalEquipmentPage = () => {
     <div className="min-h-screen pb-48">
       
       <motion.div 
-        className="bg-white shadow-lg bg-gradient-to-r from-gray-500 via-green-500 to-gray-500"
+        className="bg-white shadow-lg bg-green-700 "
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6 }}
