@@ -35,7 +35,7 @@ const Contact = () => {
               <a href="tel:+919207755944" className="bg-white text-green-600 px-6 py-3 rounded-full font-semibold hover:bg-green-500 hover:text-white transition-colors inline-flex items-center gap-2">
                 <Phone size={16} /> Call Now
               </a>
-              <a href="https://wa.me/919207755944" className="bg-green-700 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-500 transition-colors inline-flex items-center gap-2">
+              <a href="https://wa.me/919207755944" className="bg-green-800 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-500 transition-colors inline-flex items-center gap-2">
                 <MessageCircle size={16} /> WhatsApp
               </a>
             </div>

@@ -104,7 +104,7 @@ const Slideshow = () => {
             <div className="absolute  bottom-4 left-4 z-20 lg:bottom-12 lg:left-12   md:bottom-8 md:left-10 ">
               <div className="space-y-2">
                 {/* <div className="w-16 h-1 bg-gradient-to-r from-pink-500 via-indigo-500 to-yellow-400 rounded-full"></div> */}
-                <h3 className="text-white text-sm lg:text-5xl sm:text-xl md:text-3xl font-black tracking-tight drop-shadow-2xl">
+                <h3 className="text-white text-lg lg:text-5xl sm:text-xl md:text-3xl font-bold italic tracking-tight drop-shadow-2xl">
                   {slides[currentIndex].title.split(' ').map((word, index) => (
                     <span 
                       key={index} 
