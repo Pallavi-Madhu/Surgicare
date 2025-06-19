@@ -33,17 +33,18 @@ This website is designed to provide an intuitive, professional, and informative 
 ## Glimpses of the Interface
 
 ### Home
-<img src="https://github.com/user-attachments/assets/c6b472d3-7a3d-44af-a477-4cee14e519a0" width="80%" />
+![Screenshot From 2025-06-19 17-34-50](https://github.com/user-attachments/assets/f9813f6b-e391-4209-83d4-7a914cedb593)
 
 ### About
-<img src="https://github.com/user-attachments/assets/3b5aa581-7151-42e4-8a1e-d0057ad5a03c" width="80%" />
+![Screenshot From 2025-06-19 17-40-01](https://github.com/user-attachments/assets/0257317e-af4e-47fd-a531-6edbb82c27ed)
+
 
 ### Products
-<img src="https://github.com/user-attachments/assets/cba26c4e-c5b9-4823-bdc2-664f93d8cdca" width="80%" />
+![Screenshot From 2025-06-19 17-37-22](https://github.com/user-attachments/assets/aef9657b-46d0-490d-9f6b-07d18b4f3558)
+
 
 ### Contact
-<img src="https://github.com/user-attachments/assets/044bafb2-8a42-43c5-9953-9b327f5915f4" width="80%" />
-
+![Screenshot From 2025-06-19 17-35-33](https://github.com/user-attachments/assets/422aa46d-7809-4923-8cfe-8ada6fde858f)
 
 
 ## Contributors
