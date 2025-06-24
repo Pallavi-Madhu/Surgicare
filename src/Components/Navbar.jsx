@@ -245,6 +245,13 @@ const Navbar = () => {
                 )}
               </AnimatePresence>
             </div>
+             <a
+                       href="/certificates"
+                        className="text-gray-700 hover:text-green-600 font-semibold text-2xl transition-colors duration-200 relative group"
+                       style={{ WebkitTapHighlightColor: 'transparent' }}
+                     >
+                       Certificates
+                     </a>
 
             <a
               href="/contact"
@@ -354,7 +361,7 @@ const Navbar = () => {
                                          className="text-gray-600 pl-4 rounded hover:text-green-900 hover:bg-green-100 font-sans text-lg transition-colors duration-200 flex items-center space-x-2"
                                        >
                                          <span className="text-3xl text-green-700">•</span>
-                                         <span>{dept.name}</span>
+                                         <span>{dept.name } Products</span>
                                        </a>
                                      ))}
                                    </motion.div>
@@ -365,7 +372,13 @@ const Navbar = () => {
                          )}
                        </AnimatePresence>
                      </div>
-     
+          <a
+                       href="/certificates"
+                       className="block text-gray-700 rounded rounded-xl hover:text-green-700 font-bold text-lg p-3 transition duration-200 hover:shadow-lg"
+                       style={{ WebkitTapHighlightColor: 'transparent' }}
+                     >
+                       Certificates
+                     </a>
 <a
   href="/contact"
   className="block text-gray-700 rounded-xl hover:text-green-700 font-bold text-lg p-3 transition duration-200 hover:shadow-lg"

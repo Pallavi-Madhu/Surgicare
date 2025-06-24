@@ -17,7 +17,7 @@ const About = () => {
       >
      <div className="">  
        <motion.div
-                className="text-center bg-green-700  py-10 px-2 sm:py-24"
+                className="text-center bg-green-700  py-10 px-2 sm:py-20"
                 initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
@@ -28,6 +28,10 @@ const About = () => {
                 <h1 className="text-4xl sm:text-6xl font-extrabold text-white mb-6">
                   Nandana Surgi Care
                 </h1>
+                <p className="text-white text-sm sm:text-xl lg:text-2xl max-w-4xl mx-auto mt-4 px-4">
+  A growing medical distributor based in Kochi, offering a wide range of medical devices and disposables for various departments.
+</p>
+
                 
               </motion.div>
       <div className="w-30 h-1  my-2 bg-gradient-to-r from-gray-500 via-green-500 to-gray-500 mx-auto rounded-full"></div>

@@ -22,8 +22,14 @@ const Contact = () => {
    
       <div>
         <Navbar />
-        <div className="pt-24 pb-16 bg-green-700 text-white">
-        <div className="container mx-auto px-4">
+               <motion.div
+                        className="text-center bg-green-700  py-10 px-2 sm:py-24"
+                        initial={{ opacity: 0, y: -20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.3 }}
+                      >
+      <div className=" bg-green-700 text-white">
+         <div className="container mx-auto px-4">
           <div className="text-center max-w-4xl mx-auto pt-10">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
               Let's Connect
@@ -42,6 +48,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      </motion.div>
 
       <div className="w-30 h-1  my-2 bg-gradient-to-r from-gray-500 via-green-400 to-gray-500 mx-auto rounded-full"></div>
 
