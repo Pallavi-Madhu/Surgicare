@@ -193,7 +193,7 @@ const MedicalEquipmentPage = () => {
         transition={{ duration: 0.6 }}
       >
         
-        <div className="container  mx-auto py-10 sm:py-16 lg:py-20 mt-16 sm:mt-20">
+        <div className="container  mx-auto py-10 sm:py-16 lg:py-22 mt-16 sm:mt-20">
           
           <motion.h1 
             className="text-4xl lg:text-5xl font-bold text-center text-white mb-4"

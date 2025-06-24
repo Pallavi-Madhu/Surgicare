@@ -5,6 +5,7 @@ import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Products from "./Pages/Products";
 import Contact from "./Pages/Contact";
+import Certificates from "./Pages/Certificates";
 import ScrollToTop from "./Components/ScrollToTop";
 
 // Import Department Pages
@@ -30,6 +31,7 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/about-us" element={<About />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/certificates" element={<Certificates />} />
             <Route path="/contact" element={<Contact />} />
 
             {/* Department Pages */}
