@@ -134,27 +134,6 @@ const CriticalSidebarDesign = () => {
       ]
     },
 
-  Sinapi : {
-      logo: Sinapi,
-      name: "Sinapi Biomedical",
-      bgColor: "bg-green-50",
-      accentColor: "green",
-      description: "Innovative devices for thoracic drainage and critical care.",
-      website: "https://www.sinapi.co.za/",
-      established: "2006",
-      headquarters: "South Africa",
-      products: [
-        {
-          id: "chest-drain",
-          image: chestdrain,
-          name: "Chest Drainage System 50ml, 400ml, 1000ml",
-          category: "Thoracic Drainage",
-          description: " Fluid and air removal from thorax",
-          url: ChestDrain
-        }
-      ]
-    },
-
    Toray : {
       logo: toray,
       name: "Toray Medical",
@@ -220,29 +199,26 @@ const CriticalSidebarDesign = () => {
         }
       ]
     },
-
-    CareEssentials : {
-      logo: cocoon,
-      name: "Care Essentials",
+  Sinapi : {
+      logo: Sinapi,
+      name: "Sinapi Biomedical",
       bgColor: "bg-green-50",
       accentColor: "green",
-      description: "Specialized in warming therapy and infection control solutions.",
-      website: "https://www.careessentials.com.au/",
-      established:"1996",
-      headquarters:"Australia",
+      description: "Innovative devices for thoracic drainage and critical care.",
+      website: "https://www.sinapi.co.za/",
+      established: "2006",
+      headquarters: "South Africa",
       products: [
         {
-          id: "body-warmer",
-          image: "/CriticalCare/cocoon.png",
-          name: "Body Warmer",
-          category: "Warming Therapy",
-          description: " Patient warming system for surgery",
-          url: "https://www.careessentials.com.au/product/cws-5000/"
+          id: "chest-drain",
+          image: chestdrain,
+          name: "Chest Drainage System 50ml, 400ml, 1000ml",
+          category: "Thoracic Drainage",
+          description: " Fluid and air removal from thorax",
+          url: ChestDrain
         }
       ]
-    },
-
-   Hico : {
+    },  Hico : {
       logo: hico,
       name: "Hico",
       bgColor: "bg-green-50",
@@ -269,7 +245,30 @@ const CriticalSidebarDesign = () => {
           url: "https://www.hico.de/en/hico-aquatherm-660.html"
         }
       ]
-    }
+    },
+    
+    CareEssentials : {
+      logo: cocoon,
+      name: "Care Essentials",
+      bgColor: "bg-green-50",
+      accentColor: "green",
+      description: "Specialized in warming therapy and infection control solutions.",
+      website: "https://www.careessentials.com.au/",
+      established:"1996",
+      headquarters:"Australia",
+      products: [
+        {
+          id: "body-warmer",
+          image: "/CriticalCare/cocoon.png",
+          name: "Body Warmer",
+          category: "Warming Therapy",
+          description: " Patient warming system for surgery",
+          url: "https://www.careessentials.com.au/product/cws-5000/"
+        }
+      ]
+    },
+
+ 
   };
 
   const currentCompany = companies[activeCompany];

@@ -70,7 +70,7 @@ import { ExternalLink, Globe, Package2, Building, ChevronRight, Star, ShoppingCa
 import Loading from "../../Components/Loading";
 
 const NeuroSidebarDesign = () => {
-  const [activeCompany, setActiveCompany] = useState("Mizuho");
+  const [activeCompany, setActiveCompany] = useState("BLLifeSciences");
   const [hoveredProduct, setHoveredProduct] = useState(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -92,221 +92,7 @@ const NeuroSidebarDesign = () => {
   }
 
   const companies = {
-   Mizuho: {
-  logo: Mizuho, 
-  name: "Mizuho",
-  bgColor: "bg-green-50",
-  accentColor: "green",
-  description: "Leading provider of advanced neurosurgical instruments and vascular systems.",
-  website: "http://www.mizuhomedical.co.jp/",
-  established: "1919",
-  headquarters: "Japan",
-  products: [
-    {
-      id: 1,
-      image: clips,
-      name: "Sugita Titanium Aneurysm Clip II (T2) & Appliers",
-      category: "Neurosurgery",
-      description: "Sugita Titanium Aneurysm Clip II from Mizuho, designed for precise and safe aneurysm clipping.",
-      url: "http://www.mizuhomedical.co.jp/products/?id=1459223043-814215"
-    },
-    {
-      id: 2,
-      image: headholder,
-      name: "Smart Fix Head Holder",
-      category: "Neurosurgery",
-      description: "Stabilizes the patient's head during delicate neurosurgical procedures.",
-      url: "http://www.mizuhomedical.co.jp/products/?id=1461291666-642683"
-    },
-    {
-      id: 3,
-      image: dopplersystem,
-      name: "Mizuho Vascular Doppler System",
-      category: "Vascular Monitoring",
-      description: "Intraoperative Doppler system used to monitor blood flow during surgeries.",
-      url: "http://www.mizuhomedical.co.jp/products/?id=1461299942-673127"
-    }
-  ]
-},
-Kinamed: {
-  logo: Kinamed,
-  name: "Kinamed",
-  bgColor: "bg-green-50",
-  accentColor: "green",
-  description: "Innovators in neurosurgical fixation and implant systems.",
-  website: "https://www.kinamed.com/",
-  established: "1987",
-  headquarters: "USA",
-  products: [
-    {
-      id: 1,
-      image: screws,
-      name: "NeuroPro® Rigid Fixation System",
-      category: "Neurosurgery",
-      description: "Provides rigid cranial fixation using titanium implants for precise stabilization.",
-      url: "https://www.kinamed.com/products/neurosurgical-products/neuropro-rigid-fixation-system"
-    },
-    {
-      id: 2,
-      image: screws2,
-      name: "NeuroPro® Low Profile Rigid Fixation System",
-      category: "Neurosurgery",
-      description: "Low profile version designed for enhanced comfort and minimal interference with soft tissue.",
-      url: "https://www.kinamed.com/products/neurosurgical-products/neuropro-low-profile-rigid-fixation-system"
-    }
-  ]
-},
-Baxter: {
-  logo: Baxter, 
-  name: "Baxter",
-  bgColor: "bg-green-50",
-  accentColor: "green",
-  description: "Global leader in surgical care and advanced hemostatic solutions.",
-  website: "https://advancedsurgery.baxter.com/",
-  established: "1931",
-  headquarters: "USA",
-  products: [
-    {
-      id: 1,
-      image: floseal,
-      name: "Floseal",
-      category: "Hemostatic Agent",
-      description: "Advanced hemostatic matrix for rapid and effective bleeding control during surgery.",
-      url: "https://advancedsurgery.baxter.com/floseal"
-    },
-    {
-      id: 2,
-      image: hemopatch,
-      name: "Hemopatch",
-      category: "Hemostatic Patch",
-      description: "Sealing and hemostatic patch used to control bleeding on tissue surfaces.",
-      url: "https://advancedsurgery.baxter.eu/hemopatch"
-    },
-    {
-      id: 3,
-      image: tiseel,
-      name: "Tisseel",
-      category: "Fibrin Sealant",
-      description: "Two-component fibrin sealant used for hemostasis, sealing, and tissue adhesion.",
-      url: "https://www.baxter.com/healthcare-professionals/surgical-care/tisseel-fibrin-sealant"
-    }
-  ]
-},
-Halyard: {
-  logo: Halyard,
-  name: "Halyard Health",
-  bgColor: "bg-green-50",
-  accentColor: "green",
-  description: "Provider of innovative solutions in infection prevention and surgical protection.",
-  website: "https://products.halyardhealth.com/",
-  established: "2014", 
-  headquarters: "USA",
-  products: [
-    {
-      id: "drapes",
-      image: drapes,
-      name: "Surgical Drapes",
-      category: "Surgical Protection",
-      description: "Drapes designed for optimal barrier protection during surgeries.",
-      url: "https://products.halyardhealth.com/products/surgical-solutions/surgical-drapes"
-    },
-    {
-      id: "gowns",
-      image: gowns,
-      name: "Surgical Gowns",
-      category: "Surgical Protection",
-      description: "Gowns providing critical protection and comfort for surgical staff.",
-      url: "https://products.halyardhealth.com/products/surgical-solutions/surgical-gowns"
-    },
-    {
-      id: "masks",
-      image: masks,
-      name: "Surgical Masks",
-      category: "Facial & Respiratory Protection",
-      description: "Medical and surgical masks designed for effective respiratory protection.",
-      url: "https://products.halyardhealth.com/products/personal-protection/facial-respiratory-protection/medical-surgical-masks"
-    }
-  ]
-},
-Sunoptic: {
-  logo: Sunoptic,
-  name: "Sunoptic Surgical",
-  bgColor: "bg-green-50",
-  accentColor: "green",
-  description: "Industry leaders in surgical lighting and visualization solutions.",
-  website: "https://sunopticsurgical.com/",
-  established: "2001",
-  headquarters: "USA",
-  products: [
-    {
-      id: 1,
-      image: light,
-      name: "Sunoptic LX2 LED Headlight",
-      category: "Surgical Lighting",
-      description: "Battery-operated LED headlight designed for bright, focused surgical illumination.",
-      url: "https://sunopticsurgical.com/products/ssl-lx2-led-best-in-class-portable-headlight/"
-    },
-    {
-      id: 2,
-      image: pro,
-      name: "Pro300",
-      category: "Surgical Lighting",
-      description: "Advanced headlight system offering comfort, intensity, and long-lasting performance.",
-      url: "https://sunopticsurgical.com/products/pro300/"
-    }
-  ]
-},
-Synkromax: {
-    logo: Syncromax,
-    name: "Synkromax Biotech Pvt. Ltd.",
-    bgColor: "bg-green-50",
-    accentColor: "green",
-    description:
-      "Developer of synthetic vascular grafts and patches, supporting cardiovascular and surgical reconstruction.",
-    website: "https://www.synkromax.com/",
-    established: "2009", 
-    headquarters: "India",
-  products: [
-    {
-      id: 1,
-      image: bovinepatch,
-      name: "Bovine Pericardial Patch",
-      category: "Cardiovascular",
-      description: "Biological patch derived from bovine pericardium for cardiovascular and surgical use.",
-      url: "https://www.visionarymedtech.com/synkroscaff.html"
-    }
-  ]
-},
-
-CareEssentials: {
-  logo: Cocoon,
-  name: "Care Essentials",
-  bgColor: "bg-green-50",
-  accentColor: "green",
-  description: "Specialized in warming therapy and infection control solutions.",
-  website: "https://www.careessentials.com.au/",
-  established: "1996",
-  headquarters: "Australia",
-  products: [
-    {
-      id: 1,
-      image: blanket,
-      name: "Cocoon Convective Warming Blankets",
-      category: "Warming Therapy",
-      description: "Single-use warming blankets used with convective warming machines for patient thermal management.",
-      url: "https://www.careessentials.com.au/product-category/warming-blankets-warming-machines/warming-blankets/"
-    },
-    {
-      id: 2,
-      image: warmer,
-      name: "Cocoon Convective Warming System",
-      category: "Warming Therapy",
-      description: "Cocoon Warming Machine CWS 5000 designed to regulate patient temperature during surgical procedures.",
-      url: "https://www.careessentials.com.au/product/cws-5000/"
-    }
-  ]
-},
-BLLifeSciences: {
+    BLLifeSciences: {
   logo: BL,
   name: "BL Life Sciences",
   bgColor: "bg-green-50",
@@ -390,6 +176,43 @@ BLLifeSciences: {
     }
   ]
 },
+
+    Baxter: {
+  logo: Baxter, 
+  name: "Baxter",
+  bgColor: "bg-green-50",
+  accentColor: "green",
+  description: "Global leader in surgical care and advanced hemostatic solutions.",
+  website: "https://advancedsurgery.baxter.com/",
+  established: "1931",
+  headquarters: "USA",
+  products: [
+    {
+      id: 1,
+      image: floseal,
+      name: "Floseal",
+      category: "Hemostatic Agent",
+      description: "Advanced hemostatic matrix for rapid and effective bleeding control during surgery.",
+      url: "https://advancedsurgery.baxter.com/floseal"
+    },
+    {
+      id: 2,
+      image: hemopatch,
+      name: "Hemopatch",
+      category: "Hemostatic Patch",
+      description: "Sealing and hemostatic patch used to control bleeding on tissue surfaces.",
+      url: "https://advancedsurgery.baxter.eu/hemopatch"
+    },
+    {
+      id: 3,
+      image: tiseel,
+      name: "Tisseel",
+      category: "Fibrin Sealant",
+      description: "Two-component fibrin sealant used for hemostasis, sealing, and tissue adhesion.",
+      url: "https://www.baxter.com/healthcare-professionals/surgical-care/tisseel-fibrin-sealant"
+    }
+  ]
+},
 Surgiwear: {
   logo: Surgiwear,
   name: "Surgiwear",
@@ -465,7 +288,188 @@ Surgiwear: {
       url: "https://surgiwear.co.in/?product_cat=0&s=bone+cement&post_type=product"
     }
   ]
-}
+},
+Halyard: {
+  logo: Halyard,
+  name: "Halyard Health",
+  bgColor: "bg-green-50",
+  accentColor: "green",
+  description: "Provider of innovative solutions in infection prevention and surgical protection.",
+  website: "https://products.halyardhealth.com/",
+  established: "2014", 
+  headquarters: "USA",
+  products: [
+    {
+      id: "drapes",
+      image: drapes,
+      name: "Surgical Drapes",
+      category: "Surgical Protection",
+      description: "Drapes designed for optimal barrier protection during surgeries.",
+      url: "https://products.halyardhealth.com/products/surgical-solutions/surgical-drapes"
+    },
+    {
+      id: "gowns",
+      image: gowns,
+      name: "Surgical Gowns",
+      category: "Surgical Protection",
+      description: "Gowns providing critical protection and comfort for surgical staff.",
+      url: "https://products.halyardhealth.com/products/surgical-solutions/surgical-gowns"
+    },
+    {
+      id: "masks",
+      image: masks,
+      name: "Surgical Masks",
+      category: "Facial & Respiratory Protection",
+      description: "Medical and surgical masks designed for effective respiratory protection.",
+      url: "https://products.halyardhealth.com/products/personal-protection/facial-respiratory-protection/medical-surgical-masks"
+    }
+  ]
+},
+   Mizuho: {
+  logo: Mizuho, 
+  name: "Mizuho",
+  bgColor: "bg-green-50",
+  accentColor: "green",
+  description: "Leading provider of advanced neurosurgical instruments and vascular systems.",
+  website: "http://www.mizuhomedical.co.jp/",
+  established: "1919",
+  headquarters: "Japan",
+  products: [
+    {
+      id: 1,
+      image: clips,
+      name: "Sugita Titanium Aneurysm Clip II (T2) & Appliers",
+      category: "Neurosurgery",
+      description: "Sugita Titanium Aneurysm Clip II from Mizuho, designed for precise and safe aneurysm clipping.",
+      url: "http://www.mizuhomedical.co.jp/products/?id=1459223043-814215"
+    },
+    {
+      id: 2,
+      image: headholder,
+      name: "Smart Fix Head Holder",
+      category: "Neurosurgery",
+      description: "Stabilizes the patient's head during delicate neurosurgical procedures.",
+      url: "http://www.mizuhomedical.co.jp/products/?id=1461291666-642683"
+    },
+    {
+      id: 3,
+      image: dopplersystem,
+      name: "Mizuho Vascular Doppler System",
+      category: "Vascular Monitoring",
+      description: "Intraoperative Doppler system used to monitor blood flow during surgeries.",
+      url: "http://www.mizuhomedical.co.jp/products/?id=1461299942-673127"
+    }
+  ]
+},
+Kinamed: {
+  logo: Kinamed,
+  name: "Kinamed",
+  bgColor: "bg-green-50",
+  accentColor: "green",
+  description: "Innovators in neurosurgical fixation and implant systems.",
+  website: "https://www.kinamed.com/",
+  established: "1987",
+  headquarters: "USA",
+  products: [
+    {
+      id: 1,
+      image: screws,
+      name: "NeuroPro® Rigid Fixation System",
+      category: "Neurosurgery",
+      description: "Provides rigid cranial fixation using titanium implants for precise stabilization.",
+      url: "https://www.kinamed.com/products/neurosurgical-products/neuropro-rigid-fixation-system"
+    },
+    {
+      id: 2,
+      image: screws2,
+      name: "NeuroPro® Low Profile Rigid Fixation System",
+      category: "Neurosurgery",
+      description: "Low profile version designed for enhanced comfort and minimal interference with soft tissue.",
+      url: "https://www.kinamed.com/products/neurosurgical-products/neuropro-low-profile-rigid-fixation-system"
+    }
+  ]
+},
+
+Sunoptic: {
+  logo: Sunoptic,
+  name: "Sunoptic Surgical",
+  bgColor: "bg-green-50",
+  accentColor: "green",
+  description: "Industry leaders in surgical lighting and visualization solutions.",
+  website: "https://sunopticsurgical.com/",
+  established: "2001",
+  headquarters: "USA",
+  products: [
+    {
+      id: 1,
+      image: light,
+      name: "Sunoptic LX2 LED Headlight",
+      category: "Surgical Lighting",
+      description: "Battery-operated LED headlight designed for bright, focused surgical illumination.",
+      url: "https://sunopticsurgical.com/products/ssl-lx2-led-best-in-class-portable-headlight/"
+    },
+    {
+      id: 2,
+      image: pro,
+      name: "Pro300",
+      category: "Surgical Lighting",
+      description: "Advanced headlight system offering comfort, intensity, and long-lasting performance.",
+      url: "https://sunopticsurgical.com/products/pro300/"
+    }
+  ]
+},
+Synkromax: {
+    logo: Syncromax,
+    name: "Synkromax Biotech Pvt. Ltd.",
+    bgColor: "bg-green-50",
+    accentColor: "green",
+    description:
+      "Developer of synthetic vascular grafts and patches, supporting cardiovascular and surgical reconstruction.",
+    website: "https://www.synkromax.com/",
+    established: "2009", 
+    headquarters: "India",
+  products: [
+    {
+      id: 1,
+      image: bovinepatch,
+      name: "Bovine Pericardial Patch",
+      category: "Cardiovascular",
+      description: "Biological patch derived from bovine pericardium for cardiovascular and surgical use.",
+      url: "https://www.visionarymedtech.com/synkroscaff.html"
+    }
+  ]
+},
+
+CareEssentials: {
+  logo: Cocoon,
+  name: "Care Essentials",
+  bgColor: "bg-green-50",
+  accentColor: "green",
+  description: "Specialized in warming therapy and infection control solutions.",
+  website: "https://www.careessentials.com.au/",
+  established: "1996",
+  headquarters: "Australia",
+  products: [
+    {
+      id: 1,
+      image: blanket,
+      name: "Cocoon Convective Warming Blankets",
+      category: "Warming Therapy",
+      description: "Single-use warming blankets used with convective warming machines for patient thermal management.",
+      url: "https://www.careessentials.com.au/product-category/warming-blankets-warming-machines/warming-blankets/"
+    },
+    {
+      id: 2,
+      image: warmer,
+      name: "Cocoon Convective Warming System",
+      category: "Warming Therapy",
+      description: "Cocoon Warming Machine CWS 5000 designed to regulate patient temperature during surgical procedures.",
+      url: "https://www.careessentials.com.au/product/cws-5000/"
+    }
+  ]
+},
+
+
 };
 
   const currentCompany = companies[activeCompany];

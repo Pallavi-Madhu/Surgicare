@@ -86,14 +86,16 @@ const Slideshow = () => {
             )}
             
             {/* Main Image */}
-            <img
-              src={slides[currentIndex].image}
-              alt={slides[currentIndex].title}
-              className={`w-full h-70 object-cover transition-all duration-1000 ${
-                imageLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-110'
-              } group-hover:scale-105`}
-              onLoad={() => setImageLoaded(true)}
-            />
+      <img
+      
+  src={slides[currentIndex].image}
+  alt={slides[currentIndex].title}
+  className={`w-full h-70 object-cover transition-opacity duration-1000 ${
+    imageLoaded ? 'opacity-100 animate-zoom' : 'opacity-0'
+  }`}
+  onLoad={() => setImageLoaded(true)}
+/>
+
             
             
             {/* Animated Border*/} 
@@ -188,18 +190,21 @@ const Slideshow = () => {
       </div>
 
       {/* CSS Animations */}
-      <style>{`
-        @keyframes slideInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
+<style>{`
+  @keyframes zoom {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.1);
+    }
+  }
+
+  .animate-zoom {
+    animation: zoom 5s ease-in-out forwards;
+  }
+`}</style>
+
     </div>
   );
 };

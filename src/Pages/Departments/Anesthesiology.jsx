@@ -174,31 +174,95 @@ const companies = {
     }
   ]
 },
-Venticare: {
-  logo: Venticare,
-  name: "Venticare Medical Inc.",
+Meditech: {
+  logo: Meditec,
+  name: "Meditech",
   bgColor: "bg-green-50",
   accentColor: "green",
-  description: "Specialized in respiratory care and critical care products.",
-  website: "https://venticaremedicalinc.com/",
-  established: "Not specified",
-  headquarters: "India",
+  description: "Meditech specializes in advanced airway management tools including bougies, introducers, and stylets for all age groups.",
+  website: "https://www.meditechsystems.co.uk/",
+  established:"N/A",
+  headquarters:"N/A",
   products: [
     {
       id: "1",
-      image: image11,
-      name: "Adult Nebulizer Mask Kit",
-      category: "Respiratory Care",
-      description: "Disposable nebulizer kit for effective medication delivery.",
-      url: "https://venticaremedicalinc.com/products/"
+      image: image30,
+      name: "Bougie Introducer - Adult, Coudé Tip - 15 FR x 70 cm",
+      category: "Airway Management",
+      description: "Flexible bougie introducer with curved tip for adult use",
+      url: "https://www.meditechsystems.co.uk/product/bougie-coude-tip-introducers/"
     },
     {
       id: "2",
-      image: image12,
-      name: "Ventilator Circuit Plain Adult",
-      category: "Critical Care",
-      description: "Plain adult ventilator circuit for mechanical ventilation.",
-      url: "https://venticaremedicalinc.com/products/"
+      image: image31,
+      name: "Bougie Introducer - Pediatric, Coudé Tip - 10 FR x 70 cm",
+      category: "Airway Management",
+      description: "Smaller curved bougie for pediatric intubation",
+      url: "https://www.meditechsystems.co.uk/product/bougie-coude-tip-introducers/"
+    },
+    {
+      id: "3",
+      image: image32,
+      name: "Adult Ported Introducer - 15 FR x 70 cm",
+      category: "Airway Management",
+      description: "Adult ported introducer for guided airway access"
+      // No URL provided
+    },
+    {
+      id: "4",
+      image: image33,
+      name: "Pediatric Ported Introducer - 10 FR x 70 cm",
+      category: "Airway Management",
+      description: "Pediatric version of the ported introducer"
+      // No URL provided
+    },
+    {
+      id: "5",
+      image: image34,
+      name: "Neonatal Stylette (2.0mm) - 6 FR x 255 mm",
+      category: "Stylets",
+      description: "Flexible neonatal intubation stylet"
+      // No URL provided
+    },
+    {
+      id: "6",
+      image: image35,
+      name: "Pediatric Stylette (3.0mm) - 8 FR x 300 mm",
+      category: "Stylets",
+      description: "Pediatric-sized intubation stylet"
+      // No URL provided
+    },
+    {
+      id: "7",
+      image: image36,
+      name: "Adult Stylette (4.0mm) - 10 FR x 335 mm",
+      category: "Stylets",
+      description: "Standard adult intubation stylet"
+      // No URL provided
+    },
+    {
+      id: "8",
+      image: image37,
+      name: "Adult Malleable Introducer - 15 FR x 70 cm",
+      category: "Introducers",
+      description: "Malleable airway introducer for adult patients"
+      // No URL provided
+    },
+    {
+      id: "9",
+      image: image38,
+      name: "Sterile Adult Al Stylette - 9 FR x 16",
+      category: "Stylets",
+      description: "Sterile aluminum adult stylet"
+      // No URL provided
+    },
+    {
+      id: "10",
+      image: image39,
+      name: "Wendl Nasopharyngeal Airways (Silicone) 12 Fr - 3/4.0mm",
+      category: "Airway Management",
+      description: "Soft silicone nasal airway for oxygen or suctioning",
+      url: "https://www.meditechsystems.co.uk/product-category/airway-management/oxygen-and-aerosol-therapy/resuscitation-kits-and-nasophranageal/"
     }
   ]
 },
@@ -423,98 +487,35 @@ Suretech: {
     }
   ]
 },
-Meditech: {
-  logo: Meditec,
-  name: "Meditech",
+Venticare: {
+  logo: Venticare,
+  name: "Venticare Medical Inc.",
   bgColor: "bg-green-50",
   accentColor: "green",
-  description: "Meditech specializes in advanced airway management tools including bougies, introducers, and stylets for all age groups.",
-  website: "https://www.meditechsystems.co.uk/",
-  established:"N/A",
-  headquarters:"N/A",
+  description: "Specialized in respiratory care and critical care products.",
+  website: "https://venticaremedicalinc.com/",
+  established: "Not specified",
+  headquarters: "India",
   products: [
     {
       id: "1",
-      image: image30,
-      name: "Bougie Introducer - Adult, Coudé Tip - 15 FR x 70 cm",
-      category: "Airway Management",
-      description: "Flexible bougie introducer with curved tip for adult use",
-      url: "https://www.meditechsystems.co.uk/product/bougie-coude-tip-introducers/"
+      image: image11,
+      name: "Adult Nebulizer Mask Kit",
+      category: "Respiratory Care",
+      description: "Disposable nebulizer kit for effective medication delivery.",
+      url: "https://venticaremedicalinc.com/products/"
     },
     {
       id: "2",
-      image: image31,
-      name: "Bougie Introducer - Pediatric, Coudé Tip - 10 FR x 70 cm",
-      category: "Airway Management",
-      description: "Smaller curved bougie for pediatric intubation",
-      url: "https://www.meditechsystems.co.uk/product/bougie-coude-tip-introducers/"
-    },
-    {
-      id: "3",
-      image: image32,
-      name: "Adult Ported Introducer - 15 FR x 70 cm",
-      category: "Airway Management",
-      description: "Adult ported introducer for guided airway access"
-      // No URL provided
-    },
-    {
-      id: "4",
-      image: image33,
-      name: "Pediatric Ported Introducer - 10 FR x 70 cm",
-      category: "Airway Management",
-      description: "Pediatric version of the ported introducer"
-      // No URL provided
-    },
-    {
-      id: "5",
-      image: image34,
-      name: "Neonatal Stylette (2.0mm) - 6 FR x 255 mm",
-      category: "Stylets",
-      description: "Flexible neonatal intubation stylet"
-      // No URL provided
-    },
-    {
-      id: "6",
-      image: image35,
-      name: "Pediatric Stylette (3.0mm) - 8 FR x 300 mm",
-      category: "Stylets",
-      description: "Pediatric-sized intubation stylet"
-      // No URL provided
-    },
-    {
-      id: "7",
-      image: image36,
-      name: "Adult Stylette (4.0mm) - 10 FR x 335 mm",
-      category: "Stylets",
-      description: "Standard adult intubation stylet"
-      // No URL provided
-    },
-    {
-      id: "8",
-      image: image37,
-      name: "Adult Malleable Introducer - 15 FR x 70 cm",
-      category: "Introducers",
-      description: "Malleable airway introducer for adult patients"
-      // No URL provided
-    },
-    {
-      id: "9",
-      image: image38,
-      name: "Sterile Adult Al Stylette - 9 FR x 16",
-      category: "Stylets",
-      description: "Sterile aluminum adult stylet"
-      // No URL provided
-    },
-    {
-      id: "10",
-      image: image39,
-      name: "Wendl Nasopharyngeal Airways (Silicone) 12 Fr - 3/4.0mm",
-      category: "Airway Management",
-      description: "Soft silicone nasal airway for oxygen or suctioning",
-      url: "https://www.meditechsystems.co.uk/product-category/airway-management/oxygen-and-aerosol-therapy/resuscitation-kits-and-nasophranageal/"
+      image: image12,
+      name: "Ventilator Circuit Plain Adult",
+      category: "Critical Care",
+      description: "Plain adult ventilator circuit for mechanical ventilation.",
+      url: "https://venticaremedicalinc.com/products/"
     }
   ]
 },
+
 };
 
 

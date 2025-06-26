@@ -51,29 +51,6 @@ const PlasticSidebarDesign = () => {
     },
   ],
 },
-
-ReachMedical: {
-  logo: Synkromax,
-  name: "Synkromax Biotech Pvt. Ltd.",
-  bgColor: "bg-green-50",
-  accentColor: "green",
-  description:
-    "Developer of synthetic vascular grafts and patches, supporting cardiovascular and surgical reconstruction.",
-  website: "https://www.synkromax.com/",
-  established: "2009", 
-  headquarters: "India",
-  products: [
-    {
-      id: "bovine-patch",
-      image: "/Plastic/bovine.png",
-      name: "Bovine Patch",
-      category: "Vascular Grafts",
-      description: "Biocompatible patch used for cardiovascular repair",
-      url: "https://www.reachmedicalsystems.com/synkromax",
-    },
-  ],
-},
-
 Surgiwear: {
   logo: Surgiwear, 
   name: "Surgiwear",
@@ -111,7 +88,31 @@ Surgiwear: {
     },
   ],
 
-    }
+    },
+
+ReachMedical: {
+  logo: Synkromax,
+  name: "Synkromax Biotech Pvt. Ltd.",
+  bgColor: "bg-green-50",
+  accentColor: "green",
+  description:
+    "Developer of synthetic vascular grafts and patches, supporting cardiovascular and surgical reconstruction.",
+  website: "https://www.synkromax.com/",
+  established: "2009", 
+  headquarters: "India",
+  products: [
+    {
+      id: "bovine-patch",
+      image: "/Plastic/bovine.png",
+      name: "Bovine Patch",
+      category: "Vascular Grafts",
+      description: "Biocompatible patch used for cardiovascular repair",
+      url: "https://www.reachmedicalsystems.com/synkromax",
+    },
+  ],
+},
+
+
   };
 
   const currentCompany = companies[activeCompany];

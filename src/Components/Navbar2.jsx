@@ -11,18 +11,20 @@ const Navbar = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const navbarRef = useRef(null);
 
-  const departments = [
-    { name: "Critical Care", href: "/critical-care" },
-    { name: "Cardiac Surgery", href: "/cardiac-surgery" },
-    { name: "Cardiology", href: "/cardiology" },
-    { name: "Neurosurgery", href: "/neurosurgery" },
-    { name: "Ophthalmology", href: "/ophthalmology" },
-    { name: "Pulmonology", href: "/pulmonology" },
-    { name: "General Surgery", href: "/general-surgery" },
-    { name: "Plastic Surgery", href: "/plastic-surgery" },
-    { name: "Orthopedic", href: "/orthopedic" },
-    { name: "Anesthesiology", href: "/anesthesiology" },
-  ];
+const departments = [
+  { name: "Anesthesiology", href: "/anesthesiology" },
+  { name: "Cardiac Surgery", href: "/cardiac-surgery" },
+  { name: "Cardiology", href: "/cardiology" },
+  { name: "Critical Care", href: "/critical-care" },
+  { name: "General Surgery", href: "/general-surgery" },
+    { name: "Nephrology", href: "/nephrology" },
+  { name: "Neurosurgery", href: "/neurosurgery" },
+  { name: "Ophthalmology", href: "/ophthalmology" },
+  { name: "Orthopedic", href: "/orthopedic" },
+  { name: "Plastic Surgery", href: "/plastic-surgery" },
+  { name: "Pulmonology", href: "/pulmonology" },
+];
+
   useEffect(() => {
   if (isMenuOpen) {
     document.body.style.overflow = 'hidden';
