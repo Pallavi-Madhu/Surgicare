@@ -1,169 +1,110 @@
 import React, { useState, useEffect,useRef } from "react";
 import Navbar2 from "../../Components/Navbar2";
 import Footer from "../../Components/Footer";
-import Halyard from "../../assets/Halyard.png";
-import Surgiwear from "../../assets/Surgiwear.png";
-import DepNav from "../../Components/DepNav";
-//Products-Halyard
-import drapes from "../../assets/Orthopedic/Halyard/drapes.jpg";
-import gowns from "../../assets/Orthopedic/Halyard/gowns.jpeg";
-import masks from "../../assets/Orthopedic/Halyard/masks.jpg";
-//Products-Surgiwear
-import GBone from "../../assets/Orthopedic/Surgiwear/GBone.webp";
-import GDress from "../../assets/Orthopedic/Surgiwear/GDress.jpg";
-import GPatch from "../../assets/Orthopedic/Surgiwear/GPatchFinal.png"
-import Baxter from "../../assets/Baxter.png"
-//import { motion } from "framer-motion";
+import Baxter from "../../assets/Baxter.png";
+import tiseel from "../../assets/Neuro/Baxter/Tisseel.webp";
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Globe, Package2, Building, ChevronRight, Star, ShoppingCart,ArrowLeft ,X} from 'lucide-react';
+import { ExternalLink, Globe, Package2, Building, ChevronRight, Star, ShoppingCart, ArrowRight,ArrowLeft, X,ArrowLeftRightIcon } from 'lucide-react';
 import Loading from "../../Components/Loading";
+import DepNav from "../../Components/DepNav";
 
-const OrthopedicSidebarDesign = () => {
-  const [activeCompany, setActiveCompany] = useState("Baxter"); // Changed from "Sinapi" to "Halyard"
-  const [hoveredProduct, setHoveredProduct] = useState(null);
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const Nephrology = () => {
+    const [activeCompany, setActiveCompany] = useState("Baxter");
+    const [hoveredProduct, setHoveredProduct] = useState(null);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  const swipeAreaRef = useRef(null);
-        const sidebarRef = useRef(null);
+    const swipeAreaRef = useRef(null);
+    const sidebarRef = useRef(null);
 
-  const [loading, setLoading] = useState(true);
 
-     useEffect(() => {
-        setTimeout(() => setLoading(false), 3000); // 4 second delay
-      }, []);
-      
-if(loading) {
-  return(
-  <Loading department = "Orthopedic "/>
-  )
-}
-  const companies = {
+    const [loading, setLoading] = useState(true);
+    
+    useEffect(() => {
+      setTimeout(() => setLoading(false), 3000); // 4 second delay
+    }, []);
+    
+    // Touch event handlers for swipe gesture
+  useEffect(() => {
+    let startX = 0;
+    let startY = 0;
+
+    const handleTouchStart = (e) => {
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+    };
+
+    const handleTouchEnd = (e) => {
+      const endX = e.changedTouches[0].clientX;
+      const endY = e.changedTouches[0].clientY;
+
+      const diffX = endX - startX;
+      const diffY = endY - startY;
+
+      if (Math.abs(diffX) > Math.abs(diffY)) {
+        if (startX < 50 && diffX > 50) {
+          setIsSidebarOpen(true);
+        } else if (diffX < -50 && isSidebarOpen) {
+          setIsSidebarOpen(false);
+        }
+      }
+    };
+
+    const handleClickOutside = (e) => {
+      if (
+        sidebarRef.current &&
+        !sidebarRef.current.contains(e.target) &&
+        isSidebarOpen
+      ) {
+        setIsSidebarOpen(false);
+      }
+    };
+
+    const node = swipeAreaRef.current || document;
+
+    node.addEventListener("touchstart", handleTouchStart);
+    node.addEventListener("touchend", handleTouchEnd);
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      node.removeEventListener("touchstart", handleTouchStart);
+      node.removeEventListener("touchend", handleTouchEnd);
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isSidebarOpen]);
+
+          
+    if(loading) {
+      return(
+        <Loading department="Nephrology"/>
+      )
+    }
+
+    const companies = {
       Baxter: {
-      logo: Baxter, 
-      name: "Baxter Healthcare",
-      //tagline: "Advancing Surgery",
-      bgColor: "bg-green-50",
-      accentColor: "green",
-      description: "Global leader in hemostatic solutions for orthopedic surgery. Our advanced products provide effective bleeding control and tissue sealing, enhancing surgical precision and reducing complications.",
-      website: "https://www.baxter.com/",
-      established: "1931",
-      headquarters: "USA",
-      products: [
-        {
-          id: "hemopatch",
-          image: "/hemopatch.png",
-          name: "Hemopatch",
-          category: "Hemostatic Sealing",
-          description: "Revolutionary hemostatic sealing pad",
-          //features: ["Rapid hemostasis", "Easy application", "Bioabsorbable"],
-          url: "https://advancedsurgery.baxter.com.tr/en/hemopatch"
-        },
-        {
-          id: "floseal",
-          image: "/Ophthalmology/floseal.png",
-          name: "Floseal",
-          category: "Bleeding Control",
-          description: "Hemostatic matrix for effective bleeding control",
-          //features: ["Conforms to tissue", "Rapid activation", "Versatile use"],
-          url: "https://advancedsurgery.baxter.com/floseal"
-        },
-        {
-          id: "tiseel",
-          image: "/Ophthalmology/Tiseel.jpg",
-          name: "Tiseel",
-          category: "Fibrin Sealant",
-          description: "Fibrin sealant for tissue adhesion and sealing",
-          //features: ["Strong sealing", "Tissue adhesion", "Hemostatic effect"],
-          url: "https://www.baxter.com/healthcare-professionals/surgical-care/tisseel-fibrin-sealant"
-        }
-      ]
-    },
-    Halyard: {
-      logo: Halyard,
-      name: "Halyard Health",
-      //tagline: "Infection Prevention Excellence",
-      bgColor: "bg-blue-50",
-      accentColor: "green",
-      description: "Halyard contributes to the orthopedic department by providing high-quality surgical drapes, gowns, and sterilization solutions to ensure infection prevention during procedures. Their orthopedic-specific solutions help maintain a sterile field and enhance patient safety..",
-      website: "https://www.halyardhealth.com/",
-      established: "1979",
-      headquarters: "USA",
-      products: [
-        {
-          id: "drapes",
-          image: drapes,
-          name: "Surgical Drapes",
-          category: "Sterile Solutions",
-          description: "Premium surgical drapes engineered for maximum protection",
-          features: ["Fluid-resistant", "Tear-resistant", "Lint-free"],
-          url: "https://products.halyardhealth.com/products/surgical-solutions/surgical-drapes"
-        },
-        {
-          id: "gowns",
-          image: gowns,
-          name: "Surgical Gowns", 
-          category: "Protective Wear",
-          description: "High-performance gowns for surgical protection",
-          features: ["Breathable fabric", "Reinforced seams", "Comfort fit"],
-          url: "https://products.halyardhealth.com/products/surgical-solutions/surgical-gowns"
-        },
-        {
-          id: masks,
-          image: masks,
-          name: "Surgical Masks",
-          category: "Respiratory Protection", 
-          description: "Advanced filtration masks for surgical environments",
-          features: ["99% filtration", "Comfortable wear", "Secure fit"],
-          url: "https://products.halyardhealth.com/products/personal-protection/facial-respiratory-protection/medical-surgical-masks"
-        }
-      ]
-    },
-    Surgiwear: {
-      logo: Surgiwear,
-      name: "Surgiwear Ltd",
-      //tagline: "Innovation in Healthcare",
-      bgColor: "bg-green-50",
-      accentColor: "green",
-      description: "Indian medical device innovator specializing in surgical implants, infection control, and wound care products. Focused on enhancing patient safety and surgical outcomes through quality innovation.",
-      website: "https://surgiwear.co.in/",
-      established: "1992",
-      headquarters: "India",
-      products: [
-        {
-          id: "gbone",
-          image: GBone,
-          name: "G Bone",
-          category: "Bone Grafts",
-          description: "Modified hydroxyapatite bone graft substitute",
-          features: ["Biocompatible", "Osteoconductive", "Resorbable"],
-          url: "https://surgiwear.co.in/product-category/orthopaedics/implants-orthopaedics/g-bone-modified-hydroxyapatite/"
-        },
-        {
-          id: "gdress",
-          image: GDress,
-          name: "G Dress",
-          category: "Wound Care",
-          description: "Advanced disposable surgical dressings",
-          features: ["Antimicrobial", "Moisture control", "Easy application"],
-          url: "https://surgiwear.co.in/product-category/orthopaedics/disposable-orthopaedics/g-dress-disposable-orthopaedics/"
-        },
-        {
-          id: "gpatch",
-          image: GPatch,
-          name: "G Patch",
-          category: "Implants",
-          description: "Advanced orthopedic patches for tissue repair",
-          features: ["Biodegradable", "Strong adhesion", "Tissue compatible"],
-          url: "https://surgiwear.co.in/product-category/orthopaedics/implants-orthopaedics/g-patch-implants-orthopaedics/"
-        }
-      ]
-    },
-  
-  };
+        logo: Baxter, 
+        name: "Baxter",
+        bgColor: "bg-green-50",
+        accentColor: "green",
+        description: "Global leader in surgical care and advanced hemostatic solutions.",
+        website: "https://advancedsurgery.baxter.com/",
+        established: "1931",
+        headquarters: "USA",
+        products: [
+          {
+            id: 3,
+            image: tiseel,
+            name: "Tisseel",
+            category: "Fibrin Sealant",
+            description: "Two-component fibrin sealant used for hemostasis, sealing, and tissue adhesion.",
+            url: "https://www.baxter.com/healthcare-professionals/surgical-care/tisseel-fibrin-sealant"
+          }
+        ]
+      },
+    };
 
-  const currentCompany = companies[activeCompany];
+    const currentCompany = companies[activeCompany];
 
-   return (
+    return (
   <>
     <div ref={swipeAreaRef}>
       <div className="min-h-screen bg-gray-100 flex relative">
@@ -206,7 +147,7 @@ if(loading) {
           </button>
 
           <div className="p-6 border-b bg-gradient-to-br from-green-900 via-green-500 to-green-900 text-white relative">
-            <h1 className="text-3xl font-bold pt-10 lg:pt-0  mb-2">ORTHOPEDIC</h1>
+            <h1 className="text-3xl font-bold pt-10 lg:pt-0  mb-2">NEPHROLOGY</h1>
             <p className="text-gray-100 text-xl">Surgical Solutions</p>
           </div>
 
@@ -297,11 +238,11 @@ if(loading) {
                             </div>
                             <h2 className="text-3xl md:text-5xl font-bold text-white mb-2 md:mb-0">{currentCompany.name}</h2>
                           </div>
-                          <div className="flex justify-center items-center  min-w-[120px]">
+                          <div className="flex justify-center items-center min-w-[120px]">
                             <img
                               src={currentCompany.logo}
                               alt="Company Logo"
-                              className="h-16 rounded rounded-lg  sm:h-20 w-auto object-contain"
+                              className="h-14 rounded rounded-lg  sm:h-20 w-auto object-contain"
                             />
                           </div>
                         </div>
@@ -424,6 +365,7 @@ if(loading) {
     </div>
   </>
 );
-};
 
-export default OrthopedicSidebarDesign;
+  };
+
+  export default Nephrology;

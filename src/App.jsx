@@ -12,6 +12,7 @@ import ScrollToTop from "./Components/ScrollToTop";
 import CriticalCare from "./Pages/Departments/Critical_care";
 import CardiacSurgery from "./Pages/Departments/Cardiac_surgery";
 import Cardiology from "./Pages/Departments/Cardiology";
+import Nephrology from "./Pages/Departments/Nephrology";
 import Neurosurgery from "./Pages/Departments/Neurosurgery";
 import Ophthalmology from "./Pages/Departments/Ophthalmology";
 import Pulmonology from "./Pages/Departments/Pulmonology";
@@ -38,6 +39,7 @@ const App = () => {
             <Route path="/critical-care" element={<CriticalCare />} />
             <Route path="/cardiac-surgery" element={<CardiacSurgery />} />
             <Route path="/cardiology" element={<Cardiology />} />
+            <Route path="/nephrology" element={<Nephrology />} />
             <Route path="/neurosurgery" element={<Neurosurgery />} />
             <Route path="/ophthalmology" element={<Ophthalmology />} />
             <Route path="/pulmonology" element={<Pulmonology />} />

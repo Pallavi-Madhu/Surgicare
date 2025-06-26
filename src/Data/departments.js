@@ -8,13 +8,15 @@ import {
   FaUserNurse, 
   FaSyringe,
   FaAmbulance,
-  FaMedkit
+  FaMedkit,
+  FaProcedures
 } from "react-icons/fa";
 
 const departments = [
   { id: "critical-care", name: "Critical Care", icon: FaAmbulance },
   { id: "cardiac-surgery", name: "Cardiac Surgery", icon: FaHeartbeat },
   { id: "cardiology", name: "Cardiology", icon: FaStethoscope },
+  { id: "nephrology", name: "Nephrology", icon: FaProcedures },
   { id: "neurosurgery", name: "Neurosurgery", icon: FaBrain },
   { id: "ophthalmology", name: "Ophthalmology", icon: FaEye },
   { id: "pulmonology", name: "Pulmonology", icon: FaMedkit },
