@@ -15,7 +15,6 @@ import oxygenerator from "../assets/Equipments/oxygenerator.png";
 import pro from "../assets/Neuro/Sunoptic/pro.png";
 import aortic from "../assets/CardiacSurgery/Terumo/aortic.jpeg";
 
-
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, FileText, Star, ChevronRight } from 'lucide-react';
@@ -42,12 +41,12 @@ const products = [
   },
   {
     id: 3,
-    name: "HICO",
-    image: hico,
-    k: "Medical Equipments",
-    category: "General Equipment",
-    description: "Comprehensive range of medical equipment solutions",
-    isPdf: true,
+    name: "Sunoptic",
+    image: sunoptic,
+    k: "Headlight and Light Sources",
+    category: "Surgical Equipment",
+    description: "Professional surgical lighting solutions",
+    url: "https://sunopticsurgical.com/products/",
   },
   {
     id: 4,
@@ -58,14 +57,15 @@ const products = [
     description: "Advanced dehumidification systems for medical environments",
     url: "https://www.climatronics.in/product/compact-dehumidifiers/novita/",
   },
-  {
+  
+ {
     id: 5,
-    name: "Sunoptic",
-    image: sunoptic,
-    k: "Headlight and Light Sources",
-    category: "Surgical Equipment",
-    description: "Professional surgical lighting solutions",
-    url: "https://sunopticsurgical.com/products/",
+    name: "HICO",
+    image: hico,
+    k: "Medical Equipments",
+    category: "General Equipment",
+    description: "Comprehensive range of medical equipment solutions",
+    isPdf: hico,
   },
   {
     id: 6,
@@ -75,15 +75,6 @@ const products = [
     category: "Surgical Tools",
     description: "Precision surgical cutting instruments",
     url: "https://www.de-soutter.com/US-products-power-tools-Cardiothoracic",
-  },
-  {
-    id: 7,
-    name: "So Clean",
-    image: soClean,
-    k: "X-ray viewer",
-    category: "Diagnostic Equipment",
-    description: "High-clarity X-ray viewing system for clinical use",
-    url: "https://www.soclean.in/x-ray-view-box.html",
   },
   {
     id: 8,
@@ -102,15 +93,6 @@ const products = [
     category: "Respiratory Equipment",
     description: "Advanced oxygenation systems for cardiovascular procedures",
     url: "https://terumoindia.com/cardiovascular-division-terumo-cardiovascular/oxygenation-systems",
-  },
-  {
-    id: 10,
-    name: "GelweaveTM- Aortic Surgical Grafts",
-    image: aortic,
-    k: "Aortic Surgical Grafts",
-    category: "Vascular Grafts",
-    description: "Durable grafts for aortic surgical reconstruction",
-    url: "https://terumoindia.com/vascular-graft-division-terumo-aortic",
   },
   {
     id: 11,
@@ -265,16 +247,22 @@ const MedicalEquipmentPage = () => {
 
                 {/* Action Icon */}
                 <div className="absolute top-4 right-4">
-                  {product.isPdf ? (
-                    <div className="bg-white backdrop-blur-sm p-2 rounded-full shadow-lg">
-                      <FileText className="w-4 h-4 text-gray-700" />
-                    </div>
-                  ) : (
-                    <div className="bg-white backdrop-blur-sm p-2 rounded-full shadow-lg">
-                      <ExternalLink className="w-4 h-4 text-gray-700" />
-                    </div>
-                  )}
-                </div>
+  {product.isPdf ? (
+    <a
+      href={product.isPdf}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-white backdrop-blur-sm p-2 rounded-full shadow-lg block"
+    >
+      <FileText className="w-4 h-4 text-gray-700" />
+    </a>
+  ) : (
+    <div className="bg-white backdrop-blur-sm p-2 rounded-full shadow-lg">
+      <ExternalLink className="w-4 h-4 text-gray-700" />
+    </div>
+  )}
+</div>
+
               </div>
 
               {/* Card Content */}

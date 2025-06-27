@@ -1,15 +1,17 @@
 import React, { useState, useEffect,useRef } from "react";
 import Navbar2 from "../../Components/Navbar2";
 import Footer from "../../Components/Footer";
-import Baxter from "../../assets/Baxter.png";
-import tiseel from "../../assets/Neuro/Baxter/Tisseel.webp";
+import toray from "../../assets/Toray.png";
+import BL from "../../assets/BLLifsciences.png";
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Globe, Package2, Building, ChevronRight, Star, ShoppingCart, ArrowRight,ArrowLeft, X,ArrowLeftRightIcon } from 'lucide-react';
 import Loading from "../../Components/Loading";
 import DepNav from "../../Components/DepNav";
+import brochure from "../../assets/DiaX 202010.pdf"
+import diax from "../../assets/diax.png"
 
   const Nephrology = () => {
-    const [activeCompany, setActiveCompany] = useState("Baxter");
+    const [activeCompany, setActiveCompany] = useState("Toray");
     const [hoveredProduct, setHoveredProduct] = useState(null);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -80,26 +82,54 @@ import DepNav from "../../Components/DepNav";
     }
 
     const companies = {
-      Baxter: {
-        logo: Baxter, 
-        name: "Baxter",
-        bgColor: "bg-green-50",
-        accentColor: "green",
-        description: "Global leader in surgical care and advanced hemostatic solutions.",
-        website: "https://advancedsurgery.baxter.com/",
-        established: "1931",
-        headquarters: "USA",
-        products: [
-          {
-            id: 3,
-            image: tiseel,
-            name: "Tisseel",
-            category: "Fibrin Sealant",
-            description: "Two-component fibrin sealant used for hemostasis, sealing, and tissue adhesion.",
-            url: "https://www.baxter.com/healthcare-professionals/surgical-care/tisseel-fibrin-sealant"
-          }
-        ]
-      },
+       Toray : {
+            logo: toray,
+            name: "Toray Medical",
+            bgColor: "bg-green-50",
+            accentColor: "green",
+            description: "Advanced therapies for emergency and intensive care settings.",
+            website: "https://www.toray-medical.com/en/",
+            established: "1980",
+            headquarters: "Japan",
+            products: [
+              {
+                id: "hemofeel",
+                image: "/CriticalCare/hemofeel.png",
+                name: "Hemofeel",
+                category: "Emergency Therapy",
+                description: "Hemoperfusion cartridge for blood purification",
+                url: "https://www.toray-medical.com/en/products/emergency/eme_0020.html"
+              },
+              {
+                id: "toraymyxin",
+                image: "/CriticalCare/myxin.png",
+                name: "Toraymyxin",
+                category: "Emergency Therapy",
+                description: "Toxin-absorbing cartridge for sepsis management",
+                url: "https://www.toray-medical.com/en/products/emergency/eme_0010.html"
+              }
+            ]
+          },
+           BL: {
+            logo: BL,
+            name: "BL Lifesciences",
+            bgColor: "bg-green-50",
+            accentColor: "green",
+            description: "A provider of innovative medical devices across anesthesia, cardiology, and critical care domains.",
+            website: "https://www.bllifesciences.com/",
+            established: "1996",
+            headquarters: "India",
+            products: [
+              {
+              id: "1",
+              image:diax,
+              name: "DiaX products",
+              category:"",
+              description:"",
+              url: brochure
+              }
+            ]
+           }
     };
 
     const currentCompany = companies[activeCompany];

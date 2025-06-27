@@ -76,7 +76,8 @@ const Footer = () => {
               <div className="text-white">
                 Near Palakkal Bhagavathi Temple<br />
                 Container Terminal Road<br />
-                Cheranalloor, Cochin - 682034
+                Cheranalloor, Cochin - 682034<br/>
+                Ernakulam District, Kerala, India
               </div>
             </div>
           </div>
@@ -86,9 +87,10 @@ const Footer = () => {
             <FaMapMarkerAlt className="w-6 h-6 text-white mt-1 flex-shrink-0" />
             <div className="text-lg leading-relaxed">
               <div className="text-white">
-                Vyapara Bhavan,<br />
-                Eranhipalam,<br />
-                Kozhikode, Kerala-673021
+                  Vyapara Bhavan,<br />
+                  Eranhipalam,<br />
+                  Kozhikode District, <br/>
+                  Kerala, India
               </div>
             </div>
           </div>

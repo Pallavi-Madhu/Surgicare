@@ -80,11 +80,16 @@ const Home = () => {
               </div>
 
               <h2 className="text-2xl lg:text-4xl font-bold text-gray-800 leading-tight">
-                World-Class <span className="text-green-700">Biomedical Equipment</span> Distribution
+                Leading <span className="text-green-700">Medical Device and Disposable</span> Distribution
               </h2>
               <p className="lg:text-xl text-sm sm:text-lg font-sans font-extralight text-gray-900 leading-relaxed">
-                At Nandana SurgiCare, we take pride in being a trusted distributor of world-class biomedical equipment, 
-                enabling healthcare professionals to deliver exceptional patient care. With our strong focus on quality, 
+                 We, Nandana Surgi Care are one of the upcoming distributors based at Kochi, undertaking Govt. and
+                private hospitals business for various equipments, medical devices and disposables exclusively for
+                CVTS, Cardiology, Vascular, Plastic Surgery, Ophthalmology, Anesthesia & Neurosurgery departments.
+              </p>
+            
+              <p className="lg:text-xl text-sm sm:text-lg font-sans font-extralight text-gray-900 leading-relaxed">
+                With < span className="font-sans text-gray-900 text-sm sm:text-base lg:text-xl">20+</span>  years of experience and a strong focus on quality, 
                 innovation, and reliability, we offer a comprehensive range of medical instruments and devices from some 
                 of the most respected brands in the industry.
               </p>
