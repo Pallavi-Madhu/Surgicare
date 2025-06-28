@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import logo from "../assets/Surgicare logo.png";
 import { motion, AnimatePresence } from "framer-motion";
+import Searchbar from "./Searchbar"
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -100,7 +101,7 @@ const departments = [
     exit: { opacity: 0, y: -10 },
   };
 
-  return (
+  return (<>
     <motion.nav 
       ref={navbarRef}
       className="fixed top-0 w-full z-30"
@@ -130,15 +131,15 @@ const departments = [
         }`}
       />
 
-      <div className=" md:max-w-7xl px-4 sm:px-6 mx-auto lg:px-8">
-        <div className="flex justify-between items-center h-16 sm:h-20">
+      <div className=" md:max-w-full px-4 sm:px-6 mx-auto lg:px-8 2xl:px-60">
+        <div className="flex lg:flex-col 2xl:flex-row justify-between items-center h-16 sm:h-20 mb-0 lg:mb-4 2xl:mb-0">
           {/* Logo Section */}
                     <div className="flex items-center space-x-3">
                       <div className=" transition-colors duration-200 relative group  rounded-xl flex items-center justify-center">
                         <img src={logo} alt="SurgiCare Logo" className="mb-2 sm:mb-0 w-14 h-10 sm:w-20 sm:h-12" />
                       </div>
                       <div>
-                        <h1 className="text-gray-800 hover:text-blue-900 font-sans font-semibold text-2xl sm:text-4xl transition-colors duration-200 relative group">
+                        <h1 className="text-gray-800 hover:text-blue-900 font-sans font-semibold text-2xl sm:text-3xl 2xl:text-4xl transition-colors duration-200 relative group">
                           Nandana Surgi Care
                         </h1>
                       </div>
@@ -166,14 +167,14 @@ const departments = [
           <div className="hidden lg:flex space-x-8  items-center">
             <a
               href="/"
-              className="text-gray-700 hover:text-green-600 font-semibold text-2xl transition-colors duration-200 relative group"
+              className="text-gray-700 hover:text-green-600 font-semibold text-lg 2xl:text-xl transition-colors duration-200 relative group"
             >
               Home
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-200 group-hover:w-full"></span>
             </a>
             <a
               href="/about-us"
-              className="text-gray-700 hover:text-green-600 font-semibold text-2xl transition-colors duration-200 relative group"
+              className="text-gray-700 hover:text-green-600 font-semibold text-lg 2xl:text-xl transition-colors duration-200 relative group"
             >
               About Us
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-200 group-hover:w-full"></span>
@@ -183,7 +184,7 @@ const departments = [
             <div className="relative" ref={desktopDropdownRef}>
               <button
                 onClick={toggleProductsMenu}
-                className="text-gray-700 hover:text-green-600 font-semibold text-2xl transition-colors duration-200 relative group flex items-center space-x-1"
+                className="text-gray-700 hover:text-green-600 font-semibold text-lg 2xl:text-xl transition-colors duration-200 relative group flex items-center space-x-1"
               >
                 <span>Products</span>
                 <svg className={`w-4 h-4 transition-transform duration-200 ${isProductsOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -249,7 +250,7 @@ const departments = [
             </div>
              <a
                        href="/certificates"
-                        className="text-gray-700 hover:text-green-600 font-semibold text-2xl transition-colors duration-200 relative group"
+                        className="text-gray-700 hover:text-green-600 font-semibold text-lg 2xl:text-xl transition-colors duration-200 relative group"
                        style={{ WebkitTapHighlightColor: 'transparent' }}
                      >
                        Certificates
@@ -257,12 +258,22 @@ const departments = [
 
             <a
               href="/contact"
-              className="text-gray-700 hover:text-green-600 font-semibold text-2xl transition-colors duration-200 relative group"
+              className="text-gray-700 hover:text-green-600 font-semibold text-lg 2xl:text-xl transition-colors duration-200 relative group"
             >
               Contact
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-200 group-hover:w-full"></span>
             </a>
+            <div className="hidden lg:block">
+  <Searchbar 
+    items={departments} 
+    onSelect={(item) => {
+      console.log('Selected:', item);
+    }}
+  />
+</div>
           </div>
+        
+
         </div>
 
         {/* Mobile Menu */}
@@ -381,22 +392,24 @@ const departments = [
                      >
                        Certificates
                      </a>
-<a
-  href="/contact"
-  className="block text-gray-700 rounded-xl hover:text-green-700 font-bold text-lg p-3 transition duration-200 hover:shadow-lg"
-  style={{ WebkitTapHighlightColor: 'transparent' }}
->
-  Contact
-</a>
-
+                       <a
+                         href="/contact"
+                         className="block text-gray-700 rounded-xl hover:text-green-700 font-bold text-lg p-3 transition duration-200 hover:shadow-lg"
+                         style={{ WebkitTapHighlightColor: 'transparent' }}
+                       >
+                         Contact
+                       </a>
 
                    </div>
+                   
                  </motion.div>
-         </div>
-       )}
+                    </div>
+                      )}           
+                      
      </AnimatePresence>
       </div>
     </motion.nav>
+    </>
   );
 };
 

@@ -1,4 +1,3 @@
-import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
@@ -7,13 +6,10 @@ import { EffectCoverflow, Pagination, Autoplay } from "swiper/modules";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import Card from "../Components/Cards";
-import bg from "../assets/bg.png";
 import { cards } from "../Data/dataHome";
-import surgeryVideo from "../assets/Surgeryequip.mp4";
 import positive from "../assets/positive.png"
 import dist from "../assets/dist.png"
 import { motion } from "framer-motion";
-import ParticleOverlay from '../Components/Particle';
 import { useState, useEffect } from "react";
 import HeroSlideshow from "../Components/HeroSlideshow";
 
