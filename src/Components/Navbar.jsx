@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import logo from "../assets/Surgicare logo.png";
 import { motion, AnimatePresence } from "framer-motion";
 import Searchbar from "./Searchbar"
+import { useLocation } from 'react-router-dom';
+
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,6 +14,9 @@ const Navbar = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const navbarRef = useRef(null);
   const desktopDropdownRef = useRef(null);
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+
 
 const departments = [
   { name: "Anesthesiology", href: "/anesthesiology" },
@@ -263,14 +268,17 @@ const departments = [
               Contact
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-200 group-hover:w-full"></span>
             </a>
-            <div className="hidden lg:block">
-  <Searchbar 
-    items={departments} 
-    onSelect={(item) => {
-      console.log('Selected:', item);
-    }}
-  />
-</div>
+{isHomePage && (
+  <div className="hidden lg:block">
+    <Searchbar 
+      items={departments} 
+      onSelect={(item) => {
+        console.log('Selected:', item);
+      }}
+    />
+  </div>
+)}
+
           </div>
         
 
