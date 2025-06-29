@@ -91,19 +91,28 @@ const Searchbar = ({ items = [], onSelect }) => {
     searchRef.current?.focus();
   };
 
-  const highlightMatch = (text, query) => {
-    if (!query) return text;
-    const regex = new RegExp(`(${query})`, 'gi');
-    const parts = text.split(regex);
-    
-    return parts.map((part, index) => 
-      regex.test(part) ? (
-        <span key={index} className="bg-green-100 text-green-800 font-semibold">
-          {part}
-        </span>
-      ) : part
-    );
-  };
+const highlightMatch = (text, query) => {
+  if (!query) return text;
+
+  const regex = new RegExp(`\\b(${query})`, 'i'); // Match only at word-start
+  const match = text.match(regex);
+
+  if (!match) return text;
+
+  const start = match.index;
+  const end = start + match[0].length;
+
+  return (
+    <>
+      {text.slice(0, start)}
+      <span className="bg-green-100 text-green-800 font-semibold">
+        {text.slice(start, end)}
+      </span>
+      {text.slice(end)}
+    </>
+  );
+};
+
 
   return (
     <div className="relative left-10 w-full max-w-sm mx-auto" ref={searchRef}>

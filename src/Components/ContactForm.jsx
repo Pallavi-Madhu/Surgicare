@@ -24,22 +24,22 @@ const ContactForm = () => {
 
     try {
       // Step 1: Insert data into Supabase
-      const { data, error } = await supabase
-        .from("Contact")
-        .insert([emailData]);
+      // const { data, error } = await supabase
+      //   .from("Contact")
+      //   .insert([emailData]);
 
-      if (error) {
-        console.error("Error inserting data into Supabase:", error);
-        toast.error("Failed to save data to the database. Please try again.", {
-          hideProgressBar: true,
-          className:
-            "bg-red-100 text-red-700 border border-red-500 rounded-lg shadow-lg p-4",
-          autoClose: 3000,
-        });
-        return; // Exit if Supabase insertion fails
-      }
+      // if (error) {
+      //   console.error("Error inserting data into Supabase:", error);
+      //   toast.error("Failed to save data to the database. Please try again.", {
+      //     hideProgressBar: true,
+      //     className:
+      //       "bg-red-100 text-red-700 border border-red-500 rounded-lg shadow-lg p-4",
+      //     autoClose: 3000,
+      //   });
+      //   return; // Exit if Supabase insertion fails
+      // }
 
-      console.log("Data saved to Supabase:", data);
+      // console.log("Data saved to Supabase:", data);
 
       // Step 2: Send email using EmailJS
       emailjs.init("Yg9-5u6pVdj850AEi"); // Replace with your EmailJS user ID

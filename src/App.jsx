@@ -7,6 +7,7 @@ import Products from "./Pages/Products";
 import Contact from "./Pages/Contact";
 import Certificates from "./Pages/Certificates";
 import ScrollToTop from "./Components/ScrollToTop";
+import '../src/Components/Particle.css';  
 
 // Import Department Pages
 import CriticalCare from "./Pages/Departments/Critical_care";
