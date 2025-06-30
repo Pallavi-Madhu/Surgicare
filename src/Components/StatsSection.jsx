@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 const StatsSection = () => {
   const stats = [
-    { number: 5, suffix: "+", label: "Years Experience" },
+    { number: 20, suffix: "+", label: "Years Experience" },
     { number: 100, suffix: "+", label: "Healthcare Partners" },
     { number: 100, suffix: "+", label: "Medical Devices / Disposables" },
     { number: "24/7", label: "Customer Support" }
