@@ -15,6 +15,7 @@ import Scanlan from "../../assets/Scanlan.png";
 import Sinapi from "../../assets/Sinapi.png";
 import Halyard from "../../assets/Halyard.png";
 import Insightra from "../../assets/insightra.png";
+import Grena from "../../assets/Grena.png";
 import LSI from "../../assets/LSI.png";
 import bg from "../../assets/depBG.png";
 //Euroset products
@@ -116,6 +117,13 @@ import corknot from "../../assets/CardiacSurgery/LSI/corknot.jpeg";
 //Scanlan
 import coverpg from "../../assets/CardiacSurgery/Scanlan/cover.jpg"
 import sc from "../../assets/CardiacSurgery/Scanlan/Scanlan.pdf"
+
+//grena
+import vclip from "../../assets/vclips.png";
+import ligav from "../../assets/ligav.png";
+import clickav from "../../assets/clickav.png";
+import clickavplus from "../../assets/clickavplus.png";
+import clickxxl from "../../assets/clickxxl.png";
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Globe, Package2, Building, ChevronRight, Star, ShoppingCart, ArrowLeft, X } from 'lucide-react';
@@ -719,7 +727,61 @@ Insightra: {
         url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf"
       }
     ]
-    }
+    },
+    Grena: {
+        logo: Grena, 
+        name: "Grena Ltd.",
+        bgColor: "bg-green-50",
+        accentColor: "green",
+        description:
+          "Grena Ltd. specializes in high-quality polymer and titanium ligating clips and clip appliers for surgical procedures worldwide.",
+        website: "https://www.grena.co.uk/",
+        established: "2006",
+        headquarters: "London",
+        products: [
+          {
+            id: 1,
+            image: vclip,
+            name: "VClip® – titanium ligating clips",
+            category: "Surgical Accessories",
+            description: "Titanium ligating clips designed for precise and secure vessel or duct closure.",
+            url: "https://www.grena.co.uk/our-products/titanium-ligating-clips/v-clip-titanium-ligating-clips/"
+          },
+          {
+            id: 2,
+            image: ligav,
+            name: "LigaV® – titanium ligating clips",
+            category: "Surgical Accessories",
+            description: "Reliable titanium clips ideal for general surgery and minimally invasive procedures.",
+            url: "https://www.grena.co.uk/our-products/titanium-ligating-clips/ligav-titanium-ligating-clips/"
+          },
+          {
+            id: 3,
+            image: clickav,
+            name: "Click’aV® polymer ligating clips",
+            category: "Surgical Accessories",
+            description: "Polymer clips for secure vessel ligation in open and laparoscopic surgeries.",
+            url: "https://www.grena.co.uk/our-products/ligating-clips/click-a-v-polymer-ligating-clips/"
+          },
+          {
+            id: 4,
+            image: clickavplus,
+            name: "Click’aV Plus™ polymer ligating clips",
+            category: "Surgical Accessories",
+            description: "Advanced polymer clip system offering firm locking and precise application.",
+            url: "https://www.grena.co.uk/our-products/ligating-clips/click-av-plus-polymer-ligating-clips/"
+          },
+          {
+            id: 5,
+            image: clickxxl,
+            name: "XXL Click’aV Plus™ Ligating Clips & Clip Appliers",
+            category: "Surgical Accessories",
+            description: "Extra-large clip and applier system for demanding surgical applications.",
+            url: "https://www.grena.co.uk/our-products/ligating-clips/xxl-click-av-plus-polymer-ligating-clips/"
+          },
+        ]
+
+},
 };
 
   const currentCompany = companies[activeCompany];
