@@ -59,9 +59,7 @@ const openCertificate = (certificate) => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <div className="flex justify-center mb-8">
-                <div className="p-3 bg-blue-100 rounded-full">
-                  <Award className="w-12 h-12 text-green-600" />
-                </div>
+                 
               </div>
               <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl md:text-6xl">
                 Our <span className="text-green-600">Certifications</span>
@@ -96,9 +94,9 @@ const openCertificate = (certificate) => {
 
                 {/* Certificate Details */}
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">
-                    {certificate.title}
-                  </h3>
+                  <div className="lg:text-2xl text-xl flex flex-row items-center justify-center text-center py-0 lg:py-4 font-bold text-gray-900 mb-3">
+                     <Award className="hidden sm:block w-8 h-8 text-green-600 " />{certificate.title}
+                  </div>
                   
                   {/* Action Buttons */}
                   <div className="mt-6  flex justify-center sm:items-end items-center flex-col sm:flex-row space-y-3 space-x-3">
