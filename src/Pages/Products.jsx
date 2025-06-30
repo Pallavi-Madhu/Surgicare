@@ -14,6 +14,7 @@ import hico from "../assets/Equipments/hico.png";
 import oxygenerator from "../assets/Equipments/oxygenerator.png";
 import pro from "../assets/Neuro/Sunoptic/pro.png";
 import aortic from "../assets/CardiacSurgery/Terumo/aortic.jpeg";
+import hicopdf from "../assets/hico.pdf"
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -65,7 +66,7 @@ const products = [
     k: "Medical Equipments",
     category: "General Equipment",
     description: "Comprehensive range of medical equipment solutions",
-    isPdf: hico,
+    isPdf: hicopdf,
   },
   {
     id: 6,
@@ -116,7 +117,7 @@ const MedicalEquipmentPage = () => {
 
   const handleProductClick = (product) => {
     if (product.isPdf) {
-      window.open("/public/HICO.pdf", "_blank");
+      window.open(product.isPdf, "_blank");
     } else {
       window.open(product.url, "_blank");
     }
@@ -166,8 +167,7 @@ const MedicalEquipmentPage = () => {
     <>
     <Navbar />
 
-    <div className="min-h-screen pb-48">
-      
+    <div className="min-h-screen pb-48"> 
       <motion.div 
         className="bg-white shadow-lg bg-green-700 "
         initial={{ y: -50, opacity: 0 }}
