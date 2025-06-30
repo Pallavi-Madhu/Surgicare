@@ -2,6 +2,8 @@
 
 Welcome to the official website repository for **Nandana Surgicare**, a company dedicated to delivering high-quality medical and surgical equipment. This website serves as a digital catalog of the wide range of products handled by the company across various medical departments.
 
+<h2>🌐 Live Website</h2>
+<h3>Check out the deployed website here: <a href="https://nandanasurgicare.com" target="_blank">  nandanasurgicare.com</a></h3>
 
 ## About the Website
 
@@ -22,7 +24,7 @@ This website is designed to provide an intuitive, professional, and informative 
 - ⚡ **User-Friendly Interface**  
   Clean UI with easy navigation to help users quickly find the medical equipment they are looking for.
 
-## 🏗️ Tech Stack
+##  Tech Stack
 
 - **Frontend**: HTML, CSS, JavaScript  
 - **Backend**: _None (Static site)_ 
