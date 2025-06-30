@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { Eye, Download, X, FileText } from 'lucide-react';
 import cert1 from "../../src/assets/Certificates/GST CERTIFICATE.pdf";
 import cert2 from "../../src/assets/Certificates/Udyam Registration Certificate.Nandana.pdf";
+import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer"
 import image1 from "../../src/assets/Certificates/image.png"
 import image2 from "../../src/assets/Certificates/image copy.png"
 
@@ -39,13 +41,14 @@ const Certificates = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100">
+      <Navbar/>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Header Section */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-green-600 rounded-full mb-6">
+          {/* <div className="inline-flex items-center justify-center w-16 h-16 bg-green-600 rounded-full mb-6">
             <FileText size={32} className="text-white" />
-          </div>
-          <h1 className="text-4xl font-bold text-green-900 mb-4">
+          </div> */}
+          <h1 className="text-4xl font-bold text-green-900 mb-4 pt-10">
             Our Certifications
           </h1>
           <p className="text-lg text-green-700 max-w-2xl mx-auto">
@@ -122,6 +125,7 @@ const Certificates = () => {
           </div>
         </div>
       )}
+      <Footer/>
     </div>
   );
 };
