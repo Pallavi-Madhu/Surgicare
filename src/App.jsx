@@ -10,7 +10,6 @@ import ScrollToTop from "./Components/ScrollToTop";
 import '../src/Components/Particle.css';  
 
 // Import Department Pages
-import CriticalCare from "./Pages/Departments/Critical_care";
 import CardiacSurgery from "./Pages/Departments/Cardiac_surgery";
 import Cardiology from "./Pages/Departments/Cardiology";
 import Nephrology from "./Pages/Departments/Nephrology";
@@ -37,7 +36,6 @@ const App = () => {
             <Route path="/contact" element={<Contact />} />
 
             {/* Department Pages */}
-            <Route path="/critical-care" element={<CriticalCare />} />
             <Route path="/cardiac-surgery" element={<CardiacSurgery />} />
             <Route path="/cardiology" element={<Cardiology />} />
             <Route path="/nephrology" element={<Nephrology />} />
@@ -47,7 +45,7 @@ const App = () => {
             <Route path="/general-surgery" element={<GeneralSurgery />} />
             <Route path="/plastic-surgery" element={<PlasticSurgery />} />
             <Route path="/orthopedic" element={<Orthopedic />} />
-            <Route path="/anesthesiology" element={<Anesthesiology />} />
+            <Route path="/anesthesiology&CriticalCare" element={<Anesthesiology />} />
 
             {/* Fallback Route */}
             <Route path="*" element={<h1>404 - Page Not Found</h1>} />

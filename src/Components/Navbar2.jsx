@@ -12,12 +12,11 @@ const Navbar = () => {
   const navbarRef = useRef(null);
 
 const departments = [
-  { name: "Anesthesiology", href: "/anesthesiology" },
+  { name: "Anesthesiology and Critical Care", href: "/anesthesiology&CriticalCare" },
   { name: "Cardiac Surgery", href: "/cardiac-surgery" },
   { name: "Cardiology", href: "/cardiology" },
-  { name: "Critical Care", href: "/critical-care" },
   { name: "General Surgery", href: "/general-surgery" },
-    { name: "Nephrology", href: "/nephrology" },
+  { name: "Nephrology", href: "/nephrology" },
   { name: "Neurosurgery", href: "/neurosurgery" },
   { name: "Ophthalmology", href: "/ophthalmology" },
   { name: "Orthopedic", href: "/orthopedic" },

@@ -2,7 +2,6 @@ import React, { useState,useEffect,useRef } from "react";
 import Navbar2 from "../../Components/Navbar2";
 import Footer from "../../Components/Footer";
 import DepNav from "../../Components/DepNav";
-import bg from "../../assets/depBG.png";
 import BL from "../../assets/BLLifsciences.png";
 import Sinapi from "../../assets/Sinapi.png";
 import toray from "../../assets/Toray.png";
@@ -49,91 +48,6 @@ const CriticalSidebarDesign = () => {
   }
 
   const companies = {
-    BL : {
-      logo: BL,
-      name: "BL Lifesciences",
-      bgColor: "bg-green-50",
-      accentColor: "green",
-      description: "BL Lifesciences offers a wide range of advanced medical devices for anesthesia, critical care, and interventional systems.",
-      website: "https://www.bllifesciences.com/",
-      established: "1996",
-      headquarters: "India",
-      products: [
-        {
-          id: "pressure-monitoring-lines",
-          image: image1,
-          name: "Pressure Monitoring Lines",
-          category: "Invasive Pressure System",
-          description: "Accurate invasive pressure line system",
-          url: "https://www.bllifesciences.com/products/invasive-pressure-system/",
-        },
-        {
-          id: "disposable-pressure-transducer",
-          image: image2,
-          name: "Disposable Pressure Transducer",
-          category: "Invasive Pressure System",
-          description: "Single-use transducer for pressure monitoring",
-          url: "https://www.bllifesciences.com/products/invasive-pressure-system/",
-        },
-        {
-          id: "hme-filter",
-          image: image3,
-          name: "HME Filter",
-          category: "Anesthesia & Critical Care",
-          description: "Moisture exchange and bacterial filtration",
-          url: "https://www.bllifesciences.com/products/anesthesia-and-critical-care/",
-        },
-        {
-          id: "interphase-cable",
-          image: image4,
-          name: "Interphase Cable",
-          category: "Monitor Accessories",
-          description: "Cable suit compatible with your monitor",
-          url: cable,
-        },
-        {
-          id: "3way-extension",
-          image: image5,
-          name: "3 Way with Extension - 10cm, 25/50cm",
-          category: "Interventional Systems",
-          description: "IV fluid direction control with extension",
-          url: "https://www.bllifesciences.com/products/interventional-systems/",
-        },
-        {
-          id: "iv-set-vented",
-          image: "/Cardiology/IVset.png",
-          name: "IV Set Vented",
-          category: "Infusion",
-          description: "Vented set for controlled infusion",
-          url: "https://bllifesciences.com/wp-content/uploads/2022/08/BL-Lifesciences.pdf",
-        },
-        {
-          id: "central-venous-catheters",
-          image: image7,
-          name: "Central Venous Catheters",
-          category: "Catheters",
-          description: "Multi-lumen venous access device",
-          url: "https://www.bllifesciences.com/products/central-venous-catheters/",
-        },
-        {
-          id: "adult-expandable-circuit",
-          image: image8,
-          name: "Adult Expandable Circuit",
-          category: "Anesthesia & Critical Care",
-          description: "Expandable circuit for anesthesia delivery",
-          url: "https://www.bllifesciences.com/products/anesthesia-and-critical-care/",
-        },
-        {
-          id: "lung-exerciser",
-          image: image9,
-          name: "Lung Exerciser",
-          category: "Anesthesia & Critical Care",
-          description: " Respiratory strengthening post-operative device",
-          url: "https://www.bllifesciences.com/products/anesthesia-and-critical-care/",
-        }
-      ]
-    },
-
    Toray : {
       logo: toray,
       name: "Toray Medical",
@@ -163,42 +77,6 @@ const CriticalSidebarDesign = () => {
       ]
     },
 
-    Meditec : {
-      logo: meditech,
-      name: "Meditec Devices",
-      bgColor: "bg-green-50",
-      accentColor: "green",
-      description: "Manufacturers of airway management devices and surgical accessories.",
-      website: "https://meditecdevices.com/",
-      established: "2011",
-      headquarters: "India",
-      products: [
-        {
-          id: "nasopharyngeal-airway",
-          image: "/CriticalCare/airway.png",
-          name: "Nasopharyngeal Airway",
-          category: "Airway Management",
-          description: "Soft tube for nasal airway access",
-          url: "https://meditecdevices.com/products/search/?q=nasopharyngeal%20airway"
-        },
-        {
-          id: "bougie",
-          image: "/CriticalCare/bougie.png",
-          name: "Bougie",
-          category: "Intubation Aid",
-          description: "Intubation aid for airway access",
-          url: "https://meditecdevices.com/products/search/?q=bougie"
-        },
-        {
-          id: "stylet",
-          image: "/CriticalCare/stylet.png",
-          name: "Stylet",
-          category: "Intubation Aid",
-          description: "Rigid guide for endotracheal tube",
-          url: "https://meditecdevices.com/products/search/?q=stylet"
-        }
-      ]
-    },
   Sinapi : {
       logo: Sinapi,
       name: "Sinapi Biomedical",
@@ -218,7 +96,8 @@ const CriticalSidebarDesign = () => {
           url: ChestDrain
         }
       ]
-    },  Hico : {
+    },  
+    Hico : {
       logo: hico,
       name: "Hico",
       bgColor: "bg-green-50",
