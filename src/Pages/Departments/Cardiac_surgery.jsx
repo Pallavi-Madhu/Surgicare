@@ -98,7 +98,7 @@ import gelsoft from "../../assets/CardiacSurgery/Terumo/gelsoft.jpeg";
 import gelwieve from "../../assets/CardiacSurgery/Terumo/gelwieve.jpeg";
 import aortic from "../../assets/CardiacSurgery/Terumo/aortic.jpeg";
 import valsalva from "../../assets/CardiacSurgery/Terumo/valsalva.jpeg";
-
+import oxygenerator2 from "../../assets/Equipments/oxygenerator.png";
 
 //Sinapi products
 import chestdrain from "../../assets/CardiacSurgery/Sinapi/chestdrain.png";
@@ -510,6 +510,14 @@ const CardiacSidebarDesign = () => {
       description: "Minimally invasive EVH system for coronary artery bypass grafting.",
       url: "https://terumocv.com/evh/"
     },
+    {
+  id: "oxygenerator",
+  name: "Oxygenerator",
+  image: oxygenerator2,
+  category: "Respiratory Equipment",
+  description: "Advanced oxygenation systems for cardiovascular procedures",
+  url: "https://terumoindia.com/cardiovascular-division-terumo-cardiovascular/oxygenation-systems"
+},
     {
       id: "stabilizer",
       image: stabilizer,

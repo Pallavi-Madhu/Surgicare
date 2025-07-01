@@ -11,7 +11,6 @@ import soClean from "../assets/Equipments/soClean.png";
 import sunoptic from "../assets/Equipments/sunoptic.png";
 import novita from "../assets/Equipments/novita.png";
 import hico from "../assets/Equipments/hico.png";
-import oxygenerator from "../assets/Equipments/oxygenerator.png";
 import pro from "../assets/Neuro/Sunoptic/pro.png";
 import aortic from "../assets/CardiacSurgery/Terumo/aortic.jpeg";
 import hicopdf from "../assets/hico.pdf"
@@ -85,15 +84,6 @@ const products = [
     category: "Therapeutic Devices",
     description: "FDA-approved device for preventing deep vein thrombosis",
     url: "https://megamed.in/product/devon-cirona-6200-dvt-pump-ce-fda-approved/",
-  },
-  {
-    id: 9,
-    name: "Oxygenerator",
-    image: oxygenerator,
-    k: "Oxygenerator",
-    category: "Respiratory Equipment",
-    description: "Advanced oxygenation systems for cardiovascular procedures",
-    url: "https://terumoindia.com/cardiovascular-division-terumo-cardiovascular/oxygenation-systems",
   },
   {
     id: 11,
