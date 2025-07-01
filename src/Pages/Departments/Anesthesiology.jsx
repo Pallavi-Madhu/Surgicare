@@ -94,7 +94,7 @@ const AnesthesioSidebarDesign = () => {
       
 if(loading) {
   return(
-  <Loading department = "Anesthesiology"/>
+  <Loading department = "Anesthesiology and Critical Care"/>
   )
 }
 

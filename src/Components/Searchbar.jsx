@@ -219,8 +219,14 @@ const departments = [
               onSelect={handleSelect}
               placeholder="Search departments..."
             />
+      </div>
+  );
+};
 
-        {/* Features */}
+export default SearchbarDemo;
+
+
+{/* Features */}
         {/* <div className="grid md:grid-cols-2 gap-6">
           <div className="bg-white rounded-xl p-6 shadow-lg">
             <h3 className="text-lg font-semibold text-gray-800 mb-3">Features</h3>
@@ -243,8 +249,4 @@ const departments = [
             </ul>
           </div>
         </div> */}
-      </div>
-  );
-};
-
-export default SearchbarDemo;
+        

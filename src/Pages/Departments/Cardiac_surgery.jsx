@@ -131,7 +131,7 @@ import { ExternalLink, Globe, Package2, Building, ChevronRight, Star, ShoppingCa
 
 
 const CardiacSidebarDesign = () => {
-  const [activeCompany, setActiveCompany] = useState("Euroset");
+  const [activeCompany, setActiveCompany] = useState("BL");
   const [hoveredProduct, setHoveredProduct] = useState(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -152,88 +152,7 @@ const CardiacSidebarDesign = () => {
   }
 
   const companies = {
-      Euroset: {
-      logo: Euroset, 
-      name: "Eurosets",
-      bgColor: "bg-green-50",
-      accentColor: "green",
-      description: "Swiss manufacturer offering a range of advanced oxygenator systems for pediatric and adult use.",
-      website: "https://www.eurosets.com/en/",
-      established: "1991", // Update this if known
-      headquarters: "Italy",
-      products: [
-        {
-          id: "kompass",
-          image: oxygenerator,
-          name: "Oxygenator Adult Kompass",
-          category: "Oxygenator",
-          description: "Adult oxygenator for extracorporeal circulation",
-          url: "https://euromed.ch/wp-content/uploads/2023/01/kompass_brochure.pdf",
-        },
-        {
-          id: "trilly-ped",
-          image: trilly1,
-          name: "Trilly Pediatric Oxygenator",
-          category: "Oxygenator",
-          description: "Pediatric oxygenator with integrated arterial filter",
-          url: trilly2pdf,
-        },
-        {
-          id: "trilly-infant",
-          image: trilly2,
-          name: "Trilly Infant-Pediatric Oxygenator",
-          category: "Oxygenator",
-          description: "Infant-paediatric oxygenator with modular cascade filtration",
-          url: trilly1pdf,
-        },
-        {
-          id: "remowell",
-          image: remowell,
-          name: "Remowell Oxygenator",
-          category: "Oxygenator",
-          description: "Dual chamber adult oxygenator with lipid and leukocyte reduction",
-          url: remowellpdf,
-        },
-        {
-          id: "horizon",
-          image: horizon,
-          name: "Horizon Oxygenator",
-          category: "Oxygenator",
-          description: "Single chamber adult oxygenator",
-          url: horizonpdf,
-        },
-        {
-          id: "ecmo",
-          image: ecmooxy,
-          name: "ECMO",
-          category: "Oxygenator",
-          description: "Extracorporeal membrane oxygenation system",
-          url: ecmooxypdf,
-        },
-      ],
-    },
-
-    Scanlan: {
-      logo: Scanlan, 
-      name: "Scanlan International",
-      bgColor: "bg-green-50",
-      accentColor: "green",
-      description: "Premier provider of high-quality surgical instruments trusted globally by healthcare professionals.",
-      website: "https://www.scanlaninternational.com/",
-      established: "1921",
-      headquarters: "US",
-      products: [
-        {
-          id: "product-catalog",
-          image: coverpg,
-          name: "Scanlan Product Catalog",
-          category: "Surgical Instruments",
-          description: "Comprehensive catalog showcasing Scanlan's surgical instrument range",
-          url: sc,
-        },
-      ],
-    },
-    BL: {
+      BL: {
       logo: BL, 
       name: "BL Lifesciences",
       bgColor: "bg-green-50",
@@ -527,7 +446,7 @@ const CardiacSidebarDesign = () => {
         },
       ],
     },
-  Baxter : {
+      Baxter : {
       logo: Baxter, 
       name: "Baxter",
       bgColor: "bg-green-50", 
@@ -572,28 +491,7 @@ const CardiacSidebarDesign = () => {
         },
       ],
     },
- Synkromax : {
-  logo: Synkromax, 
-  name: "Synkromax",
-  bgColor: "bg-green-50", 
-  accentColor: "green",
-  description:
-    "Synkromax provides specialized cardiovascular surgical solutions, including pericardial patches designed for optimal biocompatibility.",
-  website: "https://www.reachmedicalsystems.com/synkromax",
-  established: "2009", 
-  headquarters: "India",
-  products: [
-    {
-      id: "bovine-patch",
-      image: bovinepatch,
-      name: "Bovine Pericardial Patch",
-      category: "Cardiovascular",
-      description: "Durable bovine pericardial patch for cardiovascular surgical applications.",
-      url: "https://www.reachmedicalsystems.com/synkromax",
-    },
-  ],
-},
- Terumo : {
+     Terumo : {
   logo: Terumo, 
   name: "Terumo",
   bgColor: "bg-green-50",
@@ -654,79 +552,65 @@ const CardiacSidebarDesign = () => {
     }
   ]
 },
-Sinapi : {
-  logo: Sinapi, 
-  name: "Sinapi Biomedical",
-  bgColor: "bg-green-50",
-  accentColor: "green",
-  description:
-    "Sinapi Biomedical develops innovative drainage systems focused on patient comfort and clinical efficiency.",
-  website: "https://sinapi.co.za/",
-  products: [
-    {
-      id: "chestdrain",
-      image: chestdrain,
-      name: "Chest Drain System",
-      category: "Thoracic Surgery",
-      description: "Advanced chest drainage system with fluid and air evacuation.",
-      url: "https://t.sinapibiomedical.com/"
-    }
-  ]
-},
-Halyard : {
-  logo: Halyard,
-  name: "Halyard Health",
-  bgColor: "bg-green-50",
-  accentColor: "green",
-  description:
-    "Halyard contributes to the surgical domain with high-quality gowns, drapes, and PPE ensuring infection control and comfort.",
-  website: "https://products.halyardhealth.com/",
-  products: [
-    {
-      id: "drapes",
-      image: drapes,
-      name: "Surgical Drapes",
-      category: "Infection Control",
-      description: "Sterile drapes for various surgical applications.",
-      url: "https://products.halyardhealth.com/products/surgical-solutions/surgical-drapes"
-    },
-    {
-      id: "gowns",
-      image: gowns,
-      name: "Surgical Gowns",
-      category: "Surgical Apparel",
-      description: "Surgical gowns designed for protection and comfort.",
-      url: "https://products.halyardhealth.com/products/surgical-solutions/surgical-gowns"
-    },
-    {
-      id: "masks",
-      image: masks,
-      name: "Surgical Masks",
-      category: "Personal Protection",
-      description: "Medical-grade masks offering fluid resistance and breathability.",
-      url: "https://products.halyardhealth.com/products/personal-protection/facial-respiratory-protection/medical-surgical-masks"
-    }
-  ]
-},
-Insightra: {
-    logo: Insightra, 
-    name: "Insightra Medical",
-    bgColor: "bg-green-50",
-    accentColor: "green",
-    description: "Advanced intra-aortic balloon pump for hemodynamic support.",
-    website: "https://insightra.com/",
-    established: "2001",
-    headquarters: "USA",
-    products: [
-      {
-        id: "iabp",
-        image: "/Cardiology/IABP.png",
-        name: "IABP",
-        category: "Cardiovascular Support",
-        description: "Intra-aortic balloon pump system.",
-        url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf"
-      }
-    ]
+      Euroset: {
+      logo: Euroset, 
+      name: "Eurosets",
+      bgColor: "bg-green-50",
+      accentColor: "green",
+      description: "Swiss manufacturer offering a range of advanced oxygenator systems for pediatric and adult use.",
+      website: "https://www.eurosets.com/en/",
+      established: "1991", // Update this if known
+      headquarters: "Italy",
+      products: [
+        {
+          id: "kompass",
+          image: oxygenerator,
+          name: "Oxygenator Adult Kompass",
+          category: "Oxygenator",
+          description: "Adult oxygenator for extracorporeal circulation",
+          url: "https://euromed.ch/wp-content/uploads/2023/01/kompass_brochure.pdf",
+        },
+        {
+          id: "trilly-ped",
+          image: trilly1,
+          name: "Trilly Pediatric Oxygenator",
+          category: "Oxygenator",
+          description: "Pediatric oxygenator with integrated arterial filter",
+          url: trilly2pdf,
+        },
+        {
+          id: "trilly-infant",
+          image: trilly2,
+          name: "Trilly Infant-Pediatric Oxygenator",
+          category: "Oxygenator",
+          description: "Infant-paediatric oxygenator with modular cascade filtration",
+          url: trilly1pdf,
+        },
+        {
+          id: "remowell",
+          image: remowell,
+          name: "Remowell Oxygenator",
+          category: "Oxygenator",
+          description: "Dual chamber adult oxygenator with lipid and leukocyte reduction",
+          url: remowellpdf,
+        },
+        {
+          id: "horizon",
+          image: horizon,
+          name: "Horizon Oxygenator",
+          category: "Oxygenator",
+          description: "Single chamber adult oxygenator",
+          url: horizonpdf,
+        },
+        {
+          id: "ecmo",
+          image: ecmooxy,
+          name: "ECMO",
+          category: "Oxygenator",
+          description: "Extracorporeal membrane oxygenation system",
+          url: ecmooxypdf,
+        },
+      ],
     },
     Grena: {
         logo: Grena, 
@@ -782,6 +666,123 @@ Insightra: {
         ]
 
 },
+Halyard : {
+  logo: Halyard,
+  name: "Halyard Health",
+  bgColor: "bg-green-50",
+  accentColor: "green",
+  description:
+    "Halyard contributes to the surgical domain with high-quality gowns, drapes, and PPE ensuring infection control and comfort.",
+  website: "https://products.halyardhealth.com/",
+  products: [
+    {
+      id: "drapes",
+      image: drapes,
+      name: "Surgical Drapes",
+      category: "Infection Control",
+      description: "Sterile drapes for various surgical applications.",
+      url: "https://products.halyardhealth.com/products/surgical-solutions/surgical-drapes"
+    },
+    {
+      id: "gowns",
+      image: gowns,
+      name: "Surgical Gowns",
+      category: "Surgical Apparel",
+      description: "Surgical gowns designed for protection and comfort.",
+      url: "https://products.halyardhealth.com/products/surgical-solutions/surgical-gowns"
+    },
+    {
+      id: "masks",
+      image: masks,
+      name: "Surgical Masks",
+      category: "Personal Protection",
+      description: "Medical-grade masks offering fluid resistance and breathability.",
+      url: "https://products.halyardhealth.com/products/personal-protection/facial-respiratory-protection/medical-surgical-masks"
+    }
+  ]
+},
+    Scanlan: {
+      logo: Scanlan, 
+      name: "Scanlan International",
+      bgColor: "bg-green-50",
+      accentColor: "green",
+      description: "Premier provider of high-quality surgical instruments trusted globally by healthcare professionals.",
+      website: "https://www.scanlaninternational.com/",
+      established: "1921",
+      headquarters: "US",
+      products: [
+        {
+          id: "product-catalog",
+          image: coverpg,
+          name: "Scanlan Product Catalog",
+          category: "Surgical Instruments",
+          description: "Comprehensive catalog showcasing Scanlan's surgical instrument range",
+          url: sc,
+        },
+      ],
+    },
+ Synkromax : {
+  logo: Synkromax, 
+  name: "Synkromax",
+  bgColor: "bg-green-50", 
+  accentColor: "green",
+  description:
+    "Synkromax provides specialized cardiovascular surgical solutions, including pericardial patches designed for optimal biocompatibility.",
+  website: "https://www.reachmedicalsystems.com/synkromax",
+  established: "2009", 
+  headquarters: "India",
+  products: [
+    {
+      id: "bovine-patch",
+      image: bovinepatch,
+      name: "Bovine Pericardial Patch",
+      category: "Cardiovascular",
+      description: "Durable bovine pericardial patch for cardiovascular surgical applications.",
+      url: "https://www.reachmedicalsystems.com/synkromax",
+    },
+  ],
+},
+Sinapi : {
+  logo: Sinapi, 
+  name: "Sinapi Biomedical",
+  bgColor: "bg-green-50",
+  accentColor: "green",
+  description:
+    "Sinapi Biomedical develops innovative drainage systems focused on patient comfort and clinical efficiency.",
+  website: "https://sinapi.co.za/",
+  products: [
+    {
+      id: "chestdrain",
+      image: chestdrain,
+      name: "Chest Drain System",
+      category: "Thoracic Surgery",
+      description: "Advanced chest drainage system with fluid and air evacuation.",
+      url: "https://t.sinapibiomedical.com/"
+    }
+  ]
+},
+
+Insightra: {
+    logo: Insightra, 
+    name: "Insightra Medical",
+    bgColor: "bg-green-50",
+    accentColor: "green",
+    description: "Advanced intra-aortic balloon pump for hemodynamic support.",
+    website: "https://insightra.com/",
+    established: "2001",
+    headquarters: "USA",
+    products: [
+      {
+        id: "iabp",
+        image: "/Cardiology/IABP.png",
+        name: "IABP",
+        category: "Cardiovascular Support",
+        description: "Intra-aortic balloon pump system.",
+        url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf"
+      }
+    ]
+    },
+
 };
 
   const currentCompany = companies[activeCompany];
@@ -966,6 +967,45 @@ Insightra: {
                   <Package2 className={`w-8 h-8 text-${currentCompany.accentColor}-600`} />
                   <h3 className="text-2xl md:text-3xl font-bold text-gray-900">Product Portfolio</h3>
                 </div>
+
+{              activeCompany==="BL" &&(
+ <div className=" grid grid-cols-1 md:grid-cols-2 w-auto 2xl:w-3/4 m-10 2xl:my-20 my-10 mx-auto gap-6 2xl:gap-20">
+  {/* Card 1 - SURGX */}
+  <div className="group border rounded-2xl p-6 shadow hover:shadow-lg transition bg-white flex flex-col items-center text-center">
+    <img 
+      src="/surgx.png" 
+      alt="Bougie Introducer" 
+      className="h-40 lg:h-60 w-full object-contain mb-6"
+    />
+
+    <a
+      href="/SurgxCat.pdf"
+      target="_blank"
+  rel="noopener noreferrer"
+      className="w-40 text-center flex flex-row items-center gap-2 justify-center  text-base 2xl:text-2xl font-semibold py-2 px-4 rounded-full bg-green-500 text-white hover:bg-green-700 transition"
+    >
+      View <ExternalLink className="w-4 h-4" />
+    </a>
+  </div>
+
+  {/* Card 2 - Perfx */}
+  <div className="group border rounded-2xl p-6 shadow hover:shadow-lg transition bg-white flex flex-col items-center text-center">
+    <img 
+      src="/perfx.png" 
+      alt="Adult Ported Introducer" 
+      className="h-40 lg:h-60 w-full object-contain mb-6"
+    />
+
+    <a
+      href="/PerfxCat.pdf"
+      target="_blank"
+  rel="noopener noreferrer"
+      className="w-40 flex flex-row items-center gap-2 justify-center text-center text-base 2xl:text-xl font-semibold py-2 px-4 rounded-full bg-green-500 text-white hover:bg-green-700 transition"
+    >
+      View <ExternalLink className="w-4 h-4" />
+    </a>
+  </div>
+</div>)}
 
                 <div className="grid grid-cols-1 p-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-16">
                   {currentCompany.products.map((product, index) => (
