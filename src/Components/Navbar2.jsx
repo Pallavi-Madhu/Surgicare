@@ -12,12 +12,11 @@ const Navbar = () => {
   const navbarRef = useRef(null);
 
 const departments = [
-  { name: "Anesthesiology", href: "/anesthesiology" },
+  { name: "Anesthesiology and Critical Care", href: "/anesthesiology&CriticalCare" },
   { name: "Cardiac Surgery", href: "/cardiac-surgery" },
   { name: "Cardiology", href: "/cardiology" },
-  { name: "Critical Care", href: "/critical-care" },
   { name: "General Surgery", href: "/general-surgery" },
-    { name: "Nephrology", href: "/nephrology" },
+  { name: "Nephrology", href: "/nephrology" },
   { name: "Neurosurgery", href: "/neurosurgery" },
   { name: "Ophthalmology", href: "/ophthalmology" },
   { name: "Orthopedic", href: "/orthopedic" },
@@ -92,7 +91,7 @@ const departments = [
   return (
     <motion.nav 
       ref={navbarRef}
-      className="fixed top-0 w-full z-30"
+      className="fixed bg-gradient-to-b from-white to-transparent top-0 w-full z-30"
       initial={false}
       animate={{
         y: isVisible ? 0 : -100,
@@ -119,7 +118,7 @@ const departments = [
         }`}
       />
 
-      <div className=" md:max-w-2xl px-4 sm:px-6  lg:px-8">
+      <div className=" md:max-w-2xl  px-4 sm:px-6  lg:px-8">
         <div className="flex justify-between items-center h-16 sm:h-20">
           {/* Logo Section */}
           <div className="flex items-center space-x-3">

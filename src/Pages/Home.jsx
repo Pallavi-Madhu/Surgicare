@@ -281,7 +281,7 @@ const Home = () => {
               <div className="w-24 h-1 bg-gradient-to-r from-green-500 to-green-600 mx-auto"></div>
             </div>
             
-            <div className="grid  md:grid-cols-3 gap-14">
+            <div className="grid  lg:grid-cols-3 gap-14">
               {[
                 {
                   title: "Quality Assurance",

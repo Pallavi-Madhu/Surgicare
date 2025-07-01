@@ -5,6 +5,15 @@ import Footer from "../../Components/Footer";
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Globe, Package2, Building, ChevronRight, Star, ShoppingCart,ArrowLeft,X } from 'lucide-react';
 
+{/** Critical Care*/}
+import Sinapi from "../../assets/Sinapi.png";
+import toray from "../../assets/Toray.png";
+import hico from "../../assets/Hico.png";
+import chestdrain from "../../assets/Pulmo/chestdrain.png"
+import ChestDrain from "../../assets/ChestDrain.pdf";
+
+
+{/** Anesthesiology*/}
 import Cocoon from "../../assets/Cocoon.png";
 import BL from "../../assets/BLLifsciences.png";
 import Meditec from "../../assets/meditec.png";
@@ -85,7 +94,7 @@ const AnesthesioSidebarDesign = () => {
       
 if(loading) {
   return(
-  <Loading department = "Anesthesiology"/>
+  <Loading department = "Anesthesiology and Critical Care"/>
   )
 }
 
@@ -181,8 +190,8 @@ Meditech: {
   accentColor: "green",
   description: "Meditech specializes in advanced airway management tools including bougies, introducers, and stylets for all age groups.",
   website: "https://www.meditechsystems.co.uk/",
-  established:"N/A",
-  headquarters:"N/A",
+  established:"2011",
+  headquarters:"India",
   products: [
     {
       id: "1",
@@ -263,27 +272,31 @@ Meditech: {
       category: "Airway Management",
       description: "Soft silicone nasal airway for oxygen or suctioning",
       url: "https://www.meditechsystems.co.uk/product-category/airway-management/oxygen-and-aerosol-therapy/resuscitation-kits-and-nasophranageal/"
-    }
-  ]
-},
-CareEssentials: {
-  logo: Cocoon,
-  name: "Care Essentials",
-  bgColor: "bg-green-50",
-  accentColor: "green",
-  description: "Specialized in patient warming therapy and infection control.",
-  website: "https://www.careessentials.com.au/",
-  established: "1996",
-  headquarters: "Australia",
-  products: [
+    },
     {
-      id: "1",
-      image: image10,
-      name: "Warming Blankets",
-      category: "Warming Therapy",
-      description: "Convective warming blankets for maintaining patient body temperature.",
-      url: "https://www.careessentials.com.au/product-category/warming-blankets-warming-machines/?category-list=warming-blankets"
-    }
+          id: "nasopharyngeal-airway",
+          image: "/CriticalCare/airway.png",
+          name: "Nasopharyngeal Airway",
+          category: "Airway Management",
+          description: "Soft tube for nasal airway access",
+          url: "https://meditecdevices.com/products/search/?q=nasopharyngeal%20airway"
+        },
+        {
+          id: "bougie",
+          image: "/CriticalCare/bougie.png",
+          name: "Bougie",
+          category: "Intubation Aid",
+          description: "Intubation aid for airway access",
+          url: "https://meditecdevices.com/products/search/?q=bougie"
+        },
+        {
+          id: "stylet",
+          image: "/CriticalCare/stylet.png",
+          name: "Stylet",
+          category: "Intubation Aid",
+          description: "Rigid guide for endotracheal tube",
+          url: "https://meditecdevices.com/products/search/?q=stylet"
+        }
   ]
 },
 Aero: {
@@ -375,6 +388,113 @@ Aero: {
     }
   ]
 },
+Toray : {
+      logo: toray,
+      name: "Toray Medical",
+      bgColor: "bg-green-50",
+      accentColor: "green",
+      description: "Advanced therapies for emergency and intensive care settings.",
+      website: "https://www.toray-medical.com/en/",
+      established: "1980",
+      headquarters: "Japan",
+      products: [
+        {
+          id: "hemofeel",
+          image: "/CriticalCare/hemofeel.png",
+          name: "Hemofeel",
+          category: "Emergency Therapy",
+          description: "Hemoperfusion cartridge for blood purification",
+          url: "https://www.toray-medical.com/en/products/emergency/eme_0020.html"
+        },
+        {
+          id: "toraymyxin",
+          image: "/CriticalCare/myxin.png",
+          name: "Toraymyxin",
+          category: "Emergency Therapy",
+          description: "Toxin-absorbing cartridge for sepsis management",
+          url: "https://www.toray-medical.com/en/products/emergency/eme_0010.html"
+        }
+      ]
+    },
+
+  Sinapi : {
+      logo: Sinapi,
+      name: "Sinapi Biomedical",
+      bgColor: "bg-green-50",
+      accentColor: "green",
+      description: "Innovative devices for thoracic drainage and critical care.",
+      website: "https://www.sinapi.co.za/",
+      established: "2006",
+      headquarters: "South Africa",
+      products: [
+        {
+          id: "chest-drain",
+          image: chestdrain,
+          name: "Chest Drainage System 50ml, 400ml, 1000ml",
+          category: "Thoracic Drainage",
+          description: " Fluid and air removal from thorax",
+          url: ChestDrain
+        }
+      ]
+    },  
+    Hico : {
+      logo: hico,
+      name: "Hico",
+      bgColor: "bg-green-50",
+      accentColor: "green",
+      description: "High-quality warming therapy devices for critical care.",
+      website: "https://www.hico.de/en/",
+      established:"1945",
+      headquarters:"Germany",
+      products: [
+        {
+          id: "variotherm",
+          image: "/CriticalCare/vari.png",
+          name: "Variotherm",
+          category: "Warming Therapy",
+          description: "Water-based patient warming system",
+          url: "https://www.hico.de/en/hico-variotherm-550.html"
+        },
+        {
+          id: "aquatherm",
+          image: "/CriticalCare/aqua.png",
+          name: "Aquatherm",
+          category: "Warming Therapy",
+          description: "Automatic fluid and patient warming unit",
+          url: "https://www.hico.de/en/hico-aquatherm-660.html"
+        }
+      ]
+    },
+
+CareEssentials: {
+  logo: Cocoon,
+  name: "Care Essentials",
+  bgColor: "bg-green-50",
+  accentColor: "green",
+  description: "Specialized in patient warming therapy and infection control.",
+  website: "https://www.careessentials.com.au/",
+  established: "1996",
+  headquarters: "Australia",
+  products: [
+    {
+      id: "1",
+      image: image10,
+      name: "Warming Blankets",
+      category: "Warming Therapy",
+      description: "Convective warming blankets for maintaining patient body temperature.",
+      url: "https://www.careessentials.com.au/product-category/warming-blankets-warming-machines/?category-list=warming-blankets"
+    },
+     {
+          id: "body-warmer",
+          image: "/CriticalCare/cocoon.png",
+          name: "Body Warmer",
+          category: "Warming Therapy",
+          description: " Patient warming system for surgery",
+          url: "https://www.careessentials.com.au/product/cws-5000/"
+        }
+  ]
+},
+
 Portex: {
   logo: Portex,
   name: "Portex",
@@ -564,7 +684,7 @@ Venticare: {
           </button>
 
           <div className="p-6 border-b bg-gradient-to-br from-green-900 via-green-500 to-green-900 text-white relative">
-            <h1 className="text-3xl font-bold pt-10 lg:pt-0  mb-2">ANESTHESIOLOGY</h1>
+            <h1 className="text-2xl font-bold pt-10 lg:pt-0  mb-2">ANESTHESIOLOGY AND CRITICAL CARE</h1>
             <p className="text-gray-100 text-xl">Surgical Solutions</p>
           </div>
 
