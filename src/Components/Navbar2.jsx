@@ -13,7 +13,7 @@ const Navbar = () => {
 
 const departments = [
   { name: "Anesthesiology and Critical Care", href: "/anesthesiology&CriticalCare" },
-  { name: "Cardiac Surgery", href: "/cardiac-surgery" },
+  { name: "Cardiac Surgery and Perfusion", href: "/cardiac-surgery" },
   { name: "Cardiology", href: "/cardiology" },
   { name: "General Surgery", href: "/general-surgery" },
   { name: "Nephrology", href: "/nephrology" },
@@ -250,7 +250,7 @@ const departments = [
                                     className="text-gray-600 pl-4 rounded hover:text-green-900 hover:bg-green-100 font-sans text-lg transition-colors duration-200 flex items-center space-x-2"
                                   >
                                     <span className="text-3xl text-green-700">•</span>
-                                    <span>{dept.name}</span>
+                                    <span>{dept.name } Products</span>
                                   </a>
                                 ))}
                               </motion.div>
