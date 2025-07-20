@@ -116,7 +116,7 @@ const Home = () => {
                   <span className="text-gray-500"> 
                     <motion.img
               src={positive}
-              className="w-auto p-2 m-auto h-80 sm:h-96 lg:h-full max-w-sm rounded-2xl shadow-lg"
+              className="w-auto p-2 m-auto h-80 sm:h-auto 2xl:h-full max-w-sm rounded-2xl shadow-lg"
                />
               </span>
                 </div>

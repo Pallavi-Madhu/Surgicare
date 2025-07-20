@@ -20,7 +20,7 @@ const Navbar = () => {
 
 const departments = [
   { name: "Anesthesiology and Critical Care", href: "/anesthesiology&CriticalCare" },
-  { name: "Cardiac Surgery", href: "/cardiac-surgery" },
+  { name: "Cardiac Surgery and Perfusion", href: "/cardiac-surgery" },
   { name: "Cardiology", href: "/cardiology" },
   { name: "General Surgery", href: "/general-surgery" },
   { name: "Nephrology", href: "/nephrology" },

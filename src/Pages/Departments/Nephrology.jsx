@@ -22,7 +22,7 @@ import diax from "../../assets/diax.png"
     const [loading, setLoading] = useState(true);
     
     useEffect(() => {
-      setTimeout(() => setLoading(false), 3000); // 4 second delay
+       setTimeout(() => setLoading(false), 2000); 
     }, []);
     
     // Touch event handlers for swipe gesture
