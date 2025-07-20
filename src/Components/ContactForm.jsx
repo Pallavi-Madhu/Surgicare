@@ -102,7 +102,7 @@ const ContactForm = () => {
           <div>
             <label
               htmlFor="name"
-              className="block text-xl sm:text-2xl font-medium text-gray-700"
+              className="block text-xl  sm:text-2xl font-medium text-gray-700"
             >
               Name
             </label>
@@ -113,14 +113,14 @@ const ContactForm = () => {
               value={formData.name}
               onChange={handleChange}
               required
-              className="mt-1 block w-full p-3 border border-green-700 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="mt-2 block w-full text-lg sm:text-2xl p-1 sm:p-2 md:p-3 border border-green-700 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
             />
           </div>
           {/* Email Input */}
           <div>
             <label
               htmlFor="email"
-              className="block text-xl sm:text-2xl text-md font-medium text-gray-700"
+              className="block mt-3 md:mt-5 text-xl sm:text-2xl text-md font-medium text-gray-700"
             >
               Email
             </label>
@@ -131,14 +131,14 @@ const ContactForm = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="mt-1 block w-full p-3 border border-green-700 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="mt-2 block w-full  text-lg sm:text-2xl p-1 sm:p-2 md:p-3 border border-green-700 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
             />
           </div>
           {/* Phone Input */}
           <div>
             <label
               htmlFor="phone"
-              className="block text-xl sm:text-2xl text-md font-medium text-gray-700"
+              className="block text-xl mt-3 md:mt-5  sm:text-2xl text-sm font-medium text-gray-700"
             >
               Phone
             </label>
@@ -149,14 +149,14 @@ const ContactForm = () => {
               value={formData.phone}
               onChange={handleChange}
               required
-              className="mt-1 block  w-full p-3 border border-green-700 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="mt-2 block  text-lg sm:text-2xl w-full p-1 sm:p-2 md:p-3 border border-green-700 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
             />
           </div>
           {/* Enquiry Input */}
           <div>
             <label
               htmlFor="enquiry"
-              className="block text-xl sm:text-2xl text-md font-medium text-gray-700"
+              className="block mt-3 text-xl md:mt-5  sm:text-2xl text-md font-medium text-gray-700"
             >
               Enquiry
             </label>
@@ -166,14 +166,14 @@ const ContactForm = () => {
               value={formData.enquiry}
               onChange={handleChange}
               required
-              className="mt-1 block w-full p-3 border border-green-700 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="mt-2  text-lg sm:text-2xl block w-full p-1 sm:p-2 md:p-3 border border-green-700 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
             ></textarea>
           </div>
         </div>
         {/* Submit Button */}
         <button
           type="submit"
-          className="w-full text-xl sm:text-2xl mt-6 p-3 bg-green-600 text-white font-semibold rounded-md hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-green-500"
+          className="w-full text-xl sm:text-2xl mt-6 p-2 sm:p-3 bg-green-600 text-white font-semibold rounded-md hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-green-500"
         >
           Submit Form
         </button>

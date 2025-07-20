@@ -262,6 +262,14 @@ const departments = [
                   </AnimatePresence>
                 </div>
 
+                    <a
+                       href="/certificates"
+                        className="block text-gray-700 hover:text-green-700 font-bold text-lg p-3 transition duration-200 rounded rounded-xl hover:shadow-lg"
+                       style={{ WebkitTapHighlightColor: 'transparent' }}
+                     >
+                       Certificates
+                     </a>
+
                 <a
                   href="/contact"
                   className="block text-gray-700 hover:text-green-700 font-bold text-lg p-3 transition duration-200 rounded rounded-xl hover:shadow-lg"
