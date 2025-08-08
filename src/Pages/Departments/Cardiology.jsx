@@ -211,6 +211,43 @@ const CardiologySidebarDesign = () => {
         url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf"
       }
     ]
+    },
+      AMS: {
+    logo: Insightra, 
+    name: "Advanced Meditech Solutions",
+    bgColor: "bg-green-50",
+    accentColor: "green",
+    description: "Advanced intra-aortic balloon pump for hemodynamic support.",
+    website: "https://insightra.com/",
+    established: "2001",
+    headquarters: "USA",
+    products: [
+      {
+        id: "PVC",
+        image: "/Cardiology/PVC.png",
+        name: "IABP",
+        category: "Cardiovascular Support",
+        description: "Intra-aortic balloon pump system.",
+        url: ""
+      },
+       {
+        id: "Advalve",
+        image: "/Cardiology/Advalve.png",
+        name: "Advalve Bioprosthesis",
+        category: "Cardiovascular Support",
+        description: "Intra-aortic balloon pump system.",
+        url: "Cardiology/Advalve.pdf"
+      },
+      {
+        id: "BPP",
+        image: "/Cardiology/BPP.png",
+        name: "IABP",
+        category: "Cardiovascular Support",
+        description: "Intra-aortic balloon pump system.",
+        url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf"
+      },
+     
+    ]
     }
 };
 
