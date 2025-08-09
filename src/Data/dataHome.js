@@ -8,7 +8,7 @@ import image7 from "../assets/Halyard.png";
 import image8 from "../assets/Sinapi.png";
 import image9 from "../assets/Syncromax.png";
 import image10 from "../assets/Mizuho.png";
-import image11 from "../assets/deSoutter.png";
+//import image11 from "../assets/deSoutter.png";
 import image12 from "../assets/Sunoptic.png";
 import image13 from "../assets/Helena.png";
 import image14 from "../assets/Cocoon.png";
@@ -69,11 +69,11 @@ export const cards = [
     image: image10,
     url:"http://www.mizuhomedical.co.jp/"
   },
-  {
-    description: "Precision-driven surgical instruments for advanced care.",   
-    image: image11,
-    url:"https://www.de-soutter.com/"
-  },
+  // {
+  //   description: "Precision-driven surgical instruments for advanced care.",   
+  //   image: image11,
+  //   url:"https://www.de-soutter.com/"
+  // },
   {
     description:
       "Specializing in optical and medical equipment for healthcare.",
