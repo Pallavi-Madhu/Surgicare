@@ -192,7 +192,43 @@ const CardiologySidebarDesign = () => {
         }
       ]
     },
-  Insightra: {
+    AMS: {
+    logo: "AMS.png",
+    name: "Advanced Meditech Solutions",
+    bgColor: "bg-green-50",
+    accentColor: "green",
+    description: "An India-based MedTech company providing advanced surgical, interventional cardiology, endo surgery, hernia and wound-care solutions across 116+ countries.",
+    website: "https://www.amsltd.com/",
+    established: "2001",
+    headquarters: "India",
+   products: [
+      {
+        id: "PVC",
+        image: "/Cardiology/PVC.png",
+        name: "Pulmonary Valved Conduit",
+        category: "Cardiac Surgery – Valve Conduit",
+        description: "Pre-formed valved conduit for right ventricular outflow tract reconstruction in congenital heart disease.",
+        url: "Cardiology/PVC.pdf"
+      },
+      {
+        id: "Advalve",
+        image: "/Cardiology/Advalve.png",
+        name: "Advalve Bioprosthesis",
+        category: "Cardiac Surgery – Valve Prosthesis",
+        description: "Bioprosthetic heart valve designed for safe and durable replacement of diseased native valves.",
+        url: "Cardiology/Advalve.pdf"
+      },
+      {
+        id: "BPP",
+        image: "/Cardiology/BPP.png",
+        name: "Bovine Pericardial Patch",
+        category: "Cardiac Surgery – Patch Repair",
+        description: "High-strength bovine pericardium patch for structural repair and tissue reinforcement in cardiac surgery.",
+        url: "Cardiology/BPP.pdf"
+      }
+    ]
+  },
+   Insightra: {
     logo: Insightra, 
     name: "Insightra Medical",
     bgColor: "bg-green-50",
@@ -211,7 +247,8 @@ const CardiologySidebarDesign = () => {
         url: "https://insightra.com/wp-content/uploads/2019/01/ULTRA7FR_IAB_product_brochure.pdf"
       }
     ]
-    }
+    },
+
 };
 
   const currentCompany = companies[activeCompany];
